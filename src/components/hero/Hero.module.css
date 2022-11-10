@@ -1,6 +1,6 @@
 .background {
   /* background-color: var(--colorSoftDeco); */
-  height: 80vh;
+  height: 40rem;
   position: relative;
 }
 .textContainer {
@@ -29,11 +29,9 @@
   color: var(--colorBlackDeco);
 }
 
-.imageContainer {
-}
-
 .image {
   width: 100%;
+  height: 40rem;
   object-fit: cover;
 }
 
