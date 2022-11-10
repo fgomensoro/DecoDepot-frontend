@@ -19,8 +19,7 @@ function Featured() {
     getFeatured();
   }, []);
 
-  console.log(featured);
-  return <Slider products={featured} />;
+  return <Slider products={featured} title={"Featured"} />;
 }
 
 export default Featured;

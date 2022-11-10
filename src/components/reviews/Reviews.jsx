@@ -7,16 +7,13 @@ function Reviews() {
 
   useEffect(() => {
     const getReviews = async () => {
-      console.log("axios");
       const response = await axios({
         url: `${process.env.REACT_APP_API_PORT}reviews/`,
         method: "GET",
       });
       setReviews(response.data.reviews);
-      console.log(response.data.reviews);
     };
     getReviews();
-    console.log("useEffect");
   }, []); // eslint-disable-line
 
   return (
