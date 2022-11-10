@@ -19,7 +19,6 @@ function Featured() {
     getFeatured();
   }, []);
 
-  console.log(featured);
   return <Slider products={featured} />;
 }
 
