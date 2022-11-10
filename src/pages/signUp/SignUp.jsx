@@ -30,7 +30,7 @@ function SignUp() {
       },
     });
 
-    navigate("/");
+    navigate("/login");
   };
 
   return (
