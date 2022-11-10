@@ -15,23 +15,23 @@ function Footer() {
         </div>
       </div>
       <div className={`${styles.backGrey} container-fluid`}>
-        <div class="container ">
-          <footer class="py-5">
+        <div className="container ">
+          <footer className="py-5">
             <div className="d-flex justify-content-between">
               <p>Subscribe to get 10% off on your first order</p>
               <div>
-                <i class="bi bi-instagram mx-1"></i>
-                <i class="bi bi-tiktok mx-1"></i>
-                <i class="bi bi-twitter mx-1"></i>
-                <i class="bi bi-facebook mx-1"></i>
+                <i className="bi bi-instagram mx-1"></i>
+                <i className="bi bi-tiktok mx-1"></i>
+                <i className="bi bi-twitter mx-1"></i>
+                <i className="bi bi-facebook mx-1"></i>
               </div>
             </div>
             <hr />
-            <div class="row">
-              <div class="col-6 col-md-2 mb-3 ">
+            <div className="row">
+              <div className="col-6 col-md-2 mb-3 ">
                 <h5 className={styles.listTitles}>Section</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
+                <ul className="nav flex-column">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -39,7 +39,7 @@ function Footer() {
                       All products
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -47,7 +47,7 @@ function Footer() {
                       Bedroom
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -55,7 +55,7 @@ function Footer() {
                       Home office
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -66,10 +66,10 @@ function Footer() {
                 </ul>
               </div>
 
-              <div class="col-6 col-md-2 mb-3">
+              <div className="col-6 col-md-2 mb-3">
                 <h5 className={styles.listTitles}>ABOUT</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
+                <ul className="nav flex-column">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -77,12 +77,12 @@ function Footer() {
                       About us
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link to="/" className={`${styles.customFooterLink} nav-link p-0 text-muted`}>
                       Brands
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -93,10 +93,10 @@ function Footer() {
                 </ul>
               </div>
 
-              <div class="col-6 col-md-2 mb-3">
+              <div className="col-6 col-md-2 mb-3">
                 <h5 className={styles.listTitles}>MORE</h5>
-                <ul class="nav flex-column">
-                  <li class="nav-item mb-2">
+                <ul className="nav flex-column">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -104,7 +104,7 @@ function Footer() {
                       Contact us
                     </Link>
                   </li>
-                  <li class="nav-item mb-2">
+                  <li className="nav-item mb-2">
                     <Link
                       to="/"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
@@ -116,20 +116,20 @@ function Footer() {
               </div>
             </div>
             <hr />
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 ">
+            <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 ">
               <p>© 2022 Company, Inc. All rights reserved.</p>
-              <ul class="list-unstyled d-flex">
-                <li class="ms-3">
+              <ul className="list-unstyled d-flex">
+                <li className="ms-3">
                   <Link to="/" className={`${styles.customFooterLink} link-dark`}>
                     Terms of service
                   </Link>
                 </li>
-                <li class="ms-3">
+                <li className="ms-3">
                   <Link to="/" className={`${styles.customFooterLink} link-dark`}>
                     Privacy policy
                   </Link>
                 </li>
-                <li class="ms-3">
+                <li className="ms-3">
                   <Link to="/" className={`${styles.customFooterLink} link-dark`}>
                     Accesibility
                   </Link>
@@ -144,55 +144,3 @@ function Footer() {
 }
 
 export default Footer;
-
-{
-  /* <div class="container">
-  <footer class="py-5">
-    <div class="row">
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-
-      <div class="col-6 col-md-2 mb-3">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-        </ul>
-      </div>
-
-     
-    </div>
-
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>© 2022 Company, Inc. All rights reserved.</p>
-      <ul class="list-unstyled d-flex">
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-      </ul>
-    </div>
-  </footer>
-</div>; */
-}
