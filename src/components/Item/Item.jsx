@@ -11,7 +11,13 @@ function Item({ product }) {
           alt=""
         />
       </div>
-      <p>{product.price}</p>
+      <div className={styles.description}>
+        <div>
+          <h3 className={styles.name}>{product.name}</h3>
+          <p className={styles.price}>{`Actual price $${product.price}`}</p>
+        </div>
+        <button className={styles.shopBtn}>Shop now</button>
+      </div>
     </div>
   );
 }

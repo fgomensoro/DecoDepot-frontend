@@ -19,7 +19,7 @@ function Featured() {
     getFeatured();
   }, []);
 
-  return <Slider products={featured} />;
+  return <Slider products={featured} title={"Featured"} />;
 }
 
 export default Featured;

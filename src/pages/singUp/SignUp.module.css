@@ -1,0 +1,49 @@
+.mainContainer {
+  min-height: 100vh;
+  background-image: url("http://localhost:8000/img/loginBackroundImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--fontFamilyDeco);
+}
+
+.registerLink {
+  color: #131313;
+  font-family: var(--fontFamilyDeco);
+  text-decoration: none;
+  font-size: 1, 5rem;
+  line-height: 2rem;
+  border: none;
+  transition-duration: 3s;
+  margin-left: 10px;
+}
+
+.formWrapper {
+  width: 400px;
+  margin-top: 5%;
+  background-color: rgba(210, 194, 194, 0.5);
+  height: fit-content;
+  border-radius: 5px;
+}
+.formInput {
+  border-radius: 5px;
+  border: none;
+}
+.formInput:focus {
+  outline: solid var(--colorSoftDeco) 5px;
+  background-color: aliceblue;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.submitBtn {
+  border: none;
+  margin-top: 12px;
+  background-color: white;
+}
+
+.submitBtn:hover {
+  background-color: aliceblue;
+  transform: scale(1.01);
+}
