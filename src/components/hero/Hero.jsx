@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Hero.module.css";
 
 function Hero() {
   const imageUrl = "hero.jpg";
@@ -9,7 +10,7 @@ function Hero() {
         <button className={styles.button}>Shop Now</button>
       </div>
       <div className="col-12 col-md-6">
-        <img src={imageUrl} alt="" />
+        <img src={process.env.REACT_APP_IMAGE_PATH$ + imageUrl} alt="" />
       </div>
     </div>
   );
