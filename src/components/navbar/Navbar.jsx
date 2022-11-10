@@ -3,41 +3,38 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid d-flex  justify-content-around">
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item">
+    <nav className={`${styles.backGrey} navbar navbar-expand-lg `}>
+      <div className="container-fluid d-flex  justify-content-around">
+        <ul className="navbar-nav  mb-2 mb-lg-0">
+          <li className="nav-item">
             <Link to="/" className={`${styles.customNavLink} nav-link`}>
               Shop
             </Link>
           </li>
-          <li class="nav-item">
-            <Link to="/" className={`${styles.customNavLink} nav-link`}>
+          <li className="nav-item ">
+            <button className={`${styles.customNavLinkButton} nav-link`}>
               About
-            </Link>
+              <i
+                className={`${styles.customNavLink} ${styles.arrowWeight} bi bi-chevron-down arrowWeight`}
+              ></i>
+            </button>
           </li>
-
-          <li class="nav-item">
+        </ul>
+        <ul className="navbar-nav  mb-2 mb-lg-0">
+          <li className="nav-item">
             <Link to="/" className={`${styles.customNavLink} nav-link`}>
-              Our mission
+              LOGO
             </Link>
           </li>
         </ul>
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item">
-            <Link to="/" className={`${styles.customNavLink} nav-link`}>
-              Shop
-            </Link>
-          </li>
-        </ul>
-        <ul class="navbar-nav  mb-2 mb-lg-0">
-          <li class="nav-item">
+        <ul className="navbar-nav mb-2 mb-lg-0">
+          <li className="nav-item">
             <Link to="/" className={`${styles.customNavLink} nav-link`}>
               Cart
             </Link>
           </li>
 
-          <li class="nav-item">
+          <li className="nav-item">
             <Link to="/" className={`${styles.customNavLink} nav-link`}>
               My accout
             </Link>
@@ -49,23 +46,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-/* 
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<li class="nav-item">
-  <Link to="/" className="nav-link">
-    Shop
-  </Link>
-</li>
-<li class="nav-item">
-  <Link to="/" className="nav-link">
-    About
-  </Link>
-</li>
-
-<li class="nav-item">
-  <Link to="/" className="nav-link">
-    Our mission
-  </Link>
-</li>
-</ul> */
