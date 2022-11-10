@@ -29,6 +29,7 @@
 
 .arrowWeight {
   -webkit-text-stroke: 1.3px black;
+  margin-left: 3px;
 }
 
 .cart {

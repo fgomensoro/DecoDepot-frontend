@@ -21,10 +21,14 @@ function Navbar() {
             </button>
           </li>
         </ul>
-        <div className={styles.logo}>
-          <Link to="/" className={`${styles.customNavLink}   nav-link`}></Link>
-        </div>
 
+        <ul className="navbar-nav mb-2 mb-lg-0">
+          <li className="nav-item">
+            <Link to="/" className={`${styles.customNavLink}   nav-link`}>
+              <div className={styles.logo}> </div>
+            </Link>
+          </li>
+        </ul>
         <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
             <button className={`${styles.customNavLinkButton} nav-link`}>

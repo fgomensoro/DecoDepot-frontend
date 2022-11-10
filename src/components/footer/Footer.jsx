@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div>
+    <div className={styles.footerContainer}>
       <div className={`${styles.gradient} `}>
         <div className="container">
           <div className={`${styles.sloganWrapper}`}>

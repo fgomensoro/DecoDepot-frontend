@@ -28,10 +28,18 @@
 
 .slogan {
   font-size: 2rem;
+  font-family: var(--fontFamilyDeco);
 }
 
 .sloganWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.footerContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
