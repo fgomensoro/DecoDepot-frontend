@@ -22,7 +22,7 @@
   margin-top: 5%;
   background-color: rgba(210, 194, 194, 0.5);
   height: fit-content;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .formInput {
   border-radius: 5px;
@@ -40,6 +40,7 @@ input::-webkit-inner-spin-button {
 .submitBtn {
   border: none;
   margin-top: 12px;
+  border-radius: 5px;
   background-color: white;
 }
 
