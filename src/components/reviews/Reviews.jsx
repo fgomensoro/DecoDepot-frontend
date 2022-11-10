@@ -19,7 +19,7 @@ function Reviews() {
   return (
     reviews && (
       <div className={styles.section}>
-        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             {reviews.map((review, index) => {
               if (index === 0) {
