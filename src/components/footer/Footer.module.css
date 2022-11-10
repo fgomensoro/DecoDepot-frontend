@@ -1,1 +1,45 @@
+.customFooterLink {
+  color: #131313;
+  font-family: var(--fontFamilyDeco);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  font-weight: 200;
+}
 
+.listTitle {
+  color: #131313;
+  font-family: var(--fontFamilyDeco);
+  font-size: 1rem;
+  letter-spacing: 4px;
+}
+.backGrey {
+  background-color: var(--colorSoftDeco);
+}
+
+.gradient {
+  background-image: linear-gradient(to top, #dce7ed, #e6ecf2, #f0f2f7, #f8f8fb, #ffffff);
+  height: 300px;
+  font-family: var(--fontFamilyDeco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slogan {
+  font-size: 2rem;
+  font-family: var(--fontFamilyDeco);
+}
+
+.sloganWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footerContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

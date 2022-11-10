@@ -1,0 +1,46 @@
+.background {
+  /* background-color: var(--colorSoftDeco); */
+  height: 80vh;
+  position: relative;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.button {
+  width: 9.5rem;
+  border: 3px solid var(--colorBlackDeco);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  background-color: var(--colorBlackDeco);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--colorSoftDeco);
+  color: var(--colorBlackDeco);
+}
+
+.imageContainer {
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.textContainer2 {
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
