@@ -1,4 +1,9 @@
 :root {
   --colorSoftDeco: #dce7ed;
+  --colorBlackDeco: #131313;
   --fontFamilyDeco: Arial, Helvetica, sans-serif;
+}
+
+.body {
+  position: relative;
 }
