@@ -10,7 +10,7 @@ function Hero() {
         <button className={styles.button}>Shop Now</button>
       </div>
       <div className="col-12 col-md-6">
-        <img src={process.env.REACT_APP_IMAGE_PATH$ + imageUrl} alt="" />
+        <img src={process.env.REACT_APP_IMAGE_PATH + imageUrl} alt="" />
       </div>
     </div>
   );

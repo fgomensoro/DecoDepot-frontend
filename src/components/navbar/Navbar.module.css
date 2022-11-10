@@ -16,6 +16,11 @@
   font-weight: 600;
   border: none;
   background-color: var(--colorSoftDeco);
+  transition-duration: 3s;
+}
+
+.customNavLinkButton:hover {
+  transform: scale(1.05);
 }
 
 .backGrey {
@@ -24,4 +29,15 @@
 
 .arrowWeight {
   -webkit-text-stroke: 1.3px black;
+}
+
+.cart {
+  margin-left: 5px;
+}
+
+.logo {
+  height: 48px;
+  width: 48px;
+  background-image: url("http://localhost:8000/img/decoDepotLogo.png");
+  background-size: cover;
 }
