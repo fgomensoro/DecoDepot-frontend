@@ -1,0 +1,12 @@
+.section {
+  text-align: center;
+  padding: 10rem 0;
+}
+
+.comment {
+  font-style: italic;
+}
+
+.author {
+  font-style: italic;
+}

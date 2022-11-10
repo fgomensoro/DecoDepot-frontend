@@ -3,11 +3,11 @@
   height: 40rem;
   position: relative;
 }
-.textContainer {
+/* .textContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
 .title {
   margin: 1rem 0;
@@ -35,10 +35,22 @@
   object-fit: cover;
 }
 
-.textContainer2 {
-  position: absolute;
-  left: 25%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+@media (min-width: 900px) {
+  .textContainer {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) {
+  .textContainer {
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    width: 100%;
+  }
 }
