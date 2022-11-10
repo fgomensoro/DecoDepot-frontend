@@ -9,7 +9,7 @@ function Reviews() {
     const getReviews = async () => {
       console.log("axios");
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}/reviews/`,
+        url: `${process.env.REACT_APP_API_PORT}reviews/`,
         method: "GET",
       });
       setReviews(response.data.reviews);

@@ -6,7 +6,7 @@ import Item from "../Item/Item";
 
 function Slider({ products }) {
   return (
-    <div>
+    <div className={`${styles.sliderContainer} pt-5 container`}>
       <Swiper modules={[Navigation]} spaceBetween={30} slidesPerView={3} navigation>
         {products.map((product) => {
           return (
