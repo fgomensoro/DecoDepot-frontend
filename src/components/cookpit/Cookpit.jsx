@@ -9,21 +9,6 @@ import ReviewsTable from "../../components/tables/ReviewsTable";
 function Cookpit() {
   const [table, setTable] = useState(null);
 
-  //   const tables = {
-  //     1: <ProductsTable />,
-  //     2: <OrdersTable />,
-  //     3: <PacksTable />,
-  //     4: <UsersTable />,
-  //     5: <ReviewsTable />,
-  //   };
-
-  //   const handleTables = (num) => {
-  //     console.log(tables[1]);
-  //     const searchedTable = tables.num;
-  //     console.log(searchedTable);
-  //     setTable(searchedTable);
-  //   };
-
   return (
     <div className={`${styles.body} container`}>
       <div className={styles.buttonContainer}>
