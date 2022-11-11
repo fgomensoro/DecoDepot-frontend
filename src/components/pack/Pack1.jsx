@@ -1,5 +1,4 @@
 import styles from "./Pack.module.css";
-import bigImage from "./img/bigImage.jpg";
 import PackCards from "./PackCards";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -9,14 +8,13 @@ function Pack() {
 
   const axiosConfig = {
     method: "GET",
-    url: "http://localhost:8000/combos",
+    url: "http://localhost:8000/packs",
   };
 
   useEffect(() => {
     const getPacks = async () => {
       const response = await axios(axiosConfig);
       setPacks(response.data);
-      console.log(response.data);
     };
     getPacks(); // eslint-disable-next-line
   }, []);
