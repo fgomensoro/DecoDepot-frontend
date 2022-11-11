@@ -22,7 +22,7 @@ function Navbar() {
       <div className="container d-flex  justify-content-between">
         <ul className="navbar-nav  mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link to="/" className={`${styles.customNavLink} nav-link`}>
+            <Link to="/store" className={`${styles.customNavLink} nav-link`}>
               Shop
             </Link>
           </li>
