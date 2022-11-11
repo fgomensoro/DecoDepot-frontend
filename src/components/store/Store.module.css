@@ -1,0 +1,91 @@
+.section {
+  margin: 3rem auto;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(211, 209, 209);
+  margin: auto 0;
+}
+
+.buttonSmall {
+  width: 32.5rem;
+  margin: 0 1rem;
+  border: 3px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.6rem 0;
+  background-color: var(--colorBlackDeco);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonSmall:hover {
+  background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.link {
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: black;
+}
+
+.imageContainer {
+  position: relative;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.imageContainer:hover {
+  position: relative;
+  border: 4px solid black;
+}
+
+.imageContainer:focus-visible {
+  position: relative;
+  border: 4px solid black;
+}
+
+.image {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.buttonBig {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  font-size: 10rem;
+  background-color: transparent;
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonBig:hover {
+  background-color: black;
+  opacity: 0.3;
+  color: white;
+}
+
+.buttonBig:focus-visible {
+  background-color: black;
+  opacity: 0.3;
+  color: white;
+}

@@ -1,6 +1,6 @@
 .background {
   /* background-color: var(--colorSoftDeco); */
-  height: 40rem;
+  height: 45rem;
   position: relative;
 }
 /* .textContainer {
@@ -17,40 +17,44 @@
 .button {
   width: 9.5rem;
   border: 3px solid var(--colorBlackDeco);
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 0.5rem 0;
   background-color: var(--colorBlackDeco);
   color: white;
+  font-weight: bold;
   transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: var(--colorSoftDeco);
+  background-color: transparent;
   color: var(--colorBlackDeco);
 }
 
 .image {
   width: 100%;
-  height: 40rem;
+  height: 45rem;
   object-fit: cover;
 }
 
 @media (min-width: 900px) {
   .textContainer {
     position: absolute;
-    left: 25%;
+    left: 30%;
     top: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center;  */
   }
 }
 
-@media (min-width: 600px) {
+@media (max-width: 900px) {
   .textContainer {
     position: absolute;
-    top: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    width: 100%;
   }
 }

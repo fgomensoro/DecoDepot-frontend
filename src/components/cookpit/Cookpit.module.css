@@ -1,0 +1,15 @@
+.body {
+  min-width: 80vh;
+  margin-top: 15%;
+}
+
+.buttonContainer {
+  text-align: center;
+  padding: 2rem;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+}
