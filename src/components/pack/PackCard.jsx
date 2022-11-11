@@ -2,14 +2,12 @@ import styles from "./Pack.module.css";
 import StarRatings from "react-star-ratings";
 
 function PackCard({ product }) {
-  console.log(product);
   const url = `${process.env.REACT_APP_IMAGE_PATH}${product.images[0]}`;
 
   const priceBefore = Math.round((product.price * 1.15 + Number.EPSILON) * 1) / 1;
   const numberReviews = Math.floor(Math.random() * (6000 - 3 + 1) + 3);
   const rating = Math.random() * (5 - 3.5 + 1) + 2.5;
   let description = product.description;
-  console.log(rating);
 
   return (
     <div className={`${styles.smallCard} mt-3`}>
@@ -26,10 +24,10 @@ function PackCard({ product }) {
           {description.length < 66 && <p className={styles.paragraphCard}>{description}</p>}
           <p className={`${styles.paragraphCard2} ${styles.linethrough}`}>${priceBefore}</p>
         </div>
-        <p className={styles.smallCard}>
+        <div className={styles.smallCard}>
           <StarRatings rating={rating} starDimension="1rem" starSpacing="0px" />
           {`  ${numberReviews}`} Reviews
-        </p>
+        </div>
       </div>
     </div>
   );

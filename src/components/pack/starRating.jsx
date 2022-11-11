@@ -24,6 +24,6 @@ class Foo extends Component {
 class Bar extends Component {
   render() {
     // aggregateRating = 2.35;
-    return ;
+    return;
   }
 }
