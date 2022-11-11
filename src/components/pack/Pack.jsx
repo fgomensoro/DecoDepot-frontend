@@ -9,7 +9,7 @@ function Pack() {
 
   const axiosConfig = {
     method: "GET",
-    url: "http://localhost:8000/combos",
+    url: "http://localhost:8000/packs",
   };
 
   useEffect(() => {
