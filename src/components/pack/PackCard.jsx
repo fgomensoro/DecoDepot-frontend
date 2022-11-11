@@ -3,6 +3,7 @@ import image1 from "./img/image1.jpg";
 
 function PackCard({ product }) {
   console.log(product);
+  console.log(product);
   const url = `${process.env.REACT_APP_IMAGE_PATH}${product.images[0]}`;
 
   const priceBefore = Math.round((product.price * 1.15 + Number.EPSILON) * 1) / 1;

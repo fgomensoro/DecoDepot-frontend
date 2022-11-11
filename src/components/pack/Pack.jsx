@@ -16,7 +16,7 @@ function Pack() {
     const getPacks = async () => {
       const response = await axios(axiosConfig);
       setPacks(response.data);
-      console.log(packs);
+      console.log(response.data);
     };
     getPacks(); // eslint-disable-next-line
   }, []);
@@ -37,7 +37,7 @@ function Pack() {
             />
           </div>
           <div className="col-12 col-lg-6">
-            <div className='d-flex flex-wrap'>
+            <div className="d-flex flex-wrap">
               <PackCards packs={packs[0]} />
             </div>
           </div>

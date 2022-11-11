@@ -6,7 +6,6 @@ import Navbar from "../../components/navbar/Navbar";
 import Reviews from "../../components/reviews/Reviews";
 import Combo from "../../components/pack/Pack";
 import Store from "../../components/store/Store";
-import Combo from "../../components/combo/Combo";
 
 function Home() {
   return (
@@ -17,7 +16,6 @@ function Home() {
       <Store />
       <Combo />
       <Reviews />
-      <Combo />
       <Footer />
     </>
   );
