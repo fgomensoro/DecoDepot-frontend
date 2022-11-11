@@ -1,0 +1,10 @@
+.body {
+  height: 80vh;
+  margin-top: 15%;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+}

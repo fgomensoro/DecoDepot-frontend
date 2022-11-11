@@ -1,6 +1,6 @@
 .background {
   /* background-color: var(--colorSoftDeco); */
-  height: 40rem;
+  height: 45rem;
   position: relative;
 }
 /* .textContainer {
@@ -17,21 +17,22 @@
 .button {
   width: 9.5rem;
   border: 3px solid var(--colorBlackDeco);
-  border-radius: 10px;
+  border-radius: 30px;
   padding: 0.5rem 0;
   background-color: var(--colorBlackDeco);
   color: white;
+  font-weight: bold;
   transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: var(--colorSoftDeco);
+  background-color: transparent;
   color: var(--colorBlackDeco);
 }
 
 .image {
   width: 100%;
-  height: 40rem;
+  height: 45rem;
   object-fit: cover;
 }
 

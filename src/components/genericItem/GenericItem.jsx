@@ -1,6 +1,6 @@
 import styles from "./GenericItem.module.css";
 import image1 from "./img/image1.jpg";
-function GenericItem() {
+function GenericItem({ product }) {
   return (
     <div className={styles.cardCombo1}>
       <img className={styles.smallImage} src={image1} alt="comboImage" />

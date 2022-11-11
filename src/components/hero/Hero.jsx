@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Hero.module.css";
 
 function Hero() {
-  const url = process.env.REACT_APP_IMAGE_PATH + "hero.jpg";
+  const url = process.env.REACT_APP_IMAGE_PATH + "hero12.jpg";
 
   return (
     <div className={styles.background}>
