@@ -3,6 +3,7 @@ import Featured from "../../components/Featured/Featured";
 import Hero from "../../components/hero/Hero";
 import Reviews from "../../components/reviews/Reviews";
 import Store from "../../components/store/Store";
+import Combo from "../../components/combo/Combo";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <Hero />
       <Featured />
       <Store />
+      <Combo />
       <Reviews />
     </>
   );

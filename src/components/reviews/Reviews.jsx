@@ -19,19 +19,19 @@ function Reviews() {
   return (
     reviews && (
       <div className={styles.section}>
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
           <div className="carousel-inner">
             {reviews.map((review, index) => {
               if (index === 0) {
                 return (
-                  <div className="carousel-item active" data-bs-interval="5000">
+                  <div key={review._id} className="carousel-item active" data-bs-interval="3500">
                     <h2>"{review.comment}"</h2>
                     <p>{review.author}</p>
                   </div>
                 );
               } else {
                 return (
-                  <div className="carousel-item" data-bs-interval="5000">
+                  <div key={review._id} className="carousel-item" data-bs-interval="3500">
                     <h2 className={styles.comment}>"{review.comment}"</h2>
                     <p className={styles.author}>{review.author}</p>
                   </div>
