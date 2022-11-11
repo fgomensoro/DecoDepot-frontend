@@ -10,5 +10,5 @@ const usersSlice = createSlice({
   },
 });
 const { actions, reducer } = usersSlice;
-export const { storeToken, updateList, deleteList, reset } = actions;
+export const { storeToken, reset } = actions;
 export default reducer;
