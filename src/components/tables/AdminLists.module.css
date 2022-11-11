@@ -1,0 +1,10 @@
+.buttonContainer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.button {
+  border: none;
+  background-color: black;
+  color: white;
+}

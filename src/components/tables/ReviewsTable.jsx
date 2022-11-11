@@ -21,11 +21,39 @@ function ReviewsTable() {
 
   return (
     reviews && (
-      <>
-        {reviews.map((review) => {
-          return <p>{review.author}</p>;
-        })}
-      </>
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Comment</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reviews.map((review, index) => {
+            return (
+              <tr key={review._id}>
+                <th scope="row">{index}</th>
+                <td>{review.author}</td>
+                <td>{review.comment}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     )
   );
 }
