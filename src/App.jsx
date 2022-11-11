@@ -4,7 +4,6 @@ import styles from "./App.module.css";
 import Home from "./pages/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Pack from "./components/pack/Pack";
 import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
 import Products from "./pages/products/Products";
