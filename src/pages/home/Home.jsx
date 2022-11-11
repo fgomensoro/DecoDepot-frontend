@@ -18,7 +18,6 @@ function Home() {
       <Pack1 />
       <Pack2 />
       <Reviews />
-
       <Footer />
     </>
   );

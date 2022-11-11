@@ -15,7 +15,6 @@ function Pack() {
     const getPacks = async () => {
       const response = await axios(axiosConfig);
       setPacks(response.data);
-      console.log(packs);
     };
     getPacks(); // eslint-disable-next-line
   }, []);

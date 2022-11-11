@@ -7,14 +7,13 @@ function PacksTable() {
   useEffect(() => {
     const getPacks = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}combos`,
+        url: `${process.env.REACT_APP_API_PORT}packs`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
         // },
       });
-      console.log(response.data.combos);
-      setPacks(response.data.combos);
+      setPacks(response.data);
     };
     getPacks();
   }, []); // eslint-disable-line
