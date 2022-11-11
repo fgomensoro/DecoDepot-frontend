@@ -20,31 +20,31 @@
   margin-top: 1.25rem;
 }
 
-.row1 {
+/* .row {
   margin-top: 0.8rem;
   margin-left: 2.5rem;
-}
-
-.row2 {
-  margin-top: 0.8rem;
-  margin-left: 1.3rem;
-}
+} */
 
 .bigImage {
   border-radius: 25px;
-  width: 38rem;
-  height: 56rem;
+  width: 95%;
+  height: 100%;
 }
 
 .smallImage {
   border-radius: 5px;
-  width: 19rem;
-  height: 19rem;
+  width: 21.5em;
+  height: 100%;
+}
+
+.smallCard {
+  margin-right: 0.5em;
 }
 
 .inline {
   display: flex;
   justify-content: space-between;
+  width: 19rem;
 }
 
 .cardCombo1 {
