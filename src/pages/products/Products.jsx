@@ -48,8 +48,8 @@ function Products() {
               <div className="d-flex">
                 <h4 className={styles.titleRight}>Living</h4>
                 <hr className={styles.line} />
-                {products.map((product) => {
-                  return <GenericItem product={product} />;
+                {products.map((product, index) => {
+                  return <GenericItem product={product} key={index} />;
                 })}
               </div>
             </div>
