@@ -6,7 +6,7 @@ function Navbar() {
   const logoUrl = "decoDepotLogo.png";
   const [colorChange, setColorchange] = useState(false);
   const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 100) {
       setColorchange(true);
     } else {
       setColorchange(false);
