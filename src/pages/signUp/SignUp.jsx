@@ -9,6 +9,7 @@ function SignUp() {
   const [lastName, setLastName] = useState("");
   const [eMail, setEMail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [adress, setAdress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -18,7 +19,7 @@ function SignUp() {
     e.preventDefault();
     const response = await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API_PORT}api/signup`,
+      url: `${process.env.REACT_APP_API_PORT}users/signup`,
       data: {
         firstname: firstName,
         lastname: lastName,
@@ -27,6 +28,7 @@ function SignUp() {
         password: password,
         adress: adress,
         phoneNumber: phoneNumber,
+        confirmPassword: confirmPassword,
       },
     });
 
@@ -73,6 +75,15 @@ function SignUp() {
               name="password"
               className={styles.formInput}
               onChange={(event) => setPassword(event.target.value)}
+            />
+
+            <label htmlFor="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              name="confirmPassword"
+              className={styles.formInput}
+              onChange={(event) => setConfirmPassword(event.target.value)}
             />
 
             <label htmlFor="adress">Adress</label>
