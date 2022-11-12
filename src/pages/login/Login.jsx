@@ -2,30 +2,27 @@ import React from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { storeToken } from "../../redux/usersSlice";
+import { useDispatch } from "react-redux";
+import { storeUser } from "../../redux/userSlice";
 import axios from "axios";
 
 function Login() {
-  const user = useSelector((state) => state.user);
-  const [eMail, setEMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const giveToken = async (e) => {
+  const getToken = async (e) => {
     e.preventDefault();
     const response = await axios({
       method: "POST",
       url: `${process.env.REACT_APP_API_PORT}users/tokens`,
       data: {
-        email: eMail,
+        email: email,
         password: password,
       },
     });
-
-    console.log(response.data);
-    dispatch(storeToken(response.data));
+    dispatch(storeUser(response.data.user));
     navigate("/");
   };
 
@@ -34,14 +31,14 @@ function Login() {
       <div className={`${styles.formWrapper} p-3 `}>
         <div>
           <h2 className="text-center mb-5">Login</h2>{" "}
-          <form className="d-flex flex-column" onSubmit={giveToken}>
+          <form className="d-flex flex-column" onSubmit={getToken}>
             <label htmlFor="eMail">Email</label>
             <input
               type="email"
               placeholder="Enter your email"
               name="eMail"
               className={styles.formInput}
-              onChange={(event) => setEMail(event.target.value)}
+              onChange={(event) => setEmail(event.target.value)}
             />
 
             <label htmlFor="password">Password</label>
