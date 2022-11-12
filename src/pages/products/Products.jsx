@@ -1,15 +1,14 @@
 import styles from "./Products.module.css";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-import GenericItem from "../../components/genericItem/GenericItem";
+import ProductsSection from "../../components/productsSection/ProductsSection";
+import { Link } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { tab } from "@testing-library/user-event/dist/tab";
 function Products() {
   const [products, setProducts] = useState(null);
-  const [table, setTable] = useState(null);
-  const [chair, setChair] = useState(null);
-  const [bed, setBed] = useState(null);
-  const [sofa, setSofa] = useState(null);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -28,30 +27,61 @@ function Products() {
       <div>
         <Navbar />
         <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
-          <div>
-            <h2>All Products</h2>
+          <div className={styles.wrapper}>
+            <h2 className={styles.bigLetter}>All Products</h2>
             <p>Design your home interior with your heart</p>
           </div>
         </div>
         <div className={`container-fluid px-5 mt-4`}>
           <div className={`row`}>
-            <div className={`${styles.leftColumn} col-4 bg-danger`}>
-              <h3 className={styles.titleLeft}>Collections</h3>
+            <div className={`${styles.leftColumn} col-4 `}>
+              <h3 className={styles.titleLeft}>Categories</h3>
               <ul className={styles.list}>
-                <li>All Products</li>
-                <li>Living</li>
-                <li>Bedroom</li>
-                <li>Home Office</li>
+                <li>
+                  {" "}
+                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                    Tables
+                  </Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                    Chairs
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                    Beds
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                    Sofas
+                  </Link>
+                </li>
               </ul>
             </div>
-            <div className="col-8 bg-warning">
+            <div className="col-8  ">
               <div className="d-flex">
-                <h4 className={styles.titleRight}>Living</h4>
+                <h4 className={styles.titleRight}>Tables</h4>
                 <hr className={styles.line} />
-                {products.map((product, index) => {
-                  return <GenericItem product={product} key={index} />;
-                })}
               </div>
+              <ProductsSection products={products} category="chair" />
+              <div className="d-flex">
+                <h4 className={styles.titleRight}>Chairs</h4>
+                <hr className={styles.line} />
+              </div>
+              <ProductsSection products={products} category="table" />
+              <div className="d-flex">
+                <h4 className={styles.titleRight}>Beds</h4>
+                <hr className={styles.line} />
+              </div>
+              <ProductsSection products={products} category="bed" />
+              <div className="d-flex">
+                <h4 className={styles.titleRight}>Sofas</h4>
+                <hr className={styles.line} />
+              </div>
+              <ProductsSection products={products} category="sofa" />
             </div>
           </div>
         </div>
