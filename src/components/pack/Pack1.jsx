@@ -8,7 +8,7 @@ function Pack() {
 
   const axiosConfig = {
     method: "GET",
-    url: "http://localhost:8000/packs",
+    url: `${process.env.REACT_APP_API_PORT}packs`,
   };
 
   useEffect(() => {
@@ -30,16 +30,16 @@ function Pack() {
           <h3 className={styles.title}>{packs[0].name}</h3>
           <hr className={styles.line} />
         </div>
-        <div className={`${styles.comboContain} row`}>
-          <div className="col-12 col-lg-6">
+        <div className={`${styles.comboContain1} row`}>
+          <div className={`${styles.cards} col-12 col-lg-6 text-center`}>
             <img
               className={styles.bigImage}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[0].bigImage}`}
               alt="comboBigImage"
             />
           </div>
-          <div className="col-12 col-lg-6">
-            <div className="d-flex flex-wrap">
+          <div className={`${styles.cards} col-12 col-lg-6`}>
+            <div className={`${styles.packCards} d-flex flex-wrap`}>
               <PackCards packs={packs[0]} />
             </div>
           </div>
