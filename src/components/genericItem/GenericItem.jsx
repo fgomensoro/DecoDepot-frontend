@@ -10,11 +10,17 @@ function GenericItem({ product }) {
   return (
     <div className={`${styles.smallCard} mt-3`}>
       <div className={`${styles.cardCombo1}`}>
-        <img
+        <div
+          className={styles.longImage}
+          style={{
+            backgroundImage: `url(${process.env.REACT_APP_IMAGE_PATH + product.images[2]})`,
+          }}
+        ></div>
+        {/*         <img
           className={styles.smallImage}
           src={`${process.env.REACT_APP_IMAGE_PATH + product.images[2]}`}
           alt="comboImage"
-        />
+        /> */}
         <div className={styles.inline}>
           <h4 className={styles.titleH4}>{product.name}</h4>
           <p className={styles.titleH4}>${product.price}</p>

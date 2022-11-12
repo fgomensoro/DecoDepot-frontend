@@ -36,7 +36,13 @@
   width: 21.5em;
   height: 100%;
 }
+.longImage {
+  height: 400px;
+  background-size: cover;
 
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
 .smallCard {
   margin-right: 0.5em;
 }
