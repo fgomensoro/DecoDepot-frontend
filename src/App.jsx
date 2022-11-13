@@ -8,6 +8,7 @@ import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
 import Products from "./pages/products/Products";
 import Admin from "./pages/admin/Admin";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/store" element={<Products />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
