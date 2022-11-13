@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
 import Combo from "./components/combo/Combo";
+import Detail from "./pages/Detail/Detail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/combo" element={<Combo />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </div>
   );

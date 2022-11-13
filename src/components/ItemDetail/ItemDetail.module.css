@@ -1,0 +1,17 @@
+.detail{
+    display: flex;
+}
+
+.imgContainer{
+    width: 50%;
+    height: 70vh;
+}
+
+.img{
+    height: 100%;
+    width: 100%;
+}
+.infoContainer{
+    margin-top: 50px;
+    padding: 10px 20px;
+}

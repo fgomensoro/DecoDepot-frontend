@@ -9,7 +9,7 @@ function Slider({ products, title }) {
     <div className="pt-5 container">
       <h2 className={styles.sliderTitle}>{title}</h2>
       <div className={`${styles.sliderContainer}`}>
-        <Swiper modules={[Navigation]} spaceBetween={30} slidesPerView={3} navigation>
+        <Swiper modules={[Navigation]} spaceBetween={30} slidesPerView={2.5} navigation>
           {products.map((product) => {
             return (
               <SwiperSlide key={product._id}>
