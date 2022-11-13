@@ -8,6 +8,7 @@
 }
 
 .title {
+  color: black;
   font-family: "Calibre", sans-serif;
   font-size: 2.4rem;
   width: 15%;
@@ -70,12 +71,14 @@
   margin: 0px;
   margin-top: 0.5rem;
   vertical-align: baseline;
+  color: black;
 }
 
 .paragraphCard {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.22rem;
   margin-top: -0.8rem;
+  color: black;
 }
 
 .paragraphCard2 {
@@ -84,6 +87,7 @@
   padding-top: 0.3rem;
   margin-top: -0.8rem;
   font-weight: 200;
+  color: black;
 }
 
 .linethrough {
@@ -94,6 +98,7 @@
   font-family: "Calibre", sans-serif;
   font-size: 0.88rem;
   margin-top: -0.5rem;
+  color: black;
 }
 
 /* .bigContain {

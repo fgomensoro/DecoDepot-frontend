@@ -9,12 +9,14 @@
  width: 100%;
  object-fit: cover;
 }
+
 .description{
     display: flex;
     justify-content: space-between;
     padding: 20px 8px 0 8px;
    
 }
+
 .shopBtn{
     margin-top: 6px;
     background-color: transparent;
@@ -22,17 +24,22 @@
     height: fit-content;
     padding: 6px 30px;
     font-weight: 500;
+    transition: all 0.3s;
+    text-decoration:none ;
 
 }
+
 .name{
+    color: black;
     font-weight: 500;
 }
+
 .price{
     font-weight: 500;
     color: #647788;
 }
 
 .shopBtn:hover{
-    background-color: black;
+    background-color: rgb(15, 15, 15);
     color: aliceblue;
 }

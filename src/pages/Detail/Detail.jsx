@@ -1,30 +1,41 @@
-// import { useState, useEffect } from "react";
-// import ItemDetail from "../../components/ItemDetail/ItemDetail";
-// import axios from "axios";
+import { useState, useEffect } from "react";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 
-// function ItemDetailContainer() {
+function ItemDetailContainer() {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
-//   const [product, setProduct] = useState([]);
+  const axiosConfig = {
+    url: `${process.env.REACT_APP_API_PORT}products/detail/${id}`,
+    method: "GET",
+  };
 
-//   const axiosConfig = {
-//     url: `${process.env.REACT_APP_API_PORT}products/detail/${}` ,
-//     method: "GET",
-//   };
+  const getProduct = async () => {
+    const response = await axios(axiosConfig);
+    setProduct(response.data.product);
+  };
 
-//   const getFeatured = async () => {
-//     const response = await axios(axiosConfig);
-//     setFeatured(response.data);
-//   };
+  useEffect(() => {
+    getProduct();
+  }, []);
 
-//   useEffect(() => {
-//     getFeatured();
-//   }, []);
+  console.log(product);
+  {
+    if (!product) {
+      return <div>holax</div>;
+    }
+  }
+  return (
+    <div>
+      <Navbar />
+      {product && <ItemDetail product={product} getProduct={getProduct} />}
+      <Footer />
+    </div>
+  );
+}
 
-//   return (
-//     <div>
-//       <ItemDetail />
-//     </div>
-//   );
-// }
-
-// export default ItemDetailContainer;
+export default ItemDetailContainer;
