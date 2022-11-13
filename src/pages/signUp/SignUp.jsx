@@ -91,11 +91,11 @@ function SignUp() {
               onChange={(event) => setConfirmPassword(event.target.value)}
             />
 
-            <label htmlFor="adress">Address</label>
+            <label htmlFor="address">Address</label>
             <input
               type="text"
-              placeholder="Enter your adress"
-              name="adress"
+              placeholder="Enter your address"
+              name="address"
               className={styles.formInput}
               onChange={(event) => setAddress(event.target.value)}
             />
