@@ -1,18 +1,20 @@
-import React from "react";
-import styles from "./SignUp.module.css";
-import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import styles from "./SignUp.module.css";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { storeUser } from "../../redux/userSlice";
 import axios from "axios";
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [eMail, setEMail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-
+  const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const createUser = async (e) => {
@@ -23,16 +25,19 @@ function SignUp() {
       data: {
         firstname: firstName,
         lastname: lastName,
-
-        email: eMail,
+        email: email,
         password: password,
-        adress: adress,
+        address: address,
         phoneNumber: phoneNumber,
         confirmPassword: confirmPassword,
       },
     });
-
-    navigate("/login");
+    if (response.data.msg) {
+      setMessage(response.data.msg);
+    } else {
+      dispatch(storeUser(response.data.user));
+      navigate("/");
+    }
   };
 
   return (
@@ -65,7 +70,7 @@ function SignUp() {
               placeholder="Enter your email"
               name="eMail"
               className={styles.formInput}
-              onChange={(event) => setEMail(event.target.value)}
+              onChange={(event) => setEmail(event.target.value)}
             />
 
             <label htmlFor="password">Password</label>
@@ -86,13 +91,13 @@ function SignUp() {
               onChange={(event) => setConfirmPassword(event.target.value)}
             />
 
-            <label htmlFor="adress">Adress</label>
+            <label htmlFor="adress">Address</label>
             <input
               type="text"
               placeholder="Enter your adress"
               name="adress"
               className={styles.formInput}
-              onChange={(event) => setAdress(event.target.value)}
+              onChange={(event) => setAddress(event.target.value)}
             />
 
             <label htmlFor="phoneNumber">Phone number</label>
@@ -103,6 +108,7 @@ function SignUp() {
               className={styles.formInput}
               onChange={(event) => setPhoneNumber(event.target.value)}
             />
+            <p className={styles.message}>{message}</p>
 
             <button type="submit" className={styles.submitBtn}>
               Submit
