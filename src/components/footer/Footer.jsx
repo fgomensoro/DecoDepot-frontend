@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className={styles.footerContainer}>
-      <div className={`${styles.gradient} `}>
+      {/* <div className={`${styles.gradient} `}>
         <div className="container">
           <div className={`${styles.sloganWrapper}`}>
             <p className={styles.slogan}>
@@ -13,7 +13,7 @@ function Footer() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={`${styles.backGrey} container-fluid`}>
         <div className="container ">
           <footer className="py-5">

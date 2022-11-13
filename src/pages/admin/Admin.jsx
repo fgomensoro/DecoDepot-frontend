@@ -1,13 +1,13 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
-import Cookpit from "../../components/cookpit/Cookpit";
 import Footer from "../../components/footer/Footer";
+import AdminNav from "../../components/adminNav/AdminNav";
 
 function Admin() {
   return (
     <>
       <Navbar />
-      <Cookpit />
+      <AdminNav />
       <Footer />
     </>
   );
