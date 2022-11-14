@@ -5,35 +5,35 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/cartSlice";
 import { useSelector } from "react-redux";
 
-function SugestionItem({ suggestion }) {
+function SuggestionItem({ product }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
-
+  console.log(product.images[0]);
   return (
     <div className={styles.slideItem}>
-      {/* <Link className="text-decoration-none" to={`/detail/${suggestion._id}`}> */}
+      {/* <Link className="text-decoration-none" to={`/detail/${product._id}`}> */}
       <div className={styles.itemImgContainer}>
         <img
           className={styles.itemImg}
-          src={process.env.REACT_APP_IMAGE_PATH + suggestion.images[Math.floor(Math.random() * 3)]}
+          src={process.env.REACT_APP_IMAGE_PATH + product.images[Math.floor(Math.random() * 3)]}
           alt=""
         />
       </div>
       <div className={styles.description}>
         <div>
-          <h3 className={styles.name}>{suggestion.name}</h3>
-          <p className={styles.price}>{`Actual price $${suggestion.price}`}</p>
+          <h3 className={styles.name}>{product.name}</h3>
+          <p className={styles.price}>{`Actual price $${product.price}`}</p>
         </div>
         <button
           className={styles.shopBtn}
           onClick={() =>
             dispatch(
               addItem({
-                id: suggestion.id,
-                name: suggestion.name,
+                id: product.id,
+                name: product.name,
                 qty: 1,
-                image: suggestion.productImage,
-                price: suggestion.price,
+                image: product.images[Math.floor(Math.random() * 3)],
+                price: product.price,
               }),
             )
           }
@@ -46,4 +46,4 @@ function SugestionItem({ suggestion }) {
   );
 }
 
-export default SugestionItem;
+export default SuggestionItem;
