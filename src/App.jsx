@@ -9,18 +9,12 @@ import Products from "./pages/products/Products";
 import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
 import CartPage from "./pages/cart/CartPage";
-import ProductsTable from "./components/tables/ProductsTable";
-import OrdersTable from "./components/tables/OrdersTable";
-import PacksTable from "./components/tables/PacksTable";
-import ReviewsTable from "./components/tables/ReviewsTable";
-import UsersTable from "./components/tables/UsersTable";
 import ProductsTable from "./components/admin/products/ProductsTable";
 import OrdersTable from "./components/admin/orders/OrdersTable";
 import PacksTable from "./components/admin/packs/PacksTable";
 import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
-import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
