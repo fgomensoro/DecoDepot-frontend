@@ -1,15 +1,15 @@
 import styles from "./CartItem.module.css";
-import _ from "lodash";
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addItem, calculateTotal } from "../../redux/cartSlice";
+import { addItem } from "../../redux/cartSlice";
 import { useSelector } from "react-redux";
 
 function CartItem({ product }) {
   const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
-  console.log(_.isEmpty(cart));
+
   return (
     <div className="container-fluid">
       <div className={`container-fluid`}>
@@ -65,6 +65,7 @@ function CartItem({ product }) {
                 <i className={`${styles.arrowUpDown}  bi bi-arrow-up-circle `}></i>
               </button>
               <button type="submit">Add to cart</button>
+              <button type="submit">Remove from cart</button>
             </form>
           </div>
         </div>

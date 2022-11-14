@@ -88,7 +88,7 @@
 }
 
 .cartBody {
-  /* background-color: red; */
+  background-color: var(--colorSoftDeco);
 }
 
 .cartHeader {

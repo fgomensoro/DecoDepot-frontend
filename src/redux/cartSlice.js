@@ -7,7 +7,7 @@ const cartSlice = createSlice({
   initialState: {
     total: 0,
     items: [
-      {
+      /*  {
         id: 1,
         name: "Wooden Table",
         image: url,
@@ -27,7 +27,7 @@ const cartSlice = createSlice({
         image: url,
         price: 500,
         qty: 1,
-      },
+      }, */
     ],
   },
 

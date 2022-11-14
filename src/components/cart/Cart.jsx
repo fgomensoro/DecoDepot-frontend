@@ -1,12 +1,56 @@
 import styles from "./Cart.module.css";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import _ from "lodash";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import SuggestionItem from "./SuggestionItem";
+
 function Cart() {
   const cart = useSelector((state) => state.cart.items);
-  console.log(cart);
-  console.log(_.isEmpty(cart));
-  return (
+
+  const [products, setProducts] = useState(null);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios({
+        url: `${process.env.REACT_APP_API_PORT}products`,
+        method: "GET",
+      });
+      console.log(response.data.products);
+      setProducts(response.data.products);
+    };
+
+    getproducts();
+  }, []);
+
+  if (cart.length === 0) {
+    return (
+      <div>
+        <h1>Your cart</h1>
+        <p>Your cart is empty, give it some love!</p>
+        {products &&
+          products.map((suggestion, index) => {
+            return (
+              <div key={index} className="mx-4">
+                <SuggestionItem products={product} />
+              </div>
+            );
+          })}
+      </div>
+    );
+  } else {
+    return (
+      cart && (
+        <div>
+          <h1>Your cart</h1>
+
+          {cart && cart.map((product, index) => <CartItem key={index} product={product} />)}
+        </div>
+      )
+    );
+  }
+
+  /*  return (
     cart && (
       <div>
         <h1>Your cart</h1>
@@ -15,7 +59,7 @@ function Cart() {
         {cart && cart.map((product, index) => <CartItem key={index} product={product} />)}
       </div>
     )
-  );
+  ); */
 }
 
 export default Cart;
