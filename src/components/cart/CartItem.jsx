@@ -1,14 +1,45 @@
 import styles from "./CartItem.module.css";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../../redux/cartSlice";
+import { addItem, removeItem } from "../../redux/cartSlice";
 import { useSelector } from "react-redux";
+import { current } from "@reduxjs/toolkit";
 
 function CartItem({ product }) {
   const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
+  const formRef = useRef();
+  const handleMinus = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handlePlus = () => {
+    setQuantity(quantity + 1);
+  };
+  function handleSubmitAdd(event) {
+    event.preventDefault();
+    const { value } = formRef.current.quantity;
+
+    dispatch(
+      addItem({
+        id: product.id,
+        name: product.name,
+        qty: quantity,
+        image: product.productImage,
+        price: product.price,
+      }),
+      setQuantity(0),
+    );
+  }
+
+  function handleSubmitRemove(event) {
+    event.preventDefault();
+    dispatch(removeItem()), setQuantity(0);
+  }
 
   return (
     <div className={`${styles.productContainer} container-fluid`}>
@@ -29,63 +60,36 @@ function CartItem({ product }) {
             <span>Ships in 7-10 Days</span>
           </div>
           <div className={styles.formContainer}>
-            <form
-              className={styles.form}
-              onSubmit={(event) => {
-                event.preventDefault();
-                dispatch(
-                  addItem({
-                    id: product.id,
-                    name: product.name,
-                    qty: quantity,
-                    image: product.productImage,
-                    price: product.price,
-                  }),
-                  setQuantity(0),
-                );
-              }}
-            >
+            <form ref={formRef} className={styles.form} /* onSubmit={handleSubmitAdd} */>
               <div className={styles.inline}>
                 <button
                   className={`${styles.plus} btn`}
                   type="button"
-                  onClick={() => setQuantity(quantity - 1)}
+                  onClick={() => handleMinus()}
                 >
                   -
                 </button>
-                <input type="text" className={styles.quantity} value={quantity} />
+                <input
+                  type="text"
+                  className={styles.quantity}
+                  value={quantity}
+                  name="quantity"
+                  onChange={(event) => setQuantity(event.target.value)}
+                />
                 <button
                   className={`${styles.minus} btn`}
                   type="button"
-                  onClick={() => setQuantity(quantity + 1)}
+                  onClick={() => handlePlus()}
                 >
                   +
                 </button>{" "}
-                <button type="submit" className={styles.shopBtn}>
+                <button type="submit" className={styles.shopBtn} onClick={handleSubmitAdd}>
                   Add item
                 </button>
-                <button type="submit" className={styles.shopBtn}>
+                <button type="submit" className={styles.shopBtn} onClick={handleSubmitRemove}>
                   Remove
                 </button>
               </div>
-
-              {/*     <div className={styles.inline}>
-                <button
-                  className={`${styles.plus} btn`}
-                  type="button"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  +
-                </button>
-                <input type="text" className={styles.quantity} value={quantity} />
-                <button
-                  className={`${styles.minus} btn`}
-                  type="button"
-                  onClick={() => setQuantity(quantity - 1)}
-                >
-                  -
-                </button>
-              </div> */}
             </form>
           </div>
         </div>

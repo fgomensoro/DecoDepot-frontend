@@ -14,7 +14,7 @@ function Navbar() {
   const handleCloseAbout = () => setShowAbout(false);
   const handleShowAbout = () => setShowAbout(true);
   const [showCart, setShowCart] = useState(false);
-  const cart = useSelector((state) => state.cart.items);
+  const cart = useSelector((state) => state.cart);
 
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
@@ -79,7 +79,7 @@ function Navbar() {
       >
         <Offcanvas.Header className={`${styles.cartHeader} d`}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i class="bi bi-chevron-left"></i>
+            <i className="bi bi-chevron-left"></i>
           </button>
           <h5 className={styles.cartTitle}>My cart</h5>
           {/* <Offcanvas.Title className="d-flex justify-content-center">My cart</Offcanvas.Title> */}
@@ -87,15 +87,19 @@ function Navbar() {
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
-        {cart.length !== 0 && (
+        {cart.items.length !== 0 && (
           <div
-            className={`${styles.cartFooter} d-flex justify-content-center bg-success order-2 w-100`}
+            className={`${styles.cartFooter} d-flex p-3 align-items-center bg-success order-2 w-100`}
           >
-            <div className="align-self-center">
-              <button type="button" class="btn btn-primary btn-sm">
-                FOOTER
-              </button>
+            <div className="d-flex flex-column align-items-center">
+              <span>SUBTOTAL</span>
+              <h3>{cart.total}$</h3>
             </div>
+            <button className={styles.btnContinue}>
+              <Link to="/checkout" className={styles.linkContinue}>
+                Continue to checkout
+              </Link>
+            </button>
           </div>
         )}
       </Offcanvas>

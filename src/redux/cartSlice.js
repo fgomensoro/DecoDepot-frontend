@@ -42,7 +42,7 @@ const cartSlice = createSlice({
     addItem(state, action) {
       let sum = 0;
       const isInCart = state.items.find((product) => product.name === action.payload.name);
-      console.log(isInCart);
+
       if (!isInCart) {
         state.items.push({
           id: action.payload.id,
@@ -61,19 +61,14 @@ const cartSlice = createSlice({
       console.log(action.payload.name);
     },
 
-    /*    calculateTotal(state, action) {
-      state.items.forEach((item) => {
-        state.total += item.price;
-      });
-    }, */
-
     removeItem(state, action) {
-      cart.cartItems = cart.cartItems.filter((product) => product.id !== action.payload.productId);
+      console.log("hola");
+      /*   cart.cartItems = cart.cartItems.filter((product) => product.id !== action.payload.productId); */
     },
   },
 });
 
 const { actions, reducer } = cartSlice;
-export const { addItem, calculateTotal } = actions;
+export const { addItem, calculateTotal, removeItem } = actions;
 
 export default reducer;

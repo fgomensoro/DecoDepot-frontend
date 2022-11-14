@@ -16,7 +16,7 @@ function Cart() {
         url: `${process.env.REACT_APP_API_PORT}products`,
         method: "GET",
       });
-      console.log(response.data.products);
+
       setProducts(response.data.products);
     };
 
