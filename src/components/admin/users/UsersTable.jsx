@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./AdminLists.module.css";
+import styles from "../tablesCSS/AdminTables.module.css";
 import AdminNav from "../adminNav/AdminNav";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 
 function UsersTable() {
   const [users, setUsers] = useState(null);

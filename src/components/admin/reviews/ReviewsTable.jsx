@@ -1,54 +1,54 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./AdminLists.module.css";
+import styles from "../tablesCSS/AdminTables.module.css";
 import AdminNav from "../adminNav/AdminNav";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 
-function PacksTable() {
-  const [packs, setPacks] = useState(null);
+function ReviewsTable() {
+  const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    const getPacks = async () => {
+    const getReviews = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}packs`,
+        url: `${process.env.REACT_APP_API_PORT}reviews`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
         // },
       });
-      setPacks(response.data);
+      setReviews(response.data.reviews);
     };
-    getPacks();
+    getReviews();
   }, []); // eslint-disable-line
 
   return (
     <div>
       <Navbar />
       <div className={`${styles.body} container`}>
-        <AdminNav active={"Packs"} />
-        {packs && (
+        <AdminNav active={"Reviews"} />
+        {reviews && (
           <table className="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Pack Image</th>
-                <th scope="col">Product 1</th>
-                <th scope="col">Product 2</th>
-                <th scope="col">Product 3</th>
-                <th scope="col">Product 4</th>
+                <th scope="col">Comment</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
-              {packs.map((pack, index) => {
+              {reviews.map((review, index) => {
                 return (
-                  <tr key={pack._id}>
+                  <tr key={review._id}>
                     <th scope="row">{index}</th>
-                    <td>{pack.name}</td>
-                    <td>{pack.bigImage}</td>
-                    <td>{pack.stock}</td>
+                    <td>{review.author}</td>
+                    <td>{review.comment}</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -68,4 +68,4 @@ function PacksTable() {
   );
 }
 
-export default PacksTable;
+export default ReviewsTable;

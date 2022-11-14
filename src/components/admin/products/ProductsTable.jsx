@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import styles from "./AdminLists.module.css";
+import styles from "../tablesCSS/AdminTables.module.css";
 import AdminNav from "../adminNav/AdminNav";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../../navbar/Navbar";
+import Footer from "../../footer/Footer";
 
 function ProductsTable() {
   const [products, setProducts] = useState(null);
@@ -28,7 +29,11 @@ function ProductsTable() {
       <div className={`${styles.body} container`}>
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>
-          <button className={styles.button}>Create</button>
+          <button className={styles.button}>
+            <Link className={styles.link} to={"/admin/products/create"}>
+              Create
+            </Link>
+          </button>
         </div>
         {products && (
           <table className="table">
