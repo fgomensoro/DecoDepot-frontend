@@ -76,7 +76,7 @@ function Navbar() {
       >
         <Offcanvas.Header className={styles.cartHeader}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i class="bi bi-x"></i>
+            <i className="bi bi-x"></i>
           </button>
           <Offcanvas.Title>My cart</Offcanvas.Title>
         </Offcanvas.Header>

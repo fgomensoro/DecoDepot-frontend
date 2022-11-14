@@ -44,12 +44,6 @@ function CartItem({ product }) {
                 );
               }}
             >
-              <input
-                className={styles.inputNumber}
-                type="number"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
               <button
                 type="button"
                 className={styles.buttonUpDown}
@@ -57,6 +51,13 @@ function CartItem({ product }) {
               >
                 <i className={`${styles.arrowUpDown} bi bi-arrow-down-circle `}></i>
               </button>
+              <input
+                className={styles.inputNumber}
+                type="number"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+              />
+
               <button
                 type="button"
                 className={styles.buttonUpDown}
