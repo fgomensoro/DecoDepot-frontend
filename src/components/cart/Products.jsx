@@ -1,7 +1,7 @@
 import Product from "./Product";
 
 function Products({ cart }) {
-  const items = cart.map((item) => (
+  const items = cart.items.map((item) => (
     <div key={item.id}>
       <Product item={item} />
     </div>

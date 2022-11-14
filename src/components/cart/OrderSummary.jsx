@@ -15,11 +15,10 @@ function OrderSummary() {
       <div className={`${styles.titleOrderSummary}`}>Order Summary</div>
       <div className={styles.orderSummary}>
         <Products cart={cart} />
-
         <div className={styles.totalsContainer}>
           <div className={styles.totals}>
             <p className={styles.pSubtotals}>Subtotal</p>
-            <p className={styles.price}>$ {dollarUSLocale.format(12000)}</p>
+            <p className={styles.price}>$ {dollarUSLocale.format(cart.total)}</p>
           </div>
         </div>
       </div>
