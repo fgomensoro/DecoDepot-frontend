@@ -8,12 +8,13 @@ import Detail from "./pages/Detail/Detail";
 import Products from "./pages/products/Products";
 import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
+import ProductsTable from "./components/admin/products/ProductsTable";
+import OrdersTable from "./components/admin/orders/OrdersTable";
+import PacksTable from "./components/admin/packs/PacksTable";
+import ReviewsTable from "./components/admin/reviews/ReviewsTable";
+import UsersTable from "./components/admin/users/UsersTable";
+import CreateProduct from "./components/admin/products/CreateProduct";
 import Cart from "./pages/cart/Cart";
-import ProductsTable from "./components/tables/ProductsTable";
-import OrdersTable from "./components/tables/OrdersTable";
-import PacksTable from "./components/tables/PacksTable";
-import ReviewsTable from "./components/tables/ReviewsTable";
-import UsersTable from "./components/tables/UsersTable";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<ProductsTable />} />
+        <Route path="/admin/products/create" element={<CreateProduct />} />
         <Route path="/admin/orders" element={<OrdersTable />} />
         <Route path="/admin/packs" element={<PacksTable />} />
         <Route path="/admin/reviews" element={<ReviewsTable />} />
