@@ -33,7 +33,7 @@ function Navbar() {
         <Offcanvas.Header>
           <h2 className={styles.sideBarTitle}>Deco Depot</h2>
           <button onClick={handleCloseAbout} className={styles.btnClose}>
-            <i class="bi bi-x"></i>
+            <i className="bi bi-x"></i>
           </button>
         </Offcanvas.Header>
 

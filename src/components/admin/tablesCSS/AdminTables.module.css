@@ -1,6 +1,6 @@
 .body {
   min-width: 80vh;
-  margin-top: 12%;
+  margin-top: 10%;
 }
 
 .buttonContainer {
@@ -14,12 +14,22 @@
   border-radius: 30px;
   padding: 0.5rem 0;
   background-color: var(--colorBlackDeco);
-  color: white;
-  font-weight: bold;
+
   transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
   background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem 3rem;
+}
+
+.link:hover {
   color: var(--colorBlackDeco);
 }
