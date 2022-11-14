@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function OrderSummary() {
   const cart = useSelector((state) => state.cart);
-  const user = useSelector((state) => state.user);
   console.log(cart);
 
   return (
