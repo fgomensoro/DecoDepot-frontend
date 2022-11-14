@@ -1,14 +1,17 @@
 import styles from "./CheckoutForm.module.css";
-import Product from "./Product";
+import Products from "./Products";
+import { useSelector } from "react-redux";
 
 function OrderSummary() {
+  const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user);
+  console.log(cart);
+
   return (
     <div className={styles.orderSummary}>
       <div className={`${styles.titleOrderSummary}`}>Order Summary</div>
-      <Product />
-      <Product />
-      <Product />
-      <Product />
+      <Products />
+
       <div className={styles.totalsContainer}>
         <div className={styles.totals}>
           <p className={styles.pSubtotals}>Subtotal</p>
@@ -25,7 +28,7 @@ function OrderSummary() {
         <div className={styles.hrLine}></div>
         <div className={styles.totals}>
           <p className={styles.pTotal}>Total</p>
-          <p className={styles.priceTotal} > $ 12000 </p>
+          <p className={styles.priceTotal}> $ 12000 </p>
         </div>
       </div>
     </div>

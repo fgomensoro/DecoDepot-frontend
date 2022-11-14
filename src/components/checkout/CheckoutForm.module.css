@@ -61,11 +61,11 @@ form {
     padding: 50px 20px;
   }
 
-  .form-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 30px;
-    line-height: 70px;
+}
+
+@media (max-width: 991px) {
+  .shippingAddress {
+    margin-top: 2rem;
   }
 }
 
@@ -76,6 +76,25 @@ form {
   background-color: #f2fafd;
   margin-top: 25rem;
   opacity: 80%;
+}
+
+@media (max-width: 1399px) {
+  .orderSummary {
+    margin-top: 22rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .orderSummary {
+    margin-top: 19rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .orderSummary {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .productImg {

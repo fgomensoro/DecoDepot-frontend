@@ -8,6 +8,7 @@ import Detail from "./pages/Detail/Detail";
 import Products from "./pages/products/Products";
 import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
+import Cart from "./pages/cart/Cart";
 import ProductsTable from "./components/tables/ProductsTable";
 import OrdersTable from "./components/tables/OrdersTable";
 import PacksTable from "./components/tables/PacksTable";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<ProductsTable />} />
         <Route path="/admin/orders" element={<OrdersTable />} />

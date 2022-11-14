@@ -13,8 +13,12 @@ function Pack() {
 
   useEffect(() => {
     const getPacks = async () => {
-      const response = await axios(axiosConfig);
-      setPacks(response.data);
+      try {
+        const response = await axios(axiosConfig);
+        setPacks(response.data);
+      } catch (error) {
+        console.log(error.data);
+      }
     };
     getPacks(); // eslint-disable-next-line
   }, []);
