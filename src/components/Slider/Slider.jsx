@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination, Autoplay, FreeMode } from "swiper";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/pagination";
 // import { Navigation, Pagination,  A11y } from 'swiper';
 import styles from "./Slider.module.css";
@@ -12,11 +13,24 @@ function Slider({ products, title }) {
       <h2 className={styles.sliderTitle}>{title}</h2>
       <div className={`${styles.sliderContainer}`}>
         <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={30}
-          slidesPerView={3.2}
+          modules={[Navigation, Pagination, Autoplay, FreeMode]}
           navigation
           pagination={{ clickable: true }}
+          autoplay={{ delay: 3700 }}
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 2.3,
+              spaceBetween: 10,
+            },
+            992: {
+              slidesPerView: 3.3,
+              spaceBetween: 30,
+            },
+          }}
         >
           {products.map((product) => {
             return (

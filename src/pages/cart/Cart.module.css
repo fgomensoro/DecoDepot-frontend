@@ -3,46 +3,14 @@
   height: 100vh;
 }
 
-.itemImgContainer {
-  height: 230px;
-  border-radius: 12px;
-  overflow: hidden;
+.cart {
+  margin-top: 14rem;
+  background-color: #f2f7f9;
 }
 
-.itemImg {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.description {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 8px 0 8px;
-}
-
-.shopBtn {
-  margin-top: 6px;
-  background-color: transparent;
-  border-radius: 20px;
-  height: fit-content;
-  padding: 6px 30px;
-  font-weight: 500;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-
-.name {
-  color: black;
-  font-weight: 500;
-}
-
-.price {
-  font-weight: 500;
-  color: #647788;
-}
-
-.shopBtn:hover {
-  background-color: rgb(15, 15, 15);
-  color: aliceblue;
+@media (max-width: 1070px) {
+  .cart {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

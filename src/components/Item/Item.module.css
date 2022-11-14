@@ -43,3 +43,34 @@
     background-color: rgb(15, 15, 15);
     color: aliceblue;
 }
+
+@media (max-width: 1198px){
+    .name{
+        font-size: 1.3rem;
+    }
+    .price{
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767px){
+    .itemImgContainer{
+        height: 130px;
+    }
+    
+    .shopBtn{
+        margin-top: 3px;
+        background-color: transparent;
+        border-radius: 20px;
+        height: fit-content;
+        padding: 3px 10px;
+        font-size: 0.7rem;
+    }
+    .name{
+        font-size: 0.9rem;
+    }
+    .price{
+        font-size: 0.6rem;
+    }
+}
+

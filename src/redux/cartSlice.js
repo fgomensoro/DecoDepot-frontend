@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { current } from "@reduxjs/toolkit";
-const url = "decoDepotLogoShort.jpeg";
 
+const url = "imgPrueba3.jpg";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
