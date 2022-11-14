@@ -8,19 +8,19 @@ import SuggestionItem from "./SuggestionItem";
 function Cart() {
   const cart = useSelector((state) => state.cart.items);
 
-  const [suggestions, setSuggestions] = useState(null);
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    const getSuggestions = async () => {
+    const getProducts = async () => {
       const response = await axios({
         url: `${process.env.REACT_APP_API_PORT}products`,
         method: "GET",
       });
       console.log(response.data.products);
-      setSuggestions(response.data.products);
+      setProducts(response.data.products);
     };
 
-    getSuggestions();
+    getProducts();
   }, []);
 
   if (cart.length === 0) {
@@ -28,11 +28,11 @@ function Cart() {
       <div>
         <h1>Your cart</h1>
         <p>Your cart is empty, give it some love!</p>
-        {suggestions &&
-          suggestions.map((suggestion, index) => {
+        {products &&
+          products.map((product, index) => {
             return (
               <div key={index} className="mx-4">
-                <SuggestionItem suggestion={suggestion} />
+                <SuggestionItem product={product} />
               </div>
             );
           })}
