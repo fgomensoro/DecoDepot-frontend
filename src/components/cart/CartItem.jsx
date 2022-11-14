@@ -11,7 +11,7 @@ function CartItem({ product }) {
   const cart = useSelector((state) => state.cart.items);
 
   return (
-    <div className="container-fluid">
+    <div className={`${styles.productContainer} container-fluid`}>
       <div className={`container-fluid`}>
         <div className="row">
           <div className="col-5">
@@ -21,13 +21,14 @@ function CartItem({ product }) {
                 src={process.env.REACT_APP_IMAGE_PATH + product.image}
                 alt=""
               />
+              <h3>{product.price + " " + "$"}</h3>
             </div>
           </div>
           <div className="col-7">
-            <h2>{product.name + " " + product.price + "$"}</h2>
+            <h2>{product.name}</h2>
             <span>Ships in 7-10 Days</span>
           </div>
-          <div>
+          <div className={styles.formContainer}>
             <form
               className={styles.form}
               onSubmit={(event) => {
@@ -44,28 +45,47 @@ function CartItem({ product }) {
                 );
               }}
             >
-              <input
-                className={styles.inputNumber}
-                type="number"
-                value={quantity}
-                onChange={(e) => setQuantity(e.target.value)}
-              />
-              <button
-                type="button"
-                className={styles.buttonUpDown}
-                onClick={() => setQuantity(quantity - 1)}
-              >
-                <i className={`${styles.arrowUpDown} bi bi-arrow-down-circle `}></i>
-              </button>
-              <button
-                type="button"
-                className={styles.buttonUpDown}
-                onClick={() => setQuantity(quantity + 1)}
-              >
-                <i className={`${styles.arrowUpDown}  bi bi-arrow-up-circle `}></i>
-              </button>
-              <button type="submit">Add to cart</button>
-              <button type="submit">Remove from cart</button>
+              <div className={styles.inline}>
+                <button
+                  className={`${styles.plus} btn`}
+                  type="button"
+                  onClick={() => setQuantity(quantity - 1)}
+                >
+                  -
+                </button>
+                <input type="text" className={styles.quantity} value={quantity} />
+                <button
+                  className={`${styles.minus} btn`}
+                  type="button"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  +
+                </button>{" "}
+                <button type="submit" className={styles.shopBtn}>
+                  Add item
+                </button>
+                <button type="submit" className={styles.shopBtn}>
+                  Remove
+                </button>
+              </div>
+
+              {/*     <div className={styles.inline}>
+                <button
+                  className={`${styles.plus} btn`}
+                  type="button"
+                  onClick={() => setQuantity(quantity + 1)}
+                >
+                  +
+                </button>
+                <input type="text" className={styles.quantity} value={quantity} />
+                <button
+                  className={`${styles.minus} btn`}
+                  type="button"
+                  onClick={() => setQuantity(quantity - 1)}
+                >
+                  -
+                </button>
+              </div> */}
             </form>
           </div>
         </div>

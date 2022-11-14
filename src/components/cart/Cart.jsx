@@ -42,24 +42,11 @@ function Cart() {
     return (
       cart && (
         <div>
-          <h1>Your cart</h1>
-
           {cart && cart.map((product, index) => <CartItem key={index} product={product} />)}
         </div>
       )
     );
   }
-
-  /*  return (
-    cart && (
-      <div>
-        <h1>Your cart</h1>
-        <p>Your cart is empty, give it some love!</p>
-
-        {cart && cart.map((product, index) => <CartItem key={index} product={product} />)}
-      </div>
-    )
-  ); */
 }
 
 export default Cart;

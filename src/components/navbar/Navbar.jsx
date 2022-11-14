@@ -5,6 +5,7 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../cart/Cart";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
@@ -13,6 +14,7 @@ function Navbar() {
   const handleCloseAbout = () => setShowAbout(false);
   const handleShowAbout = () => setShowAbout(true);
   const [showCart, setShowCart] = useState(false);
+  const cart = useSelector((state) => state.cart.items);
 
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
@@ -68,22 +70,36 @@ function Navbar() {
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
+
       <Offcanvas
         show={showCart}
         onHide={handleCloseCart}
         placement={"end"}
         className={styles.cartSideBar}
       >
-        <Offcanvas.Header className={styles.cartHeader}>
+        <Offcanvas.Header className={`${styles.cartHeader} d`}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i class="bi bi-x"></i>
+            <i class="bi bi-chevron-left"></i>
           </button>
-          <Offcanvas.Title>My cart</Offcanvas.Title>
+          <h5 className={styles.cartTitle}>My cart</h5>
+          {/* <Offcanvas.Title className="d-flex justify-content-center">My cart</Offcanvas.Title> */}
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
+        {cart.length !== 0 && (
+          <div
+            className={`${styles.cartFooter} d-flex justify-content-center bg-success order-2 w-100`}
+          >
+            <div className="align-self-center">
+              <button type="button" class="btn btn-primary btn-sm">
+                FOOTER
+              </button>
+            </div>
+          </div>
+        )}
       </Offcanvas>
+
       <div className="container d-flex  justify-content-between">
         <ul className="navbar-nav  mb-2 mb-lg-0">
           <li className="nav-item">

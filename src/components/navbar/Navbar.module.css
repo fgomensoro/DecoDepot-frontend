@@ -92,7 +92,13 @@
 }
 
 .cartHeader {
-  /* background-color: blue; */
+}
+.cartTitle {
+  margin-right: 140px;
+}
+.cartFooter {
+  max-height: 120px;
+  min-height: 120px;
 }
 /* .cartSideBar {
   background-color: red;
