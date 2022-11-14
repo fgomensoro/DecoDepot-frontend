@@ -9,7 +9,7 @@ function CheckoutForm() {
     <div>
       <img className={`${styles.logo} text-center`} src={url} alt="Logo" />
       <h2 className={`${styles.shippingAddress} mb-4`}>Shipping address</h2>
-      <form>
+      <form className={styles.form}>
         <div className="form-group">
           <input
             type="text"

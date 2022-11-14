@@ -4,6 +4,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Cart from "../cart/Cart";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
@@ -33,7 +34,7 @@ function Navbar() {
         <Offcanvas.Header>
           <h2 className={styles.sideBarTitle}>Deco Depot</h2>
           <button onClick={handleCloseAbout} className={styles.btnClose}>
-            <i class="bi bi-x"></i>
+            <i className="bi bi-x"></i>
           </button>
         </Offcanvas.Header>
 
@@ -71,16 +72,20 @@ function Navbar() {
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
-      <Offcanvas show={showCart} onHide={handleCloseCart} placement={"end"}>
-        <Offcanvas.Header>
+      <Offcanvas
+        show={showCart}
+        onHide={handleCloseCart}
+        placement={"end"}
+        className={styles.cartSideBar}
+      >
+        <Offcanvas.Header className={styles.cartHeader}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i class="bi bi-x"></i>
+            <i className="bi bi-x"></i>
           </button>{" "}
           <Offcanvas.Title>My cart</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you have chosen. Like,
-          text, images, lists, etc.
+        <Offcanvas.Body className={styles.cartBody}>
+          <Cart />
         </Offcanvas.Body>
       </Offcanvas>
       <div className="container d-flex  justify-content-between">

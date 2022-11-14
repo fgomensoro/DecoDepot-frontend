@@ -1,0 +1,19 @@
+.productImage {
+  width: 100px;
+  height: 100px;
+}
+
+.inputNumber {
+  width: 30px;
+  margin: 0px;
+}
+
+.buttonUpDown {
+  all: unset;
+}
+
+.arrowUpDown {
+  height: 30px;
+  width: 30px;
+  font-weight: 500;
+}
