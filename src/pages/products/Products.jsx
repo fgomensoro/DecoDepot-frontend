@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { tab } from "@testing-library/user-event/dist/tab";
+
 function Products() {
   const [products, setProducts] = useState(null);
 
@@ -28,7 +28,7 @@ function Products() {
         <Navbar />
         <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
           <div className={styles.wrapper}>
-            <h2 className={styles.bigLetter}>All Products</h2>
+            <h1 className={styles.bigLetter}>Products</h1>
             <p>Design your home interior with your heart</p>
           </div>
         </div>
@@ -38,13 +38,11 @@ function Products() {
               <h3 className={styles.titleLeft}>Categories</h3>
               <ul className={styles.list}>
                 <li>
-                  {" "}
                   <Link to="/store" className={`${styles.customNavLink} nav-link`}>
                     Tables
                   </Link>
                 </li>
                 <li>
-                  {" "}
                   <Link to="/store" className={`${styles.customNavLink} nav-link`}>
                     Chairs
                   </Link>

@@ -3,13 +3,10 @@ import { TiArrowBack } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
 function CheckoutForm() {
-  const url = `${process.env.REACT_APP_IMAGE_PATH}decoDepotLogoShort.jpeg`;
-
   return (
     <div>
-      <img className={`${styles.logo} text-center`} src={url} alt="Logo" />
       <h2 className={`${styles.shippingAddress} mb-4`}>Shipping address</h2>
-      <form>
+      <form className={styles.form}>
         <div className="form-group">
           <input
             type="text"
