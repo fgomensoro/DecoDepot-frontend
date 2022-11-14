@@ -1,11 +1,13 @@
 .background {
   background-color: #f2f7f9;
   height: 100vh;
+  background-color: transparent;
+  background-image: linear-gradient(#f2f7f9 7%, transparent 95%);
 }
 
 .cart {
   margin-top: 14rem;
-  background-color: #f2f7f9;
+  background-color: transparent;
 }
 
 @media (max-width: 1070px) {

@@ -5,9 +5,9 @@ const url = "imgPrueba3.jpg";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    total: 0,
+    total: 3500,
     items: [
-      /*  {
+      {
         id: 1,
         name: "Wooden Table",
         image: url,
@@ -27,7 +27,7 @@ const cartSlice = createSlice({
         image: url,
         price: 500,
         qty: 1,
-      }, */
+      },
     ],
   },
 
