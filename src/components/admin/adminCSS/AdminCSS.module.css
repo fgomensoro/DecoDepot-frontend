@@ -40,6 +40,8 @@
   padding: 0.4rem 0;
   background-color: var(--colorBlackDeco);
   transition: all 0.2s ease-in-out;
+  color: white;
+  font-weight: bold;
 }
 
 .buttonEdit:hover {
