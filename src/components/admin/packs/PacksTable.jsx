@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../tablesCSS/AdminTables.module.css";
+import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";

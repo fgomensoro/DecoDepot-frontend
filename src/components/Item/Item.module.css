@@ -1,76 +1,73 @@
-.itemImgContainer{
-    height: 230px;
-    border-radius: 12px;
-    overflow: hidden;
+.itemImgContainer {
+  height: 230px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.itemImg{
- height: 100%;
- width: 100%;
- object-fit: cover;
+.itemImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-.description{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 8px 0 8px;
-   
+.description {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8px 0 8px;
 }
 
-.shopBtn{
-    margin-top: 6px;
+.shopBtn {
+  margin-top: 6px;
+  background-color: transparent;
+  border-radius: 20px;
+  height: fit-content;
+  padding: 6px 30px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.shopBtn:hover {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+}
+
+.name {
+  color: black;
+  font-weight: 500;
+}
+
+.price {
+  font-weight: 500;
+  color: #647788;
+}
+
+@media (max-width: 1198px) {
+  .name {
+    font-size: 1.3rem;
+  }
+  .price {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .itemImgContainer {
+    height: 130px;
+  }
+
+  .shopBtn {
+    margin-top: 3px;
     background-color: transparent;
     border-radius: 20px;
     height: fit-content;
-    padding: 6px 30px;
-    font-weight: 500;
-    transition: all 0.3s;
-    text-decoration:none ;
-
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+  .name {
+    font-size: 0.9rem;
+  }
+  .price {
+    font-size: 0.6rem;
+  }
 }
-
-.name{
-    color: black;
-    font-weight: 500;
-}
-
-.price{
-    font-weight: 500;
-    color: #647788;
-}
-
-.shopBtn:hover{
-    background-color: rgb(15, 15, 15);
-    color: aliceblue;
-}
-
-@media (max-width: 1198px){
-    .name{
-        font-size: 1.3rem;
-    }
-    .price{
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 767px){
-    .itemImgContainer{
-        height: 130px;
-    }
-    
-    .shopBtn{
-        margin-top: 3px;
-        background-color: transparent;
-        border-radius: 20px;
-        height: fit-content;
-        padding: 3px 10px;
-        font-size: 0.7rem;
-    }
-    .name{
-        font-size: 0.9rem;
-    }
-    .price{
-        font-size: 0.6rem;
-    }
-}
-

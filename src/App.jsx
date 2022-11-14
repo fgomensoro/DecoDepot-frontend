@@ -14,6 +14,7 @@ import PacksTable from "./components/admin/packs/PacksTable";
 import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
+import EditProduct from "./components/admin/products/EditProduct";
 import Cart from "./pages/cart/Cart";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<ProductsTable />} />
         <Route path="/admin/products/create" element={<CreateProduct />} />
+        <Route path="/admin/products/:id/edit" element={<EditProduct />} />
         <Route path="/admin/orders" element={<OrdersTable />} />
         <Route path="/admin/packs" element={<PacksTable />} />
         <Route path="/admin/reviews" element={<ReviewsTable />} />

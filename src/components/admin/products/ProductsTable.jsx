@@ -1,13 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import styles from "../tablesCSS/AdminTables.module.css";
+import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
 
 function ProductsTable() {
   const [products, setProducts] = useState(null);
+  const [message, setMessage] = useState("");
+
+  const handleDelete = async (deletedProductId) => {
+    const response = await axios({
+      url: `${process.env.REACT_APP_API_PORT}products/${deletedProductId}`,
+      method: "DELETE",
+      // headers: {
+      //   Authorization: "Bearer " + token,
+      // },
+    });
+    if (response.data.msg === "OK") {
+      const filteredProducts = products.filter((product) => product._id !== deletedProductId);
+      setProducts(filteredProducts);
+    } else {
+      setMessage("Failed to delete product");
+    }
+  };
 
   useEffect(() => {
     const getProducts = async () => {
@@ -29,11 +46,12 @@ function ProductsTable() {
       <div className={`${styles.body} container`}>
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>
-          <button className={styles.button}>
-            <Link className={styles.link} to={"/admin/products/create"}>
+          <button className={styles.buttonCreate}>
+            <Link className={styles.linkButtonCreate} to={"/admin/products/create"}>
               Create
             </Link>
           </button>
+          <p className={styles.message}>{message}</p>
         </div>
         {products && (
           <table className="table">
@@ -63,8 +81,17 @@ function ProductsTable() {
                     <td>{product.category.name}</td>
                     <td>{product.featured}</td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
+                      <button className={styles.buttonEdit}>
+                        <Link className={styles.linkButtonEdit} to={`${product._id}/edit`}>
+                          Edit
+                        </Link>
+                      </button>
+                      <button
+                        className={styles.buttonDelete}
+                        onClick={() => handleDelete(product._id)}
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 );

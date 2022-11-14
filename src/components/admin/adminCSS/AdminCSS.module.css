@@ -1,0 +1,90 @@
+.body {
+  min-width: 80vh;
+  margin-top: 10%;
+}
+
+.buttonContainer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.buttonCreate {
+  width: 9.5rem;
+  border: 3px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  background-color: var(--colorBlackDeco);
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonCreate:hover {
+  background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.linkButtonCreate {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem 3rem;
+}
+
+.linkButtonCreate:hover {
+  color: var(--colorBlackDeco);
+}
+
+.buttonEdit {
+  width: 7rem;
+  border: 3px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.4rem 0;
+  background-color: var(--colorBlackDeco);
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonEdit:hover {
+  background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.linkButtonEdit {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem 2rem;
+}
+
+.linkButtonEdit:hover {
+  color: var(--colorBlackDeco);
+}
+
+.buttonDelete {
+  width: 7rem;
+  border: 3px solid rgb(252, 23, 23);
+  border-radius: 30px;
+  padding: 0.4rem 0;
+  background-color: rgb(252, 23, 23);
+  transition: all 0.2s ease-in-out;
+  color: white;
+  font-weight: bold;
+}
+
+.buttonDelete:hover {
+  background-color: transparent;
+  color: rgb(252, 23, 23);
+}
+
+.linkButtonDelete {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+}
+
+.linkButtonDelete:hover {
+  color: rgb(252, 23, 23);
+}
+
+.message {
+  color: rgb(252, 25, 25);
+}

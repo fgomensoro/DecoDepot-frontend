@@ -3,7 +3,7 @@ import Footer from "../../footer/Footer";
 import Navbar from "../../navbar/Navbar";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import styles from "./Products.module.css";
+import styles from "../adminCSS/AdminCSS.module.css";
 
 function CreateProduct() {
   const [name, setName] = useState("");
@@ -37,7 +37,7 @@ function CreateProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_PORT}admin/products`,
+      url: `${process.env.REACT_APP_API_PORT}products`,
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",
