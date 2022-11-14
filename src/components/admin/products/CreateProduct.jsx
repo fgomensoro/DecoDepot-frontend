@@ -21,7 +21,7 @@ function CreateProduct() {
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}categories`,
+        url: `${process.env.REACT_APP_API_URL}categories`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
@@ -37,7 +37,7 @@ function CreateProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_PORT}/products`,
+      url: `${process.env.REACT_APP_API_URL}/products`,
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",

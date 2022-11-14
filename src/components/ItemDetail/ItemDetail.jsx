@@ -7,7 +7,7 @@ function ItemDetail({ product }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_PORT}/products?category=${product.category._id}`,
+    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}`,
     method: "GET",
   };
 

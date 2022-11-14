@@ -6,7 +6,7 @@ function Featured() {
   const [featured, setFeatured] = useState([]);
 
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_PORT}/products?featured=true`,
+    url: `${process.env.REACT_APP_API_URL}/products?featured=true`,
     method: "GET",
   };
 

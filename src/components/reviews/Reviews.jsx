@@ -8,7 +8,7 @@ function Reviews() {
   useEffect(() => {
     const getReviews = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}/reviews`,
+        url: `${process.env.REACT_APP_API_URL}/reviews`,
         method: "GET",
       });
       setReviews(response.data.reviews);

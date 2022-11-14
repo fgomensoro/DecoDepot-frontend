@@ -10,7 +10,7 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_PORT}/products/${id}`,
+    url: `${process.env.REACT_APP_API_URL}/products/${id}`,
     method: "GET",
   };
 
