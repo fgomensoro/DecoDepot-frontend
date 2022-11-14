@@ -2,3 +2,15 @@
   background-color: #f2f7f9;
   height: 100vh;
 }
+
+.cart {
+  margin-top: 14rem;
+  background-color: #f2f7f9;
+}
+
+@media (max-width: 1070px) {
+  .cart {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
