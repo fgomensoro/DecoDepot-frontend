@@ -65,6 +65,7 @@ const cartSlice = createSlice({
     },
   },
 });
+
 const { actions, reducer } = cartSlice;
 export const { addItem, calculateTotal } = actions;
 

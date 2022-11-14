@@ -41,33 +41,29 @@ function Navbar() {
         <Offcanvas.Body>
           <ul className={styles.aboutUsList + " " + "d-flex flex-column align-items-start pe-3 "}>
             <li>
-              {" "}
               <Link to="/store" className={`${styles.sideLink} side-link`}>
                 Shop
-              </Link>{" "}
-            </li>
-            <li>
-              {" "}
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>{" "}
-            </li>
-            <li>
-              {" "}
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>{" "}
-            </li>
-            <li>
-              {" "}
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>{" "}
+              </Link>
             </li>
             <li>
               <Link to="/store" className={`${styles.sideLink} side-link`}>
                 Shop
-              </Link>{" "}
+              </Link>
+            </li>
+            <li>
+              <Link to="/store" className={`${styles.sideLink} side-link`}>
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link to="/store" className={`${styles.sideLink} side-link`}>
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link to="/store" className={`${styles.sideLink} side-link`}>
+                Shop
+              </Link>
             </li>
           </ul>
         </Offcanvas.Body>
@@ -80,8 +76,8 @@ function Navbar() {
       >
         <Offcanvas.Header className={styles.cartHeader}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i className="bi bi-x"></i>
-          </button>{" "}
+            <i class="bi bi-x"></i>
+          </button>
           <Offcanvas.Title>My cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.cartBody}>
