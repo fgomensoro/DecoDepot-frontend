@@ -1,7 +1,10 @@
 import styles from "./CheckoutForm.module.css";
 
+
 function Product() {
   const url = `${process.env.REACT_APP_IMAGE_PATH}imgPrueba3.jpg`;
+
+  
 
   return (
     <div className={`${styles.productSummary}`}>
