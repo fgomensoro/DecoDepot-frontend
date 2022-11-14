@@ -11,7 +11,7 @@ function PacksTable() {
   useEffect(() => {
     const getPacks = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}packs`,
+        url: `${process.env.REACT_APP_API_PORT}/packs`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,

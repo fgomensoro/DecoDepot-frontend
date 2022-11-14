@@ -43,7 +43,7 @@ function EditProduct() {
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}categories`,
+        url: `${process.env.REACT_APP_API_PORT}/categories`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
@@ -59,7 +59,7 @@ function EditProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_PORT}products/${params.id}`,
+      url: `${process.env.REACT_APP_API_PORT}/products/${params.id}`,
       method: "PATCH",
       headers: {
         "Content-Type": "multipart/form-data",

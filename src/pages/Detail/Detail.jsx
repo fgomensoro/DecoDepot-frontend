@@ -10,20 +10,18 @@ function ItemDetailContainer() {
   const [product, setProduct] = useState(null);
 
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_PORT}products/detail/${id}`,
+    url: `${process.env.REACT_APP_API_PORT}/products/${id}`,
     method: "GET",
   };
 
-  const getProduct = async () => {
-    const response = await axios(axiosConfig);
-    setProduct(response.data.product);
-  };
-
   useEffect(() => {
+    const getProduct = async () => {
+      const response = await axios(axiosConfig);
+      setProduct(response.data.product);
+    };
     getProduct();
   }, []);
 
-  console.log(product);
   {
     if (!product) {
       return <div>holax</div>;
@@ -32,7 +30,7 @@ function ItemDetailContainer() {
   return (
     <div>
       <Navbar />
-      {product && <ItemDetail product={product} getProduct={getProduct} />}
+      {product && <ItemDetail product={product} />}
       <Footer />
     </div>
   );

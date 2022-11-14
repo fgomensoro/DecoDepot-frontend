@@ -11,7 +11,7 @@ function OrdersTable() {
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}orders`,
+        url: `${process.env.REACT_APP_API_PORT}/orders`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,

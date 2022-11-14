@@ -13,12 +13,11 @@ function Products() {
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}products`,
+        url: `${process.env.REACT_APP_API_PORT}/products`,
         method: "GET",
       });
-      setProducts(response.data.products);
+      setProducts(response.data);
     };
-    console.log(products);
     getProducts();
   }, []);
 

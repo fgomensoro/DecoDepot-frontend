@@ -11,13 +11,13 @@ function UsersTable() {
   useEffect(() => {
     const getUsers = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}users`,
+        url: `${process.env.REACT_APP_API_PORT}/users`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
         // },
       });
-      setUsers(response.data.users);
+      setUsers(response.data);
     };
     getUsers();
   }, []); // eslint-disable-line

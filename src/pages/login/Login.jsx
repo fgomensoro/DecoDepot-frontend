@@ -16,13 +16,13 @@ function Login() {
     e.preventDefault();
     const response = await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API_PORT}users/tokens`,
+      url: `${process.env.REACT_APP_API_PORT}/users/tokens`,
       data: {
         email: email,
         password: password,
       },
     });
-    dispatch(storeUser(response.data.user));
+    dispatch(storeUser(response.data));
     navigate("/");
   };
 
