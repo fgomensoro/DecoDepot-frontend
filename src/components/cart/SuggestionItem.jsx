@@ -21,8 +21,8 @@ function SuggestionItem({ product }) {
       </div>
       <div className={styles.description}>
         <div>
-          <h3 className={styles.name}>{product.name}</h3>
-          <p className={styles.price}>{`Actual price $${product.price}`}</p>
+          <h3 className={`${styles.name}`}>{product.name}</h3>
+          <p className={`${styles.price}`}>{`Actual price $${product.price}`}</p>
         </div>
         <button
           className={styles.shopBtn}

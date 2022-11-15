@@ -42,58 +42,64 @@ function CartItem({ product }) {
   }
 
   return (
-    <div className={`${styles.productContainer} container-fluid`}>
-      <div className={`container-fluid`}>
-        <div className="row">
-          <div className="col-5">
-            <div className={`${styles.productImage}`}>
-              <img
-                className={`${styles.productImage}`}
-                src={process.env.REACT_APP_IMAGE_PATH + product.image}
-                alt=""
-              />
-              <h3>{product.price + " " + "$"}</h3>
-            </div>
-          </div>
-          <div className="col-7">
-            <h2>{product.name}</h2>
-            <span>Ships in 7-10 Days</span>
-          </div>
-          <div className={styles.formContainer}>
-            <form ref={formRef} className={styles.form} /* onSubmit={handleSubmitAdd} */>
-              <div className={styles.inline}>
-                <button
-                  className={`${styles.plus} btn`}
-                  type="button"
-                  onClick={() => handleMinus()}
-                >
-                  -
-                </button>
-                <input
-                  type="text"
-                  className={styles.quantity}
-                  value={quantity}
-                  name="quantity"
-                  onChange={(event) => setQuantity(event.target.value)}
+    <div>
+      <div className={`${styles.productContainer} container-fluid`}>
+        <div className={`container-fluid`}>
+          <div className="row">
+            <div className="col-5">
+              <div className={`${styles.productImage}`}>
+                <img
+                  className={`${styles.productImage}`}
+                  src={process.env.REACT_APP_IMAGE_PATH + product.image}
+                  alt=""
                 />
-                <button
-                  className={`${styles.minus} btn`}
-                  type="button"
-                  onClick={() => handlePlus()}
-                >
-                  +
-                </button>{" "}
-                <button type="submit" className={styles.shopBtn} onClick={handleSubmitAdd}>
-                  Add item
-                </button>
-                <button type="submit" className={styles.shopBtn} onClick={handleSubmitRemove}>
-                  Remove
-                </button>
+                <h3 className="text-center">{"$" + product.price}</h3>
               </div>
-            </form>
+            </div>
+            <div className="col-7 d-flex align-items-center">
+              <div>
+                <h2>{product.name}</h2>
+                <span>Ships in 7-10 Days</span>
+              </div>
+            </div>
+            <div className={`${styles.formContainer} d-flex align-items-center`}>
+              <form ref={formRef} className={styles.form} /* onSubmit={handleSubmitAdd} */>
+                <div className={styles.inline}>
+                  <button
+                    className={`${styles.plus} btn`}
+                    type="button"
+                    onClick={() => handleMinus()}
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    className={styles.quantity}
+                    value={quantity}
+                    name="quantity"
+                    onChange={(event) => setQuantity(event.target.value)}
+                  />
+                  <button
+                    className={`${styles.minus} btn`}
+                    type="button"
+                    onClick={() => handlePlus()}
+                  >
+                    +
+                  </button>{" "}
+                  <button type="submit" className={styles.shopBtn} onClick={handleSubmitAdd}>
+                    Add item
+                  </button>
+                  <button type="submit" className={styles.shopBtn} onClick={handleSubmitRemove}>
+                    Remove
+                  </button>
+                </div>{" "}
+              </form>{" "}
+              <i className={`${styles.trash} bi bi-trash`}></i>
+            </div>
           </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 }

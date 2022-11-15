@@ -27,8 +27,11 @@ function Cart() {
   if (cart && cart.length === 0) {
     return (
       <div>
-        <h1>Your cart</h1>
-        <p>Your cart is empty, give it some love!</p>
+        <div className="d-flex flex-column ">
+          {" "}
+          <h1 className="text-center">Your cart</h1>
+          <h5 className="text-center">Your cart is empty, give it some love!</h5>
+        </div>
         {products &&
           products.map((product, index) => {
             return (
