@@ -108,7 +108,7 @@ function Navbar() {
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
-        {/* {cart.items.length !== 0 && (
+        {cart.items.length !== 0 && (
           <div
             className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
           >
@@ -121,7 +121,7 @@ function Navbar() {
               <button className={styles.btnContinue}> Continue to checkout</button>
             </Link>
           </div>
-        )} */}
+        )}
       </Offcanvas>
 
       <div className="container d-flex  justify-content-between">

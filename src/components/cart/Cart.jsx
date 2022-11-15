@@ -18,7 +18,6 @@ function Cart() {
       });
 
       setProducts(response.data);
-      console.log(response.data);
     };
 
     getProducts();

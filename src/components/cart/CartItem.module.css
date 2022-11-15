@@ -38,7 +38,7 @@
   color: aliceblue;
 }
 .trash {
-  height: ;
+  margin-right: 22px;
 }
 .quantity {
   width: 2rem;
@@ -76,4 +76,9 @@
 
 .productContainer {
   margin-bottom: 15px;
+}
+
+.delete {
+  all: unset;
+  margin-top: 3px;
 }

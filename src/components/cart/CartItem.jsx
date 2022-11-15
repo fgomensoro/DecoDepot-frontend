@@ -40,7 +40,11 @@ function CartItem({ product }) {
     event.preventDefault();
     dispatch(removeItem({ name: product.name, qty: quantity })), setQuantity(0);
   }
-
+  function handleSubmitClear(event) {
+    event.preventDefault();
+    dispatch(removeItem({ name: product.name, qty: 10000 }));
+  }
+  console.log(product.qty);
   return (
     <div>
       <div className={`${styles.productContainer} container-fluid`}>
@@ -94,7 +98,14 @@ function CartItem({ product }) {
                   </button>
                 </div>{" "}
               </form>{" "}
-              <i className={`${styles.trash} bi bi-trash`}></i>
+            </div>{" "}
+            <div className="d-flex justify-content-between mt-4">
+              <p>You have {product.qty} of this in your cart</p>
+              <form onSubmit={handleSubmitClear}>
+                <button type="submit" className={styles.delete}>
+                  <i className={`${styles.trash} bi bi-trash`}></i>{" "}
+                </button>
+              </form>
             </div>
           </div>
         </div>
