@@ -13,7 +13,7 @@ function ReviewsTable() {
   useEffect(() => {
     const getReviews = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/reviews`,
+        url: `${process.env.REACT_APP_API_URL}/admin/reviews`,
         method: "GET",
         headers: {
           Authorization: "Bearer " + user.token,

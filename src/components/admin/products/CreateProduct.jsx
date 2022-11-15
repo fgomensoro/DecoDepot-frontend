@@ -23,7 +23,7 @@ function CreateProduct() {
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/categories`,
+        url: `${process.env.REACT_APP_API_URL}/admin/categories`,
         method: "GET",
         headers: {
           Authorization: "Bearer " + user.token,
