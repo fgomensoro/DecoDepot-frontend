@@ -1,13 +1,16 @@
 .productImage {
   width: 100px;
   height: 100px;
+  border-radius: 15px;
 }
 
 .inputNumber {
   width: 30px;
   margin: 0px;
 }
-
+.formContainer {
+  margin-top: 25px;
+}
 .buttonUpDown {
   all: unset;
 }
@@ -16,4 +19,51 @@
   height: 30px;
   width: 30px;
   font-weight: 500;
+}
+
+.shopBtn {
+  margin-top: 6px;
+  background-color: transparent;
+  border-radius: 20px;
+  height: fit-content;
+  padding: 6px 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.quantity {
+  width: 2rem;
+  border: solid #eaeaea 1px;
+  background-color: #f6f6f6;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.inline {
+  display: flex;
+  margin-top: 0.6rem;
+  background-color: #eaeaea;
+  border-radius: 10px;
+}
+
+.plus {
+  border-radius: 10px 0px 0px 10px;
+  border: solid #eaeaea 1px;
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.minus {
+  border-radius: 0px 10px 10px 0px;
+  border: solid #eaeaea 1px;
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.productContainer {
+  margin-bottom: 15px;
 }

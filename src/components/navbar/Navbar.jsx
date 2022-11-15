@@ -6,12 +6,14 @@ import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../cart/Cart";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
   const [colorChange, setColorchange] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -83,22 +85,39 @@ function Navbar() {
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
+
       <Offcanvas
         show={showCart}
         onHide={handleCloseCart}
         placement={"end"}
         className={styles.cartSideBar}
       >
-        <Offcanvas.Header className={styles.cartHeader}>
+        <Offcanvas.Header className={`${styles.cartHeader} d`}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i className="bi bi-x"></i>
+            <i className="bi bi-chevron-left"></i>
           </button>
-          <Offcanvas.Title>My cart</Offcanvas.Title>
+          <h5 className={styles.cartTitle}>My cart</h5>
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
+        {cart.items.length !== 0 && (
+          <div
+            className={`${styles.cartFooter} d-flex p-3 align-items-center bg-success order-2 w-100`}
+          >
+            <div className="d-flex flex-column align-items-center">
+              <span>SUBTOTAL</span>
+              <h3>{cart.total}$</h3>
+            </div>
+            <button className={styles.btnContinue}>
+              <Link to="/checkout" className={styles.linkContinue}>
+                Continue to checkout
+              </Link>
+            </button>
+          </div>
+        )}
       </Offcanvas>
+
       <div className="container d-flex  justify-content-between">
         <ul className="navbar-nav  mb-2 mb-lg-0">
           <li className="nav-item">
@@ -143,16 +162,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-/* 
-<ul className="navbar-nav  mb-2 mb-lg-0">
-<li className="nav-item">
-  <Link to="/" className={`${styles.customNavLink}  nav-link`}>
-    <img
-      className={styles.logoImg}
-      src={process.env.REACT_APP_IMAGE_PATH + logoUrl}
-      alt="Logo"
-    />
-  </Link>
-</li>
-</ul> */

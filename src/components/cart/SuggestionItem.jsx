@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 function SuggestionItem({ product }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
-  console.log(product.images[0]);
+
   return (
     <div className={styles.slideItem}>
       {/* <Link className="text-decoration-none" to={`/detail/${product._id}`}> */}
