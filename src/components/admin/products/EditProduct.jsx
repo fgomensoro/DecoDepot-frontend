@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Footer from "../../footer/Footer";
 import Navbar from "../../navbar/Navbar";
 import { useNavigate, useParams } from "react-router-dom";
@@ -6,6 +7,7 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 
 function EditProduct() {
+  const user = useSelector((state) => state.user);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -23,19 +25,19 @@ function EditProduct() {
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}products/${params.id}`,
+        url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
-      setName(response.data.product.name);
-      setDescription(response.data.product.description);
-      setPrice(response.data.product.price);
-      setStock(response.data.product.stock);
-      setCategory(response.data.product.category.name);
-      setFeatured(response.data.product.features);
-      setSlug(response.data.product.slug);
+      setName(response.data.name);
+      setDescription(response.data.description);
+      setPrice(response.data.price);
+      setStock(response.data.stock);
+      setCategory(response.data.category.name);
+      setFeatured(response.data.features);
+      setSlug(response.data.slug);
     };
     getProduct();
   }, []); // eslint-disable-line
@@ -45,9 +47,9 @@ function EditProduct() {
       const response = await axios({
         url: `${process.env.REACT_APP_API_URL}/categories`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
       setCategories(response.data.categories);
     };
@@ -59,10 +61,11 @@ function EditProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
+      url: `${process.env.REACT_APP_API_URL}/admin/products/${params.id}`,
       method: "PATCH",
       headers: {
         "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + user.token,
       },
       data: formData,
     });

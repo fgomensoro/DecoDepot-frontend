@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
@@ -6,6 +7,7 @@ import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
 
 function PacksTable() {
+  const user = useSelector((state) => state.user);
   const [packs, setPacks] = useState(null);
 
   useEffect(() => {
@@ -13,9 +15,9 @@ function PacksTable() {
       const response = await axios({
         url: `${process.env.REACT_APP_API_URL}/packs`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
       setPacks(response.data);
     };

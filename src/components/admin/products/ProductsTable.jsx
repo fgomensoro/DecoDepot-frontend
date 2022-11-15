@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
@@ -7,16 +8,17 @@ import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
 
 function ProductsTable() {
+  const user = useSelector((state) => state.user);
   const [products, setProducts] = useState(null);
   const [message, setMessage] = useState("");
 
   const handleDelete = async (deletedProductId) => {
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}products/${deletedProductId}`,
+      url: `${process.env.REACT_APP_API_URL}/admin/products/${deletedProductId}`,
       method: "DELETE",
-      // headers: {
-      //   Authorization: "Bearer " + token,
-      // },
+      headers: {
+        Authorization: "Bearer " + user.token,
+      },
     });
     if (response.data.msg === "OK") {
       const filteredProducts = products.filter((product) => product._id !== deletedProductId);
@@ -29,13 +31,13 @@ function ProductsTable() {
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}products`,
+        url: `${process.env.REACT_APP_API_URL}/products`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
-      setProducts(response.data.products);
+      setProducts(response.data);
     };
     getProducts();
   }, []); // eslint-disable-line

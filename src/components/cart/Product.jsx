@@ -1,10 +1,12 @@
 import styles from "./OrderSummary.module.css";
 import { HiOutlineTrash } from "react-icons/hi";
+import { useState } from "react";
 
 function Product({ item }) {
   const url = `${process.env.REACT_APP_IMAGE_PATH}${item.image}`;
   const dollarUSLocale = Intl.NumberFormat("en-US");
   const priceBefore = Math.round((item.price * 1.15 + Number.EPSILON) * 1) / 1;
+  const [qty, setQty] = useState("");
 
   return (
     <div className={`${styles.productSummary}`}>
@@ -14,7 +16,7 @@ function Product({ item }) {
         <h4 className={styles.titleH4}>{item.name}</h4>
         <div className={styles.inline}>
           <button className={`${styles.plus} btn`}>-</button>
-          <input type="text" className={styles.quantity} value={item.qty} />
+          <input type="text" className={styles.quantity} value={item.qty} readOnly="disabled" />
           <button className={`${styles.minus} btn`}>+</button>
         </div>
       </div>

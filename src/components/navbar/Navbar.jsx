@@ -1,8 +1,9 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/userSlice";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../cart/Cart";
 import { useSelector } from "react-redux";
@@ -11,13 +12,22 @@ function Navbar() {
   const logoUrl = "decoDepotLogo.png";
   const [colorChange, setColorchange] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
-  const handleCloseAbout = () => setShowAbout(false);
-  const handleShowAbout = () => setShowAbout(true);
   const [showCart, setShowCart] = useState(false);
   const cart = useSelector((state) => state.cart);
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCloseAbout = () => setShowAbout(false);
+  const handleShowAbout = () => setShowAbout(true);
   const handleCloseCart = () => setShowCart(false);
   const handleShowCart = () => setShowCart(true);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
   const changeNavbarColor = () => {
     if (window.scrollY >= 100) {
       setColorchange(true);
@@ -67,6 +77,11 @@ function Navbar() {
                 Shop
               </Link>
             </li>
+            <li>
+              <button onClick={() => handleLogout()} className={styles.loguot}>
+                Logout
+              </button>
+            </li>
           </ul>
         </Offcanvas.Body>
       </Offcanvas>
@@ -93,7 +108,7 @@ function Navbar() {
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
-        {cart.items.length !== 0 && (
+        {/* {cart.items.length !== 0 && (
           <div
             className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
           >
@@ -106,7 +121,7 @@ function Navbar() {
               <button className={styles.btnContinue}> Continue to checkout</button>
             </Link>
           </div>
-        )}
+        )} */}
       </Offcanvas>
 
       <div className="container d-flex  justify-content-between">

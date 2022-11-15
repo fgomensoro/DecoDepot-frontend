@@ -46,7 +46,8 @@
 .detailsBtns {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
+  padding-bottom: 10px;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
@@ -60,7 +61,7 @@
   background-color: rgba(0, 0, 0, 0.096);
 }
 .detailsBtns:hover .btnSee {
-  animation: ease-in-out 0.3s 1 translate;
+  animation: ease-in-out 0.4s 1 translate;
 }
 .detailsBtns:hover .btnAdd {
   animation: ease-in-out 0.2s 1 translate2;
@@ -70,7 +71,7 @@
     transform: translateY(100%);
   }
   to {
-    transform: translateY(-100%);
+    transform: translateY(-80%);
   }
 }
 @keyframes translate2 {
@@ -93,7 +94,7 @@
   font-weight: 600;
   font-size: 1.2rem;
   border-radius: 50px;
-  transform: translateY(-100%);
+  transform: translateY(-65%);
 }
 
 .btnAdd {

@@ -17,6 +17,7 @@ import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
 import Cart from "./pages/cart/CartPage";
+import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/store/:category" element={<ProductsCategory />} />
         <Route path="/products/:id" element={<Detail />} />
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
