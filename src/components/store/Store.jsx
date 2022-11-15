@@ -11,7 +11,7 @@ function Store() {
         <div className={styles.line}></div>
         <button className={styles.buttonSmall}>
           <Link className={styles.link} to={"/store"}>
-            Shop All Products
+            Store
           </Link>
         </button>
         <div className={styles.line}></div>

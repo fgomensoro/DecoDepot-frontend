@@ -6,8 +6,12 @@ const userSlice = createSlice({
     storeUser(state, action) {
       return action.payload;
     },
+    logout(state, action) {
+      state = {};
+      return state;
+    },
   },
 });
 const { actions, reducer } = userSlice;
-export const { storeUser } = actions;
+export const { storeUser, logout } = actions;
 export default reducer;

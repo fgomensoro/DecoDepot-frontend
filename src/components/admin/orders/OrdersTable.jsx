@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
@@ -6,16 +7,17 @@ import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
 
 function OrdersTable() {
+  const user = useSelector((state) => state.user);
   const [orders, setOrders] = useState(null);
 
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/orders`,
+        url: `${process.env.REACT_APP_API_URL}/admin/orders`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
       setOrders(response.data.orders);
     };
