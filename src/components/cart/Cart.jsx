@@ -18,7 +18,6 @@ function Cart() {
       });
 
       setProducts(response.data);
-      console.log(response.data);
     };
 
     getProducts();
@@ -29,7 +28,7 @@ function Cart() {
       <div>
         <div className="d-flex flex-column ">
           {" "}
-          <h1 className="text-center">Your cart</h1>
+          <h1 className="text-center">Start shopping!</h1>
           <h5 className="text-center">Your cart is empty, give it some love!</h5>
         </div>
         {products &&

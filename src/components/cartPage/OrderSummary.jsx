@@ -6,9 +6,9 @@ import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function OrderSummary() {
-  const cartStore = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
 
-  const [cart, setCart] = useState(cartStore);
+  // const [cart, setCart] = useState(cartStore);
 
   let dollarUSLocale = Intl.NumberFormat("en-US");
 

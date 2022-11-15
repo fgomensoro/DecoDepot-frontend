@@ -51,8 +51,10 @@ const cartSlice = createSlice({
         sum += item.price * item.qty;
       });
       state.total = sum;
-      console.log(action.payload.name);
+      // console.log(action.payload.name);
     },
+
+    
 
     removeItem(state, action) {
       let sum = 0;
