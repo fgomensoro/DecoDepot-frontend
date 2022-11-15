@@ -105,9 +105,14 @@ function Navbar() {
           </h5>
         </Offcanvas.Header>
 
-        <Offcanvas.Body className={styles.cartBody}>
+        <Offcanvas.Body
+          className={`${cart.items.length !== 0 ? styles.cartBody1 : styles.cartBody}`}
+        >
           <div className={styles.rssBlock}>
-            <span className={styles.marqueeStyle}>FREE SHIPPING ON ORDERS OVER $32</span>
+            <span className={styles.marqueeStyle}>&nbsp;FREE SHIPPING ON ORDERS OVER $32</span>
+            {/* <span className={styles.marqueeStyle2}>
+              &nbsp; Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            </span> */}
           </div>
           <Cart />
         </Offcanvas.Body>

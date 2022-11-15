@@ -119,6 +119,10 @@
   background-color: var(--colorSoftDeco);
   padding: 0px;
 }
+.cartBody1 {
+  background-color: white;
+  padding: 0px;
+}
 
 .cartHeader {
   background-color: var(--colorSoftDeco);
@@ -151,18 +155,18 @@
 
 .marqueeStyle {
   display: inline-block;
-  /* Apply animation to this element */
-  -webkit-animation: scrolling-left1 10s linear infinite;
-  animation: scrolling-left1 10s linear infinite;
+
+  -webkit-animation: scrolling-left 5s linear infinite;
+  animation: scrolling-left 5s linear infinite;
 }
 
-@keyframes scrolling-left1 {
+@keyframes scrolling-left {
   0% {
     transform: translateX(200%);
-    /* -webkit-transform: translateX(100%); */
+    -webkit-transform: translateX(150%);
   }
   100% {
     transform: translateX(-100%);
-    /*   -webkit-transform: translateX(-100%); */
+    -webkit-transform: translateX(-100%);
   }
 }
