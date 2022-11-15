@@ -1,5 +1,7 @@
 import "./App.module.css";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styles from "./App.module.css";
 import Home from "./pages/home/Home";
 import SignUp from "./pages/signUp/SignUp";
@@ -18,8 +20,11 @@ import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
 import Cart from "./pages/cart/CartPage";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
+import AdminOnly from "./components/adminOnly/AdminOnly";
 
 function App() {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className={styles.body}>
       <Routes>
@@ -32,14 +37,16 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/products" element={<ProductsTable />} />
-        <Route path="/admin/products/create" element={<CreateProduct />} />
-        <Route path="/admin/products/:id/edit" element={<EditProduct />} />
-        <Route path="/admin/orders" element={<OrdersTable />} />
-        <Route path="/admin/packs" element={<PacksTable />} />
-        <Route path="/admin/reviews" element={<ReviewsTable />} />
-        <Route path="/admin/users" element={<UsersTable />} />
+        <Route element={<AdminOnly isAdmin={user.isAdmin} />}>
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/products" element={<ProductsTable />} />
+          <Route path="/admin/products/create" element={<CreateProduct />} />
+          <Route path="/admin/products/:id/edit" element={<EditProduct />} />
+          <Route path="/admin/orders" element={<OrdersTable />} />
+          <Route path="/admin/packs" element={<PacksTable />} />
+          <Route path="/admin/reviews" element={<ReviewsTable />} />
+          <Route path="/admin/users" element={<UsersTable />} />
+        </Route>
       </Routes>
     </div>
   );
