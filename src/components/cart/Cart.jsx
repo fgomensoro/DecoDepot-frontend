@@ -18,7 +18,6 @@ function Cart() {
       });
 
       setProducts(response.data);
-      console.log(response.data);
     };
 
     getProducts();
@@ -29,16 +28,13 @@ function Cart() {
       <div>
         <div className="d-flex flex-column ">
           {" "}
-          <h1 className="text-center">Your cart</h1>
-          <h5 className="text-center">Your cart is empty, give it some love!</h5>
+          <h5 className={`${styles.subtitle} text-center`}>
+            Your cart is empty, give it some love!
+          </h5>
         </div>
         {products &&
           products.map((product, index) => {
-            return (
-              <div key={index} className="mx-4">
-                <SuggestionItem product={product} />
-              </div>
-            );
+            return <SuggestionItem key={index} product={product} />;
           })}
       </div>
     );

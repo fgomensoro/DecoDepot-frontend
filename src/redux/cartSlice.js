@@ -35,7 +35,7 @@ const cartSlice = createSlice({
     addItem(state, action) {
       let sum = 0;
       const isInCart = state.items.find((product) => product.name === action.payload.name);
-
+      console.log(action.payload.image);
       if (!isInCart) {
         state.items.push({
           id: action.payload.id,
@@ -51,7 +51,6 @@ const cartSlice = createSlice({
         sum += item.price * item.qty;
       });
       state.total = sum;
-      console.log(action.payload.name);
     },
 
     removeItem(state, action) {
