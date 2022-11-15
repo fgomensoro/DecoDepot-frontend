@@ -14,7 +14,7 @@ function ProductsTable() {
 
   const handleDelete = async (deletedProductId) => {
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/admin/products/${deletedProductId}`,
+      url: `${process.env.REACT_APP_API_URL}/products/${deletedProductId}`,
       method: "DELETE",
       headers: {
         Authorization: "Bearer " + user.token,
@@ -31,7 +31,7 @@ function ProductsTable() {
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/admin/products`,
+        url: `${process.env.REACT_APP_API_URL}/products`,
         method: "GET",
         headers: {
           Authorization: "Bearer " + user.token,

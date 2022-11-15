@@ -97,6 +97,7 @@
   text-decoration: none;
   margin-bottom: 12px;
   margin-left: 30px;
+  background-color: #eaeaea;
 }
 .btnContinue:hover {
   background-color: rgb(15, 15, 15);
@@ -116,6 +117,11 @@
 }
 .cartBody {
   background-color: var(--colorSoftDeco);
+  padding: 0px;
+}
+.cartBody1 {
+  background-color: white;
+  padding: 0px;
 }
 
 .cartHeader {
@@ -134,7 +140,33 @@
   background-color: var(--colorSoftDeco);
   border-top: solid 1px #828d94;
 }
-/* .cartSideBar {
-  background-color: red;
-  width: 600px;
-} */
+.rssBlock {
+  left: 0px;
+  height: fit-content;
+  background-color: var(--colorSoftDeco);
+  position: relative;
+  border-bottom: solid 1px #828d94;
+  overflow: hidden;
+}
+
+/*remove p*/
+.cnnContents {
+}
+
+.marqueeStyle {
+  display: inline-block;
+
+  -webkit-animation: scrolling-left 5s linear infinite;
+  animation: scrolling-left 5s linear infinite;
+}
+
+@keyframes scrolling-left {
+  0% {
+    transform: translateX(200%);
+    -webkit-transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}

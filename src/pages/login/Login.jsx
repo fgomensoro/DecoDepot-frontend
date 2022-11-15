@@ -9,9 +9,10 @@ import axios from "axios";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const url = process.env.REACT_APP_IMAGE_PATH + "loginBackroundImage2.jpg";
   const getToken = async (e) => {
     e.preventDefault();
     const response = await axios({
@@ -22,34 +23,37 @@ function Login() {
         password: password,
       },
     });
-    dispatch(storeUser(response.data));
-    navigate("/");
+    if (response.data.msg) {
+      return setMessage(response.data.msg);
+    } else {
+      dispatch(storeUser(response.data));
+      return navigate("/");
+    }
   };
 
   return (
-    <div className={`${styles.mainContainer} d-flex justify-content-center `}>
-      <div className={`${styles.formWrapper} p-3 `}>
-        <div>
-          <h2 className="text-center mb-5">Login</h2>{" "}
-          <form className="d-flex flex-column" onSubmit={getToken}>
-            <label htmlFor="eMail">Email</label>
+    <div className={`${styles.mainContainer}`} style={{ backgroundImage: `url(${url})` }}>
+      <div className={`${styles.formWrapper} `}>
+        <div className={styles.formContent}>
+          <h2 className="text-center mb-4">Login</h2>
+          <form onSubmit={getToken}>
             <input
               type="email"
               placeholder="Enter your email"
               name="eMail"
-              className={styles.formInput}
+              // className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setEmail(event.target.value)}
             />
-
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="Enter your password"
               name="password"
-              className={styles.formInput}
+              // className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setPassword(event.target.value)}
             />
-
+            <p className={styles.message}>{message}</p>
             <button type="submit" className={styles.submitBtn}>
               Submit
             </button>
