@@ -28,58 +28,42 @@ function Products() {
         <Navbar />
         <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
           <div className={styles.wrapper}>
-            <h1 className={styles.bigLetter}>Products</h1>
+            <h1 className={styles.bigLetter}>Our products</h1>
             <p>Design your home interior with your heart</p>
           </div>
         </div>
         <div className={`container-fluid px-5 mt-4`}>
           <div className={`row`}>
-            <div className={`${styles.leftColumn} col-4 `}>
+            <div className={`${styles.leftColumn} col-12 `}>
               <h3 className={styles.titleLeft}>Categories</h3>
               <ul className={styles.list}>
                 <li>
-                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                  <Link to="/store/tables" className={`${styles.customNavLink} nav-link`}>
                     Tables
                   </Link>
                 </li>
                 <li>
-                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                  <Link to="/store/chairs" className={`${styles.customNavLink} nav-link`}>
                     Chairs
                   </Link>
                 </li>
                 <li>
-                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                  <Link to="/store/beds" className={`${styles.customNavLink} nav-link`}>
                     Beds
                   </Link>
                 </li>
                 <li>
-                  <Link to="/store" className={`${styles.customNavLink} nav-link`}>
+                  <Link to="/store/sofas" className={`${styles.customNavLink} nav-link`}>
                     Sofas
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="col-8  ">
-              <div className="d-flex">
-                <h4 className={styles.titleRight}>Tables</h4>
-                <hr className={styles.line} />
-              </div>
-              <ProductsSection products={products} category="chair" />
-              <div className="d-flex">
-                <h4 className={styles.titleRight}>Chairs</h4>
-                <hr className={styles.line} />
-              </div>
-              <ProductsSection products={products} category="table" />
-              <div className="d-flex">
-                <h4 className={styles.titleRight}>Beds</h4>
-                <hr className={styles.line} />
-              </div>
-              <ProductsSection products={products} category="bed" />
-              <div className="d-flex">
-                <h4 className={styles.titleRight}>Sofas</h4>
-                <hr className={styles.line} />
-              </div>
-              <ProductsSection products={products} category="sofa" />
+            <div className="col-8  mx-auto">
+              <ProductsSection products={products} category="Chair" />
+              <ProductsSection products={products} category="Table" />
+              <ProductsSection products={products} category="Bed" />
+              <ProductsSection products={products} category="Sofa" />
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ function ItemDetail({ product, getProduct }) {
           <p className={styles.category}>{product.category.name}</p>
         </div>
         <p className={styles.description}>{product.description}</p>
-        <button className={styles.btn}>Add to cartar</button>
+        <button className={styles.btn}>Add to cart</button>
 
         <h3 className={styles.similarTitle}>You might also like</h3>
         <div className={styles.itemsContainer}>
