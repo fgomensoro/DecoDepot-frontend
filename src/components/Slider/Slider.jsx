@@ -5,7 +5,7 @@ import "swiper/css/autoplay";
 import "swiper/css/pagination";
 // import { Navigation, Pagination,  A11y } from 'swiper';
 import styles from "./Slider.module.css";
-import Item from "../Item/Item";
+import Item from "../item/Item";
 
 function Slider({ products, title }) {
   return (

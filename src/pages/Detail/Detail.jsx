@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import ItemDetail from "../../components/itemDetail/ItemDetail";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
