@@ -47,7 +47,7 @@ const cartSlice = createSlice({
       } else {
         isInCart.qty += action.payload.qty;
       }
-      state.items.forEach((item) => {
+      state.items.map((item) => {
         sum += item.price * item.qty;
       });
       state.total = sum;
@@ -67,7 +67,7 @@ const cartSlice = createSlice({
         state.items = newCart;
       }
 
-      state.items.forEach((item) => {
+      state.items.map((item) => {
         sum += item.price * item.qty;
       });
       state.total = sum;
