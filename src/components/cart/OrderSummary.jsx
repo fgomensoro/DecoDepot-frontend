@@ -2,11 +2,10 @@ import styles from "./OrderSummary.module.css";
 import Products from "./Products";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { FaLock } from "react-icons/fa";
 
 function OrderSummary() {
-  const cartStore = useSelector((state) => state.cart);
-  // console.log(cart);
-  const [cart, setCart] = useState(cartStore);
+  const cart = useSelector((state) => state.cart);
 
   let dollarUSLocale = Intl.NumberFormat("en-US");
 
@@ -24,7 +23,7 @@ function OrderSummary() {
       </div>
       <div className={styles.checkoutContainer}>
         <button type="button" className={`${styles.continueBtn} btn btn-dark btn-lg`}>
-          Continue to Checkout
+          <FaLock /> Continue to Checkout
         </button>
       </div>
     </div>
