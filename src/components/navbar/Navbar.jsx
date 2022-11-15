@@ -8,6 +8,8 @@ import { useState } from "react";
 
 import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
+import Cart from "../cart/Cart";
+import SuggestionItem from "../cart/SuggestionItem";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";

@@ -28,15 +28,12 @@ function RightNavbar({ showCart, handleCloseCart, cart }) {
       <Offcanvas.Body className={`${cart.items.length !== 0 ? styles.cartBody1 : styles.cartBody}`}>
         <div className={styles.rssBlock}>
           <span className={styles.marqueeStyle}>&nbsp;FREE SHIPPING ON ORDERS OVER $32</span>
-          {/* <span className={styles.marqueeStyle2}>
-          &nbsp; Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        </span> */}
         </div>
         <Cart />
       </Offcanvas.Body>
       {cart.items.length !== 0 && (
         <div
-          className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
+          className={`${styles.cartFooter} d-flex  align-items-center justify-content-center order-2 w-100`}
         >
           <div className="d-flex flex-column align-items-center">
             <span>SUBTOTAL</span>
