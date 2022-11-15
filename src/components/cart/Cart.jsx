@@ -6,7 +6,7 @@ import axios from "axios";
 import SuggestionItem from "./SuggestionItem";
 
 function Cart() {
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart.items);
 
   const [products, setProducts] = useState(null);
 

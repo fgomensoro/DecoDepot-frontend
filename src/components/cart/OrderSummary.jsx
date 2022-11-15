@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 
 function OrderSummary() {
-  const cartStore = useSelector((state) => state.cart.items);
-  // console.log(cart);
+  const cartStore = useSelector((state) => state.cart);
+
   const [cart, setCart] = useState(cartStore);
 
   let dollarUSLocale = Intl.NumberFormat("en-US");

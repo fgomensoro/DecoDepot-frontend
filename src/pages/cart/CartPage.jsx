@@ -6,7 +6,7 @@ import OrderSummary from "../../components/cart/OrderSummary";
 function CartPage() {
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={styles.background}>
         <div className="row">
           <div className="col-4"></div>
