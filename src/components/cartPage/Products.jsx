@@ -7,8 +7,6 @@ function Products({ cart }) {
     </div>
   ));
 
- 
-
   return <div>{items}</div>;
 }
 
