@@ -22,6 +22,11 @@ function OrderSummary() {
           </div>
         </div>
       </div>
+      <div className={styles.checkoutContainer}>
+        <button type="button" class={`${styles.continueBtn} btn btn-dark btn-lg`}>
+          Continue to Checkout
+        </button>
+      </div>
     </div>
   );
 }
