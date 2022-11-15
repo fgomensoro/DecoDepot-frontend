@@ -2,7 +2,6 @@ import styles from "./ProductsSection.module.css";
 import GenericItem from "../genericItem/GenericItem";
 
 function ProductsSection({ products, category }) {
-  const cat = category.toLowerCase();
   return (
     <div>
       <div className="d-flex">
@@ -11,7 +10,7 @@ function ProductsSection({ products, category }) {
       </div>
       <div className="d-flex flex-wrap justify-content-center ">
         {products
-          .filter((product) => product.category.name === cat)
+          .filter((product) => product.category.name === category)
           .map((product, index) => {
             return (
               <div key={index} className="mx-4">
