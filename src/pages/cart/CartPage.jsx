@@ -1,13 +1,12 @@
 import styles from "./Cart.module.css";
 import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
+
 import OrderSummary from "../../components/cartPage/OrderSummary";
 import ContinueToCheckout from "../../components/cartPage/ContinueToCheckout";
 
 function CartPage() {
   return (
     <div>
-      <Navbar />
       <div className={styles.background}>
         <div className="row">
           <div className="col-4"></div>
@@ -25,7 +24,7 @@ function CartPage() {
         </div>
       </div>
       <div className={styles.divider}>
-      <Footer  />
+        <Footer />
       </div>
     </div>
   );

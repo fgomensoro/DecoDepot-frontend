@@ -3,7 +3,6 @@ import ItemDetail from "../../components/itemDetail/ItemDetail";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
 
 function ItemDetailContainer() {
   const { id } = useParams();
@@ -30,7 +29,6 @@ function ItemDetailContainer() {
   }
   return (
     <div>
-      <Navbar />
       {product && <ItemDetail product={product} getProduct={getProduct} />}
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Footer from "../../footer/Footer";
-import Navbar from "../../navbar/Navbar";
+
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
@@ -77,7 +77,6 @@ function EditProduct() {
   };
   return (
     <div>
-      <Navbar />
       <div className={styles.body + " container"}>
         <form className="mt-5" encType="multipart/form-data" action="" onSubmit={handleSubmit}>
           <div className="mb-3">

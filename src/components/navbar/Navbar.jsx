@@ -5,7 +5,11 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+
+import LeftNavbar from "./LeftNavbar";
+import RightNavbar from "./RightNavbar";
 import Cart from "../cart/Cart";
+import SuggestionItem from "../cart/SuggestionItem";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
@@ -56,95 +60,13 @@ function Navbar() {
         colorChange ? styles.backBlue : styles.backGrey
       } navbar navbar-expand-lg fixed-top`}
     >
-      <Offcanvas show={showAbout} onHide={handleCloseAbout}>
-        <Offcanvas.Header>
-          <h2 className={styles.sideBarTitle}>Deco Depot</h2>
-          <button onClick={handleCloseAbout} className={styles.btnClose}>
-            <i className="bi bi-x"></i>
-          </button>
-        </Offcanvas.Header>
-
-        <Offcanvas.Body>
-          <ul className={styles.aboutUsList + " " + "d-flex flex-column align-items-start pe-3 "}>
-            <li>
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>
-            </li>
-            <li>
-              <Link to="/store" className={`${styles.sideLink} side-link`}>
-                Shop
-              </Link>
-            </li>
-            <li>
-              <button onClick={() => handleLogout()} className={styles.loguot}>
-                Logout
-              </button>
-            </li>
-          </ul>
-        </Offcanvas.Body>
-      </Offcanvas>
-
-      <Offcanvas
-        show={showCart}
-        onHide={handleCloseCart}
-        placement={"end"}
-        className={styles.cartSideBar}
-      >
-        <Offcanvas.Header className={`${styles.cartHeader} `}>
-          <button onClick={handleCloseCart} className={styles.btnClose}>
-            <i className="bi bi-chevron-left"></i>
-          </button>
-          <h5
-            className={`${
-              cart.items.length !== 0 ? styles.cartTitle : styles.cartTitle2
-            } text-center`}
-          >
-            My cart
-          </h5>
-        </Offcanvas.Header>
-
-        <Offcanvas.Body
-          className={`${cart.items.length !== 0 ? styles.cartBody1 : styles.cartBody}`}
-        >
-          <div className={styles.rssBlock}>
-            <span className={styles.marqueeStyle}>&nbsp;FREE SHIPPING ON ORDERS OVER $32</span>
-            {/* <span className={styles.marqueeStyle2}>
-              &nbsp; Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            </span> */}
-          </div>
-          <Cart />
-        </Offcanvas.Body>
-        {cart.items.length !== 0 && (
-          <div
-            className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
-          >
-            <div className="d-flex flex-column align-items-center">
-              <span>SUBTOTAL</span>
-              <h3>{cart.total}$</h3>
-            </div>
-
-            <Link to="/checkout" className={styles.linkContinue}>
-              <button className={styles.btnContinue}> Continue to checkout</button>
-            </Link>
-          </div>
-        )}
-      </Offcanvas>
+      <LeftNavbar
+        showAbout={showAbout}
+        handleCloseAbout={handleCloseAbout}
+        handleLogout={handleLogout}
+        user={user}
+      />
+      <RightNavbar showCart={showCart} handleCloseCart={handleCloseCart} cart={cart} />
 
       <div className="container d-flex  justify-content-between">
         <ul className="navbar-nav  mb-2 mb-lg-0">
