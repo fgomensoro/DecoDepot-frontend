@@ -53,8 +53,11 @@
   color: rgb(53, 50, 50);
 }
 
-.inline {
+.input {
+  width: fit-content;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   margin-top: 0.6rem;
   background-color: #eaeaea;
   border-radius: 10px;
