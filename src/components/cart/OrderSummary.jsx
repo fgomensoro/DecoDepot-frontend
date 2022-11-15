@@ -5,7 +5,9 @@ import { useState } from "react";
 import { FaLock } from "react-icons/fa";
 
 function OrderSummary() {
-  const cart = useSelector((state) => state.cart);
+  const cartStore = useSelector((state) => state.cart);
+
+  const [cart, setCart] = useState(cartStore);
 
   let dollarUSLocale = Intl.NumberFormat("en-US");
 

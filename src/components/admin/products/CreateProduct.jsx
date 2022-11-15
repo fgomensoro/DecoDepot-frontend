@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Footer from "../../footer/Footer";
 import Navbar from "../../navbar/Navbar";
 import { useNavigate, Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 
 function CreateProduct() {
+  const user = useSelector((state) => state.user);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -21,11 +23,11 @@ function CreateProduct() {
   useEffect(() => {
     const getCategories = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}categories`,
+        url: `${process.env.REACT_APP_API_URL}/categories`,
         method: "GET",
-        // headers: {
-        //   Authorization: "Bearer " + token,
-        // },
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
       });
       setCategories(response.data.categories);
     };
@@ -37,10 +39,11 @@ function CreateProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/products`,
+      url: `${process.env.REACT_APP_API_URL}/admin/products`,
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",
+        Authorization: "Bearer " + user.token,
       },
       data: formData,
     });

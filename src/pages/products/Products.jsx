@@ -1,6 +1,7 @@
 import styles from "./Products.module.css";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
+import { Link } from "react-router-dom";
 import ProductsSection from "../../components/product/ProductsSection";
 import { useEffect, useState } from "react";
 import axios from "axios";
