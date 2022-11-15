@@ -61,7 +61,7 @@ function EditProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/admin/products/${params.id}`,
+      url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
       method: "PATCH",
       headers: {
         "Content-Type": "multipart/form-data",

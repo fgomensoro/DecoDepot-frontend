@@ -1,0 +1,66 @@
+.itemImgContainer {
+  height: 230px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.itemImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.price {
+  color: #131313;
+  font-weight: 400;
+  font-family: "Calibre", sans-serif;
+  font-size: 18px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 8px 0 8px;
+  margin-bottom: 1.5rem;
+}
+
+.shopBtn {
+  font-family: "Calibre", sans-serif;
+  margin-bottom: 1.8rem;
+  background-color: black;
+  border-radius: 50px;
+  height: fit-content;
+  padding: 8px 5px 3px 5px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: white;
+  border: black solid 1px;
+}
+
+.name {
+  color: #131313;
+  font-weight: 500;
+  font-family: "Calibre", sans-serif;
+  font-size: 20px;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 1198px) {
+  .name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .itemImgContainer {
+    height: 130px;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+}

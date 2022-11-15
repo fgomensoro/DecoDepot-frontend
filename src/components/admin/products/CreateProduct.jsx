@@ -39,7 +39,7 @@ function CreateProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/admin/products`,
+      url: `${process.env.REACT_APP_API_URL}/products`,
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",

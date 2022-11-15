@@ -1,8 +1,9 @@
+import styles from "./OrderSummary.module.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Slider from "../slider/Slider";
+import Slider from "./cartPageSlider/Slider";
 
-function Featured() {
+function ContinueToCheckout() {
   const [featured, setFeatured] = useState([]);
 
   const axiosConfig = {
@@ -19,7 +20,13 @@ function Featured() {
     getFeatured();
   }, []);
 
-  return <Slider products={featured} title={"Featured"} />;
+  return (
+    <div>
+      <div className={styles.otherProdContainer}>
+        <Slider products={featured} title={"Featured"} />
+      </div>
+    </div>
+  );
 }
 
-export default Featured;
+export default ContinueToCheckout;

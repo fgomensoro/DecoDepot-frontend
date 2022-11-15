@@ -3,11 +3,11 @@ import styles from "./ItemDetail.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function ItemDetail({ product }) {
+function ItemDetail({ product, getProduct }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}`,
+    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}&limit=3`,
     method: "GET",
   };
 
@@ -20,6 +20,7 @@ function ItemDetail({ product }) {
   }, [product]);
 
   const handleClick = async (id) => {
+    getProduct();
     navigate(`/products/${id}`);
   };
 
