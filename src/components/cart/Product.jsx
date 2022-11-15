@@ -13,9 +13,9 @@ function Product({ item }) {
       <div className={styles.centerCol}>
         <h4 className={styles.titleH4}>{item.name}</h4>
         <div className={styles.inline}>
-          <button className={`${styles.plus} btn`}>+</button>
+          <button className={`${styles.plus} btn`}>-</button>
           <input type="text" className={styles.quantity} value={item.qty} />
-          <button className={`${styles.minus} btn`}>-</button>
+          <button className={`${styles.minus} btn`}>+</button>
         </div>
       </div>
       <div className={styles.block}>
