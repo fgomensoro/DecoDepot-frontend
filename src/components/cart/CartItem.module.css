@@ -30,8 +30,16 @@
   font-weight: 500;
   transition: all 0.3s;
   text-decoration: none;
+  margin: 2px;
 }
 
+.shopBtn:hover {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+}
+.trash {
+  height: ;
+}
 .quantity {
   width: 2rem;
   border: solid #eaeaea 1px;
@@ -46,6 +54,8 @@
   margin-top: 0.6rem;
   background-color: #eaeaea;
   border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .plus {

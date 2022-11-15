@@ -83,7 +83,7 @@
 
 .btnClose {
   border: none;
-  background-color: white;
+  background-color: var(--colorSoftDeco);
   font-size: 2.2rem;
 }
 .btnContinue {
@@ -98,22 +98,41 @@
   margin-bottom: 12px;
   margin-left: 30px;
 }
+.btnContinue:hover {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+}
+
 .linkContinue {
   text-decoration: none;
   color: black;
+  transition: all 0.3s;
+  height: 40px;
+  margin-bottom: 20px;
+}
+.linkContinue:hover {
+  text-decoration: none;
+  color: aliceblue;
 }
 .cartBody {
   background-color: var(--colorSoftDeco);
 }
 
 .cartHeader {
+  background-color: var(--colorSoftDeco);
+  border-bottom: solid 1px #828d94;
 }
 .cartTitle {
   margin-right: 140px;
 }
+.cartTitle2 {
+  margin-right: 160px;
+}
 .cartFooter {
   max-height: 120px;
   min-height: 120px;
+  background-color: var(--colorSoftDeco);
+  border-top: solid 1px #828d94;
 }
 /* .cartSideBar {
   background-color: red;
