@@ -21,7 +21,7 @@ function SignUp() {
     e.preventDefault();
     const response = await axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API_PORT}users/signup`,
+      url: `${process.env.REACT_APP_API_URL}/users/signup`,
       data: {
         firstname: firstName,
         lastname: lastName,
@@ -35,7 +35,7 @@ function SignUp() {
     if (response.data.msg) {
       setMessage(response.data.msg);
     } else {
-      dispatch(storeUser(response.data.user));
+      dispatch(storeUser(response.data));
       navigate("/");
     }
   };
