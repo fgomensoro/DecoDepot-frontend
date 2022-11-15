@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductsHero from "../../components/product/ProductsHero";
 import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
+
 import axios from "axios";
 import ProductsSection from "../../components/product/ProductsSection";
 
@@ -28,7 +28,6 @@ function ProductsCategory() {
   return (
     products && (
       <div>
-        <Navbar />
         <ProductsHero getProducts={getProducts} />
         <div className={`container-fluid px-5 mt-4`}>
           <div className={`row`}>
