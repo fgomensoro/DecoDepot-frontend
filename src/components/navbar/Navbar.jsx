@@ -92,28 +92,34 @@ function Navbar() {
         placement={"end"}
         className={styles.cartSideBar}
       >
-        <Offcanvas.Header className={`${styles.cartHeader} d`}>
+        <Offcanvas.Header className={`${styles.cartHeader} `}>
           <button onClick={handleCloseCart} className={styles.btnClose}>
             <i className="bi bi-chevron-left"></i>
           </button>
-          <h5 className={styles.cartTitle}>My cart</h5>
+          <h5
+            className={`${
+              cart.items.length !== 0 ? styles.cartTitle : styles.cartTitle2
+            } text-center`}
+          >
+            My cart
+          </h5>
         </Offcanvas.Header>
+
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
         </Offcanvas.Body>
         {cart.items.length !== 0 && (
           <div
-            className={`${styles.cartFooter} d-flex p-3 align-items-center bg-success order-2 w-100`}
+            className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
           >
             <div className="d-flex flex-column align-items-center">
               <span>SUBTOTAL</span>
               <h3>{cart.total}$</h3>
             </div>
-            <button className={styles.btnContinue}>
-              <Link to="/checkout" className={styles.linkContinue}>
-                Continue to checkout
-              </Link>
-            </button>
+
+            <Link to="/checkout" className={styles.linkContinue}>
+              <button className={styles.btnContinue}> Continue to checkout</button>
+            </Link>
           </div>
         )}
       </Offcanvas>
