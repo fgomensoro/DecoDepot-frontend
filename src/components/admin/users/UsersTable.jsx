@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "../tablesCSS/AdminTables.module.css";
+import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
@@ -11,13 +11,13 @@ function UsersTable() {
   useEffect(() => {
     const getUsers = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_PORT}users`,
+        url: `${process.env.REACT_APP_API_URL}/users`,
         method: "GET",
         // headers: {
         //   Authorization: "Bearer " + token,
         // },
       });
-      setUsers(response.data.users);
+      setUsers(response.data);
     };
     getUsers();
   }, []); // eslint-disable-line

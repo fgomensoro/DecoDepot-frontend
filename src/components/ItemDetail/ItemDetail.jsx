@@ -3,27 +3,24 @@ import styles from "./ItemDetail.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function ItemDetail({ product, getProduct }) {
-  console.log(product);
+function ItemDetail({ product }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
-
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_PORT}products/similar/${product.category._id}`,
+    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}`,
     method: "GET",
   };
 
-  const getSimilar = async () => {
-    const response = await axios(axiosConfig);
-    setSimilar(response.data.products);
-  };
   useEffect(() => {
+    const getSimilar = async () => {
+      const response = await axios(axiosConfig);
+      setSimilar(response.data);
+    };
     getSimilar();
   }, [product]);
 
   const handleClick = async (id) => {
-    navigate(`/detail/${id}`);
-    getProduct();
+    navigate(`/products/${id}`);
   };
 
   return (
@@ -47,9 +44,8 @@ function ItemDetail({ product, getProduct }) {
         <div className={styles.itemsContainer}>
           {similar &&
             similar.map((prod) => {
-              console.log(prod._id);
               return (
-                <div className={styles.similar}>
+                <div key={prod._id} className={styles.similar}>
                   <div className={styles.similarImgContainer}>
                     <img
                       className={styles.similarImg}

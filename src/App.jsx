@@ -15,6 +15,8 @@ import PacksTable from "./components/admin/packs/PacksTable";
 import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
+import EditProduct from "./components/admin/products/EditProduct";
+import Cart from "./pages/cart/CartPage";
 
 function App() {
   return (
@@ -23,13 +25,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+<<<<<<< HEAD
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/store/:categoty" element={<Products />} />
+=======
+        <Route path="/products/:id" element={<Detail />} />
+        <Route path="/store" element={<Products />} />
+>>>>>>> 69520539b768b714fd7063c179180ffeeae47e3d
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/products" element={<ProductsTable />} />
         <Route path="/admin/products/create" element={<CreateProduct />} />
+        <Route path="/admin/products/:id/edit" element={<EditProduct />} />
         <Route path="/admin/orders" element={<OrdersTable />} />
         <Route path="/admin/packs" element={<PacksTable />} />
         <Route path="/admin/reviews" element={<ReviewsTable />} />

@@ -35,13 +35,13 @@ const cartSlice = createSlice({
     addItem(state, action) {
       let sum = 0;
       const isInCart = state.items.find((product) => product.name === action.payload.name);
-      console.log(isInCart);
+
       if (!isInCart) {
         state.items.push({
           id: action.payload.id,
           name: action.payload.name,
           image: action.payload.image,
-          price: 700,
+          price: action.payload.price,
           qty: action.payload.qty,
         });
       } else {
@@ -54,19 +54,28 @@ const cartSlice = createSlice({
       console.log(action.payload.name);
     },
 
-    /*    calculateTotal(state, action) {
-      state.items.forEach((item) => {
-        state.total += item.price;
-      });
-    }, */
-
     removeItem(state, action) {
-      cart.cartItems = cart.cartItems.filter((product) => product.id !== action.payload.productId);
+      let sum = 0;
+      const isInCart = state.items.find((product) => product.name === action.payload.name);
+
+      if (isInCart.qty - action.payload.qty > 0) {
+        isInCart.qty -= action.payload.qty;
+      } else {
+        let newCart = state.items.filter((item) => {
+          return item.name !== action.payload.name;
+        });
+        state.items = newCart;
+      }
+
+      state.items.forEach((item) => {
+        sum += item.price * item.qty;
+      });
+      state.total = sum;
     },
   },
 });
 
 const { actions, reducer } = cartSlice;
-export const { addItem, calculateTotal } = actions;
+export const { addItem, calculateTotal, removeItem } = actions;
 
 export default reducer;
