@@ -5,14 +5,14 @@ const url = "imgPrueba3.jpg";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    total: 1500,
+    total: 3500,
     items: [
       {
         id: 1,
         name: "Wooden Table",
         image: url,
         price: 2000,
-        qty: 0,
+        qty: 1,
       },
       {
         id: 2,
@@ -57,23 +57,16 @@ const cartSlice = createSlice({
     removeItem(state, action) {
       let sum = 0;
       const isInCart = state.items.find((product) => product.name === action.payload.name);
-      if (!isInCart) {
-        console.log("no esta");
-      } else if (isInCart.qty === 0) {
+
+      if (isInCart.qty - action.payload.qty > 0) {
+        isInCart.qty -= action.payload.qty;
+      } else {
         let newCart = state.items.filter((item) => {
-          item.name === isInCart.name;
+          return item.name !== action.payload.name;
         });
         state.items = newCart;
-      } else {
-        if (isInCart.qty - action.payload.qty > 0) {
-          isInCart.qty -= action.payload.qty;
-        } else {
-          let newCart = state.items.filter((item) => {
-            item.name === isInCart.name;
-          });
-          state.items = newCart;
-        }
       }
+
       state.items.forEach((item) => {
         sum += item.price * item.qty;
       });
