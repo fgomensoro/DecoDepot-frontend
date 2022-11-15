@@ -14,11 +14,12 @@ function ItemDetailContainer() {
     method: "GET",
   };
 
+  const getProduct = async () => {
+    const response = await axios(axiosConfig);
+    setProduct(response.data);
+  };
+
   useEffect(() => {
-    const getProduct = async () => {
-      const response = await axios(axiosConfig);
-      setProduct(response.data.product);
-    };
     getProduct();
   }, []);
 
@@ -30,7 +31,7 @@ function ItemDetailContainer() {
   return (
     <div>
       <Navbar />
-      {product && <ItemDetail product={product} />}
+      {product && <ItemDetail product={product} getProduct={getProduct} />}
       <Footer />
     </div>
   );
