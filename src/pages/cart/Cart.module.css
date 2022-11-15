@@ -11,6 +11,10 @@
   background-color: transparent;
 }
 
+.divider {
+ margin-top: 33rem;
+}
+
 @media (max-width: 1070px) {
   .cart {
     display: flex;

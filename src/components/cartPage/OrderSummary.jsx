@@ -3,6 +3,7 @@ import Products from "./Products";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { FaLock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function OrderSummary() {
   const cartStore = useSelector((state) => state.cart);
@@ -23,10 +24,10 @@ function OrderSummary() {
           </div>
         </div>
       </div>
-      <div className={styles.checkoutContainer}>
-        <button type="button" className={`${styles.continueBtn} btn btn-dark btn-lg`}>
-          <FaLock /> Continue to Checkout
-        </button>
+      <div className={styles.checkout}>
+        <Link to="/checkout" type="button" className={`${styles.continueBtn} btn btn-dark btn-lg`}>
+          <FaLock className={styles.lock} /> Continue to Checkout
+        </Link>
       </div>
     </div>
   );
