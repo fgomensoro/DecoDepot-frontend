@@ -65,7 +65,7 @@ const cartSlice = createSlice({
         });
         state.items = newCart;
       } else {
-        if (isInCart.qty - action.payload.qty >= 0) {
+        if (isInCart.qty - action.payload.qty > 0) {
           isInCart.qty -= action.payload.qty;
         } else {
           let newCart = state.items.filter((item) => {

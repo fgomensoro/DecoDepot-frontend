@@ -8,7 +8,7 @@ function Pack() {
 
   const axiosConfig = {
     method: "GET",
-    url: `${process.env.REACT_APP_API_PORT}packs`,
+    url: `${process.env.REACT_APP_API_URL}/packs`,
   };
 
   useEffect(() => {

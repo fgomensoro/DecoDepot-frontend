@@ -82,7 +82,6 @@ function Navbar() {
             <i className="bi bi-chevron-left"></i>
           </button>
           <h5 className={styles.cartTitle}>My cart</h5>
-          {/* <Offcanvas.Title className="d-flex justify-content-center">My cart</Offcanvas.Title> */}
         </Offcanvas.Header>
         <Offcanvas.Body className={styles.cartBody}>
           <Cart />
@@ -148,16 +147,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-/* 
-<ul className="navbar-nav  mb-2 mb-lg-0">
-<li className="nav-item">
-  <Link to="/" className={`${styles.customNavLink}  nav-link`}>
-    <img
-      className={styles.logoImg}
-      src={process.env.REACT_APP_IMAGE_PATH + logoUrl}
-      alt="Logo"
-    />
-  </Link>
-</li>
-</ul> */
