@@ -100,7 +100,7 @@ function CartItem({ product }) {
               </form>{" "}
             </div>{" "}
             <div className="d-flex justify-content-between mt-4">
-              <p>You have {product.qty} of this in your cart</p>
+              <p className={styles.amount}>You have {product.qty} of this in your cart</p>
               <form onSubmit={handleSubmitClear}>
                 <button type="submit" className={styles.delete}>
                   <i className={`${styles.trash} bi bi-trash`}></i>{" "}

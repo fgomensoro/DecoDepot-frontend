@@ -45,8 +45,12 @@
   border: solid #eaeaea 1px;
   background-color: #f6f6f6;
   font-size: 0.9rem;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
+}
+.amount {
+  font-weight: 550;
+  color: rgb(53, 50, 50);
 }
 
 .inline {
@@ -76,6 +80,7 @@
 
 .productContainer {
   margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .delete {

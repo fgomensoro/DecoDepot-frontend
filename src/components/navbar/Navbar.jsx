@@ -106,6 +106,9 @@ function Navbar() {
         </Offcanvas.Header>
 
         <Offcanvas.Body className={styles.cartBody}>
+          <div className={styles.rssBlock}>
+            <span className={styles.marqueeStyle}>FREE SHIPPING ON ORDERS OVER $32</span>
+          </div>
           <Cart />
         </Offcanvas.Body>
         {cart.items.length !== 0 && (
