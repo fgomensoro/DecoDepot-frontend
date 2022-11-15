@@ -13,13 +13,13 @@ function OrdersTable() {
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/admin/orders`,
+        url: `${process.env.REACT_APP_API_URL}/orders`,
         method: "GET",
         headers: {
           Authorization: "Bearer " + user.token,
         },
       });
-      setOrders(response.data.orders);
+      setOrders(response.data);
     };
     getOrders();
   }, []); // eslint-disable-line
