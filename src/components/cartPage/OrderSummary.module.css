@@ -218,3 +218,25 @@
 .form {
   display: inline-flex;
 }
+
+.emptyCartContainer {
+  text-align: center;
+  font-family: "Calibre", sans-serif;
+}
+
+.emptyCartTitle {
+  font-size: 30px;
+  margin-top: 2rem;
+}
+
+.emptyCart {
+  width: 12em;
+  opacity: 75%;
+  margin-top: 1rem;
+}
+
+.emptyCartParagraph {
+  font-size: 20px;
+  margin-top: 2rem;
+  color: #444444;
+}
