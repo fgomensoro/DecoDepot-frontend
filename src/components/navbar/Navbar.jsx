@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../cart/Cart";
 import { useSelector } from "react-redux";
+import SuggestionItem from "../cart/SuggestionItem";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
@@ -110,15 +111,12 @@ function Navbar() {
         >
           <div className={styles.rssBlock}>
             <span className={styles.marqueeStyle}>&nbsp;FREE SHIPPING ON ORDERS OVER $32</span>
-            {/* <span className={styles.marqueeStyle2}>
-              &nbsp; Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            </span> */}
           </div>
           <Cart />
         </Offcanvas.Body>
         {cart.items.length !== 0 && (
           <div
-            className={`${styles.cartFooter} d-flex p-3 align-items-center justify-content-center order-2 w-100`}
+            className={`${styles.cartFooter} d-flex  align-items-center justify-content-center order-2 w-100`}
           >
             <div className="d-flex flex-column align-items-center">
               <span>SUBTOTAL</span>
