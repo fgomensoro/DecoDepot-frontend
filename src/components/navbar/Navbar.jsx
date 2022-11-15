@@ -1,20 +1,34 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Cart from "../cart/Cart";
-import { useSelector } from "react-redux";
 import SuggestionItem from "../cart/SuggestionItem";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
+  const [user, setUser] = useState(false);
   const [colorChange, setColorchange] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
+  const loggedUser = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    const getLoggedUser = () => {
+      if (!loggedUser.firstname) {
+        setUser(false);
+      }
+      if (loggedUser.firstname) {
+        setUser(true);
+      }
+    };
+    getLoggedUser();
+  }, []);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -167,6 +181,23 @@ function Navbar() {
               My accout
             </Link>
           </li>
+          {user ? (
+            <li className="nav-item">
+              <Link
+                to="/login"
+                onClick={() => handleLogout()}
+                className={`${styles.customNavLink} nav-link`}
+              >
+                Logout
+              </Link>
+            </li>
+          ) : (
+            <li className="nav-item">
+              <Link to="/login" className={`${styles.customNavLink} nav-link`}>
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
