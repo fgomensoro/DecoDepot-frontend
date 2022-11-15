@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Slider from "../Slider/Slider";
+import Slider from "../slider/Slider";
 
 function Featured() {
   const [featured, setFeatured] = useState([]);
