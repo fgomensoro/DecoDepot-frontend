@@ -5,14 +5,14 @@ const url = "imgPrueba3.jpg";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    total: 3500,
+    total: 1500,
     items: [
-      /*   {
+      {
         id: 1,
         name: "Wooden Table",
         image: url,
         price: 2000,
-        qty: 1,
+        qty: 0,
       },
       {
         id: 2,
@@ -28,13 +28,6 @@ const cartSlice = createSlice({
         price: 500,
         qty: 1,
       },
-      {
-        id: 3,
-        name: "Wooden Chair",
-        image: url,
-        price: 500,
-        qty: 1,
-      }, */
     ],
   },
 
@@ -48,7 +41,7 @@ const cartSlice = createSlice({
           id: action.payload.id,
           name: action.payload.name,
           image: action.payload.image,
-          price: 700,
+          price: action.payload.price,
           qty: action.payload.qty,
         });
       } else {
@@ -62,8 +55,29 @@ const cartSlice = createSlice({
     },
 
     removeItem(state, action) {
-      console.log("hola");
-      /*   cart.cartItems = cart.cartItems.filter((product) => product.id !== action.payload.productId); */
+      let sum = 0;
+      const isInCart = state.items.find((product) => product.name === action.payload.name);
+      if (!isInCart) {
+        console.log("no esta");
+      } else if (isInCart.qty === 0) {
+        let newCart = state.items.filter((item) => {
+          item.name === isInCart.name;
+        });
+        state.items = newCart;
+      } else {
+        if (isInCart.qty - action.payload.qty >= 0) {
+          isInCart.qty -= action.payload.qty;
+        } else {
+          let newCart = state.items.filter((item) => {
+            item.name === isInCart.name;
+          });
+          state.items = newCart;
+        }
+      }
+      state.items.forEach((item) => {
+        sum += item.price * item.qty;
+      });
+      state.total = sum;
     },
   },
 });

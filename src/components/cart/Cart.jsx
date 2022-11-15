@@ -23,7 +23,7 @@ function Cart() {
     getProducts();
   }, []);
 
-  if (cart.length === 0) {
+  if (cart && cart.length === 0) {
     return (
       <div>
         <h1>Your cart</h1>

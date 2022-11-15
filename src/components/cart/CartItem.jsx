@@ -38,7 +38,7 @@ function CartItem({ product }) {
 
   function handleSubmitRemove(event) {
     event.preventDefault();
-    dispatch(removeItem()), setQuantity(0);
+    dispatch(removeItem({ name: product.name, qty: quantity })), setQuantity(0);
   }
 
   return (
