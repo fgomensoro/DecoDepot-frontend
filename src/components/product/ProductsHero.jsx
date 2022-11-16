@@ -2,12 +2,15 @@ import React from "react";
 import styles from "./ProductsHero.module.css";
 import { Link } from "react-router-dom";
 
-function ProductsHero() {
+function ProductsHero({ category }) {
   return (
     <div>
       <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
         <div className={styles.wrapper}>
-          <h1 className={styles.bigLetter}>Our products</h1>
+          <h1 className={styles.bigLetter}>
+            {category ? "Our" + " " + category + "s" : "Our Products"}
+          </h1>{" "}
+          {/*   {`${category}s`} */}
           <p>Design your home interior with your heart</p>
         </div>
       </div>
