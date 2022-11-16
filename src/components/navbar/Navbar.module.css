@@ -48,7 +48,7 @@
 }
 
 @media (min-width: 764px) {
-  .logo {
+  .logoContainer {
     position: absolute;
     left: 50%;
     top: 48%;
@@ -60,7 +60,7 @@
 }
 
 @media (max-width: 763px) {
-  .logo {
+  .logoContainer {
     position: absolute;
     left: 10%;
     top: 48%;
@@ -70,8 +70,12 @@
     background-size: cover;
   }
   .exploreBtn {
-    padding-left: 3rem;
+    padding-left: 4.8rem;
   }
+}
+
+.logo {
+  margin-top: 10px;
 }
 
 .leftNavBody {
