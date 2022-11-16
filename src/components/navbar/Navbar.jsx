@@ -105,7 +105,7 @@ function Navbar() {
 
           <li className="nav-item">
             <Link to="/" className={`${styles.customNavLink} nav-link`}>
-              My accout
+              My account
             </Link>
           </li>
           {user ? (
