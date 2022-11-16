@@ -4,22 +4,18 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCart } from "../../redux/offCanvasSlice";
 
-function RightNavbar({ showCart, handleCloseCart, cart }) {
+function RightNavbar({ showCart, handleCloseCart, cart, toggle, toggleCart }) {
   const cartIsOpened = useSelector((state) => state.offCanvas);
   const dispatch = useDispatch();
-
+  const handleToggle = () => {
+    dispatch(toggleCart());
+  };
   console.log("hola");
   return (
-    <Offcanvas
-      show={showCart}
-      onHide={handleCloseCart}
-      placement={"end"}
-      className={styles.cartSideBar}
-    >
+    <Offcanvas show={toggle} placement={"end"} className={styles.cartSideBar}>
       <Offcanvas.Header className={`${styles.cartHeader} `}>
-        <button onClick={handleCloseCart} className={styles.btnClose}>
+        <button onClick={handleToggle} className={styles.btnClose}>
           <i className="bi bi-chevron-left"></i>
         </button>
         <h5
@@ -48,7 +44,6 @@ function RightNavbar({ showCart, handleCloseCart, cart }) {
           <Link to="/checkout" className={styles.linkContinue}>
             <button className={styles.btnContinue}> Continue to checkout</button>
           </Link>{" "}
-          <button /* onClick={handleProbando} */>probando</button>
         </div>
       )}
     </Offcanvas>

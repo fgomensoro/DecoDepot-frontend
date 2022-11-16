@@ -4,6 +4,7 @@ import { logout } from "../../redux/userSlice";
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { toggleCart } from "../../redux/offCanvasSlice";
 
 import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
@@ -17,6 +18,10 @@ function Navbar() {
 
   const loggedUser = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
+  const toggle = useSelector((state) => state.offCanvas);
+  const handleToggle = () => {
+    dispatch(toggleCart());
+  };
 
   useEffect(() => {
     const getLoggedUser = () => {
@@ -63,7 +68,13 @@ function Navbar() {
         handleLogout={handleLogout}
         user={user}
       />
-      <RightNavbar showCart={showCart} handleCloseCart={handleCloseCart} cart={cart} />
+      <RightNavbar
+        showCart={showCart}
+        handleCloseCart={handleCloseCart}
+        cart={cart}
+        toggle={toggle}
+        toggleCart={toggleCart}
+      />
 
       <div className="container d-flex  justify-content-between">
         <ul className="navbar-nav  mb-2 mb-lg-0">
@@ -91,7 +102,7 @@ function Navbar() {
         </ul>
         <ul className="navbar-nav mb-2 mb-lg-0">
           <li className="nav-item">
-            <button className={`${styles.customNavLinkButton} nav-link`} onClick={handleShowCart}>
+            <button className={`${styles.customNavLinkButton} nav-link`} onClick={handleToggle}>
               Cart
               <i className={`${styles.customNavLink} ${styles.cart} bi bi-cart-fill`}></i>
             </button>
