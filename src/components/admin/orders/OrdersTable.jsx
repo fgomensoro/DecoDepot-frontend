@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
-import Navbar from "../../navbar/Navbar";
+
 import Footer from "../../footer/Footer";
 
 function OrdersTable() {
@@ -26,7 +26,6 @@ function OrdersTable() {
 
   return (
     <div>
-      <Navbar />
       <div className={`${styles.body} container`}>
         <AdminNav active={"Orders"} />
         <div className={styles.tables}>
@@ -73,11 +72,3 @@ function OrdersTable() {
 }
 
 export default OrdersTable;
-
-<div>
-  <Navbar />
-  <div className={`${styles.body} container`}>
-    <AdminNav />
-  </div>
-  <Footer />
-</div>;

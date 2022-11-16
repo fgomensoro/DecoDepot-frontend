@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
-import Navbar from "../../navbar/Navbar";
+
 import Footer from "../../footer/Footer";
 
 function ProductsTable() {
@@ -44,7 +44,6 @@ function ProductsTable() {
 
   return (
     <div>
-      <Navbar />
       <div className={`${styles.body} container`}>
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>

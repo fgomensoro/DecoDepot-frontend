@@ -35,7 +35,9 @@ const cartSlice = createSlice({
     addItem(state, action) {
       let sum = 0;
       const isInCart = state.items.find((product) => product.name === action.payload.name);
-      console.log(action.payload.image);
+
+      // console.log(action.payload.image);
+
       if (!isInCart) {
         state.items.push({
           id: action.payload.id,

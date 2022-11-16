@@ -11,7 +11,6 @@ function SuggestionItem({ product }) {
 
   return (
     <div className={styles.slideItem}>
-      {/* <Link className="text-decoration-none" to={`/detail/${product._id}`}> */}
       <div className={styles.itemImgContainer}>
         <img
           className={styles.itemImg}
@@ -41,7 +40,6 @@ function SuggestionItem({ product }) {
           Add to cart
         </button>
       </div>
-      {/*  </Link> */}
     </div>
   );
 }

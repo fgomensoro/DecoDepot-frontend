@@ -1,22 +1,26 @@
 .itemImgContainer {
-  height: 230px;
+  height: 150px;
+  width: 150px;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .itemImg {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  height: 150px;
+  width: 150px;
 }
 .slideItem {
   border-bottom: solid 1px #828d94;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .description {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 20px 8px 0 8px;
+  margin-top: -15px;
 }
 
 .shopBtn {
