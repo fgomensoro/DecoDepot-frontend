@@ -12,7 +12,7 @@ function Login() {
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const url = process.env.REACT_APP_IMAGE_PATH + "loginBackroundImage2.jpg";
+  const url = process.env.REACT_APP_IMAGE_PATH + "login3.jpg";
   const getToken = async (e) => {
     e.preventDefault();
     const response = await axios({
@@ -34,7 +34,7 @@ function Login() {
   return (
     <div className={`${styles.mainContainer}`} style={{ backgroundImage: `url(${url})` }}>
       <div className={`${styles.formWrapper} `}>
-        <div className={styles.formContent}>
+        <div>
           <h2 className="text-center mb-4">Login</h2>
           <form onSubmit={getToken}>
             <input

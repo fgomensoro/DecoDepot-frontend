@@ -40,11 +40,23 @@ function LeftNavbar({ showAbout, handleCloseAbout, handleLogout, user }) {
               Shop
             </Link>
           </li>
-          <li>
-            <button onClick={() => handleLogout()} className={styles.loguot}>
-              Logout
-            </button>
-          </li>
+          {user ? (
+            <li>
+              <Link
+                to="/login"
+                onClick={() => handleLogout()}
+                className={`${styles.sideLink} side-link`}
+              >
+                Logout
+              </Link>
+            </li>
+          ) : (
+            <li>
+              <Link to="/login" className={`${styles.sideLink} side-link`}>
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </Offcanvas.Body>
     </Offcanvas>

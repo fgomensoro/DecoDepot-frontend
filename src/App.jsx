@@ -1,6 +1,6 @@
 import "./App.module.css";
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./App.module.css";
 import Home from "./pages/home/Home";
@@ -18,15 +18,21 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import Cart from "./pages/cart/CartPage";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 
 function App() {
   const user = useSelector((state) => state.user);
-
+  const location = useLocation();
+  let showNavFooter = true;
+  if (location.pathname === "/login" || location.pathname === "/signup") {
+    showNavFooter = false;
+  }
   return (
     <div className={styles.body}>
+      {showNavFooter && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
@@ -48,6 +54,7 @@ function App() {
           <Route path="/admin/users" element={<UsersTable />} />
         </Route>
       </Routes>
+      {showNavFooter && <Footer />}
     </div>
   );
 }

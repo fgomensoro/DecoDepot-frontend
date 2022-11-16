@@ -9,7 +9,6 @@ function checkout() {
       <div className={`${styles.cont} container`}>
         <CheckoutForm />
       </div>
-      <Footer />
     </div>
   );
 }

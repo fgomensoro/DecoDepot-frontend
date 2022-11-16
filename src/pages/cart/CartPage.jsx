@@ -23,9 +23,7 @@ function CartPage() {
           <div className="col-3"></div>
         </div>
       </div>
-      <div className={styles.divider}>
-        <Footer />
-      </div>
+      <div className={styles.divider}></div>
     </div>
   );
 }
