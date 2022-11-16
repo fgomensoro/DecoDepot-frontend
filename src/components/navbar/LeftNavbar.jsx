@@ -26,6 +26,11 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user,
             </Link>
           </li>
           <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+            <Link to="/about-us" className={`${styles.sideLink} side-link`}>
+              About us
+            </Link>
+          </li>
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
             <Link to="/cart" className={`${styles.sideLink} side-link`}>
               Cart
             </Link>
