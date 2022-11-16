@@ -32,7 +32,7 @@ function Login() {
   };
 
   return (
-    <div className={`${styles.mainContainer}`} style={{ backgroundImage: `url(${url})` }}>
+    <div className={`${styles.mainContainer}`} /*  style={{ backgroundImage: `url(${url})` }} */>
       <div className={`${styles.formWrapper} `}>
         <div>
           <h2 className="text-center mb-4">Login</h2>

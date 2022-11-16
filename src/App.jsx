@@ -49,7 +49,6 @@ function App() {
     <div className={styles.body}>
       {showNav && <Navbar />}
       <Routes>
-        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -58,7 +57,7 @@ function App() {
         <Route path="/products/:id" element={<Detail />} />
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/users/:user" element={<Profile />} />
+        <Route path="/users/:user/:id" element={<EditProfile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/pay" element={<Pay />} />
