@@ -37,7 +37,7 @@ function CartItem({ product }) {
     event.preventDefault();
     dispatch(removeItem({ name: product.name, qty: 10000 }));
   }
-  console.log(product.qty);
+
   return (
     <div>
       <div className={`${styles.productContainer} container-fluid`}>
@@ -61,7 +61,13 @@ function CartItem({ product }) {
                   <button className={`${styles.plus} btn`} type="button" onClick={handleMinus}>
                     -
                   </button>
-                  <input type="text" className={styles.quantity} value={quantity} name="quantity" />
+                  <input
+                    type="text"
+                    className={styles.quantity}
+                    value={quantity}
+                    name="quantity"
+                    readOnly="disabled"
+                  />
                   <button className={`${styles.minus} btn`} type="button" onClick={handlePlus}>
                     +
                   </button>

@@ -4,16 +4,11 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
 
-function RightNavbar({ showCart, handleCloseCart, cart }) {
+function RightNavbar({ cart, toggle, handleToggle }) {
   return (
-    <Offcanvas
-      show={showCart}
-      onHide={handleCloseCart}
-      placement={"end"}
-      className={styles.cartSideBar}
-    >
+    <Offcanvas show={toggle} onHide={handleToggle} placement={"end"} className={styles.cartSideBar}>
       <Offcanvas.Header className={`${styles.cartHeader} `}>
-        <button onClick={handleCloseCart} className={styles.btnClose}>
+        <button onClick={handleToggle} className={styles.btnClose}>
           <i className="bi bi-chevron-left"></i>
         </button>
         <h5
@@ -39,10 +34,12 @@ function RightNavbar({ showCart, handleCloseCart, cart }) {
             <span>SUBTOTAL</span>
             <h3>{cart.total}$</h3>
           </div>
-
           <Link to="/checkout" className={styles.linkContinue}>
-            <button className={styles.btnContinue}> Continue to checkout</button>
-          </Link>
+            <button className={styles.btnContinue} onClick={handleToggle}>
+              {" "}
+              Continue to checkout
+            </button>
+          </Link>{" "}
         </div>
       )}
     </Offcanvas>

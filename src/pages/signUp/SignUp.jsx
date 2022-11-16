@@ -14,11 +14,27 @@ function SignUp() {
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const url = process.env.REACT_APP_IMAGE_PATH + "login3.jpg";
+
   const createUser = async (e) => {
     e.preventDefault();
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !address ||
+      !phoneNumber
+    ) {
+      setError(true);
+      return false;
+    }
+
     const response = await axios({
       method: "POST",
       url: `${process.env.REACT_APP_API_URL}/users/signup`,
@@ -41,73 +57,75 @@ function SignUp() {
   };
 
   return (
-    <div className={`${styles.mainContainer} d-flex justify-content-center `}>
-      <div className={`${styles.formWrapper} p-3 `}>
+    <div className={styles.mainContainer} style={{ backgroundImage: `url(${url})` }}>
+      <div className={styles.formWrapper}>
         <div>
           <h2 className="text-center mb-5">Create an account</h2>{" "}
           <form className="d-flex flex-column" onSubmit={createUser}>
-            <label htmlFor="firstName">First name</label>
             <input
               type="text"
               placeholder="Enter your first name"
               name="firstName"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setFirstName(event.target.value)}
             />
+            {error && !firstName && <span className={styles.message}>Required field</span>}
 
-            <label htmlFor="lastName">Last name</label>
             <input
               type="text"
               placeholder="Enter your last name"
               name="lastName"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setLastName(event.target.value)}
             />
+            {error && !lastName && <span className={styles.message}>Required field</span>}
 
-            <label htmlFor="eMail">Email</label>
             <input
               type="email"
               placeholder="Enter your email"
               name="eMail"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setEmail(event.target.value)}
             />
+            {error && !email && <span className={styles.message}>Email required</span>}
 
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="Enter your password"
               name="password"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setPassword(event.target.value)}
             />
+            {error && !password && <span className={styles.message}>Password required</span>}
 
-            <label htmlFor="confirmPassword">Confirm password</label>
             <input
               type="password"
               placeholder="Confirm your password"
               name="confirmPassword"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setConfirmPassword(event.target.value)}
             />
+            {error && !confirmPassword && (
+              <span className={styles.message}>Enter your password again</span>
+            )}
 
-            <label htmlFor="address">Address</label>
             <input
               type="text"
               placeholder="Enter your address"
               name="address"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setAddress(event.target.value)}
             />
+            {error && !address && <span className={styles.message}>Address required</span>}
 
-            <label htmlFor="phoneNumber">Phone number</label>
             <input
               type="number"
               placeholder="Enter your phone number"
               name="phoneNumber"
-              className={styles.formInput}
+              className={`${styles.input} form-control mb-3`}
               onChange={(event) => setPhoneNumber(event.target.value)}
             />
+            {error && !phoneNumber && <span className={styles.message}>Phone number required</span>}
             <p className={styles.message}>{message}</p>
 
             <button type="submit" className={styles.submitBtn}>

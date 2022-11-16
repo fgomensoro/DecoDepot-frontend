@@ -27,12 +27,7 @@ function ItemDetailContainer() {
       return <div>holax</div>;
     }
   }
-  return (
-    <div>
-      {product && <ItemDetail product={product} getProduct={getProduct} />}
-      <Footer />
-    </div>
-  );
+  return <div>{product && <ItemDetail product={product} getProduct={getProduct} />}</div>;
 }
 
 export default ItemDetailContainer;
