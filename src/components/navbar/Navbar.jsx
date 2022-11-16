@@ -15,7 +15,6 @@ function Navbar() {
   const [colorChange, setColorchange] = useState(false);
   const [showLeftNavbar, setShowLeftNavbar] = useState(false);
   const [showCart, setShowCart] = useState(false);
-
   const loggedUser = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const toggle = useSelector((state) => state.offCanvas);
