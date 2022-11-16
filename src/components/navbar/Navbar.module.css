@@ -1,8 +1,12 @@
+.nav {
+  position: relative;
+}
+
 .customNavLink {
   color: #131313;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   line-height: 2rem;
   font-weight: 600;
 }
@@ -11,7 +15,7 @@
   color: #131313;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
-  font-size: 1.4rem;
+  /* font-size: 1rem; */
   line-height: 2rem;
   font-weight: 600;
   border: none;
@@ -43,27 +47,56 @@
   margin-left: 5px;
 }
 
-.logo {
-  height: 48px;
-  width: 48px;
-  background-image: url("http://localhost:8000/img/decoDepotLogo.png");
-  background-size: cover;
+@media (min-width: 764px) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 763px) {
+  .logo {
+    position: absolute;
+    left: 10%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+  }
+  .exploreBtn {
+    padding-left: 3rem;
+  }
+}
+
+.leftNavBody {
+  padding: 1.8rem;
+  background-color: var(--colorSoftDeco);
 }
 
 .aboutUsList {
   list-style: none;
-  font-size: 2.2rem;
-  line-height: 3rem;
-  margin-top: 30%;
+  padding: 0;
+}
+
+.listItem {
+  padding: 0.5rem 0;
+  border-bottom: solid 1px rgb(219, 219, 219);
+  width: 100%;
 }
 
 .sideLink {
   color: #131313;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
-  font-size: 2.2rem;
-  line-height: 1rem;
-  font-weight: 600;
+  /* line-height: 1rem; */
+  /* font-weight: 600; */
+  font-weight: bold;
   transition-duration: 0.15s;
 }
 
@@ -73,9 +106,10 @@
 
 .sideBarTitle {
   color: #131313;
+  margin: 0;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
-  font-size: 2.2rem;
+  /* font-size: 2.2rem; */
   line-height: 1rem;
   font-weight: 600;
   transition-duration: 0.15s;
@@ -84,7 +118,7 @@
 .btnClose {
   border: none;
   background-color: var(--colorSoftDeco);
-  font-size: 2.2rem;
+  /* font-size: 2.2rem; */
 }
 .btnContinue {
   display: flex;
