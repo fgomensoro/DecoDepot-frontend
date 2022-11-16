@@ -18,6 +18,8 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
+import Profile from "./pages/profile/Profile";
+import AboutUs from "./pages/aboutus/AboutUs";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
@@ -54,6 +56,8 @@ function App() {
         <Route path="/products/:id" element={<Detail />} />
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/users/:user" element={<Profile />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/pay" element={<Pay />} />
         <Route element={<AdminOnly isAdmin={user.isAdmin} />}>
