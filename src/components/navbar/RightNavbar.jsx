@@ -3,8 +3,14 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleCart } from "../../redux/offCanvasSlice";
 
 function RightNavbar({ showCart, handleCloseCart, cart }) {
+  const cartIsOpened = useSelector((state) => state.offCanvas);
+  const dispatch = useDispatch();
+
+  console.log("hola");
   return (
     <Offcanvas
       show={showCart}
@@ -39,10 +45,10 @@ function RightNavbar({ showCart, handleCloseCart, cart }) {
             <span>SUBTOTAL</span>
             <h3>{cart.total}$</h3>
           </div>
-
           <Link to="/checkout" className={styles.linkContinue}>
             <button className={styles.btnContinue}> Continue to checkout</button>
-          </Link>
+          </Link>{" "}
+          <button /* onClick={handleProbando} */>probando</button>
         </div>
       )}
     </Offcanvas>

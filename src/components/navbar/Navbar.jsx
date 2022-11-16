@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
-import Cart from "../cart/Cart";
-import SuggestionItem from "../cart/SuggestionItem";
 
 function Navbar() {
   const logoUrl = "decoDepotLogo.png";
