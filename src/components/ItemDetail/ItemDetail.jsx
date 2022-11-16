@@ -2,8 +2,25 @@ import { useState, useEffect } from "react";
 import styles from "./ItemDetail.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleCart } from "../../redux/offCanvasSlice";
+import { addItem } from "../../redux/cartSlice";
 
 function ItemDetail({ product, getProduct }) {
+  const dispatch = useDispatch();
+
+  const handleClickAdd = () => {
+    dispatch(
+      addItem({
+        id: product.id,
+        name: product.name,
+        qty: 1,
+        image: product.images[2],
+        price: product.price,
+      }),
+    );
+    dispatch(toggleCart());
+  };
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
   const axiosConfig = {
@@ -39,7 +56,9 @@ function ItemDetail({ product, getProduct }) {
           <p className={styles.category}>{product.category.name}</p>
         </div>
         <p className={styles.description}>{product.description}</p>
-        <button className={styles.btn}>Add to cart</button>
+        <button className={styles.btn} onClick={handleClickAdd}>
+          Add to cart
+        </button>
 
         <h3 className={styles.similarTitle}>You might also like</h3>
         <div className={styles.itemsContainer}>

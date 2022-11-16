@@ -10,15 +10,15 @@ import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
 
 function Navbar() {
-  const logoUrl = "decoDepotLogo.png";
   const [user, setUser] = useState(false);
   const [colorChange, setColorchange] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [showCart, setShowCart] = useState(false);
-
   const loggedUser = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const toggle = useSelector((state) => state.offCanvas);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleToggle = () => {
     dispatch(toggleCart());
   };
@@ -35,13 +35,8 @@ function Navbar() {
     getLoggedUser();
   }, []);
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
   const handleCloseAbout = () => setShowAbout(false);
   const handleShowAbout = () => setShowAbout(true);
-  const handleCloseCart = () => setShowCart(false);
-  const handleShowCart = () => setShowCart(true);
 
   const handleLogout = () => {
     dispatch(logout());

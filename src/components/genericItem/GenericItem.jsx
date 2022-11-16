@@ -1,8 +1,8 @@
 import styles from "./GenericItem.module.css";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
+import { toggleCart } from "../../redux/offCanvasSlice";
 
 import { addItem } from "../../redux/cartSlice";
 
@@ -10,12 +10,8 @@ function GenericItem({ product }) {
   let description = product.description;
   const rating = Math.random() * (5 - 3.5 + 1) + 2.5;
   const numberReviews = Math.floor(Math.random() * (6000 - 3 + 1) + 3);
-  const dispatch = useDispatch();
-  //////////handlenav
-  const [showCart, setShowCart] = useState(false);
-  const handleShowCart = () => setShowCart(true);
 
-  //////////handlenav
+  const dispatch = useDispatch();
 
   const handleClickAdd = () => {
     dispatch(
@@ -27,7 +23,7 @@ function GenericItem({ product }) {
         price: product.price,
       }),
     );
-    handleShowCart();
+    dispatch(toggleCart());
   };
 
   return (
