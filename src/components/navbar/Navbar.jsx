@@ -10,15 +10,14 @@ import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
 
 function Navbar() {
+  const url = process.env.REACT_APP_IMAGE_PATH + "decoDepotLogo.png";
   const [user, setUser] = useState(false);
   const [colorChange, setColorchange] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
+  const [showLeftNavbar, setShowLeftNavbar] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const loggedUser = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const toggle = useSelector((state) => state.offCanvas);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const handleToggle = () => {
     dispatch(toggleCart());
   };
@@ -35,8 +34,13 @@ function Navbar() {
     getLoggedUser();
   }, []);
 
-  const handleCloseAbout = () => setShowAbout(false);
-  const handleShowAbout = () => setShowAbout(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleCloseLeftNavbar = () => setShowLeftNavbar(false);
+  const handleShowLeftNavbar = () => setShowLeftNavbar(true);
+  const handleCloseCart = () => setShowCart(false);
+  const handleShowCart = () => setShowCart(true);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -55,13 +59,14 @@ function Navbar() {
     <nav
       className={`${
         colorChange ? styles.backBlue : styles.backGrey
-      } navbar navbar-expand-lg fixed-top`}
+      } navbar navbar-expand fixed-top`}
     >
       <LeftNavbar
-        showAbout={showAbout}
-        handleCloseAbout={handleCloseAbout}
+        showLeftNavbar={showLeftNavbar}
+        handleCloseLeftNavbar={handleCloseLeftNavbar}
         handleLogout={handleLogout}
         user={user}
+        loggedUser={loggedUser}
       />
       <RightNavbar
         showCart={showCart}
@@ -71,31 +76,26 @@ function Navbar() {
         toggleCart={toggleCart}
       />
 
-      <div className="container d-flex  justify-content-between">
-        <ul className="navbar-nav  mb-2 mb-lg-0">
-          <li className="nav-item">
-            <Link to="/store" className={`${styles.customNavLink} nav-link`}>
-              Shop
-            </Link>
-          </li>
-          <li className="nav-item ">
-            <button className={`${styles.customNavLinkButton}  nav-link`} onClick={handleShowAbout}>
-              About
-              <i
-                className={`${styles.customNavLink} ${styles.arrowWeight} bi bi-chevron-down arrowWeight`}
-              ></i>
-            </button>
-          </li>
-        </ul>
+      <div className={`${styles.nav} container `}>
+        <div className={styles.exploreBtn}>
+          <button
+            className={`${styles.customNavLinkButton}  nav-link`}
+            onClick={handleShowLeftNavbar}
+          >
+            Explore
+            <i
+              className={`${styles.customNavLink} ${styles.arrowWeight} bi bi-chevron-down arrowWeight`}
+            ></i>
+          </button>
+        </div>
 
-        <ul className="navbar-nav mb-2 mb-lg-0">
-          <li className="nav-item">
-            <Link to="/" className={`${styles.customNavLink}   nav-link`}>
-              <div className={styles.logo}> </div>
-            </Link>
-          </li>
-        </ul>
-        <ul className="navbar-nav mb-2 mb-lg-0">
+        <div className={`${styles.logo} nav-item`}>
+          <Link to="/" className={`${styles.customNavLink}   nav-link`}>
+            <div className={styles.logo} style={{ backgroundImage: `url(${url})` }}></div>
+          </Link>
+        </div>
+
+        <ul className="navbar-nav mb-0">
           <li className="nav-item">
             <button className={`${styles.customNavLinkButton} nav-link`} onClick={handleToggle}>
               Cart

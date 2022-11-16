@@ -3,45 +3,52 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-function LeftNavbar({ showAbout, handleCloseAbout, handleLogout, user }) {
+function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user, loggedUser }) {
   return (
-    <Offcanvas show={showAbout} onHide={handleCloseAbout}>
+    <Offcanvas className={styles.leftNavBody} show={showLeftNavbar} onHide={handleCloseLeftNavbar}>
       <Offcanvas.Header>
         <h2 className={styles.sideBarTitle}>Deco Depot</h2>
-        <button onClick={handleCloseAbout} className={styles.btnClose}>
+        <button onClick={handleCloseLeftNavbar} className={styles.btnClose}>
           <i className="bi bi-x"></i>
         </button>
       </Offcanvas.Header>
 
       <Offcanvas.Body>
-        <ul className={styles.aboutUsList + " " + "d-flex flex-column align-items-start pe-3 "}>
-          <li>
-            <Link to="/store" className={`${styles.sideLink} side-link`}>
-              Shop
+        <ul className={styles.aboutUsList}>
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+            <Link to="/" className={`${styles.sideLink} side-link`}>
+              Home
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
             <Link to="/store" className={`${styles.sideLink} side-link`}>
-              Shop
+              Go to store
             </Link>
           </li>
-          <li>
-            <Link to="/store" className={`${styles.sideLink} side-link`}>
-              Shop
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+            <Link to="/cart" className={`${styles.sideLink} side-link`}>
+              Cart
             </Link>
           </li>
-          <li>
-            <Link to="/store" className={`${styles.sideLink} side-link`}>
-              Shop
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+            <Link to={`/users/:${loggedUser.firstname}`} className={`${styles.sideLink} side-link`}>
+              My profile
             </Link>
           </li>
-          <li>
-            <Link to="/store" className={`${styles.sideLink} side-link`}>
-              Shop
+          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+            <Link to="/checkout" className={`${styles.sideLink} side-link`}>
+              Checkout
             </Link>
           </li>
+          {loggedUser.isAdmin && (
+            <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+              <Link to="/admin" className={`${styles.sideLink} side-link`}>
+                Admin
+              </Link>
+            </li>
+          )}
           {user ? (
-            <li>
+            <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
               <Link
                 to="/login"
                 onClick={() => handleLogout()}
@@ -51,7 +58,7 @@ function LeftNavbar({ showAbout, handleCloseAbout, handleLogout, user }) {
               </Link>
             </li>
           ) : (
-            <li>
+            <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
               <Link to="/login" className={`${styles.sideLink} side-link`}>
                 Login
               </Link>
