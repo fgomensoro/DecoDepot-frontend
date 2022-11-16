@@ -3,17 +3,10 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
-import { useSelector, useDispatch } from "react-redux";
 
-function RightNavbar({ showCart, handleCloseCart, cart, toggle, toggleCart }) {
-  const cartIsOpened = useSelector((state) => state.offCanvas);
-  const dispatch = useDispatch();
-  const handleToggle = () => {
-    dispatch(toggleCart());
-  };
-  console.log("hola");
+function RightNavbar({ cart, toggle, handleToggle }) {
   return (
-    <Offcanvas show={toggle} placement={"end"} className={styles.cartSideBar}>
+    <Offcanvas show={toggle} onHide={handleToggle} placement={"end"} className={styles.cartSideBar}>
       <Offcanvas.Header className={`${styles.cartHeader} `}>
         <button onClick={handleToggle} className={styles.btnClose}>
           <i className="bi bi-chevron-left"></i>
@@ -42,7 +35,10 @@ function RightNavbar({ showCart, handleCloseCart, cart, toggle, toggleCart }) {
             <h3>{cart.total}$</h3>
           </div>
           <Link to="/checkout" className={styles.linkContinue}>
-            <button className={styles.btnContinue}> Continue to checkout</button>
+            <button className={styles.btnContinue} onClick={handleToggle}>
+              {" "}
+              Continue to checkout
+            </button>
           </Link>{" "}
         </div>
       )}

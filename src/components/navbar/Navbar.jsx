@@ -70,7 +70,7 @@ function Navbar() {
       />
       <RightNavbar
         showCart={showCart}
-        handleCloseCart={handleCloseCart}
+        handleToggle={handleToggle}
         cart={cart}
         toggle={toggle}
         toggleCart={toggleCart}

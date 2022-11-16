@@ -1,7 +1,7 @@
 import styles from "./OrderSummary.module.css";
 import { HiOutlineTrash } from "react-icons/hi";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addItem, removeItem } from "../../redux/cartSlice";
 
 function Product({ item }) {
@@ -10,6 +10,10 @@ function Product({ item }) {
   const dollarUSLocale = Intl.NumberFormat("en-US");
   const priceBefore = Math.round((item.price * 1.15 + Number.EPSILON) * 1) / 1;
   const [qty, setQty] = useState(item.qty);
+
+  useEffect(() => {
+    setQty(item.qty);
+  }, [item.qty]);
 
   const handleMinus = (e) => {
     dispatch(removeItem({ name: item.name, qty: 1 }));
