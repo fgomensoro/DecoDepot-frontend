@@ -24,6 +24,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
+import EditProfile from "./pages/editUser/EditProfile";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -36,6 +37,7 @@ function App() {
     <div className={styles.body}>
       {showNavFooter && <Navbar />}
       <Routes>
+        <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
