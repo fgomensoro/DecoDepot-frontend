@@ -3,18 +3,6 @@ import styles from "./ProductsHero.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-<<<<<<< HEAD
-function ProductsHero({ category }) {
-  return (
-    <div>
-      <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
-        <div className={styles.wrapper}>
-          <h1 className={styles.bigLetter}>
-            {category ? "Our" + " " + category + "s" : "Our Products"}
-          </h1>{" "}
-          {/*   {`${category}s`} */}
-          <p>Design your home interior with your heart</p>
-=======
 function ProductsHero() {
   const [categories, setCategories] = useState(null);
 
@@ -59,7 +47,6 @@ function ProductsHero() {
               );
             })}
           </ul>
->>>>>>> 0e8ba9986095141a7a87a7919bd1100127973bff
         </div>
       </div>
     )
