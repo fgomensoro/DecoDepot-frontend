@@ -44,6 +44,7 @@
   border: none;
   color: white;
   margin-top: 20px;
+  opacity: 88%;
 }
 
 .return {
@@ -187,7 +188,7 @@
 
 .custShippingInfo {
   font-family: "Calibre", sans-serif;
-  font-size: 25px;
+  font-size: 27px;
   text-align: left;
 }
 
