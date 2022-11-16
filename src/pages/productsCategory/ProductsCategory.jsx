@@ -36,7 +36,6 @@ function ProductsCategory() {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     )
   );

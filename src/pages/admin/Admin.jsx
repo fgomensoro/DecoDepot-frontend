@@ -7,7 +7,6 @@ function Admin() {
   return (
     <>
       <AdminNav />
-      <Footer />
     </>
   );
 }
