@@ -1,15 +1,18 @@
 import styles from "./Pay.module.css";
-import { TiArrowBack } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { FaCcMastercard, FaCcVisa, FaCcAmex, FaCcPaypal, FaLock } from "react-icons/fa";
+import { useState } from "react";
 
 function CheckoutForm() {
+  const [cardNumber, setCardNumber] = useState("");
+
   return (
     <div>
       <h2 className={`${styles.shippingAddress} mb-4`}>Shipping</h2>
       <form className={styles.form2}>
-        <div className={`${styles.group} form-group`}>
-          <button className={`${styles.button} btn`}>
+        <div className={`${styles.group2} form-group`}>
+          <button disabled className={`${styles.button} btn`}>
             <BsCheckCircleFill className={`${styles.check}`} />
           </button>
           <h4 className={`${styles.item2} ${styles.freeShipping}`}>Free Shipping</h4>
@@ -21,10 +24,18 @@ function CheckoutForm() {
       <h2 className={`${styles.shippingAddress} mb-4`}>Billing & payment</h2>
       <form className={styles.form3}>
         <div className={`${styles.group} form-group`}>
-          <button className={`${styles.button2} btn`}>
-            <BsCheckCircleFill className={`${styles.check}`} />
-          </button>
-          <h4 className={`${styles.item3} ${styles.freeShipping}`}>Credit Card</h4>
+          <div className="d-flex">
+            <button disabled className={`${styles.button2} btn`}>
+              <BsCheckCircleFill className={`${styles.check}`} />
+            </button>
+            <h4 className={`${styles.item3} ${styles.freeShipping}`}>Credit Card</h4>
+          </div>
+          <div className="mx-1">
+            <FaCcMastercard className={styles.cardsIcons} />
+            <FaCcVisa className={styles.cardsIcons} />
+            <FaCcAmex className={styles.cardsIcons} />
+            <FaCcPaypal className={styles.cardsIcons} />
+          </div>
         </div>
       </form>
 
@@ -38,9 +49,11 @@ function CheckoutForm() {
             className={`${styles.item} form-control`}
             id="nameOnCard"
             placeholder="Name on card"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
           />
         </div>
-
+        <FaLock className={styles.faLock} />
         <div className={`${styles.labelInputForm} form-group`}>
           <label className={styles.label} htmlFor="cardNumber">
             Card number
@@ -52,6 +65,7 @@ function CheckoutForm() {
             placeholder="1234 1234 1234 1234"
           />
         </div>
+
         <div className={`${styles.labelInputForm} form-group`}>
           <label className={styles.label} htmlFor="expiration">
             Expiration

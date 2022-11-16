@@ -17,6 +17,8 @@ function pay() {
     setTotal(cartStore.total);
   });
 
+  
+
   return (
     <div>
       <FaLock className={styles.lock} />
