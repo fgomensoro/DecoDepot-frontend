@@ -1,5 +1,4 @@
 import "./App.module.css";
-import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./App.module.css";
@@ -11,6 +10,7 @@ import Products from "./pages/products/Products";
 import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
 import CartPage from "./pages/cart/CartPage";
+import Pay from "./pages/pay/Pay";
 import ProductsTable from "./components/admin/products/ProductsTable";
 import OrdersTable from "./components/admin/orders/OrdersTable";
 import PacksTable from "./components/admin/packs/PacksTable";
@@ -29,13 +29,25 @@ import EditProfile from "./pages/editUser/EditProfile";
 function App() {
   const user = useSelector((state) => state.user);
   const location = useLocation();
-  let showNavFooter = true;
-  if (location.pathname === "/login" || location.pathname === "/signup") {
-    showNavFooter = false;
+
+  let showNav = true;
+  if (
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/checkout" ||
+    location.pathname === "/pay"
+  ) {
+    showNav = false;
   }
+
+  let showFooter = true;
+  if (location.pathname === "/login" || location.pathname === "/signup") {
+    showFooter = false;
+  }
+
   return (
     <div className={styles.body}>
-      {showNavFooter && <Navbar />}
+      {showNav && <Navbar />}
       <Routes>
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/" element={<Home />} />
@@ -49,6 +61,7 @@ function App() {
         <Route path="/users/:user" element={<Profile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/pay" element={<Pay />} />
         <Route element={<AdminOnly isAdmin={user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/products" element={<ProductsTable />} />
@@ -60,7 +73,7 @@ function App() {
           <Route path="/admin/users" element={<UsersTable />} />
         </Route>
       </Routes>
-      {showNavFooter && <Footer />}
+      {showFooter && <Footer />}
     </div>
   );
 }

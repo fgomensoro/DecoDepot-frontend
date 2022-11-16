@@ -1,0 +1,17 @@
+.col2 {
+  margin-bottom: 4rem;
+  padding-top: 3rem;
+}
+
+.cont {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+.lock {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  color: #d2d2d2;
+}
