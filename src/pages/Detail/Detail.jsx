@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../../components/itemDetail/ItemDetail";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/footer/Footer";
 
 function ItemDetailContainer() {
   const { id } = useParams();

@@ -1,5 +1,5 @@
 import styles from "./OrderSummary.module.css";
-import Products from "./Products";
+import Product from "./Product";
 import { useSelector } from "react-redux";
 import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -16,7 +16,10 @@ function OrderSummary() {
       <div>
         <div className={`${styles.titleOrderSummary}`}>Order Summary</div>
         <div className={styles.orderSummary}>
-          <Products cart={cart} />
+          {cart.items.map((item) => {
+            return <Product key={item.id} item={item} />;
+          })}
+
           <div className={styles.totalsContainer}>
             <div className={styles.totals}>
               <p className={styles.pSubtotals}>Subtotal</p>

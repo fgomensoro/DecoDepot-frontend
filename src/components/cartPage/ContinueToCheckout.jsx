@@ -21,10 +21,8 @@ function ContinueToCheckout() {
   }, []);
 
   return (
-    <div>
-      <div className={styles.otherProdContainer}>
-        <Slider products={featured} title={"Featured"} />
-      </div>
+    <div className={styles.otherProdContainer}>
+      <Slider products={featured} title={"Featured"} />
     </div>
   );
 }

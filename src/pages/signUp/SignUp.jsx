@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./SignUp.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { storeUser } from "../../redux/userSlice";
 import axios from "axios";
@@ -131,6 +131,18 @@ function SignUp() {
             <button type="submit" className={styles.submitBtn}>
               Submit
             </button>
+            <div className="d-flex justify-content-center mt-2">
+              <span>
+                <Link to={"/"} className={styles.link}>
+                  Home
+                </Link>
+              </span>
+              <span>
+                <Link to={"/login"} className={styles.link}>
+                  Login
+                </Link>
+              </span>
+            </div>
           </form>
         </div>
       </div>
