@@ -4,11 +4,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [product, setProduct] = useState(null);
 
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_URL}/products/${id}`,
+    url: `${process.env.REACT_APP_API_URL}/products/${slug}`,
     method: "GET",
   };
 

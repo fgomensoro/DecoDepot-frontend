@@ -24,9 +24,9 @@ function ItemDetail({ product, getProduct }) {
     dispatch(toggleCart());
   };
 
-  const handleGetProduct = async (id) => {
+  const handleGetProduct = async (slug) => {
     getProduct();
-    navigate(`/products/${id}`);
+    navigate(`/products/${slug}`);
   };
 
   const axiosConfig = {
@@ -77,7 +77,7 @@ function ItemDetail({ product, getProduct }) {
 
                   <div className="text-start py-2 px-1">
                     <button
-                      onClick={() => handleGetProduct(prod._id)}
+                      onClick={() => handleGetProduct(prod.slug)}
                       className={styles.similarBtn}
                     >
                       See more

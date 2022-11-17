@@ -5,7 +5,7 @@ import styles from "./Item.module.css";
 function Item({ product }) {
   return (
     <div className={styles.slideItem}>
-      <Link className="text-decoration-none" to={`/products/${product._id}`}>
+      <Link className="text-decoration-none" to={`/products/${product.slug}`}>
         <div className={styles.itemImgContainer}>
           <img
             className={styles.itemImg}

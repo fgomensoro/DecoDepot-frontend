@@ -1,7 +1,4 @@
 import styles from "./Products.module.css";
-import Footer from "../../components/footer/Footer";
-
-import { Link } from "react-router-dom";
 import ProductsSection from "../../components/product/ProductsSection";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -9,6 +6,8 @@ import ProductsHero from "../../components/product/ProductsHero";
 
 function Products() {
   const [products, setProducts] = useState(null);
+  const [categories, setCategories] = useState([]);
+  console.log("products");
 
   useEffect(() => {
     const getProducts = async () => {
@@ -21,17 +20,34 @@ function Products() {
     getProducts();
   }, []);
 
+  useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        url: `${process.env.REACT_APP_API_URL}/categories`,
+        method: "GET",
+      });
+      setCategories(response.data);
+    };
+    getCategories();
+  }, []);
+
   return (
-    products && (
+    products &&
+    categories && (
       <div>
         <ProductsHero />
         <div className={`container-fluid px-5 mt-4`}>
           <div className={`row`}>
             <div className="col-8 mx-auto">
-              <ProductsSection products={products} category="chair" />
-              <ProductsSection products={products} category="table" />
-              <ProductsSection products={products} category="bed" />
-              <ProductsSection products={products} category="sofa" />
+              {categories.map((category) => {
+                return (
+                  <ProductsSection
+                    key={category._id}
+                    products={products}
+                    category={category.name}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

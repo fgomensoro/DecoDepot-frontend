@@ -53,12 +53,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/detail/:slug" element={<Detail />} />
         <Route path="/store/:category" element={<ProductsCategory />} />
-        <Route path="/products/:id" element={<Detail />} />
+        <Route path="/products/:slug" element={<Detail />} />
         <Route path="/store" element={<Products />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/users/:user/:id" element={<EditProfile />} />
+        <Route path="/users/:slug" element={<Profile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/buy" element={<Pay />} />

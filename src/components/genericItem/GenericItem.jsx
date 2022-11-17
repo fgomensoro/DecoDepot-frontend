@@ -31,7 +31,10 @@ function GenericItem({ product }) {
       <div className={`${styles.cardCombo1}`}>
         <div className={styles.imgContainer}>
           <div className={styles.detailsBtns}>
-            <Link className={`${styles.btnSee} text-decoration-none`} to={`/detail/${product._id}`}>
+            <Link
+              className={`${styles.btnSee} text-decoration-none`}
+              to={`/detail/${product.slug}`}
+            >
               See More
             </Link>
             <button className={styles.btnAdd} onClick={handleClickAdd}>

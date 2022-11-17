@@ -36,10 +36,7 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user,
             </Link>
           </li>
           <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
-            <Link
-              to={`/users/${loggedUser.firstname}/${loggedUser.id}`}
-              className={`${styles.sideLink} side-link`}
-            >
+            <Link to={`/users/${loggedUser.slug}`} className={`${styles.sideLink} side-link`}>
               My profile
             </Link>
           </li>
