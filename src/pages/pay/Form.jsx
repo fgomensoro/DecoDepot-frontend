@@ -49,8 +49,6 @@ function CheckoutForm() {
             className={`${styles.item} form-control`}
             id="nameOnCard"
             placeholder="Name on card"
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
           />
         </div>
         <FaLock className={styles.faLock} />
@@ -59,10 +57,12 @@ function CheckoutForm() {
             Card number
           </label>
           <input
-            type="text"
+            type="number"
             className={`${styles.item} form-control`}
             id="cardNumber"
             placeholder="1234 1234 1234 1234"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
           />
         </div>
 
@@ -71,7 +71,7 @@ function CheckoutForm() {
             Expiration
           </label>
           <input
-            type="text"
+            type="number"
             className={`${styles.item} form-control`}
             id="expiration"
             placeholder="MM / AA"
@@ -79,9 +79,14 @@ function CheckoutForm() {
         </div>
         <div className={`${styles.labelInputForm} form-group`}>
           <label className={styles.label} htmlFor="cvv">
-            Expiration
+            CVV
           </label>
-          <input type="text" className={`${styles.item} form-control`} id="cvv" placeholder="CVV" />
+          <input
+            type="number"
+            className={`${styles.item} form-control`}
+            id="cvv"
+            placeholder="CVV"
+          />
         </div>
 
         <div className={`${styles.links} form-group`}>

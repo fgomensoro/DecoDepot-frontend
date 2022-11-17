@@ -24,7 +24,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
-import EditProfile from "./pages/editUser/EditProfile";
+import EditProfile from "./pages/editProfile/EditProfile";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -35,7 +35,7 @@ function App() {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/checkout" ||
-    location.pathname === "/pay"
+    location.pathname === "/buy"
   ) {
     showNav = false;
   }
@@ -60,7 +60,7 @@ function App() {
         <Route path="/users/:user/:id" element={<EditProfile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/pay" element={<Pay />} />
+        <Route path="/buy" element={<Pay />} />
         <Route element={<AdminOnly isAdmin={user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/products" element={<ProductsTable />} />
