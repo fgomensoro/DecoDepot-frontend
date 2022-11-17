@@ -24,7 +24,7 @@ function OrdersTable() {
   useEffect(() => {
     getOrders();
   }, []); // eslint-disable-line
-
+  console.log(orders);
   return (
     <div>
       <div className={`${styles.body} container`}>

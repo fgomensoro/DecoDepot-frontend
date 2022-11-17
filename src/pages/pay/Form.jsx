@@ -1,11 +1,36 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 import styles from "./Pay.module.css";
-import { Link } from "react-router-dom";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { FaCcMastercard, FaCcVisa, FaCcAmex, FaCcPaypal, FaLock } from "react-icons/fa";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutForm() {
   const [cardNumber, setCardNumber] = useState("");
+  const state = useSelector((state) => state);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const postOrder = async () => {
+      await axios({
+        url: `${process.env.REACT_APP_API_URL}/orders`,
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + state.user.token,
+        },
+        data: {
+          prods: state.cart.items,
+          status: "Not paid",
+          address: state.shippingAddress,
+          total: state.cart.total,
+        },
+      });
+    };
+
+    postOrder();
+  };
 
   return (
     <div>
@@ -39,7 +64,7 @@ function CheckoutForm() {
         </div>
       </form>
 
-      <form className={styles.form}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <div className={`${styles.labelInputForm2} form-group`}>
           <label className={styles.label} htmlFor="nameOnCard">
             Name on card
@@ -90,9 +115,9 @@ function CheckoutForm() {
         </div>
 
         <div className={`${styles.links} form-group`}>
-          <Link to="/" className={`${styles.placeMyOrder} btn btn-block`}>
+          <button type="submit" className={`${styles.placeMyOrder} btn btn-block`}>
             Place my order
-          </Link>
+          </button>
         </div>
       </form>
     </div>
