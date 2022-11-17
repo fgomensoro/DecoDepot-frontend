@@ -24,6 +24,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
+import OrderDetail from "./components/admin/orders/OrderDetail";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/admin/products/create" element={<CreateProduct />} />
           <Route path="/admin/products/:id/edit" element={<EditProduct />} />
           <Route path="/admin/orders" element={<OrdersTable />} />
+          <Route path="/admin/orders/:id" element={<OrderDetail />} />
           <Route path="/admin/packs" element={<PacksTable />} />
           <Route path="/admin/reviews" element={<ReviewsTable />} />
           <Route path="/admin/users" element={<UsersTable />} />
