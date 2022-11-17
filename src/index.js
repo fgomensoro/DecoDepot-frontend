@@ -6,7 +6,6 @@ import store from "./redux/storeConfig";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-import Navbar from "./components/navbar/Navbar";
 const persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
