@@ -64,7 +64,6 @@ function PacksTable() {
           </table>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

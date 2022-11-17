@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Footer from "../../footer/Footer";
-
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
@@ -15,7 +13,8 @@ function CreateProduct() {
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState(null);
   const [featured, setFeatured] = useState(false);
-  const [slug, setSlug] = useState("");
+  const [error, setError] = useState(false);
+  // const [slug, setSlug] = useState("");
   const [message, setMessage] = useState("");
 
   const navigate = useNavigate();
@@ -36,6 +35,10 @@ function CreateProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!name || !description || !price || !stock || !category) {
+      setError(true);
+      return false;
+    }
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
@@ -67,6 +70,7 @@ function CreateProduct() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+              {error && !name && <span className={styles.message}>Required field</span>}
             </div>
             <div className="mb-3">
               <label className="form-label">Description</label>
@@ -77,6 +81,7 @@ function CreateProduct() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
+              {error && !description && <span className={styles.message}>Required field</span>}
             </div>
             <div className="mb-3">
               <label className="form-label">Price</label>
@@ -87,6 +92,7 @@ function CreateProduct() {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
+              {error && !price && <span className={styles.message}>Required field</span>}
             </div>
             <div className="mb-3">
               <label className="form-label">Stock</label>
@@ -97,14 +103,16 @@ function CreateProduct() {
                 value={stock}
                 onChange={(e) => setStock(e.target.value)}
               />
+              {error && !stock && <span className={styles.message}>Required field</span>}
             </div>
+            <label className="form-label">Categories</label>
             <select
               className="form-select"
               name="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option>Categories</option>
+              <option></option>
               {categories.map((category, index) => {
                 return (
                   <option key={category._id} value={category._id}>
@@ -113,7 +121,9 @@ function CreateProduct() {
                 );
               })}
             </select>
-            <div className="mb-3">
+            {error && !category && <span className={styles.message}>Required field</span>}
+
+            {/* <div className="mb-3">
               <label className="form-label">Slug</label>
               <input
                 type="text"
@@ -122,30 +132,15 @@ function CreateProduct() {
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
               />
+            </div> */}
+            <div className="mt-3">
+              <input className="form-control" name="image1" type="file" />
             </div>
             <div className="mt-3">
-              <input
-                className="form-control"
-                name="image1"
-                type="file"
-                // id="formFile"
-              />
+              <input className="form-control" name="image2" type="file" />
             </div>
             <div className="mt-3">
-              <input
-                className="form-control"
-                name="image2"
-                type="file"
-                // id="formFile"
-              />
-            </div>
-            <div className="mt-3">
-              <input
-                className="form-control"
-                name="image3"
-                type="file"
-                // id="formFile"
-              />
+              <input className="form-control" name="image3" type="file" />
             </div>
             <div className="mb-3 form-check">
               <input
@@ -161,10 +156,11 @@ function CreateProduct() {
             <button type="submit" className="btn btn-primary">
               Create
             </button>
+            <Link className={styles.linkBack} to={-1}>
+              Back
+            </Link>
           </form>
         </div>
-
-        <Footer />
       </div>
     )
   );

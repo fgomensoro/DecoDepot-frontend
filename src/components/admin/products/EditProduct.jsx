@@ -8,6 +8,7 @@ import styles from "../adminCSS/AdminCSS.module.css";
 
 function EditProduct() {
   const user = useSelector((state) => state.user);
+  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -15,8 +16,8 @@ function EditProduct() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState("");
   const [featured, setFeatured] = useState(false);
-  const [slug, setSlug] = useState("");
-  const [actionImages, setActionImages] = useState("");
+  // const [slug, setSlug] = useState("");
+  const [actionImages, setActionImages] = useState("add");
   const [message, setMessage] = useState("");
 
   const params = useParams();
@@ -25,19 +26,20 @@ function EditProduct() {
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
+        url: `${process.env.REACT_APP_API_URL}/products/${params.slug}`,
         method: "GET",
         headers: {
           Authorization: "Bearer " + user.token,
         },
       });
+      setId(response.data._id);
       setName(response.data.name);
       setDescription(response.data.description);
       setPrice(response.data.price);
       setStock(response.data.stock);
       setCategory(response.data.category.name);
       setFeatured(response.data.features);
-      setSlug(response.data.slug);
+      // setSlug(response.data.slug);
     };
     getProduct();
   }, []); // eslint-disable-line
@@ -61,7 +63,7 @@ function EditProduct() {
     console.log("handleSubmit");
     const formData = new FormData(e.target);
     const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/products/${params.id}`,
+      url: `${process.env.REACT_APP_API_URL}/products/${id}`,
       method: "PATCH",
       headers: {
         "Content-Type": "multipart/form-data",
@@ -119,7 +121,8 @@ function EditProduct() {
               onChange={(e) => setStock(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          {/* Definir si se hace automatico en backend o se puede editar manual */}
+          {/* <div className="mb-3">
             <label className="form-label">Slug</label>
             <input
               type="text"
@@ -128,7 +131,7 @@ function EditProduct() {
               value={slug}
               onChange={(e) => setSlug(e.target.value)}
             />
-          </div>
+          </div> */}
           <label className="form-label">Categories</label>
           <select
             className="form-select mb-3"
@@ -152,7 +155,6 @@ function EditProduct() {
             value={actionImages}
             onChange={(e) => setActionImages(e.target.value)}
           >
-            <option></option>
             <option value="add">Add</option>
             <option value="replace">Replace</option>
           </select>
@@ -180,10 +182,11 @@ function EditProduct() {
           <button type="submit" className={styles.buttonEdit}>
             Edit
           </button>
+          <Link className={styles.linkBack} to={-1}>
+            Back
+          </Link>
         </form>
       </div>
-
-      <Footer />
     </div>
   );
 }

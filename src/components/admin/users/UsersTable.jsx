@@ -66,7 +66,6 @@ function UsersTable() {
           </table>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

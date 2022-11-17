@@ -83,7 +83,7 @@ function ProductsTable() {
                     <td>{product.featured}</td>
                     <td>
                       <button className={styles.buttonEdit}>
-                        <Link className={styles.linkButtonEdit} to={`${product._id}/edit`}>
+                        <Link className={styles.linkButtonEdit} to={`${product.slug}/edit`}>
                           Edit
                         </Link>
                       </button>
@@ -101,7 +101,6 @@ function ProductsTable() {
           </table>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

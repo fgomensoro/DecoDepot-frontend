@@ -64,7 +64,6 @@ function ReviewsTable() {
           </table>
         )}
       </div>
-      <Footer />
     </div>
   );
 }
