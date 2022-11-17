@@ -2,27 +2,28 @@ import styles from "./EditProfile.module.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function EditProfile() {
   const user = useSelector((state) => state.user);
   const [number, setNewNumber] = useState(user.phoneNumber);
   const [email, setNewEmail] = useState(user.email);
   const [address, setNewAddress] = useState(user.address);
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(e.target.eMail.value);
     const response = await axios({
       url: `${process.env.REACT_APP_API_URL}/users/63753c14d61c836e7441e1a1`,
       method: "PATCH",
 
       data: {
-        email: e.target.eMail.value,
+        email: e.target.eMail.value !== user.email ? e.target.eMail.value : "",
         phoneNumber: e.target.phoneNumber.value,
         address: e.target.address.value,
       },
     });
+    return navigate(`/users/${user.firstname}`);
   };
 
   return (

@@ -24,7 +24,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
-import EditProfile from "./pages/editUser/EditProfile";
+import EditProfile from "./pages/editProfile/EditProfile";
 
 function App() {
   const user = useSelector((state) => state.user);
