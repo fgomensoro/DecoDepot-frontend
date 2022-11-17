@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
 
 function RightNavbar({ cart, toggle, handleToggle }) {
+  const dollarUSLocale = Intl.NumberFormat("en-US");
   return (
     <Offcanvas show={toggle} onHide={handleToggle} placement={"end"} className={styles.cartSideBar}>
       <Offcanvas.Header className={`${styles.cartHeader} `}>
@@ -32,7 +33,7 @@ function RightNavbar({ cart, toggle, handleToggle }) {
         >
           <div className="d-flex flex-column align-items-center">
             <span>SUBTOTAL</span>
-            <h3>{cart.total}$</h3>
+            <h3>${dollarUSLocale.format(cart.total)}</h3>
           </div>
           <Link to="/checkout" className={styles.linkContinue}>
             <button className={styles.btnContinue} onClick={handleToggle}>

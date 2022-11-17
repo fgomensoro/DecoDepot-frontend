@@ -9,6 +9,8 @@ function CartItem({ product }) {
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
 
+  const dollarUSLocale = Intl.NumberFormat("en-US");
+
   const handleQuantity = (num) => {
     if (num === 1) {
       const getQuantity = async () => {
@@ -36,6 +38,9 @@ function CartItem({ product }) {
     dispatch(removeItem({ name: product.name, qty: 10000 }));
   }
 
+  // const dollarUSLocale = Intl.NumberFormat("en-US");
+  // <p className={styles.titleH42}>${dollarUSLocale.format(item.price)}</p>
+
   return (
     <div>
       <div className={`${styles.productContainer} container-fluid`}>
@@ -48,7 +53,7 @@ function CartItem({ product }) {
                   src={process.env.REACT_APP_IMAGE_PATH + product.image}
                   alt=""
                 />
-                <h3 className="text-center">{"$" + product.price}</h3>
+                <h3 className="text-center">${dollarUSLocale.format(product.price)}</h3>
               </div>
             </div>
             <div className="col-7 d-flex align-items-center ">

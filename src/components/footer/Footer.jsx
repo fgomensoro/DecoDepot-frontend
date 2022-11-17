@@ -5,17 +5,6 @@ function Footer() {
   return (
     <div className={styles.footerContainer}>
       <Reviews />
-      {/* <div className={`${styles.gradient} `}>
-        <div className="container">
-          <div className={`${styles.sloganWrapper}`}>
-            <p className={styles.slogan}>
-              One billion toothpaste tubes are thrown out each year We want to end this plastic
-              waste, give you a healthier smile, and build the world's most sustainable oral care
-              company.
-            </p>
-          </div>
-        </div>
-      </div> */}
       <div className={`${styles.backGrey} container-fluid`}>
         <div className="container ">
           <footer className="pb-5">

@@ -79,3 +79,6 @@ function Product({ item }) {
 }
 
 export default Product;
+
+// const dollarUSLocale = Intl.NumberFormat("en-US");
+// <p className={styles.titleH42}>${dollarUSLocale.format(item.price)}</p>
