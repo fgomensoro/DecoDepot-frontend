@@ -7,12 +7,14 @@ import { toggleCart } from "../../redux/offCanvasSlice";
 import { addItem } from "../../redux/cartSlice";
 
 function ItemDetail({ product, getProduct }) {
+  const [similar, setSimilar] = useState(null);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleClickAdd = () => {
+  const handleAddToCart = () => {
     dispatch(
       addItem({
-        id: product.id,
+        id: product._id,
         name: product.name,
         qty: 1,
         image: product.images[2],
@@ -21,8 +23,12 @@ function ItemDetail({ product, getProduct }) {
     );
     dispatch(toggleCart());
   };
-  const [similar, setSimilar] = useState(null);
-  const navigate = useNavigate();
+
+  const handleGetProduct = async (id) => {
+    getProduct();
+    navigate(`/products/${id}`);
+  };
+
   const axiosConfig = {
     url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}&limit=3`,
     method: "GET",
@@ -35,11 +41,6 @@ function ItemDetail({ product, getProduct }) {
     };
     getSimilar();
   }, [product]);
-
-  const handleClick = async (id) => {
-    getProduct();
-    navigate(`/products/${id}`);
-  };
 
   return (
     <div className={`${styles.detail} container`}>
@@ -56,7 +57,7 @@ function ItemDetail({ product, getProduct }) {
           <p className={styles.category}>{product.category.name}</p>
         </div>
         <p className={styles.description}>{product.description}</p>
-        <button className={styles.btn} onClick={handleClickAdd}>
+        <button className={styles.btn} onClick={handleAddToCart}>
           Add to cart
         </button>
 
@@ -75,7 +76,10 @@ function ItemDetail({ product, getProduct }) {
                   </div>
 
                   <div className="text-start py-2 px-1">
-                    <button onClick={() => handleClick(prod._id)} className={styles.similarBtn}>
+                    <button
+                      onClick={() => handleGetProduct(prod._id)}
+                      className={styles.similarBtn}
+                    >
                       See more
                     </button>
                   </div>

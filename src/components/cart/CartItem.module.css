@@ -51,6 +51,7 @@
 .amount {
   font-weight: 550;
   color: rgb(53, 50, 50);
+  margin: 0;
 }
 
 .input {
@@ -89,4 +90,8 @@
 .delete {
   all: unset;
   margin-top: 3px;
+}
+
+.message {
+  color: red;
 }

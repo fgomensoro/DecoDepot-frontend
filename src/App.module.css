@@ -1,5 +1,6 @@
 :root {
-  --colorSoftDeco: #dce7ed;
+  /* --colorSoftDeco: #dce7ed; */
+  --colorSoftDeco: #e5e4e3;
   --colorBlackDeco: #131313;
   --fontFamilyDeco: "Calibre", sans-serif;
 }

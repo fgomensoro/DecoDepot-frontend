@@ -16,7 +16,7 @@ function GenericItem({ product }) {
   const handleClickAdd = () => {
     dispatch(
       addItem({
-        id: product.id,
+        id: product._id,
         name: product.name,
         qty: 1,
         image: product.images[2],

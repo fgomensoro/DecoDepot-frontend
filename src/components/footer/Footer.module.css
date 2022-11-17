@@ -18,7 +18,8 @@
 }
 
 .gradient {
-  background-image: linear-gradient(to top, #dce7ed, #e6ecf2, #f0f2f7, #f8f8fb, #ffffff);
+  /* background-image: linear-gradient(to top, #dce7ed, #e6ecf2, #f0f2f7, #f8f8fb, #ffffff); */
+  background-image: linear-gradient(to top, #e1e0de, #e9e9e9, #eeeeed, #f8f8f8, #ffffff);
   height: 300px;
   font-family: var(--fontFamilyDeco);
   display: flex;

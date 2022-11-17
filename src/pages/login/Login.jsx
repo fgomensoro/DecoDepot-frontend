@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Login.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { storeUser } from "../../redux/userSlice";
@@ -57,6 +57,18 @@ function Login() {
             <button type="submit" className={styles.submitBtn}>
               Submit
             </button>
+            <div className="d-flex justify-content-center mt-2">
+              <span>
+                <Link to={"/"} className={styles.link}>
+                  Home
+                </Link>
+              </span>
+              <span>
+                <Link to={"/signup"} className={styles.link}>
+                  Sign Up
+                </Link>
+              </span>
+            </div>
           </form>
         </div>
       </div>
