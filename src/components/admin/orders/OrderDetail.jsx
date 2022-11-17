@@ -23,10 +23,60 @@ function OrderDetail() {
   useEffect(() => {
     getOrder();
   }, []); // eslint-disable-line
-  console.log(order);
   return (
-    <div>
-      <h1></h1>
+    <div className={`${styles.order} container`}>
+      <h1 className="text-center">Order detail</h1>
+      {order && (
+        <div className={styles.table}>
+          <table className="table">
+            <tbody>
+              <tr>
+                <td className={styles.td}>User email</td>
+                <td className={styles.td}>{order.user.email}</td>
+              </tr>
+              <tr>
+                <td className={styles.td}>Address</td>
+                <td className={styles.td}>
+                  {order.shippingAddress.address}-{order.shippingAddress.apt}
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.td}>Products</td>
+                <td className={styles.td}>
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {order.products.map((product, index) => {
+                        return (
+                          <tr key={index}>
+                            <td className={styles.td}>{product.name}</td>
+                            <td className={styles.td}>{product.price}</td>
+                            <td className={styles.td}>{product.qty}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.td}>Status</td>
+                <td className={styles.td}>{order.status}</td>
+              </tr>
+              <tr>
+                <td className={styles.td}>Total</td>
+                <td className={styles.td}>${order.total}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
