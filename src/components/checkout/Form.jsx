@@ -83,9 +83,9 @@ function CheckoutForm() {
           <Link className={styles.return} to="/cart">
             <TiArrowBack className="mb-1" /> Return to cart
           </Link>
-          <button type="button" className={`${styles.continue} btn btn-block`}>
+          <Link to="/pay" type="button" className={`${styles.continue} btn btn-block`}>
             Continue
-          </button>
+          </Link>
         </div>
       </form>
     </div>
