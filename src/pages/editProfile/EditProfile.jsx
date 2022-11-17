@@ -3,6 +3,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { storeUser } from "../../redux/userSlice";
 
 function EditProfile() {
   const user = useSelector((state) => state.user);
@@ -10,6 +12,7 @@ function EditProfile() {
   const [email, setNewEmail] = useState(user.email);
   const [address, setNewAddress] = useState(user.address);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,6 +26,13 @@ function EditProfile() {
         address: e.target.address.value,
       },
     });
+
+    const modifiedUser = await axios({
+      url: `${process.env.REACT_APP_API_URL}/users/63753c14d61c836e7441e1a1`,
+      method: "GET",
+    });
+    dispatch(storeUser(modifiedUser.data));
+
     return navigate(`/users/${user.firstname}`);
   };
 
