@@ -16,7 +16,6 @@ function Home() {
       <Store />
       <Pack1 />
       <Pack2 />
-      <Reviews />
     </>
   );
 }

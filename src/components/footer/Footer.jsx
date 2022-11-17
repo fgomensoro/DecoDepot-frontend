@@ -1,22 +1,24 @@
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import Reviews from "../reviews/Reviews";
 function Footer() {
   return (
     <div className={styles.footerContainer}>
-      <div className={`${styles.gradient} `}>
+      <Reviews />
+      {/* <div className={`${styles.gradient} `}>
         <div className="container">
           <div className={`${styles.sloganWrapper}`}>
             <p className={styles.slogan}>
-              {/* One billion toothpaste tubes are thrown out each year We want to end this plastic
+              One billion toothpaste tubes are thrown out each year We want to end this plastic
               waste, give you a healthier smile, and build the world's most sustainable oral care
-              company. */}
+              company.
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={`${styles.backGrey} container-fluid`}>
         <div className="container ">
-          <footer className="py-5">
+          <footer className="pb-5">
             <div className="d-flex justify-content-between">
               <p>Subscribe to get 10% off on your first order</p>
               <div>
