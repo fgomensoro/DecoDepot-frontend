@@ -3,24 +3,25 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
-
-import Footer from "../../footer/Footer";
+import OrderButtons from "./OrderButtons";
+import { Link } from "react-router-dom";
 
 function OrdersTable() {
   const user = useSelector((state) => state.user);
   const [orders, setOrders] = useState(null);
 
+  const getOrders = async () => {
+    const response = await axios({
+      url: `${process.env.REACT_APP_API_URL}/orders`,
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + user.token,
+      },
+    });
+    setOrders(response.data);
+  };
+
   useEffect(() => {
-    const getOrders = async () => {
-      const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/orders`,
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + user.token,
-        },
-      });
-      setOrders(response.data);
-    };
     getOrders();
   }, []); // eslint-disable-line
 
@@ -34,39 +35,35 @@ function OrdersTable() {
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
-                  <th scope="col"></th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Delivered</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {orders.map((order, index) => {
-                  return (
-                    <tr key={order._id}>
-                      <th scope="row">{index}</th>
-                      <td>{order.name}</td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                      </td>
-                    </tr>
-                  );
-                })}
+                {orders &&
+                  orders.map((order, index) => {
+                    return (
+                      <tr key={order._id}>
+                        <th scope="row">{index}</th>
+                        <td>{order.user.email}</td>
+                        <td>{order.user.address}</td>
+                        <td>{`${order.status}`}</td>
+                        <td>
+                          <OrderButtons order={order} getOrders={getOrders} />
+                          <Link to={`/admin/orders/${order._id}`} className={styles.btnDetail}>
+                            Detail
+                          </Link>
+                        </td>
+                      </tr>
+                    );
+                  })}
               </tbody>
             </table>
           )}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
