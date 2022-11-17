@@ -6,7 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { storeUser } from "../../redux/userSlice";
 
+import React from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 function EditProfile() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const user = useSelector((state) => state.user);
   const [number, setNewNumber] = useState(user.phoneNumber);
   const [email, setNewEmail] = useState(user.email);
@@ -32,13 +40,33 @@ function EditProfile() {
       method: "GET",
     });
     dispatch(storeUser(modifiedUser.data));
-
-    return navigate(`/users/${user.firstname}`);
+    handleShow();
+    /*  return navigate(`/users/${user.firstname}`); */
   };
 
   return (
     <div className={`${styles.mainContainer}`}>
       <div className={`${styles.formWrapper} `}>
+        <div>
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header className="d-flex justify-content-center">
+              <Modal.Title>
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                  {" "}
+                  ¡Your changes have been saved!
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      navigate(`/users/${user.firstname}`);
+                    }}
+                  >
+                    Continue to your profile!
+                  </Button>
+                </div>
+              </Modal.Title>
+            </Modal.Header>
+          </Modal>
+        </div>
         <div>
           <h2 className="text-center mb-4">Edit your information</h2>
           <form onSubmit={handleSubmit}>
