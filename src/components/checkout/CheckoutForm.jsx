@@ -55,7 +55,7 @@ function CheckoutForm() {
         </div>
         <div className="col-12 col-lg-1"></div>
         <div className={`${styles.col2} col-12 col-lg-5 text-center`}>
-          <OrderSummary />
+          <OrderSummary total={total} />
         </div>
       </div>
     </div>
