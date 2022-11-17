@@ -197,6 +197,18 @@
   opacity: 88%;
 }
 
+.placeMyOrder:hover {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #03258e;
+  border: none;
+  color: white;
+  margin-top: 3rem;
+  opacity: 80%;
+}
+
 .return {
   color: #3f61c3;
   text-decoration: none;
