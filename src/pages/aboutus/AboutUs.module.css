@@ -1,0 +1,82 @@
+.background {
+  height: 45rem;
+  position: relative;
+}
+
+.title {
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.image {
+  width: 100%;
+  height: 45rem;
+  object-fit: cover;
+}
+
+.textContainer {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.sectionProyect {
+  background-color: var(--colorSoftDeco);
+  padding: 2rem;
+}
+
+.cardTop {
+  height: 8rem;
+}
+
+.cardBottom {
+  position: relative;
+
+  background-color: var(--colorSoftDeco);
+  padding: 2rem;
+}
+
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border: 4px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+}
+
+.name {
+  text-align: center;
+}
+
+.description {
+}
+
+.linkedin {
+  position: absolute;
+  font-size: 1.7rem;
+  bottom: -1rem;
+  left: 75%;
+}
+
+.github {
+  position: absolute;
+  font-size: 1.7rem;
+  bottom: -1rem;
+  left: 85%;
+}
+
+.sectionMore {
+  background-color: var(--colorSoftDeco);
+}
+
+.imageMern {
+  width: 100%;
+}

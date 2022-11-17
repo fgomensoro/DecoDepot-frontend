@@ -3,11 +3,9 @@ import Products from "./Products";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
-function OrderSummary() {
-  const cartStore = useSelector((state) => state.cart.items);
-  // console.log(cart);
-  const [cart, setCart] = useState(cartStore);
-
+function OrderSummary({ tax, total }) {
+  const cartStore = useSelector((state) => state.cart);
+  const [cart, setCart] = useState(cartStore.items);
   let dollarUSLocale = Intl.NumberFormat("en-US");
 
   return (
@@ -19,7 +17,7 @@ function OrderSummary() {
       <div className={styles.totalsContainer}>
         <div className={styles.totals}>
           <p className={styles.pSubtotals}>Subtotal</p>
-          <p className={styles.price}>$ {dollarUSLocale.format(12000)}</p>
+          <p className={styles.price}>$ {dollarUSLocale.format(cartStore.total)}</p>
         </div>
         <div className={styles.totals}>
           <p className={styles.pSubtotals}>Shipping</p>
@@ -32,7 +30,7 @@ function OrderSummary() {
         <div className={styles.hrLine}></div>
         <div className={styles.totals}>
           <p className={styles.pTotal}>Total</p>
-          <p className={styles.priceTotal}> $ {dollarUSLocale.format(12000)} </p>
+          <p className={styles.priceTotal}> $ {dollarUSLocale.format(total)} </p>
         </div>
       </div>
     </div>

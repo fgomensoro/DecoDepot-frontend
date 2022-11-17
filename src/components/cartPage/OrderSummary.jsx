@@ -1,7 +1,6 @@
 import styles from "./OrderSummary.module.css";
 import Products from "./Products";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import { FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

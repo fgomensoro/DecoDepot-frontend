@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import cartReducer from "./cartSlice";
 import offCanvasReducer from "./offCanvasSlice";
+import shippingAddressReducer from "./shippingAddressSlice";
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 
 import storage from "redux-persist/lib/storage";
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   user: userReducer,
   offCanvas: offCanvasReducer,
+  shippingAddress: shippingAddressReducer,
 });
 const persistConfig = { key: "root", storage };
 const persistedReducer = persistReducer(persistConfig, rootReducer);

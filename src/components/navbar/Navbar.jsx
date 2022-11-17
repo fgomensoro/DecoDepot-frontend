@@ -10,7 +10,7 @@ import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
 
 function Navbar() {
-  const url = process.env.REACT_APP_IMAGE_PATH + "decoDepotLogo.png";
+  const url = process.env.REACT_APP_IMAGE_PATH + "logo.svg";
   const [user, setUser] = useState(false);
   const [colorChange, setColorchange] = useState(false);
   const [showLeftNavbar, setShowLeftNavbar] = useState(false);
@@ -89,9 +89,10 @@ function Navbar() {
           </button>
         </div>
 
-        <div className={`${styles.logo} nav-item`}>
+        <div className={`${styles.logoContainer} nav-item`}>
           <Link to="/" className={`${styles.customNavLink}   nav-link`}>
-            <div className={styles.logo} style={{ backgroundImage: `url(${url})` }}></div>
+            {/* <div className={styles.logo} style={{ backgroundImage: `url(${url})` }}></div> */}
+            <img src={url} className={styles.logo} alt="logo" />
           </Link>
         </div>
 

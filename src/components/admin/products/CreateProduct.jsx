@@ -29,7 +29,7 @@ function CreateProduct() {
           Authorization: "Bearer " + user.token,
         },
       });
-      setCategories(response.data.categories);
+      setCategories(response.data);
     };
     getCategories();
   }, []); // eslint-disable-line

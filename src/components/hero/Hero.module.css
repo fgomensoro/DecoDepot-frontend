@@ -58,3 +58,14 @@
     text-align: center;
   }
 }
+
+.link {
+  text-decoration: none;
+  color: white;
+  padding: 0.8rem 2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: black;
+}
