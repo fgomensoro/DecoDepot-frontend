@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AboutUs.module.css";
 
 function AboutUs() {
-  const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus.jpg";
+  const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus6.jpg";
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   return (
