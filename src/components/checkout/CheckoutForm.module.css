@@ -47,6 +47,18 @@
   opacity: 88%;
 }
 
+.continue:hover {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #00258e;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  opacity: 80%;
+}
+
 .return {
   color: #3f61c3;
   text-decoration: none;
