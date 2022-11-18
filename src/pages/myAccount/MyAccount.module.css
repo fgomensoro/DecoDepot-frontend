@@ -7,7 +7,7 @@
   text-decoration: none;
   color: #5d5e5d;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 1rem;
 }
 
@@ -18,7 +18,13 @@
 }
 
 .container2 {
-  margin-top: 12rem;
+  margin-top: 13rem;
+  margin-bottom: 6rem;
+  margin-left: 3rem;
+}
+
+.container22 {
+  margin-top: 13rem;
   margin-bottom: 6rem;
 }
 
@@ -40,21 +46,24 @@
 }
 
 .title {
-  font-size: 14px;
+  font-size: 17px;
   color: #5d5e5d;
   opacity: 90%;
   margin-bottom: 2rem;
+  font-weight: 500;
 }
 
 .detail {
-  font-size: 14px;
+  font-size: 16px;
   color: #5d5e5d;
   opacity: 90%;
   margin-bottom: 2rem;
+  margin-left: 0.5rem;
+  font-weight: 400;
 }
 
 .edit {
-  margin-left: 28rem;
+  margin-left: 24rem;
   text-decoration: none;
   opacity: 80%;
   font-size: 14px;

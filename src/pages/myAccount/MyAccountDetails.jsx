@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 function MyAccount() {
   const user = useSelector((state) => state.user);
 
-  console.log(user);
-
   return (
     <div className="row">
       <div className="col-4">
@@ -34,27 +32,27 @@ function MyAccount() {
       </div>
       <div className="col-8">
         <div className={styles.container2}>
-          <div>
+          <div className="mt-4">
             <small className={styles.title}>Name: </small>
             <small className={styles.detail}>{user.firstname}</small>
           </div>
-          <div>
-            <h3 className={styles.title}>Lastname: </h3>
+          <div className="mt-4">
+            <small className={styles.title}>Last name: </small>
             <small className={styles.detail}>{user.lastname}</small>
           </div>
-          <div>
+          <div className="mt-4">
             <small className={styles.title}>Email: </small>
             <small className={styles.detail}>{user.email}</small>
           </div>
-          <div>
+          <div className="mt-4">
             <small className={styles.title}>Address: </small>
             <small className={styles.detail}>{user.address}</small>
           </div>
-          <div>
+          <div className="mt-4">
             <small className={styles.title}>Phone Number: </small>
-            <small className={styles.detail}></small>
+            <small className={styles.detail}>{user.phoneNumber}</small>
           </div>
-          <div className="d-flex">
+          <div className="d-flex mt-5">
             <Link className={`${styles.edit} btn btn-light`}>Edit</Link>
           </div>
         </div>
