@@ -1,7 +1,16 @@
 import styles from "./MyAccount.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/userSlice";
 
 function MyAccount() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
   return (
     <div className="row">
       <div className="col-4">
@@ -12,6 +21,10 @@ function MyAccount() {
               Account Details
             </Link>
             <div className={styles.line}></div>
+            <Link className={styles.link} to="/myaccount_edit">
+              Edit account
+            </Link>
+            <div className={styles.line}></div>
             <Link className={styles.link} to="/myaccount_subscriptions">
               Subscriptions
             </Link>
@@ -20,7 +33,7 @@ function MyAccount() {
               Order History
             </Link>
             <div className={styles.line}></div>
-            <Link className={styles.link} onClick={() => handleLogout()} to="/">
+            <Link className={styles.link} onClick={() => handleLogout()}>
               Log Out
             </Link>
           </div>
