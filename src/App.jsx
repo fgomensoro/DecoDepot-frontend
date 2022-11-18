@@ -11,6 +11,10 @@ import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
 import CartPage from "./pages/cart/CartPage";
 import Pay from "./pages/pay/Pay";
+import MyAccount from "./pages/myAccount/MyAccount";
+import MyAccountDetails from "./pages/myAccount/MyAccountDetails";
+import MyAccountOrderHistory from "./pages/myAccount/MyAccountOrderHistory";
+import MyAccountSubscriptions from "./pages/myAccount/MyAccountSubscriptions";
 import ProductsTable from "./components/admin/products/ProductsTable";
 import OrdersTable from "./components/admin/orders/OrdersTable";
 import PacksTable from "./components/admin/packs/PacksTable";
@@ -60,6 +64,10 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/myaccount" element={<MyAccount />} />
+        <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
+        <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
+        <Route path="/myaccount_details" element={<MyAccountDetails />} />
         <Route element={<OnlyUser />} user={user}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/users/:slug" element={<Profile />} />
