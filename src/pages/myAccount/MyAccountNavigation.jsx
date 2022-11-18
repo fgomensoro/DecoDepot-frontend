@@ -8,7 +8,7 @@ function MyAccountNavigation() {
   const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/login");
+    navigate("/home");
   };
   return (
     <>
