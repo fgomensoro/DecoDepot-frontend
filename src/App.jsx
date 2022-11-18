@@ -22,7 +22,6 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import Profile from "./pages/profile/Profile";
 import AboutUs from "./pages/aboutus/AboutUs";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -64,14 +63,14 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/myaccount" element={<MyAccount />} />
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
-          <Route path="/users/:slug" element={<Profile />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/myaccount_edit" element={<EditProfile />} />
           <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
           <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
           <Route path="/myaccount_details" element={<MyAccountDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route element={<AdminOnly isAdmin={user && user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />

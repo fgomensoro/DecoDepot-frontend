@@ -72,7 +72,7 @@ function EditProfile() {
                   <Button
                     variant="primary"
                     onClick={() => {
-                      navigate(`/users/${user.slug}`);
+                      navigate(`/myaccount`);
                     }}
                   >
                     Continue to your profile!

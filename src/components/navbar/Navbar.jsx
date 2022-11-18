@@ -90,7 +90,7 @@ function Navbar() {
           </li>
           {user && (
             <li className="nav-item">
-              <Link to={`/users/${user.slug}`} className={`${styles.customNavLink} nav-link`}>
+              <Link to={`/myaccount`} className={`${styles.customNavLink} nav-link`}>
                 My accout
               </Link>
             </li>
