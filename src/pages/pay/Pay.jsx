@@ -17,8 +17,6 @@ function pay() {
     setTotal(cartStore.total);
   });
 
-  
-
   return (
     <div>
       <FaLock className={styles.lock} />
@@ -26,7 +24,9 @@ function pay() {
       <div className={`${styles.cont} container`}>
         <div className="row">
           <div className="col-12 col-lg-6 text-center">
-            <img className={styles.logo} src={url} alt="Logo" />
+            <Link to="/">
+              <img className={styles.logo} src={url} alt="Logo" />
+            </Link>
             <div className={styles.customerInfo}>
               <div className={styles.firstLine}>
                 <h2 className={`${styles.custShippingInfo} mb-4`}>

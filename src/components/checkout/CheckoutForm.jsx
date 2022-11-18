@@ -26,7 +26,9 @@ function CheckoutForm() {
     <div>
       <div className="row">
         <div className="col-12 col-lg-6 text-center">
-          <img className={styles.logo} src={url} alt="Logo" />
+          <Link to="/">
+            <img className={styles.logo} src={url} alt="Logo" />
+          </Link>
           <div className={styles.customerInfo}>
             <h2 className={`${styles.custShippingInfo} mb-4`}>Customer & shipping information</h2>
             <div>
