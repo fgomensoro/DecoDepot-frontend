@@ -38,3 +38,30 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+.title {
+  font-size: 14px;
+  color: #5d5e5d;
+  opacity: 90%;
+  margin-bottom: 2rem;
+}
+
+.detail {
+  font-size: 14px;
+  color: #5d5e5d;
+  opacity: 90%;
+  margin-bottom: 2rem;
+}
+
+.edit {
+  margin-left: 28rem;
+  text-decoration: none;
+  opacity: 80%;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px #5d5e5d !important;
+}
+
+.edit:hover {
+  opacity: 60%;
+}
