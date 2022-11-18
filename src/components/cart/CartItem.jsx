@@ -38,8 +38,6 @@ function CartItem({ product }) {
     dispatch(removeItem({ name: product.name, qty: 10000 }));
   }
 
-  // const dollarUSLocale = Intl.NumberFormat("en-US");
-  // <p className={styles.titleH42}>${dollarUSLocale.format(item.price)}</p>
 
   return (
     <div>

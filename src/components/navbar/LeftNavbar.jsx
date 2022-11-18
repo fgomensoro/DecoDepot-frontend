@@ -35,17 +35,21 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user,
               Cart
             </Link>
           </li>
-          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
-            <Link to={`/users/${loggedUser.slug}`} className={`${styles.sideLink} side-link`}>
-              My profile
-            </Link>
-          </li>
-          <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
-            <Link to="/checkout" className={`${styles.sideLink} side-link`}>
-              Checkout
-            </Link>
-          </li>
-          {loggedUser.isAdmin && (
+          {user && (
+            <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+              <Link to={`/users/${loggedUser.slug}`} className={`${styles.sideLink} side-link`}>
+                My profile
+              </Link>
+            </li>
+          )}
+          {user && (
+            <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
+              <Link to="/checkout" className={`${styles.sideLink} side-link`}>
+                Checkout
+              </Link>
+            </li>
+          )}
+          {user && loggedUser.isAdmin && (
             <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
               <Link to="/admin" className={`${styles.sideLink} side-link`}>
                 Admin
