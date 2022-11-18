@@ -1,8 +1,7 @@
 import styles from "./Cart.module.css";
-import Footer from "../../components/footer/Footer";
 
 import OrderSummary from "../../components/cartPage/OrderSummary";
-import ContinueToCheckout from "../../components/cartPage/ContinueToCheckout";
+import FeaturedProducts from "../../components/cartPage/FeaturedProducts";
 
 function CartPage() {
   return (
@@ -12,7 +11,7 @@ function CartPage() {
           <OrderSummary />
         </div>
         <div className={`${styles.featured}`}>
-          <ContinueToCheckout />
+          <FeaturedProducts />
         </div>
       </div>
     </div>
