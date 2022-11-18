@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./AboutUs.module.css";
 
 function AboutUs() {
-  const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus6.jpg";
+  const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus9.jpg";
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
+  const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.background}>
@@ -38,8 +41,14 @@ function AboutUs() {
                   maxime iure provident in eius non maiores architecto deleniti accusamus ipsam
                   consequatur, sunt doloribus nihil libero numquam, voluptatem reiciendis!
                 </p>
-                <i className={`${styles.linkedin} bi bi-linkedin mx-1`}></i>
-                <i className={`${styles.github} bi bi-github mx-1`}></i>
+                <i
+                  className={`${styles.linkedin} bi bi-linkedin mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
+                <i
+                  className={`${styles.github} bi bi-github mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
               </div>
             </div>
           </div>
@@ -54,8 +63,14 @@ function AboutUs() {
                   maxime iure provident in eius non maiores architecto deleniti accusamus ipsam
                   consequatur, sunt doloribus nihil libero numquam, voluptatem reiciendis!
                 </p>
-                <i className={`${styles.linkedin} bi bi-linkedin mx-1`}></i>
-                <i className={`${styles.github} bi bi-github mx-1`}></i>
+                <i
+                  className={`${styles.linkedin} bi bi-linkedin mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
+                <i
+                  className={`${styles.github} bi bi-github mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
               </div>
             </div>
           </div>
@@ -72,8 +87,14 @@ function AboutUs() {
                   maxime iure provident in eius non maiores architecto deleniti accusamus ipsam
                   consequatur, sunt doloribus nihil libero numquam, voluptatem reiciendis!
                 </p>
-                <i className={`${styles.linkedin} bi bi-linkedin mx-1`}></i>
-                <i className={`${styles.github} bi bi-github mx-1`}></i>
+                <i
+                  className={`${styles.linkedin} bi bi-linkedin mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
+                <i
+                  className={`${styles.github} bi bi-github mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
               </div>
             </div>
           </div>
@@ -88,8 +109,14 @@ function AboutUs() {
                   maxime iure provident in eius non maiores architecto deleniti accusamus ipsam
                   consequatur, sunt doloribus nihil libero numquam, voluptatem reiciendis!
                 </p>
-                <i className={`${styles.linkedin} bi bi-linkedin mx-1`}></i>
-                <i className={`${styles.github} bi bi-github mx-1`}></i>
+                <i
+                  className={`${styles.linkedin} bi bi-linkedin mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
+                <i
+                  className={`${styles.github} bi bi-github mx-1`}
+                  onClick={() => navigate("/")}
+                ></i>
               </div>
             </div>
           </div>
