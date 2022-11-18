@@ -11,37 +11,52 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function EditProfile() {
+  const user = useSelector((state) => state.user);
+
   const [show, setShow] = useState(false);
+  const [phoneNumber, setNewPhoneNumber] = useState(user.phoneNumber);
+  const [email, setNewEmail] = useState(user.email);
+  const [address, setNewAddress] = useState(user.address);
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const user = useSelector((state) => state.user);
-  const [number, setNewNumber] = useState(user.phoneNumber);
-  const [email, setNewEmail] = useState(user.email);
-  const [address, setNewAddress] = useState(user.address);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleSubmit = async (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email || !address || !phoneNumber || !currentPassword) {
+      setError(true);
+      return false;
+    }
+    const updateUser = async () => {
+      const response = await axios({
+        url: `${process.env.REACT_APP_API_URL}/users/${user.slug}`,
+        method: "PATCH",
+        headers: {
+          Authorization: "Bearer " + user.token,
+        },
+        data: {
+          email,
+          phoneNumber,
+          address,
+          currentPassword,
+          newPassword,
+          confirmNewPassword,
+        },
+      });
+      console.log(response.data);
+    };
+    updateUser();
 
-    const response = await axios({
-      url: `${process.env.REACT_APP_API_URL}/users/63753c14d61c836e7441e1a1`,
-      method: "PATCH",
-
-      data: {
-        email: e.target.eMail.value !== user.email ? e.target.eMail.value : "",
-        phoneNumber: e.target.phoneNumber.value,
-        address: e.target.address.value,
-      },
-    });
-
-    const modifiedUser = await axios({
-      url: `${process.env.REACT_APP_API_URL}/users/63753c14d61c836e7441e1a1`,
-      method: "GET",
-    });
-    dispatch(storeUser(modifiedUser.data));
+    /*    dispatch(storeUser(modifiedUser.data)); */
     handleShow();
-    /*  return navigate(`/users/${user.firstname}`); */
   };
 
   return (
@@ -57,7 +72,7 @@ function EditProfile() {
                   <Button
                     variant="primary"
                     onClick={() => {
-                      navigate(`/users/${user.firstname}`);
+                      navigate(`/users/${user.slug}`);
                     }}
                   >
                     Continue to your profile!
@@ -70,15 +85,16 @@ function EditProfile() {
         <div>
           <h2 className="text-center mb-4">Edit your information</h2>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="eMail">Enter new email</label>
+            <label htmlFor="email">Enter new email</label>
             <input
               type="email"
               placeholder="Enter your new email"
-              name="eMail"
+              name="email"
               className={`${styles.input} form-control mb-3`}
               value={email}
               onChange={(event) => setNewEmail(event.target.value)}
-            />
+            />{" "}
+            {error && !email && <p className={styles.message}>Required field</p>}
             <label htmlFor="address">Enter your new address</label>
             <input
               type="text"
@@ -87,17 +103,46 @@ function EditProfile() {
               className={`${styles.input} form-control mb-3`}
               value={address}
               onChange={(event) => setNewAddress(event.target.value)}
-            />
+            />{" "}
+            {error && !address && <p className={styles.message}>Required field</p>}
             <label htmlFor="phoneNumber">Enter your new number</label>
             <input
-              type="text"
+              type="number"
               placeholder="Enter your new number"
               name="phoneNumber"
               className={`${styles.input} form-control mb-3`}
-              value={number}
-              onChange={(event) => setNewNumber(event.target.value)}
+              value={phoneNumber}
+              onChange={(event) => setNewPhoneNumber(event.target.value)}
+            />{" "}
+            {error && !phoneNumber && <p className={styles.message}>Required field</p>}
+            <label htmlFor="password">Current password</label>
+            <input
+              type="password"
+              placeholder="Enter your new number"
+              name="password"
+              className={`${styles.input} form-control mb-3`}
+              value={currentPassword}
+              onChange={(event) => setCurrentPassword(event.target.value)}
+            />{" "}
+            {error && !currentPassword && <p className={styles.message}>Required field</p>}
+            <label htmlFor="newPassword">Enter your new password</label>
+            <input
+              type="password"
+              placeholder="Enter your new password"
+              name="newPassword"
+              className={`${styles.input} form-control mb-3`}
+              value={newPassword}
+              onChange={(event) => setNewPassword(event.target.value)}
             />
-
+            <label htmlFor="confirmNewPassword">Confirm your new password</label>
+            <input
+              type="password"
+              placeholder="Enter your new number"
+              name="confirmNewPassword"
+              className={`${styles.input} form-control mb-3`}
+              value={confirmNewPassword}
+              onChange={(event) => setConfirmNewPassword(event.target.value)}
+            />
             <button type="submit" className={styles.submitBtn}>
               Submit
             </button>
