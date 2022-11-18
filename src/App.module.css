@@ -9,3 +9,16 @@
   position: relative;
   box-sizing: border-box;
 }
+
+.error404 {
+  margin-top: 18rem;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.error {
+  color: crimson;
+  opacity: 70%;
+  font-weight: 600;
+  font-size: 35px;
+}

@@ -76,8 +76,17 @@ function App() {
           <Route path="/admin/reviews" element={<ReviewsTable />} />
           <Route path="/admin/users" element={<UsersTable />} />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       {showFooter && <Footer />}
+    </div>
+  );
+}
+
+function PageNotFound() {
+  return (
+    <div className={styles.error404}>
+      <h2 className={styles.error}>404 Page not found</h2>
     </div>
   );
 }

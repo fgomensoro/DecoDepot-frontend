@@ -45,6 +45,7 @@ const cartSlice = createSlice({
           image: action.payload.image,
           price: action.payload.price,
           qty: action.payload.qty,
+          slug: action.payload.slug,
         });
       } else {
         isInCart.qty += action.payload.qty;

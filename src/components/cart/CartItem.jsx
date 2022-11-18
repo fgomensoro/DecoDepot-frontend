@@ -15,7 +15,7 @@ function CartItem({ product }) {
     if (num === 1) {
       const getQuantity = async () => {
         const response = await axios({
-          url: `${process.env.REACT_APP_API_URL}/products/${product.id}`,
+          url: `${process.env.REACT_APP_API_URL}/products/${product.slug}`,
           method: "GET",
         });
         if (response.data.stock > quantity) {
@@ -38,8 +38,6 @@ function CartItem({ product }) {
     dispatch(removeItem({ name: product.name, qty: 10000 }));
   }
 
-  // const dollarUSLocale = Intl.NumberFormat("en-US");
-  // <p className={styles.titleH42}>${dollarUSLocale.format(item.price)}</p>
 
   return (
     <div>

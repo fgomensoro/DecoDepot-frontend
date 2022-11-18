@@ -18,6 +18,7 @@ function SuggestionItem({ product }) {
         qty: 1,
         image: product.images[randomNum],
         price: product.price,
+        slug: product.slug,
       }),
     );
   };
