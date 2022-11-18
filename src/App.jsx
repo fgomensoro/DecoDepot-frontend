@@ -30,6 +30,7 @@ import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import EditProfile from "./pages/editProfile/EditProfile";
 import OnlyUser from "./components/onlyUser/OnlyUser";
+import MyAccountEdit from "./pages/myAccount/MyAccountEdit";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -66,7 +67,7 @@ function App() {
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/myaccount" element={<MyAccount />} />
-          <Route path="/myaccount_edit" element={<EditProfile />} />
+          <Route path="/myaccount_edit" element={<MyAccountEdit />} />
           <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
           <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
           <Route path="/myaccount_details" element={<MyAccountDetails />} />

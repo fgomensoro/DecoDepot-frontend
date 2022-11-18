@@ -1,6 +1,7 @@
 import styles from "./MyAccount.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
   const user = useSelector((state) => state.user);
@@ -11,21 +12,7 @@ function MyAccount() {
         <div className={`${styles.container} row`}>
           <div className="col-5"></div>
           <div className="col-5">
-            <Link className={styles.link} to="/myaccount_details">
-              Account Details
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_subscriptions">
-              Subscriptions
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_orderhistory">
-              Order History
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} onClick={() => handleLogout()} to="/">
-              Log Out
-            </Link>
+            <MyAccountNavigation />
           </div>
           <div className="col-2"></div>
         </div>
@@ -53,7 +40,9 @@ function MyAccount() {
             <small className={styles.detail}>{user.phoneNumber}</small>
           </div>
           <div className="d-flex mt-5">
-            <Link className={`${styles.edit} btn btn-light`}>Edit</Link>
+            <Link className={`${styles.edit} btn btn-light`} to={"/myaccount_edit"}>
+              Edit
+            </Link>
           </div>
         </div>
       </div>

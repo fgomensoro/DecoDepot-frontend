@@ -1,5 +1,6 @@
 import styles from "./MyAccount.module.css";
 import { Link } from "react-router-dom";
+import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
   return (
@@ -8,21 +9,7 @@ function MyAccount() {
         <div className={`${styles.container} row`}>
           <div className="col-5"></div>
           <div className="col-5">
-            <Link className={styles.link} to="/myaccount_details">
-              Account Details
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_subscriptions">
-              Subscriptions
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_orderhistory">
-              Order History
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} onClick={() => handleLogout()} to="/">
-              Log Out
-            </Link>
+            <MyAccountNavigation />
           </div>
           <div className="col-2"></div>
         </div>
