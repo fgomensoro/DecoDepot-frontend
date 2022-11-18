@@ -19,11 +19,22 @@
   object-fit: cover;
 }
 
-.textContainer {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+@media (min-width: 900px) {
+  .textContainer {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .textContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .sectionProyect {
@@ -64,6 +75,12 @@
   font-size: 1.7rem;
   bottom: -1rem;
   left: 75%;
+  transition: all 0.1s ease-in-out;
+}
+
+.linkedin:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
 
 .github {
@@ -71,6 +88,12 @@
   font-size: 1.7rem;
   bottom: -1rem;
   left: 85%;
+  transition: all 0.1s ease-in-out;
+}
+
+.github:hover {
+  cursor: pointer;
+  transform: scale(1.03);
 }
 
 .sectionMore {
