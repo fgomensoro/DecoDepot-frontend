@@ -19,6 +19,7 @@ function ItemDetail({ product, getProduct }) {
         qty: 1,
         image: product.images[2],
         price: product.price,
+        slug: product.slug,
       }),
     );
     dispatch(toggleCart());

@@ -18,6 +18,7 @@ function Item({ product }) {
         name: product.name,
         image: product.images[0],
         price: product.price,
+        slug: product.slug,
       }),
     );
     setQty(qty + 1);
@@ -25,7 +26,7 @@ function Item({ product }) {
 
   return (
     <div className={styles.slideItem}>
-      <Link className="text-decoration-none" to={`/products/${product._id}`}>
+      <Link className="text-decoration-none" to={`/products/${product.slug}`}>
         <div className={styles.itemImgContainer}>
           <img
             className={styles.itemImg}
