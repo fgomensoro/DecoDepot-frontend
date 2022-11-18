@@ -32,6 +32,10 @@
   margin-left: 4.4rem;
 }
 
+.container4 {
+  margin-left: -3.5rem;
+}
+
 .containerSubs {
   border: 1px dashed #e7e7e7;
   width: 30rem;
@@ -73,4 +77,53 @@
 
 .edit:hover {
   opacity: 60%;
+}
+
+/* DE EJEMPLO */
+
+#progressBar1 {
+  color: #455a64;
+}
+
+.cont11 {
+  margin-left: 8rem;
+  margin-top: 12rem;
+  margin-bottom: 2rem;
+}
+
+.cont1 {
+  margin-bottom: 2rem;
+}
+
+#progressBar1 li {
+  list-style-type: none;
+  font-size: 13px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+@media (max-width: 380px) {
+  #image {
+    display: none;
+  }
+  .cont1 {
+    margin-left: 0.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cont1 {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 1310px) {
+  .link {
+    margin-left: 0px;
+  }
+}
+
+.cardStepper {
+  z-index: 0;
 }
