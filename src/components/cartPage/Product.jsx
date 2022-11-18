@@ -22,7 +22,6 @@ function Product({ item }) {
           url: `${process.env.REACT_APP_API_URL}/products/${item.slug}`,
           method: "GET",
         });
-        console.log(response.data);
         if (response.data.stock > quantity) {
           dispatch(addItem({ name: item.name, qty: 1 }));
           return setQuantity(quantity + 1);

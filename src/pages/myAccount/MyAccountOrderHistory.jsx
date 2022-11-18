@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Orders from "../../components/myAccount/Orders";
+import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
   const user = useSelector((state) => state.user);
@@ -30,21 +31,7 @@ function MyAccount() {
         <div className={`${styles.container} row`}>
           <div className="col-sm-2 col-xl-5"></div>
           <div className="col-sm-2 col-xl-5">
-            <Link className={styles.link} to="/myaccount_details">
-              Account Details
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_subscriptions">
-              Subscriptions
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} to="/myaccount_orderhistory">
-              Order History
-            </Link>
-            <div className={styles.line}></div>
-            <Link className={styles.link} onClick={() => handleLogout()} to="/">
-              Log Out
-            </Link>
+            <MyAccountNavigation />
           </div>
           <div className="col-sm-8 col-xl-2"></div>
         </div>
