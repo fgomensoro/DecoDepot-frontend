@@ -19,7 +19,7 @@ function Product({ item }) {
     if (num === 1) {
       const getQuantity = async () => {
         const response = await axios({
-          url: `${process.env.REACT_APP_API_URL}/products/${item.id}`,
+          url: `${process.env.REACT_APP_API_URL}/products/${item.slug}`,
           method: "GET",
         });
         console.log(response.data);

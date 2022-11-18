@@ -26,6 +26,7 @@ import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import EditProfile from "./pages/editProfile/EditProfile";
+import OnlyUser from "./components/onlyUser/OnlyUser";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -57,13 +58,14 @@ function App() {
         <Route path="/store/:category" element={<ProductsCategory />} />
         <Route path="/products/:slug" element={<Detail />} />
         <Route path="/store" element={<Products />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/users/:slug" element={<Profile />} />
-        <Route path="/users/:slug/edit" element={<EditProfile />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/buy" element={<Pay />} />
-        <Route element={<AdminOnly isAdmin={user.isAdmin} />}>
+        <Route element={<OnlyUser />} user={user}>
+          <Route path="/buy" element={<Pay />} />
+          <Route path="/users/:slug" element={<Profile />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Route>
+        <Route element={<AdminOnly isAdmin={user && user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/products" element={<ProductsTable />} />
           <Route path="/admin/products/create" element={<CreateProduct />} />
@@ -74,8 +76,17 @@ function App() {
           <Route path="/admin/reviews" element={<ReviewsTable />} />
           <Route path="/admin/users" element={<UsersTable />} />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       {showFooter && <Footer />}
+    </div>
+  );
+}
+
+function PageNotFound() {
+  return (
+    <div className={styles.error404}>
+      <h2 className={styles.error}>404 Page not found</h2>
     </div>
   );
 }
