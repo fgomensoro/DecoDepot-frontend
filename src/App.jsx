@@ -36,18 +36,13 @@ function App() {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/checkout" ||
-    location.pathname === "/buy" ||
-    location.pathname === "*"
+    location.pathname === "/buy"
   ) {
     showNav = false;
   }
 
   let showFooter = true;
-  if (
-    location.pathname === "/login" ||
-    location.pathname === "/signup" ||
-    location.pathname === "*"
-  ) {
+  if (location.pathname === "/login" || location.pathname === "/signup") {
     showFooter = false;
   }
 
