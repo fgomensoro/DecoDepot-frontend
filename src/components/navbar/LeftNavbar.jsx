@@ -37,7 +37,7 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user 
           </li>
           {user && (
             <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
-              <Link to={`/users/${user.slug}`} className={`${styles.sideLink} side-link`}>
+              <Link to={`/myaccount`} className={`${styles.sideLink} side-link`}>
                 My profile
               </Link>
             </li>

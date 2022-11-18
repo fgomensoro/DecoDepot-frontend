@@ -11,6 +11,10 @@ import Admin from "./pages/admin/Admin";
 import Checkout from "./pages/checkout/Checkout";
 import CartPage from "./pages/cart/CartPage";
 import Pay from "./pages/pay/Pay";
+import MyAccount from "./pages/myAccount/MyAccount";
+import MyAccountDetails from "./pages/myAccount/MyAccountDetails";
+import MyAccountOrderHistory from "./pages/myAccount/MyAccountOrderHistory";
+import MyAccountSubscriptions from "./pages/myAccount/MyAccountSubscriptions";
 import ProductsTable from "./components/admin/products/ProductsTable";
 import OrdersTable from "./components/admin/orders/OrdersTable";
 import PacksTable from "./components/admin/packs/PacksTable";
@@ -18,7 +22,6 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import Profile from "./pages/profile/Profile";
 import AboutUs from "./pages/aboutus/AboutUs";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -62,7 +65,11 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
-          <Route path="/users/:slug" element={<Profile />} />
+          <Route path="/myaccount" element={<MyAccount />} />
+          <Route path="/myaccount_edit" element={<EditProfile />} />
+          <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
+          <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
+          <Route path="/myaccount_details" element={<MyAccountDetails />} />
           <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route element={<AdminOnly isAdmin={user && user.isAdmin} />}>
