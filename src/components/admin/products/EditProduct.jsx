@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Footer from "../../footer/Footer";
+
+import { Link } from "react-router-dom";
 
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
