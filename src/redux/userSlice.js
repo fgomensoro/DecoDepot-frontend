@@ -7,8 +7,7 @@ const userSlice = createSlice({
       return action.payload;
     },
     logout(state, action) {
-      state = {};
-      return state;
+      return (state = null);
     },
   },
 });

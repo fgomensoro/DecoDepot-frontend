@@ -24,10 +24,10 @@ function Navbar() {
 
   useEffect(() => {
     const getLoggedUser = () => {
-      if (!loggedUser.firstname) {
+      if (user && !loggedUser.firstname) {
         setUser(false);
       }
-      if (loggedUser.firstname) {
+      if (user && loggedUser.firstname) {
         setUser(true);
       }
     };
@@ -103,15 +103,17 @@ function Navbar() {
               <i className={`${styles.customNavLink} ${styles.cart} bi bi-cart-fill`}></i>
             </button>
           </li>
+          {user && (
+            <li className="nav-item">
+              <Link
+                to={`/users/${loggedUser.firstname}`}
+                className={`${styles.customNavLink} nav-link`}
+              >
+                My accout
+              </Link>
+            </li>
+          )}
 
-          <li className="nav-item">
-            <Link
-              to={`/users/${loggedUser.firstname}`}
-              className={`${styles.customNavLink} nav-link`}
-            >
-              My accout
-            </Link>
-          </li>
           {user ? (
             <li className="nav-item">
               <Link
