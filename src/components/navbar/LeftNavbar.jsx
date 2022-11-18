@@ -3,7 +3,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 
-function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user, loggedUser }) {
+function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user }) {
   return (
     <Offcanvas className={styles.leftNavBody} show={showLeftNavbar} onHide={handleCloseLeftNavbar}>
       <Offcanvas.Header>
@@ -37,7 +37,7 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user,
           </li>
           {user && (
             <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
-              <Link to={`/users/${loggedUser.slug}`} className={`${styles.sideLink} side-link`}>
+              <Link to={`/users/${user.slug}`} className={`${styles.sideLink} side-link`}>
                 My profile
               </Link>
             </li>
@@ -49,7 +49,7 @@ function LeftNavbar({ showLeftNavbar, handleCloseLeftNavbar, handleLogout, user,
               </Link>
             </li>
           )}
-          {user && loggedUser.isAdmin && (
+          {user && user.isAdmin && (
             <li className={styles.listItem} onClick={handleCloseLeftNavbar}>
               <Link to="/admin" className={`${styles.sideLink} side-link`}>
                 Admin

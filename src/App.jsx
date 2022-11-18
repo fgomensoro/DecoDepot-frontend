@@ -60,7 +60,7 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route element={<OnlyUser />} user={user}>
+        <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/users/:slug" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />
