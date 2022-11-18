@@ -65,13 +65,13 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/myaccount" element={<MyAccount />} />
-        <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
-        <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
-        <Route path="/myaccount_details" element={<MyAccountDetails />} />
-        <Route element={<OnlyUser />} user={user}>
+        <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/users/:slug" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
+          <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
+          <Route path="/myaccount_details" element={<MyAccountDetails />} />
         </Route>
         <Route element={<AdminOnly isAdmin={user && user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />

@@ -11,36 +11,22 @@ import RightNavbar from "./RightNavbar";
 
 function Navbar() {
   const url = process.env.REACT_APP_IMAGE_PATH + "logo.svg";
-  const [user, setUser] = useState(false);
   const [colorChange, setColorchange] = useState(false);
   const [showLeftNavbar, setShowLeftNavbar] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const loggedUser = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const toggle = useSelector((state) => state.offCanvas);
+
   const handleToggle = () => {
     dispatch(toggleCart());
   };
-
-  useEffect(() => {
-    const getLoggedUser = () => {
-      if (user && !loggedUser.firstname) {
-        setUser(false);
-      }
-      if (user && loggedUser.firstname) {
-        setUser(true);
-      }
-    };
-    getLoggedUser();
-  }, []);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleCloseLeftNavbar = () => setShowLeftNavbar(false);
   const handleShowLeftNavbar = () => setShowLeftNavbar(true);
-  const handleCloseCart = () => setShowCart(false);
-  const handleShowCart = () => setShowCart(true);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -66,7 +52,6 @@ function Navbar() {
         handleCloseLeftNavbar={handleCloseLeftNavbar}
         handleLogout={handleLogout}
         user={user}
-        loggedUser={loggedUser}
       />
       <RightNavbar
         showCart={showCart}
@@ -105,10 +90,7 @@ function Navbar() {
           </li>
           {user && (
             <li className="nav-item">
-              <Link
-                to={`/users/${loggedUser.firstname}`}
-                className={`${styles.customNavLink} nav-link`}
-              >
+              <Link to={`/users/${user.slug}`} className={`${styles.customNavLink} nav-link`}>
                 My accout
               </Link>
             </li>
