@@ -1,30 +1,14 @@
 import styles from "./GenericItem.module.css";
-import { useDispatch } from "react-redux";
+
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
-import { toggleCart } from "../../redux/offCanvasSlice";
 
-import { addItem } from "../../redux/cartSlice";
+import AddToCartButton from "../buttons/addToCartButton/AddToCartButton";
 
 function GenericItem({ product }) {
   let description = product.description;
   const rating = Math.random() * (5 - 3.5 + 1) + 2.5;
   const numberReviews = Math.floor(Math.random() * (6000 - 3 + 1) + 3);
-
-  const dispatch = useDispatch();
-
-  const handleClickAdd = () => {
-    dispatch(
-      addItem({
-        id: product._id,
-        name: product.name,
-        qty: 1,
-        image: product.images[2],
-        price: product.price,
-      }),
-    );
-    dispatch(toggleCart());
-  };
 
   return (
     <div className={`${styles.smallCard} mt-3`}>
@@ -37,9 +21,10 @@ function GenericItem({ product }) {
             >
               See More
             </Link>
-            <button className={styles.btnAdd} onClick={handleClickAdd}>
+            <AddToCartButton product={product} btnClassName={"genericItem"} />
+            {/* <button className={styles.btnAdd} onClick={handleClickAdd}>
               Add To Cart
-            </button>
+            </button> */}
           </div>
           <img
             className={styles.img}

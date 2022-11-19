@@ -21,11 +21,6 @@
   margin-top: 1.25rem;
 }
 
-/* .row {
-  margin-top: 0.8rem;
-  margin-left: 2.5rem;
-} */
-
 .bigImage {
   border-radius: 25px;
   width: 95%;
@@ -95,16 +90,6 @@
   font-size: 1.2rem;
   border-radius: 50px;
   transform: translateY(-65%);
-}
-
-.btnAdd {
-  width: 75%;
-  padding: 5px;
-  background-color: black;
-  color: aliceblue;
-  font-weight: 600;
-  font-size: 1.2rem;
-  border-radius: 50px;
 }
 
 .img {

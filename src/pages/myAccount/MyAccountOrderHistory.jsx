@@ -1,5 +1,4 @@
 import styles from "./MyAccount.module.css";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";

@@ -26,21 +26,6 @@
   margin-bottom: 1.5rem;
 }
 
-.shopBtn {
-  font-family: "Calibre", sans-serif;
-  margin-bottom: 1.8rem;
-  background-color: black;
-  border-radius: 50px;
-  height: fit-content;
-  padding: 8px 5px 3px 5px;
-  font-size: 15px;
-  font-weight: 500;
-  transition: all 0.3s;
-  text-decoration: none;
-  color: white;
-  border: black solid 1px;
-}
-
 .name {
   color: #131313;
   font-weight: 500;

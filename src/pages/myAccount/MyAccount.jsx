@@ -1,7 +1,4 @@
 import styles from "./MyAccount.module.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { logout } from "../../redux/userSlice";
 import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {

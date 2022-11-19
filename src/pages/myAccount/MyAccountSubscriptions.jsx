@@ -1,15 +1,8 @@
 import styles from "./MyAccount.module.css";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
-  const dispatch = useDispatch();
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
-
   return (
     <div className="row">
       <div className="col-4">

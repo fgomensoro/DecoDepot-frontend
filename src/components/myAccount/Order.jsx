@@ -1,6 +1,6 @@
 import styles from "../../pages/myAccount/MyAccount.module.css";
 import Products from "./Products";
-import Time from "react-pure-time";
+// import Time from "react-pure-time";
 
 function order({ order }) {
   return (
@@ -17,7 +17,7 @@ function order({ order }) {
                   <div className="text-muted mb-0">
                     Place On:{" "}
                     <span className="fw-bold text-body">
-                      <Time value={order.createdAt} format="d.m.Y" />
+                      {/* <Time value={order.createdAt} format="d.m.Y" /> */}
                     </span>
                   </div>
                 </div>
