@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cartSlice";
 import { toggleCart } from "../../../redux/offCanvasSlice";
 
-function AddToCartButton({ product, btnClassName }) {
+function AddToCartButton({ product, btnClassName, toggle }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -17,7 +17,11 @@ function AddToCartButton({ product, btnClassName }) {
         slug: product.slug,
       }),
     );
-    dispatch(toggleCart());
+    if (toggle === false) {
+      return;
+    } else {
+      dispatch(toggleCart());
+    }
   };
 
   return (
