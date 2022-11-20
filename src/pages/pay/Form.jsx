@@ -5,11 +5,13 @@ import styles from "./Pay.module.css";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { FaCcMastercard, FaCcVisa, FaCcAmex, FaCcPaypal, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function CheckoutForm() {
   const [cardNumber, setCardNumber] = useState("");
   const state = useSelector((state) => state);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +30,7 @@ function CheckoutForm() {
         },
       });
     };
-
+    dispatch();
     postOrder();
   };
 
