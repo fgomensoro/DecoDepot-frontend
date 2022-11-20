@@ -68,9 +68,7 @@ function Navbar() {
             onClick={handleShowLeftNavbar}
           >
             Explore
-            <i
-              className={`${styles.customNavLink} ${styles.arrowWeight} bi bi-chevron-down arrowWeight`}
-            ></i>
+            <i className={`${styles.customNavLink} ${styles.arrow} bi bi-chevron-down`}></i>
           </button>
         </div>
 

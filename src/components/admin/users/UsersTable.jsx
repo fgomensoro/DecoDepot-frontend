@@ -3,24 +3,24 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
-
-import Footer from "../../footer/Footer";
+import UserIsAdminCheckbox from "./UserIsAdminCheckbox";
 
 function UsersTable() {
-  const user = useSelector((state) => state.user);
+  const loggedUser = useSelector((state) => state.user);
   const [users, setUsers] = useState(null);
 
+  const getUsers = async () => {
+    const response = await axios({
+      url: `${process.env.REACT_APP_API_URL}/users`,
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + loggedUser.token,
+      },
+    });
+    setUsers(response.data);
+  };
+
   useEffect(() => {
-    const getUsers = async () => {
-      const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/users`,
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + user.token,
-        },
-      });
-      setUsers(response.data);
-    };
     getUsers();
   }, []); // eslint-disable-line
 
@@ -40,7 +40,6 @@ function UsersTable() {
                 <th scope="col">Phone</th>
                 <th scope="col">Admin</th>
                 <th scope="col">Orders</th>
-                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -53,12 +52,14 @@ function UsersTable() {
                     <td>{user.email}</td>
                     <td>{user.address}</td>
                     <td>{user.phoneNumber}</td>
-                    <td>{user.admin}</td>
-                    <td>{user.orders}</td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
+                      <UserIsAdminCheckbox
+                        loggedUser={loggedUser}
+                        user={user}
+                        getUsers={getUsers}
+                      />
                     </td>
+                    <td>{user.orders}</td>
                   </tr>
                 );
               })}
