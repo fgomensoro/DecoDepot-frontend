@@ -79,15 +79,15 @@
 .faLock {
   margin-top: 0.8rem;
   color: #cdcdcd;
-  float: right;
   margin-left: 0.5rem;
   margin-right: 0.3rem;
+  font-size: 1.3rem;
 }
 
 .label {
   text-align: center;
   margin-top: 0rem;
-  margin-bottom: 1.6rem;
+  /* margin-bottom: 1.6rem; */
   width: 10rem;
   background-color: #f9f9f9;
   border-radius: 20px 0px 0px 20px;
@@ -99,7 +99,7 @@
 
 .item {
   border-radius: 0px 20px 20px 0px;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   padding: 10px 20px;
 }
 
@@ -165,8 +165,6 @@
   margin-left: -2rem;
   width: 10em;
   height: auto;
-  justify-content: left;
-  display: flex;
 }
 
 .form {
@@ -362,4 +360,8 @@
   color: #000000;
   opacity: 40%;
   margin-top: 0.2rem;
+}
+
+.message {
+  color: rgb(252, 25, 25);
 }

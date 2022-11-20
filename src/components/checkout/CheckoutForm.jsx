@@ -25,7 +25,7 @@ function CheckoutForm() {
   return (
     <div>
       <div className="row">
-        <div className="col-12 col-lg-6 text-center">
+        <div className="col-12 col-lg-6">
           <Link to="/">
             <img className={styles.logo} src={url} alt="Logo" />
           </Link>
@@ -56,7 +56,7 @@ function CheckoutForm() {
           <Form />
         </div>
         <div className="col-12 col-lg-1"></div>
-        <div className={`${styles.col2} col-12 col-lg-5 text-center`}>
+        <div className={`${styles.col2} col-12 col-lg-5 `}>
           <OrderSummary total={total} />
         </div>
       </div>

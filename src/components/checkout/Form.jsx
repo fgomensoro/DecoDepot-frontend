@@ -19,10 +19,26 @@ function CheckoutForm() {
   const [state, setState] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(e.target);
+
+    if (
+      !firstName ||
+      !lastName ||
+      !address ||
+      !apt ||
+      !city ||
+      !country ||
+      !state ||
+      !zipCode ||
+      !phone
+    ) {
+      setError(true);
+      return false;
+    }
+
     dispatch(
       storeShippingAddress({
         firstName: firstName,
@@ -52,6 +68,7 @@ function CheckoutForm() {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
+          {error && !firstName && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
@@ -63,6 +80,7 @@ function CheckoutForm() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
+        {error && !lastName && <span className={styles.message}>Required field</span>}
         <div className="form-group">
           <input
             type="text"
@@ -72,6 +90,7 @@ function CheckoutForm() {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
+          {error && !address && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
@@ -82,6 +101,7 @@ function CheckoutForm() {
             value={apt}
             onChange={(e) => setApt(e.target.value)}
           />
+          {error && !apt && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
@@ -92,16 +112,7 @@ function CheckoutForm() {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            className={`${styles.item} form-control`}
-            id="country"
-            placeholder="Country"
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-          />
+          {error && !city && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
@@ -112,26 +123,41 @@ function CheckoutForm() {
             value={state}
             onChange={(e) => setState(e.target.value)}
           />
+          {error && !state && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
             type="text"
+            className={`${styles.item} form-control`}
+            id="country"
+            placeholder="Country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+          {error && !country && <span className={styles.message}>Required field</span>}
+        </div>
+
+        <div className="form-group">
+          <input
+            type="number"
             className={`${styles.item} form-control`}
             id="zipCode"
             placeholder="ZIP Code"
             value={zipCode}
             onChange={(e) => setZipCode(e.target.value)}
           />
+          {error && !zipCode && <span className={styles.message}>Required field</span>}
         </div>
         <div className="form-group">
           <input
-            type="text"
+            type="number"
             className={`${styles.item} form-control`}
             id="phone"
             placeholder="Phone"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
+          {error && !phone && <span className={styles.message}>Required field</span>}
         </div>
         <div className={`${styles.links} form-group`}>
           <Link className={styles.return} to="/cart">
