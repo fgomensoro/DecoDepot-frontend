@@ -14,6 +14,7 @@ function CheckoutForm() {
   const [securityCode, setSecurityCode] = useState("");
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
+  const [backendMessage, setBackendMessage] = useState();
 
   const navigate = useNavigate();
 
@@ -37,7 +38,11 @@ function CheckoutForm() {
           total: state.cart.total,
         },
       });
-      console.log(response.data);
+      if (response.data.msg) {
+        setBackendMessage(response.data.msg);
+      } else {
+        navigate("/");
+      }
     };
 
     postOrder();
@@ -93,7 +98,7 @@ function CheckoutForm() {
         </div>
         {error && !fullName && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} mb-4`}>
+        <div className={`${styles.labelInputForm} mb-4 position-relative`}>
           <label className={styles.label} htmlFor="cardNumber">
             Card number
           </label>
@@ -136,6 +141,7 @@ function CheckoutForm() {
         </div>
         {error && !securityCode && <span className={styles.message}>Required field</span>}
 
+        <p className={styles.message}>{backendMessage}</p>
         <div className={`${styles.links} `}>
           <button type="submit" className={`${styles.placeMyOrder} btn btn-block`}>
             Place my order

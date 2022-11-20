@@ -77,10 +77,11 @@
 }
 
 .faLock {
-  margin-top: 0.8rem;
+  position: absolute;
+  right: 16px;
+  top: 11px;
   color: #cdcdcd;
-  margin-left: 0.5rem;
-  margin-right: 0.3rem;
+
   font-size: 1.3rem;
 }
 
@@ -364,4 +365,5 @@
 
 .message {
   color: rgb(252, 25, 25);
+  margin: 0;
 }
