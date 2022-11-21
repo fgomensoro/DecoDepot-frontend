@@ -32,8 +32,8 @@ function RightNavbar({ cart, toggle, handleToggle }) {
           className={`${styles.cartFooter} d-flex  align-items-center justify-content-center order-2 w-100`}
         >
           <div className="d-flex flex-column align-items-center">
-            <span>SUBTOTAL</span>
-            <h3>${dollarUSLocale.format(cart.total)}</h3>
+            <div className={styles.subtotalTitle}>SUBTOTAL</div>
+            <h3 className={`${styles.subtotal}`}>${dollarUSLocale.format(cart.total)}</h3>
           </div>
           <Link to="/checkout" className={styles.linkContinue}>
             <button className={styles.btnContinue} onClick={handleToggle}>
