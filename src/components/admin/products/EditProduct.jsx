@@ -16,8 +16,7 @@ function EditProduct() {
   const [stock, setStock] = useState(0);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
-  const [featured, setFeatured] = useState(false);
-  // const [slug, setSlug] = useState("");
+  const [slug, setSlug] = useState("");
   const [actionImages, setActionImages] = useState("add");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -40,8 +39,7 @@ function EditProduct() {
       setPrice(response.data.price);
       setStock(response.data.stock);
       setCategory(response.data.category);
-      setFeatured(response.data.features);
-      // setSlug(response.data.slug);
+      setSlug(response.data.slug);
     };
     getProduct();
   }, []); // eslint-disable-line
@@ -138,17 +136,17 @@ function EditProduct() {
               {error && !stock && <span className={styles.message}>Required field</span>}
             </div>
             {/* Definir si se hace automatico en backend o se puede editar manual */}
-            {/* <div className="mb-3">
-            <label className="form-label">Slug</label>
-            <input
-              type="text"
-              className="form-control"
-              name="slug"
-              value={slug}
-              onChange={(e) => setSlug(e.target.value)}
-            />
-            {error && !slug && <span className={styles.message}>Required field</span>}
-          </div> */}
+            <div className="mb-3">
+              <label className="form-label">Slug</label>
+              <input
+                type="text"
+                className="form-control"
+                name="slug"
+                value={slug}
+                onChange={(e) => setSlug(e.target.value)}
+              />
+              {error && !slug && <span className={styles.message}>Required field</span>}
+            </div>
             <label className="form-label">Categories</label>
             <select
               className="form-select mb-3"
@@ -156,7 +154,7 @@ function EditProduct() {
               value={category.name}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option>{category.name}</option>
+              <option value={category._id}>{category.name}</option>
               {categories
                 .filter((cat) => cat.name !== category)
                 .map((category, index) => {
@@ -186,16 +184,6 @@ function EditProduct() {
             </div>
             <div className="mt-3">
               <input className="form-control" name="image3" type="file" />
-            </div>
-            <div className="mb-3 mt-3 form-check">
-              <input
-                type="checkbox"
-                className="form-check-input"
-                name="featured"
-                value={featured}
-                onChange={() => setFeatured(!featured)}
-              />
-              <label className="form-check-label">Featured</label>
             </div>
             <p className={styles.message}>{message}</p>
             <button type="submit" className={styles.buttonEdit}>

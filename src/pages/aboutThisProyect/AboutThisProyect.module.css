@@ -69,10 +69,13 @@
   left: 1rem;
 }
 
+.ghostBlock {
+  width: 7.3rem;
+}
+
 .name {
   text-align: center;
 }
-
 .description {
 }
 
@@ -95,6 +98,7 @@
   bottom: -1rem;
   left: 85%;
   transition: all 0.1s ease-in-out;
+  color: black;
 }
 
 .github:hover {
@@ -108,4 +112,9 @@
 
 .imageMern {
   width: 100%;
+}
+
+.techLogos {
+  max-width: 10rem;
+  max-height: 10rem;
 }

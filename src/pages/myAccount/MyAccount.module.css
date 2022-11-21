@@ -99,7 +99,7 @@
 }
 
 .cont11 {
-  margin-left: 8rem;
+  margin-left: 10rem;
   margin-top: 12rem;
   margin-bottom: 2rem;
 }
@@ -123,6 +123,11 @@
   .cont1 {
     margin-left: 0.8rem;
   }
+  .cont11 {
+    margin-left: 10rem;
+    margin-top: 12rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -139,4 +144,10 @@
 
 .cardStepper {
   z-index: 0;
+}
+
+.column8 {
+  padding: 0px;
+  margin: 0px;
+  margin-left: -2rem;
 }
