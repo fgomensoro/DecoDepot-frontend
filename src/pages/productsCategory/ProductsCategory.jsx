@@ -24,7 +24,6 @@ function ProductsCategory() {
     getProducts();
   }, [category]);
 
-  console.log(products);
   return (
     products && (
       <div>

@@ -26,16 +26,15 @@ function MyAccount() {
 
   return (
     <div className="row">
-      <div className="col-4">
+      <div className="col-2">
         <div className={`${styles.container} row`}>
-          <div className="col-sm-2 col-xl-5"></div>
-          <div className="col-sm-2 col-xl-5">
+          <div className="col-sm-8 mx-5">
             <MyAccountNavigation />
           </div>
-          <div className="col-sm-8 col-xl-2"></div>
         </div>
       </div>
-      <div className="col-8">
+
+      <div className={`${styles.column8} col-10`}>
         <div className={styles.cont11}>
           {orders && (
             <div>

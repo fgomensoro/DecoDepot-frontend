@@ -26,42 +26,43 @@ function MyAccount() {
   return (
     userInfo && (
       <div className="row">
-        <div className="col-4">
+    
+        <div className="col-2">
           <div className={`${styles.container} row`}>
-            <div className="col-5"></div>
-            <div className="col-5">
+            <div className="col-sm-8 mx-5">
               <MyAccountNavigation />
             </div>
           </div>
-          <div className="col-8">
-            <div className={styles.container2}>
-              <div className="mt-4">
-                <small className={styles.title}>Name: </small>
-                <small className={styles.detail}>{userInfo.firstname}</small>
-              </div>
-              <div className="mt-4">
-                <small className={styles.title}>Last name: </small>
-                <small className={styles.detail}>{userInfo.lastname}</small>
-              </div>
-              <div className="mt-4">
-                <small className={styles.title}>Email: </small>
-                <small className={styles.detail}>{userInfo.email}</small>
-              </div>
-              <div className="mt-4">
-                <small className={styles.title}>Address: </small>
-                <small className={styles.detail}>{userInfo.address}</small>
-              </div>
-              <div className="mt-4">
-                <small className={styles.title}>Phone Number: </small>
-                <small className={styles.detail}>{userInfo.phoneNumber}</small>
-              </div>
-              <div className="mt-4">
-                <small className={styles.title}>Number of Orders: </small>
-                <small className={styles.detail}>{userInfo.orders.length}</small>
-              </div>
-              <div className="d-flex mt-5">
-                <Link className={`${styles.edit} btn btn-light`}>Edit</Link>
-              </div>
+        </div>
+        <div className="col-1"></div>
+        <div className="col-8">
+          <div className={styles.container2}>
+            <div className="mt-4">
+              <small className={styles.title}>Name: </small>
+              <small className={styles.detail}>{userInfo.firstname}</small>
+            </div>
+            <div className="mt-4">
+              <small className={styles.title}>Last name: </small>
+              <small className={styles.detail}>{userInfo.lastname}</small>
+            </div>
+            <div className="mt-4">
+              <small className={styles.title}>Email: </small>
+              <small className={styles.detail}>{userInfo.email}</small>
+            </div>
+            <div className="mt-4">
+              <small className={styles.title}>Address: </small>
+              <small className={styles.detail}>{userInfo.address}</small>
+            </div>
+            <div className="mt-4">
+              <small className={styles.title}>Phone Number: </small>
+              <small className={styles.detail}>{userInfo.phoneNumber}</small>
+            </div>
+            <div className="mt-4">
+              <small className={styles.title}>Number of Orders: </small>
+              <small className={styles.detail}>{userInfo.orders.length}</small>
+            </div>
+            <div className="d-flex mt-5">
+              <Link className={`${styles.edit} btn btn-light`}>Edit</Link>
             </div>
           </div>
         </div>
