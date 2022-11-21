@@ -119,3 +119,11 @@
   color: rgb(46, 46, 46);
   margin-left: 1rem;
 }
+
+.ProductsEditButton {
+  border: none;
+}
+
+.ProductsDeleteButton {
+  border: none;
+}
