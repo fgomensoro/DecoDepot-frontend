@@ -142,7 +142,7 @@
 }
 
 .cardStepper {
-  width: 45rem;
+  max-width: 45rem;
 }
 
 .detailsWrapper {

@@ -27,13 +27,13 @@ function MyAccount() {
   return (
     <div className="container">
       <div className={`${styles.mainContainer} row`}>
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-lg-3">
           <div className={`${styles.leftContainer}`}>
             <MyAccountNavigation />
           </div>
         </div>
 
-        <div className={`${styles.rightContainer}col-12 col-md-9`}>
+        <div className={`${styles.rightContainer}col-12 col-lg-9`}>
           {orders && (
             <div>
               {orders.length > 0 && <Orders orders={orders} />}

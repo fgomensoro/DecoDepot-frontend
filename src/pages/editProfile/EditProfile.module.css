@@ -10,9 +10,9 @@
   color: #5d5e5d;
 }
 
-.label {
+/* .label {
   color: #5d5e5d;
-}
+} */
 
 .input:focus {
   outline: none;
@@ -32,15 +32,44 @@ input::-webkit-inner-spin-button {
   width: 100%;
   padding: 0.375rem;
   font-weight: 400;
-  background-color: white;
+  background-color: #f9f9f9;
   transition: all 0.2s ease-in-out;
 }
 
 .submitBtn:hover {
-  background-color: var(--colorBlackDeco);
-  color: white;
+  background-color: #f0f0f0;
 }
 
 .message {
   color: rgb(252, 17, 17);
+  padding-left: 2.1rem;
+}
+
+.label {
+  text-align: center;
+  margin-top: 0rem;
+  width: 15rem;
+  background-color: #f9f9f9;
+  border-radius: 20px 0px 0px 20px;
+  border-top: solid 1px #ced4da;
+  border-bottom: solid 1px #ced4da;
+  border-left: solid 1px #ced4da;
+  padding-top: 0.5879rem;
+}
+
+.input {
+  border-radius: 0px 20px 20px 0px;
+  padding: 10px 20px;
+}
+
+.btnSave {
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #03258e;
+  border: none;
+  color: white;
+  margin-top: 3rem;
+  opacity: 88%;
 }

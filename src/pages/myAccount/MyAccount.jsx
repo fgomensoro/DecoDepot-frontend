@@ -4,9 +4,9 @@ import MyAccountNavigation from "./MyAccountNavigation";
 function MyAccount() {
   return (
     <div className="container">
-      <div className="row">
+      <div className={`${styles.mainContainer} row`}>
         <div className="col-12 col-md-2">
-          <div className={`${styles.container}`}>
+          <div className={`${styles.leftContainer}`}>
             <MyAccountNavigation />
           </div>
         </div>
