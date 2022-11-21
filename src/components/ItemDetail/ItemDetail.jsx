@@ -4,25 +4,25 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AddToCartButton from "../buttons/addToCartButton/AddToCartButton";
 
-function ItemDetail({ product, getProduct }) {
+function ItemDetail({ product }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
 
+  const getSimilar = async () => {
+    const response = await axios(axiosConfig);
+    setSimilar(response.data);
+  };
+
   const handleGetProduct = async (slug) => {
-    getProduct();
     navigate(`/products/${slug}`);
   };
 
   const axiosConfig = {
-    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}&limit=3`,
+    url: `${process.env.REACT_APP_API_URL}/products?category=${product.category._id}&limit=3&id=${product._id}`,
     method: "GET",
   };
 
   useEffect(() => {
-    const getSimilar = async () => {
-      const response = await axios(axiosConfig);
-      setSimilar(response.data);
-    };
     getSimilar();
   }, [product]);
 
@@ -45,7 +45,6 @@ function ItemDetail({ product, getProduct }) {
         {/* <button className={styles.btn} onClick={handleAddToCart}>
           Add to cart
         </button> */}
-
         <h3 className={styles.similarTitle}>You might also like</h3>
         <div className={styles.itemsContainer}>
           {similar &&
@@ -59,7 +58,6 @@ function ItemDetail({ product, getProduct }) {
                       alt=""
                     />
                   </div>
-
                   <div className="text-start py-2 px-1">
                     <button
                       onClick={() => handleGetProduct(prod.slug)}

@@ -1,11 +1,12 @@
 .detail {
   display: flex;
   margin-top: 70px;
+  height: 570px;
 }
 
 .imgContainer {
   width: 50%;
-  height: 78vh;
+  height: 100%;
 }
 
 .img {
@@ -81,6 +82,7 @@
   .detail {
     display: block;
     padding-left: 10%;
+    height: max-content;
   }
   .imgContainer {
     width: 90%;
@@ -133,5 +135,10 @@
   }
   .similar {
     margin-bottom: 30px;
+  }
+}
+@media (max-width: 485px) {
+  .imgContainer {
+    height: 50vh;
   }
 }
