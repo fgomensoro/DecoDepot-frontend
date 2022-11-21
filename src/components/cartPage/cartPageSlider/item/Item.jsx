@@ -1,28 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
-import { addItem } from "../../../../redux/cartSlice";
+import AddToCartButton from "../../../buttons/addToCartButton/AddToCartButton";
 
 function Item({ product }) {
   const dollarUSLocale = Intl.NumberFormat("en-US");
-  const dispatch = useDispatch();
-  const [qty, setQty] = useState(null);
-
-  const handleAdd = (e) => {
-    dispatch(
-      addItem({
-        qty: 1,
-        id: product._id,
-        name: product.name,
-        image: product.images[0],
-        price: product.price,
-        slug: product.slug,
-      }),
-    );
-    setQty(qty + 1);
-  };
 
   return (
     <div className={styles.slideItem}>
@@ -40,9 +22,7 @@ function Item({ product }) {
           <small className={styles.name}>{product.name}</small>
           <small className={styles.price}> - ${dollarUSLocale.format(product.price)}</small>
         </div>
-        <button onClick={handleAdd} className={styles.shopBtn}>
-          Add
-        </button>
+        <AddToCartButton product={product} btnClassName={"sliderItem"} />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AboutUs.module.css";
+import styles from "./AboutThisProyect.module.css";
 
-function AboutUs() {
+function AboutThisProyect() {
   const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus9.jpg";
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
@@ -13,12 +13,12 @@ function AboutUs() {
       <div className={styles.background}>
         <img className={styles.image} src={urlHero} alt="" />
 
-        <div className={`${styles.textContainer}`}>
-          <h1 className={styles.title}>About us and this proyect</h1>
+        <div className={`${styles.titleContainer}`}>
+          <h1 className={styles.title}>About this proyect</h1>
         </div>
       </div>
+      <h2 className={styles.subtitle}>Deco Depot Proyect</h2>
       <div className={`${styles.sectionProyect} container my-5`}>
-        <h2>Deco Depot Proyect</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, explicabo! Dicta,
           laudantium repellat recusandae ipsa voluptas soluta voluptatum dignissimos culpa minus
@@ -28,6 +28,7 @@ function AboutUs() {
           perferendis dignissimos? Aut, a.
         </p>
       </div>
+      <h2 className={styles.subtitle}>The Team</h2>
       <div className={`${styles.sectionMambers} container my-5`}>
         <div className="row">
           <div className="col-12 col-md-6 justify-content-center">
@@ -122,13 +123,13 @@ function AboutUs() {
           </div>
         </div>
       </div>
+      <h2 className={styles.subtitle}>MER</h2>
       <div className={`${styles.sectionMore} container my-5`}>
         <div className="row">
           <div className="col-12 col-md-6 p-4">
             <img className={styles.imageMern} src={urlMern} alt="" />
           </div>
           <div className="col-12 col-md-6 p-4">
-            <h2>Mern</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur sint non
               maxime, quisquam iusto esse consequatur minima id, aliquid dolor unde, vero eaque
@@ -151,4 +152,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default AboutThisProyect;

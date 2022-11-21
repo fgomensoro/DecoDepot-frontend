@@ -2,28 +2,11 @@ import { useState, useEffect } from "react";
 import styles from "./ItemDetail.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { toggleCart } from "../../redux/offCanvasSlice";
-import { addItem } from "../../redux/cartSlice";
+import AddToCartButton from "../buttons/addToCartButton/AddToCartButton";
 
 function ItemDetail({ product, getProduct }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const handleAddToCart = () => {
-    dispatch(
-      addItem({
-        id: product._id,
-        name: product.name,
-        qty: 1,
-        image: product.images[2],
-        price: product.price,
-        slug: product.slug,
-      }),
-    );
-    dispatch(toggleCart());
-  };
 
   const handleGetProduct = async (slug) => {
     getProduct();
@@ -58,9 +41,10 @@ function ItemDetail({ product, getProduct }) {
           <p className={styles.category}>{product.category.name}</p>
         </div>
         <p className={styles.description}>{product.description}</p>
-        <button className={styles.btn} onClick={handleAddToCart}>
+        <AddToCartButton product={product} btnClassName={"itemDetail"} />
+        {/* <button className={styles.btn} onClick={handleAddToCart}>
           Add to cart
-        </button>
+        </button> */}
 
         <h3 className={styles.similarTitle}>You might also like</h3>
         <div className={styles.itemsContainer}>

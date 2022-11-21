@@ -7,7 +7,6 @@ import ProductsHero from "../../components/product/ProductsHero";
 function Products() {
   const [products, setProducts] = useState(null);
   const [categories, setCategories] = useState([]);
-  console.log("products");
 
   useEffect(() => {
     const getProducts = async () => {

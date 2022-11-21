@@ -17,16 +17,16 @@ function pay() {
     setTotal(cartStore.total);
   });
 
-  
-
   return (
     <div>
       <FaLock className={styles.lock} />
 
       <div className={`${styles.cont} container`}>
         <div className="row">
-          <div className="col-12 col-lg-6 text-center">
-            <img className={styles.logo} src={url} alt="Logo" />
+          <div className="col-12 col-lg-6">
+            <Link to="/">
+              <img className={styles.logo} src={url} alt="Logo" />
+            </Link>
             <div className={styles.customerInfo}>
               <div className={styles.firstLine}>
                 <h2 className={`${styles.custShippingInfo} mb-4`}>
@@ -43,7 +43,7 @@ function pay() {
             <Form />
           </div>
           <div className="col-12 col-lg-1"></div>
-          <div className={`${styles.col2} col-12 col-lg-5 text-center`}>
+          <div className={`${styles.col2} col-12 col-lg-5`}>
             <OrderSummary total={total} />
           </div>
         </div>

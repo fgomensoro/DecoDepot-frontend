@@ -17,7 +17,7 @@ function OrderSummary() {
         <div className={`${styles.titleOrderSummary}`}>Order Summary</div>
         <div className={styles.orderSummary}>
           {cart.items.map((item) => {
-            return <Product key={item.id} item={item} />;
+            return <Product key={item.id} product={item} />;
           })}
 
           <div className={styles.totalsContainer}>

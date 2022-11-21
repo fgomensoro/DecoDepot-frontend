@@ -1,0 +1,24 @@
+.minus {
+  border-radius: 0px 10px 10px 0px;
+  border: solid #eaeaea 1px;
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.quantity {
+  width: 2rem;
+  border: solid #eaeaea 1px;
+  background-color: #f6f6f6;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.plus {
+  border-radius: 10px 0px 0px 10px;
+  border: solid #eaeaea 1px;
+  display: flex;
+  font-size: 13px;
+  font-weight: 800;
+}

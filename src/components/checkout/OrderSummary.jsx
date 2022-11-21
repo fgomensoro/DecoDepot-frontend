@@ -6,7 +6,7 @@ import { useState } from "react";
 function OrderSummary({ tax, total }) {
   const cartStore = useSelector((state) => state.cart);
   const [cart, setCart] = useState(cartStore.items);
-  let dollarUSLocale = Intl.NumberFormat("en-US");
+  const dollarUSLocale = Intl.NumberFormat("en-US");
 
   return (
     <div className={styles.orderSummary}>

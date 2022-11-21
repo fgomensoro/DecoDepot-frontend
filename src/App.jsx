@@ -2,6 +2,8 @@ import "./App.module.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./App.module.css";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
@@ -16,19 +18,17 @@ import MyAccountDetails from "./pages/myAccount/MyAccountDetails";
 import MyAccountOrderHistory from "./pages/myAccount/MyAccountOrderHistory";
 import MyAccountSubscriptions from "./pages/myAccount/MyAccountSubscriptions";
 import ProductsTable from "./components/admin/products/ProductsTable";
+import MyAccountEdit from "./pages/myAccount/MyAccountEdit";
 import OrdersTable from "./components/admin/orders/OrdersTable";
 import PacksTable from "./components/admin/packs/PacksTable";
 import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import AboutUs from "./pages/aboutus/AboutUs";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
+import AboutThisProyect from "./pages/aboutThisProyect/AboutThisProyect";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
-import EditProfile from "./pages/editProfile/EditProfile";
 import OnlyUser from "./components/onlyUser/OnlyUser";
 
 function App() {
@@ -61,12 +61,12 @@ function App() {
         <Route path="/store/:category" element={<ProductsCategory />} />
         <Route path="/products/:slug" element={<Detail />} />
         <Route path="/store" element={<Products />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-this-proyect" element={<AboutThisProyect />} />
         <Route path="/cart" element={<CartPage />} />
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/myaccount" element={<MyAccount />} />
-          <Route path="/myaccount_edit" element={<EditProfile />} />
+          <Route path="/myaccount_edit" element={<MyAccountEdit />} />
           <Route path="/myaccount_subscriptions" element={<MyAccountSubscriptions />} />
           <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
           <Route path="/myaccount_details" element={<MyAccountDetails />} />

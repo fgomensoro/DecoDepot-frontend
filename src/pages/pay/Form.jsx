@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "./Pay.module.css";
@@ -8,27 +8,43 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function CheckoutForm() {
-  const [cardNumber, setCardNumber] = useState("");
   const state = useSelector((state) => state);
+  const [cardNumber, setCardNumber] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [expirationDate, setExpirationDate] = useState("");
+  const [securityCode, setSecurityCode] = useState("");
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
+  const [backendMessage, setBackendMessage] = useState();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!fullName || !cardNumber || !expirationDate || !securityCode) {
+      setError(true);
+      return false;
+    }
     const postOrder = async () => {
-      await axios({
+      const response = await axios({
         url: `${process.env.REACT_APP_API_URL}/orders`,
         method: "POST",
         headers: {
           Authorization: "Bearer " + state.user.token,
         },
         data: {
-          prods: state.cart.items,
+          products: state.cart.items,
           status: "Not paid",
           address: state.shippingAddress,
           total: state.cart.total,
         },
       });
+      if (response.data.msg) {
+        setBackendMessage(response.data.msg);
+      } else {
+        navigate("/");
+      }
     };
     dispatch();
     postOrder();
@@ -59,27 +75,32 @@ function CheckoutForm() {
           </div>
           <div className="mx-1">
             <FaCcMastercard className={styles.cardsIcons} />
+
             <FaCcVisa className={styles.cardsIcons} />
+
             <FaCcAmex className={styles.cardsIcons} />
+
             <FaCcPaypal className={styles.cardsIcons} />
           </div>
         </div>
       </form>
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={`${styles.labelInputForm2} form-group`}>
+        <div className={`${styles.labelInputForm2} mb-4`}>
           <label className={styles.label} htmlFor="nameOnCard">
             Name on card
           </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
-            id="nameOnCard"
             placeholder="Name on card"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
           />
         </div>
-        <FaLock className={styles.faLock} />
-        <div className={`${styles.labelInputForm} form-group`}>
+        {error && !fullName && <span className={styles.message}>Required field</span>}
+
+        <div className={`${styles.labelInputForm} mb-4 position-relative`}>
           <label className={styles.label} htmlFor="cardNumber">
             Card number
           </label>
@@ -91,32 +112,39 @@ function CheckoutForm() {
             value={cardNumber}
             onChange={(e) => setCardNumber(e.target.value)}
           />
+          <FaLock className={styles.faLock} />
         </div>
+        {error && !cardNumber && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} form-group`}>
+        <div className={`${styles.labelInputForm} mb-4`}>
           <label className={styles.label} htmlFor="expiration">
             Expiration
           </label>
           <input
             type="number"
             className={`${styles.item} form-control`}
-            id="expiration"
             placeholder="MM / AA"
+            value={expirationDate}
+            onChange={(e) => setExpirationDate(e.target.value)}
           />
         </div>
-        <div className={`${styles.labelInputForm} form-group`}>
+        {error && !expirationDate && <span className={styles.message}>Required field</span>}
+        <div className={`${styles.labelInputForm} mb-4`}>
           <label className={styles.label} htmlFor="cvv">
             CVV
           </label>
           <input
             type="number"
             className={`${styles.item} form-control`}
-            id="cvv"
             placeholder="CVV"
+            value={securityCode}
+            onChange={(e) => setSecurityCode(e.target.value)}
           />
         </div>
+        {error && !securityCode && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.links} form-group`}>
+        <p className={styles.message}>{backendMessage}</p>
+        <div className={`${styles.links} `}>
           <button type="submit" className={`${styles.placeMyOrder} btn btn-block`}>
             Place my order
           </button>

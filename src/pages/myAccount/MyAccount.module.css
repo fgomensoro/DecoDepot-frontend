@@ -1,3 +1,16 @@
+.mainContainer {
+  margin-top: 10rem;
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rightContainer {
+}
+
 .container {
   margin-top: 12rem;
   margin-bottom: 6rem;
@@ -7,8 +20,8 @@
   text-decoration: none;
   color: #5d5e5d;
   font-size: 20px;
-  font-weight: 500;
-  margin-left: 1rem;
+  font-weight: 600;
+  /* margin-left: 1rem; */
 }
 
 .line {
@@ -18,12 +31,22 @@
 }
 
 .container2 {
-  margin-top: 12rem;
+  margin-top: 13rem;
+  margin-bottom: 6rem;
+  /* margin-left: 3rem; */
+}
+
+.container22 {
+  margin-top: 13rem;
   margin-bottom: 6rem;
 }
 
 .container3 {
-  margin-left: 4.4rem;
+  /* margin-left: 4.4rem; */
+}
+
+.container4 {
+  margin-left: -3.5rem;
 }
 
 .containerSubs {
@@ -37,4 +60,83 @@
   font-size: 28px;
   display: table-cell;
   vertical-align: middle;
+}
+
+.title {
+  font-size: 17px;
+  color: #5d5e5d;
+  opacity: 90%;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.detail {
+  font-size: 16px;
+  color: #5d5e5d;
+  opacity: 90%;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+  font-weight: 400;
+}
+
+.edit {
+  margin-left: 24rem;
+  text-decoration: none;
+  opacity: 80%;
+  font-size: 14px;
+  font-weight: 600;
+  border: solid 1px #5d5e5d !important;
+}
+
+.edit:hover {
+  opacity: 60%;
+}
+
+/* DE EJEMPLO */
+
+#progressBar1 {
+  color: #455a64;
+}
+
+.cont11 {
+  margin-left: 8rem;
+  margin-top: 12rem;
+  margin-bottom: 2rem;
+}
+
+.cont1 {
+  margin-bottom: 2rem;
+}
+
+#progressBar1 li {
+  list-style-type: none;
+  font-size: 13px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+@media (max-width: 380px) {
+  #image {
+    display: none;
+  }
+  .cont1 {
+    margin-left: 0.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cont1 {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 1310px) {
+  .link {
+    margin-left: 0px;
+  }
+}
+
+.cardStepper {
+  z-index: 0;
 }
