@@ -5,7 +5,8 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import ProductIsFeatured from "./ProductIsFeatured";
-import { BsPencilSquare, BsTrash } from "react-icons/bs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
 function ProductsTable() {
   const user = useSelector((state) => state.user);
@@ -52,7 +53,7 @@ function ProductsTable() {
         <div className={styles.buttonContainer}>
           <button className={styles.buttonCreate}>
             <Link className={styles.linkButtonCreate} to={"/admin/products/create"}>
-              Create
+              New Product
             </Link>
           </button>
           <p className={styles.message}>{message}</p>
@@ -87,18 +88,17 @@ function ProductsTable() {
                       <ProductIsFeatured product={product} user={user} getProducts={getProducts} />
                     </td>
                     <td>
-                      <button
-                        className={styles.ProductsEditButton}
-                        onClick={() => navigate(`${product.slug}/edit`)}
-                      >
-                        <BsPencilSquare />
+                      <button className={styles.buttonEdit}>
+                        <Link className={styles.linkButtonEdit} to={`${product.slug}/edit`}>
+                          <FontAwesomeIcon icon={iconListSolid.faEdit} />
+                        </Link>
                       </button>
 
                       <button
                         className={styles.ProductsDeleteButton}
                         onClick={() => handleDelete(product._id)}
                       >
-                        <BsTrash />
+                        <FontAwesomeIcon icon={iconListSolid.faTrash} />
                       </button>
                     </td>
                   </tr>

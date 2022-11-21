@@ -20,12 +20,10 @@ function AboutThisProyect() {
       <h2 className={styles.subtitle}>Deco Depot Proyect</h2>
       <div className={`${styles.sectionProyect} container my-5`}>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, explicabo! Dicta,
-          laudantium repellat recusandae ipsa voluptas soluta voluptatum dignissimos culpa minus
-          accusantium aut, voluptatem, enim accusamus dolorem! Omnis, dicta facere! Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Earum eos quas incidunt a veniam, assumenda
-          nesciunt error magni eligendi quidem repellendus eum sint corporis labore ducimus
-          perferendis dignissimos? Aut, a.
+          This proyect is the final outcome of a three months, +600 hours Cooding Bootcamp at Hack
+          Academy, between setember and december 2022. And is not the result of a single people
+          effort, instead of the coordination and time of four different people, wichs descriptions
+          are attached below this section.
         </p>
       </div>
       <h2 className={styles.subtitle}>The Team</h2>

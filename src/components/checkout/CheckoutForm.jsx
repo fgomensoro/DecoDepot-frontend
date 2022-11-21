@@ -33,12 +33,7 @@ function CheckoutForm() {
             <h2 className={`${styles.custShippingInfo} mb-4`}>Customer & shipping information</h2>
             <div>
               {user.email ? (
-                <h3 className={styles.productDescription2}>
-                  {`${user.email} `}
-                  <Link className={styles.links2} onClick={() => handleLogout()} to="/login">
-                    Logout
-                  </Link>
-                </h3>
+                <h3 className={styles.productDescription2}>{`${user.email} `}</h3>
               ) : (
                 <h3 className={styles.productDescription2}>
                   Have an account?{" "}

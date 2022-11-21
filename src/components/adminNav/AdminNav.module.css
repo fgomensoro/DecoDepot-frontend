@@ -1,0 +1,19 @@
+.body {
+  min-width: 80vh;
+  margin-top: 12%;
+}
+
+.adminNav {
+  text-align: center;
+  padding: 2rem;
+}
+
+.navButton {
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+}
+
+.active {
+  border-bottom: 4px solid black;
+}
