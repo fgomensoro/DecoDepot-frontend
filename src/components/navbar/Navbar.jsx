@@ -88,7 +88,7 @@ function Navbar() {
             </button>
           </li>
           {user && (
-            <li className="nav-item">
+            <li className={`${styles.myAccount} nav-item`}>
               <Link to={`/myaccount`} className={`${styles.customNavLink} nav-link`}>
                 My account
               </Link>
