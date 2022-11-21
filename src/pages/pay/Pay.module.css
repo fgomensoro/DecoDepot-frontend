@@ -79,10 +79,9 @@
 .faLock {
   position: absolute;
   right: 16px;
-  top: 11px;
+  top: 11.5px;
   color: #cdcdcd;
-
-  font-size: 1.3rem;
+  font-size: 1.24rem;
 }
 
 .label {

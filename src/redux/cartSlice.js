@@ -5,30 +5,8 @@ const url = "imgPrueba3.jpg";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    total: 3500,
-    items: [
-      {
-        id: 1,
-        name: "Wooden Table",
-        image: url,
-        price: 2000,
-        qty: 1,
-      },
-      {
-        id: 2,
-        name: "Wooden Coffee Table",
-        image: url,
-        price: 1000,
-        qty: 1,
-      },
-      {
-        id: 3,
-        name: "Wooden Chair",
-        image: url,
-        price: 500,
-        qty: 1,
-      },
-    ],
+    total: 0,
+    items: [],
   },
 
   reducers: {
