@@ -19,14 +19,14 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     getProduct();
-  }, []);
+  }, [slug]);
 
   {
     if (!product) {
       return <div>holax</div>;
     }
   }
-  return <div>{product && <ItemDetail product={product} getProduct={getProduct} />}</div>;
+  return <div>{product && <ItemDetail product={product} />}</div>;
 }
 
 export default ItemDetailContainer;

@@ -121,6 +121,7 @@
   border: 2px solid black;
   width: 40%;
 }
+<<<<<<< HEAD
 
 .scrollX {
   display: block;
@@ -130,3 +131,5 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+=======
+>>>>>>> 9adaaa6f087d3ed729ff9a3be2835bf1d6355adc

@@ -7,7 +7,7 @@ function Orders({ orders }) {
     </div>
   ));
 
-  return <div>{items}</div>;
+  return <div className="d-flex flex-wrap">{items}</div>;
 }
 
 export default Orders;

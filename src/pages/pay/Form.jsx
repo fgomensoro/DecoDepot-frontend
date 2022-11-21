@@ -45,9 +45,9 @@ function CheckoutForm() {
         setBackendMessage(response.data.msg);
       } else {
         navigate("/");
+        dispatch(clearCart());
       }
     };
-    dispatch(clearCart());
     postOrder();
   };
 
