@@ -85,9 +85,11 @@ function EditProfile() {
       </Modal>
 
       <div>
-        <h2 className="text-center mb-4">Edit your information</h2>
+        <h2 className={`${styles.title} text-center mb-4`}>Edit your information</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Enter new email</label>
+          <label className={styles.label} htmlFor="email">
+            Enter new email
+          </label>
           <input
             type="email"
             placeholder="Enter your new email"
@@ -97,7 +99,9 @@ function EditProfile() {
             onChange={(event) => setNewEmail(event.target.value)}
           />{" "}
           {error && !email && <p className={styles.message}>Required field</p>}
-          <label htmlFor="address">Enter your new address</label>
+          <label className={styles.label} htmlFor="address">
+            Enter your new address
+          </label>
           <input
             type="text"
             placeholder="Enter your new address"
@@ -107,7 +111,9 @@ function EditProfile() {
             onChange={(event) => setNewAddress(event.target.value)}
           />{" "}
           {error && !address && <p className={styles.message}>Required field</p>}
-          <label htmlFor="phoneNumber">Enter your new number</label>
+          <label className={styles.label} htmlFor="phoneNumber">
+            Enter your new number
+          </label>
           <input
             type="number"
             placeholder="Enter your new number"
@@ -117,7 +123,9 @@ function EditProfile() {
             onChange={(event) => setNewPhoneNumber(event.target.value)}
           />{" "}
           {error && !phoneNumber && <p className={styles.message}>Required field</p>}
-          <label htmlFor="password">Current password</label>
+          <label className={styles.label} htmlFor="password">
+            Current password
+          </label>
           <input
             type="password"
             placeholder="Enter your new number"
@@ -127,7 +135,9 @@ function EditProfile() {
             onChange={(event) => setCurrentPassword(event.target.value)}
           />{" "}
           {error && !currentPassword && <p className={styles.message}>Required field</p>}
-          <label htmlFor="newPassword">Enter your new password</label>
+          <label className={styles.label} htmlFor="newPassword">
+            Enter your new password
+          </label>
           <input
             type="password"
             placeholder="Enter your new password"
@@ -136,7 +146,9 @@ function EditProfile() {
             value={newPassword}
             onChange={(event) => setNewPassword(event.target.value)}
           />
-          <label htmlFor="confirmNewPassword">Confirm your new password</label>
+          <label className={styles.label} htmlFor="confirmNewPassword">
+            Confirm your new password
+          </label>
           <input
             type="password"
             placeholder="Enter your new number"
