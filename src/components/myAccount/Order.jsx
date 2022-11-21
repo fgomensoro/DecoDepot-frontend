@@ -1,5 +1,6 @@
 import styles from "../../pages/myAccount/MyAccount.module.css";
 import Products from "./Products";
+import { compareAsc, format } from "date-fns";
 
 function order({ order }) {
   return (
@@ -16,7 +17,7 @@ function order({ order }) {
                   <div className="text-muted mb-0">
                     Place On:{" "}
                     <span className="fw-bold text-body">
-                      {/* <Time value={order.createdAt} format="d.m.Y" /> */}
+                      {format(new Date(order.createdAt), "dd/MM/yyyy")}
                     </span>
                   </div>
                 </div>

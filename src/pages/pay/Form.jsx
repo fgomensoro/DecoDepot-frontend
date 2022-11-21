@@ -46,7 +46,6 @@ function CheckoutForm() {
         navigate("/");
       }
     };
-    dispatch();
     postOrder();
   };
 

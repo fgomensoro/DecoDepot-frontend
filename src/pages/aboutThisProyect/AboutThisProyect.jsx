@@ -21,9 +21,24 @@ function AboutThisProyect() {
       <div className={`${styles.sectionProyect} container my-5`}>
         <p>
           This proyect is the final outcome of a three months, +600 hours Cooding Bootcamp at Hack
-          Academy, between setember and december 2022. And is not the result of a single people
-          effort, instead of the coordination and time of four different people, wichs descriptions
-          are attached below this section.
+          Academy, between setember and december 2022. And is not the result of a single person
+          effort, instead of the coordination and time of four different people, working remote but
+          in constant communication
+        </p>
+        <p>
+          Deco Depot is an e-commerce that consists of a frontend app builded in React JS, Redux,
+          HTML and CSS5, and an api builded in Node JS and Mongo DB. You can login or register with
+          a regular user that will allow you to 'buy' products, and you can also can login with an
+          admin user that will give you access to more functionalities like creating or editing the
+          products, have access to all the recorded orders and more.
+        </p>
+        <p>
+          Feel free to navigate troughout all of this proyect and to try all of it's
+          functionalities!
+        </p>
+        <p>
+          And you can take a look to our linkedIn and our GitHub profiles linked in our descriptions
+          bellow
         </p>
       </div>
       <h2 className={styles.subtitle}>The Team</h2>
@@ -80,11 +95,12 @@ function AboutThisProyect() {
               <div className={styles.cardTop}></div>
               <div className={styles.cardBottom}>
                 <img className={styles.avatar} src={urlAvatar} alt="" />
-                <h3 className={styles.name}>Psyduck</h3>
+                <h3 className={styles.name}>Joel Dominguez</h3>
                 <p className={styles.description}>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae veniam labore
-                  maxime iure provident in eius non maiores architecto deleniti accusamus ipsam
-                  consequatur, sunt doloribus nihil libero numquam, voluptatem reiciendis!
+                  Fullstack Web Developer Junior, that likes to play guitar on it's free time and
+                  fan of Tolkiens books, Studio Ghibli's movies and rpgs. More than 15 years of
+                  experience working in gasronomy and as a bookseller, looking for my first
+                  experience on the IT world
                 </p>
                 <i
                   className={`${styles.linkedin} bi bi-linkedin mx-1`}
