@@ -6,6 +6,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import { FaCcMastercard, FaCcVisa, FaCcAmex, FaCcPaypal, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { clearCart } from "../../redux/cartSlice";
 
 function CheckoutForm() {
   const state = useSelector((state) => state);
@@ -46,7 +47,7 @@ function CheckoutForm() {
         navigate("/");
       }
     };
-    dispatch();
+    dispatch(clearCart());
     postOrder();
   };
 
