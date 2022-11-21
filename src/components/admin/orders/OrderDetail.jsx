@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./OrderDetail.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
@@ -75,6 +75,7 @@ function OrderDetail() {
               </tr>
             </tbody>
           </table>
+          <Link to={"/admin"}>Back to Admin</Link>
         </div>
       )}
     </div>

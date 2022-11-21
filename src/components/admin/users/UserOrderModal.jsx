@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import styles from "../adminCSS/AdminCSS.module.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function UserOrderModal(props) {
   const [orders, setOrders] = useState(null);
@@ -39,6 +40,7 @@ function UserOrderModal(props) {
                   <p>Status: {order.status}</p>
                   <p>Created at: {order.createdAt}</p>
                   <p>Total: {order.total}</p>
+                  <Link to={`/admin/orders/${order._id}`}>See More</Link>
                 </div>
               );
             })}

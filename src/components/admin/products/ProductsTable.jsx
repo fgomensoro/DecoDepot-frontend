@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
+import ProductIsFeatured from "./ProductIsFeatured";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
@@ -11,6 +12,8 @@ function ProductsTable() {
   const user = useSelector((state) => state.user);
   const [products, setProducts] = useState(null);
   const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleDelete = async (deletedProductId) => {
     const response = await axios({
@@ -28,17 +31,18 @@ function ProductsTable() {
     }
   };
 
+  const getProducts = async () => {
+    const response = await axios({
+      url: `${process.env.REACT_APP_API_URL}/products`,
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + user.token,
+      },
+    });
+    setProducts(response.data);
+  };
+
   useEffect(() => {
-    const getProducts = async () => {
-      const response = await axios({
-        url: `${process.env.REACT_APP_API_URL}/products`,
-        method: "GET",
-        headers: {
-          Authorization: "Bearer " + user.token,
-        },
-      });
-      setProducts(response.data);
-    };
     getProducts();
   }, []); // eslint-disable-line
 
@@ -80,15 +84,18 @@ function ProductsTable() {
                     <td>{product.price}</td>
                     <td>{product.slug}</td>
                     <td>{product.category.name}</td>
-                    <td>{product.featured}</td>
+                    <td>
+                      <ProductIsFeatured product={product} user={user} getProducts={getProducts} />
+                    </td>
                     <td>
                       <button className={styles.buttonEdit}>
                         <Link className={styles.linkButtonEdit} to={`${product.slug}/edit`}>
                           <FontAwesomeIcon icon={iconListSolid.faEdit} />
                         </Link>
                       </button>
+
                       <button
-                        className={styles.buttonDelete}
+                        className={styles.ProductsDeleteButton}
                         onClick={() => handleDelete(product._id)}
                       >
                         <FontAwesomeIcon icon={iconListSolid.faTrash} />
