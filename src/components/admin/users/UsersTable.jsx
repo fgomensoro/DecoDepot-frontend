@@ -4,10 +4,13 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import UserIsAdminCheckbox from "./UserIsAdminCheckbox";
+import Button from "react-bootstrap/Button";
+import UserOrderModal from "./UserOrderModal";
 
 function UsersTable() {
   const loggedUser = useSelector((state) => state.user);
   const [users, setUsers] = useState(null);
+  const [modalShow, setModalShow] = useState(false);
 
   const getUsers = async () => {
     const response = await axios({
@@ -59,7 +62,20 @@ function UsersTable() {
                         getUsers={getUsers}
                       />
                     </td>
-                    <td>{user.orders}</td>
+                    <td>
+                      {user.orders.length !== 0 ? (
+                        <>
+                          <Button onClick={() => setModalShow(true)}>Orders</Button>
+                          <UserOrderModal
+                            user={user}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                          />
+                        </>
+                      ) : (
+                        <p>Empty</p>
+                      )}
+                    </td>
                   </tr>
                 );
               })}

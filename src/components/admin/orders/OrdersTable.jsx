@@ -24,6 +24,7 @@ function OrdersTable() {
   useEffect(() => {
     getOrders();
   }, []); // eslint-disable-line
+
   return (
     <div>
       <div className={`${styles.body} container`}>
@@ -36,7 +37,7 @@ function OrdersTable() {
                   <th scope="col">#</th>
                   <th scope="col">Email</th>
                   <th scope="col">Address</th>
-                  <th scope="col">Delivered</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
@@ -48,9 +49,10 @@ function OrdersTable() {
                         <th scope="row">{index}</th>
                         <td>{order.user.email}</td>
                         <td>{order.user.address}</td>
-                        <td>{`${order.status}`}</td>
                         <td>
                           <OrderButtons order={order} getOrders={getOrders} />
+                        </td>
+                        <td>
                           <Link to={`/admin/orders/${order._id}`} className={styles.btnDetail}>
                             Detail
                           </Link>

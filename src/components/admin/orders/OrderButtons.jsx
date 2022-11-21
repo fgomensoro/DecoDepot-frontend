@@ -25,25 +25,18 @@ function OrderButtons({ order, getOrders }) {
 
   return (
     <>
-      {/* <form action=""> */}
       <select
         className={styles.select}
         onChange={(e) => handleClick(e.target.value)}
         name="state"
         id=""
+        value={order.status}
       >
         <option value="Not paid">Not paid</option>
         <option value="Paid">Paid</option>
         <option value="Undelivered">Undelivered</option>
         <option value="Delivered">Delivered</option>
       </select>
-      {/* </form> */}
-      {/* <button onClick={() => handleClick(false)} className={styles.btnUnDeliv}>
-        Undelivered
-      </button>
-      <button onClick={() => handleClick(true)} className={styles.btnDeliv}>
-        Delivered
-      </button> */}
     </>
   );
 }
