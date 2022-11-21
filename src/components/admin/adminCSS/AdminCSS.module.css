@@ -115,3 +115,9 @@
   color: rgb(46, 46, 46);
   margin-left: 1rem;
 }
+
+.orderInfo{
+  padding: 8px 16px;
+  border: 2px solid black;
+  width: 40%;
+}

@@ -74,10 +74,13 @@ const cartSlice = createSlice({
       });
       state.total = sum;
     },
+    clearCart(state, action) {
+      return (state = { total: 0, items: [] });
+    },
   },
 });
 
 const { actions, reducer } = cartSlice;
-export const { addItem, calculateTotal, removeItem } = actions;
+export const { addItem, calculateTotal, removeItem, clearCart } = actions;
 
 export default reducer;
