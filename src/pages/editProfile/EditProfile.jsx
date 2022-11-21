@@ -85,70 +85,95 @@ function EditProfile() {
       </Modal>
 
       <div>
-        <h2 className="text-center mb-4">Edit your information</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">Enter new email</label>
-          <input
-            type="email"
-            placeholder="Enter your new email"
-            name="email"
-            className={`${styles.input} form-control mb-3`}
-            value={email}
-            onChange={(event) => setNewEmail(event.target.value)}
-          />{" "}
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="Enter your new email"
+              name="email"
+              className={`${styles.input} form-control`}
+              value={email}
+              onChange={(event) => setNewEmail(event.target.value)}
+            />{" "}
+          </div>
           {error && !email && <p className={styles.message}>Required field</p>}
-          <label htmlFor="address">Enter your new address</label>
-          <input
-            type="text"
-            placeholder="Enter your new address"
-            name="address"
-            className={`${styles.input} form-control mb-3`}
-            value={address}
-            onChange={(event) => setNewAddress(event.target.value)}
-          />{" "}
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="address">
+              Address
+            </label>
+            <input
+              type="text"
+              placeholder="Enter your new address"
+              name="address"
+              className={`${styles.input} form-control`}
+              value={address}
+              onChange={(event) => setNewAddress(event.target.value)}
+            />{" "}
+          </div>
           {error && !address && <p className={styles.message}>Required field</p>}
-          <label htmlFor="phoneNumber">Enter your new number</label>
-          <input
-            type="number"
-            placeholder="Enter your new number"
-            name="phoneNumber"
-            className={`${styles.input} form-control mb-3`}
-            value={phoneNumber}
-            onChange={(event) => setNewPhoneNumber(event.target.value)}
-          />{" "}
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="phoneNumber">
+              Phone number
+            </label>
+            <input
+              type="number"
+              placeholder="Enter your new number"
+              name="phoneNumber"
+              className={`${styles.input} form-control`}
+              value={phoneNumber}
+              onChange={(event) => setNewPhoneNumber(event.target.value)}
+            />{" "}
+          </div>
           {error && !phoneNumber && <p className={styles.message}>Required field</p>}
-          <label htmlFor="password">Current password</label>
-          <input
-            type="password"
-            placeholder="Enter your new number"
-            name="password"
-            className={`${styles.input} form-control mb-3`}
-            value={currentPassword}
-            onChange={(event) => setCurrentPassword(event.target.value)}
-          />{" "}
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="password">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your new number"
+              name="password"
+              className={`${styles.input} form-control`}
+              value={currentPassword}
+              onChange={(event) => setCurrentPassword(event.target.value)}
+            />{" "}
+          </div>
           {error && !currentPassword && <p className={styles.message}>Required field</p>}
-          <label htmlFor="newPassword">Enter your new password</label>
-          <input
-            type="password"
-            placeholder="Enter your new password"
-            name="newPassword"
-            className={`${styles.input} form-control mb-3`}
-            value={newPassword}
-            onChange={(event) => setNewPassword(event.target.value)}
-          />
-          <label htmlFor="confirmNewPassword">Confirm your new password</label>
-          <input
-            type="password"
-            placeholder="Enter your new number"
-            name="confirmNewPassword"
-            className={`${styles.input} form-control mb-3`}
-            value={confirmNewPassword}
-            onChange={(event) => setConfirmNewPassword(event.target.value)}
-          />
-          <p className={styles.message}>{backendMessage}</p>
-          <button type="submit" className={styles.submitBtn}>
-            Submit
-          </button>
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="newPassword">
+              New Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your new password"
+              name="newPassword"
+              className={`${styles.input} form-control`}
+              value={newPassword}
+              onChange={(event) => setNewPassword(event.target.value)}
+            />
+          </div>
+          <div className="d-flex mt-4">
+            <label className={styles.label} htmlFor="confirmNewPassword">
+              Confirm password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your new number"
+              name="confirmNewPassword"
+              className={`${styles.input} form-control`}
+              value={confirmNewPassword}
+              onChange={(event) => setConfirmNewPassword(event.target.value)}
+            />
+          </div>
+          <p className={`${styles.message}`}>{backendMessage}</p>
+          <div className={`${styles.links} d-flex justify-content-center`}>
+            <button type="submit" className={`${styles.btnSave} btn btn-block`}>
+              Save changes
+            </button>
+          </div>
         </form>
       </div>
     </div>

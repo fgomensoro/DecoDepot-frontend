@@ -4,19 +4,18 @@ import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
   return (
-    <div className="row">
-      <div className="col-2">
-        <div className={`${styles.container} row`}>
-          <div className="col-sm-8 mx-5">
+    <div className="container">
+      <div className={`${styles.mainContainer} row`}>
+        <div className="col-12 col-md-3">
+          <div className={`${styles.leftContainer}`}>
             <MyAccountNavigation />
           </div>
         </div>
-      </div>
-
-      <div className={`${styles.column8} col-10`}>
-        <div className={styles.cont11}>
-          <div className={styles.container3}>
-            <div className={styles.containerSubs}>No active subscriptions</div>
+        <div className={`${styles.rightContainer} col-12 col-md-9`}>
+          <div className={`${styles.subscriptionsWrapper} d-flex justify-content-center`}>
+            <div className={styles.containerSubs}>
+              <p className={styles.subscriptionContent}>No active subscriptions</p>
+            </div>
           </div>
         </div>
       </div>

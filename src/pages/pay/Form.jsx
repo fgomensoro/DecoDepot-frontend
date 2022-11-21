@@ -95,7 +95,7 @@ function CheckoutForm() {
       </form>
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={`${styles.labelInputForm2} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="nameOnCard">
             Name on card
           </label>
@@ -109,7 +109,7 @@ function CheckoutForm() {
         </div>
         {error && !fullName && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} mb-4 position-relative`}>
+        <div className={`d-flex mb-4 position-relative`}>
           <label className={styles.label} htmlFor="cardNumber">
             Card number
           </label>
@@ -126,7 +126,7 @@ function CheckoutForm() {
         </div>
         {error && !cardNumber && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="expiration">
             Expiration
           </label>
@@ -139,7 +139,7 @@ function CheckoutForm() {
           />
         </div>
         {error && !expirationDate && <span className={styles.message}>Required field</span>}
-        <div className={`${styles.labelInputForm} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="cvv">
             CVV
           </label>
