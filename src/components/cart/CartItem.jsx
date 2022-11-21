@@ -28,12 +28,12 @@ function CartItem({ product }) {
                   src={process.env.REACT_APP_IMAGE_PATH + product.image}
                   alt=""
                 />
-                <h3 className="text-center">${dollarUSLocale.format(product.price)}</h3>
+                <h3 className={`${styles.productPrice} text-center`}>${dollarUSLocale.format(product.price)}</h3>
               </div>
             </div>
             <div className="col-7 d-flex align-items-center ">
               <div>
-                <h2>{product.name}</h2>
+                <h2 className={styles.productTitle}>{product.name}</h2>
                 <span>Ships in 7-10 Days</span>
                 <div className={styles.input}>
                   <QuantityButtons product={product} setMessage={setMessage} />

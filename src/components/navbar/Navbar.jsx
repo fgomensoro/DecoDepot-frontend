@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useSyncExternalStore } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
 import styles from "./Navbar.module.css";
@@ -68,7 +68,7 @@ function Navbar() {
             onClick={handleShowLeftNavbar}
           >
             Explore
-            <i className={`${styles.customNavLink} ${styles.arrow} bi bi-chevron-down`}></i>
+            <i className={`${styles.icon} bi bi-arrow-down-circle-fill`}></i>
           </button>
         </div>
 
@@ -89,7 +89,7 @@ function Navbar() {
           {user && (
             <li className="nav-item">
               <Link to={`/myaccount`} className={`${styles.customNavLink} nav-link`}>
-                My accout
+                My account
               </Link>
             </li>
           )}
