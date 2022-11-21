@@ -1,0 +1,35 @@
+.body {
+  min-width: 80vh;
+  margin-top: 10%;
+}
+
+.buttonContainer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.button {
+  width: 9.5rem;
+  border: 3px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  background-color: var(--colorBlackDeco);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: var(--colorBlackDeco);
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.7rem 3rem;
+}
+
+.link:hover {
+  color: var(--colorBlackDeco);
+}

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
-
-import Footer from "../../footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
 function ProductsTable() {
   const user = useSelector((state) => state.user);
@@ -49,7 +49,7 @@ function ProductsTable() {
         <div className={styles.buttonContainer}>
           <button className={styles.buttonCreate}>
             <Link className={styles.linkButtonCreate} to={"/admin/products/create"}>
-              Create
+              New Product
             </Link>
           </button>
           <p className={styles.message}>{message}</p>
@@ -84,14 +84,14 @@ function ProductsTable() {
                     <td>
                       <button className={styles.buttonEdit}>
                         <Link className={styles.linkButtonEdit} to={`${product.slug}/edit`}>
-                          Edit
+                          <FontAwesomeIcon icon={iconListSolid.faEdit} />
                         </Link>
                       </button>
                       <button
                         className={styles.buttonDelete}
                         onClick={() => handleDelete(product._id)}
                       >
-                        Delete
+                        <FontAwesomeIcon icon={iconListSolid.faTrash} />
                       </button>
                     </td>
                   </tr>

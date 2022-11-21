@@ -220,11 +220,15 @@
   .exploreBtn {
     padding-left: 4.8rem;
   }
+  .logo {
+    width: 50px;
+  }
 }
 @media (max-width: 523px) {
   .nav {
     font-size: 1rem;
   }
+
 }
 /* .logo {
   margin-top: 10px;

@@ -162,6 +162,32 @@
   color: black;
 }
 
+@media (max-width: 1200px){
+  .btnSee{
+    width: 40%;
+    transform: translateY(0%);
+    font-size: 1rem;
+  }
+  .btnAdd{
+    width: 40%;
+    font-size: 1rem;
+  }
+  .detailsBtns{
+    opacity: 1;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .detailsBtns:hover .btnSee {
+    animation: none;
+  }
+  .detailsBtns:hover .btnAdd {
+    animation: none;
+  }
+}
+
+
+
 /* .bigContain {
   margin-top: 2rem;
 }
