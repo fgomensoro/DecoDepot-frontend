@@ -8,6 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../redux/cartSlice";
 
+// const normalizeCardNumber = (value) => {
+//   value
+//     .replace(/\s/g, "")
+//     .match(/.{1,4}/g)
+//     .join(" ")
+//     .substr(0, 19) || "";
+// };
+
 function CheckoutForm() {
   const state = useSelector((state) => state);
   const [cardNumber, setCardNumber] = useState("");
@@ -109,8 +117,9 @@ function CheckoutForm() {
             type="number"
             className={`${styles.item} form-control`}
             id="cardNumber"
-            placeholder="1234 1234 1234 1234"
+            placeholder="0000 0000 0000 0000"
             value={cardNumber}
+            autoComplete="cc-number"
             onChange={(e) => setCardNumber(e.target.value)}
           />
           <FaLock className={styles.faLock} />

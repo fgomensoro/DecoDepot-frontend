@@ -10,6 +10,7 @@ function pay() {
   const url = `${process.env.REACT_APP_IMAGE_PATH}logo.svg`;
   const user = useSelector((state) => state.user);
   const cartStore = useSelector((state) => state.cart);
+  const shipAddress = useSelector((state) => state.shippingAddress);
 
   const [total, setTotal] = useState(null);
 
@@ -36,8 +37,22 @@ function pay() {
                   Edit
                 </Link>
               </div>
-              <div>
+              <div className="mt-2">
                 <h3 className={styles.productDescription2}>{`${user.email} `}</h3>
+              </div>
+              <div className="mt-4">
+                <h3
+                  className={styles.productDescription2}
+                >{`${shipAddress.firstName} ${shipAddress.lastName}`}</h3>
+                <h3
+                  className={styles.productDescription2}
+                >{`${shipAddress.address},  ${shipAddress.apt}`}</h3>
+                <h3
+                  className={styles.productDescription2}
+                >{`${shipAddress.city},  ${shipAddress.state},  ${shipAddress.zipCode}`}</h3>
+                <h3
+                  className={styles.productDescription2}
+                >{`${shipAddress.country} ${shipAddress.phone}`}</h3>
               </div>
             </div>
             <Form />
