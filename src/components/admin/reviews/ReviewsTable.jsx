@@ -29,7 +29,7 @@ function ReviewsTable() {
       <div className={`${styles.body} container`}>
         <AdminNav active={"Reviews"} />
         {reviews && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>

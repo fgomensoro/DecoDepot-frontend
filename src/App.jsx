@@ -46,7 +46,15 @@ function App() {
   }
 
   let showFooter = true;
-  if (location.pathname === "/login" || location.pathname === "/signup") {
+  if (
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/admin/products" ||
+    location.pathname === "/admin/orders" ||
+    location.pathname === "/admin/users" ||
+    location.pathname === "/admin/packs" ||
+    location.pathname === "/admin/reviews"
+  ) {
     showFooter = false;
   }
 

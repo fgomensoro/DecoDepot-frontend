@@ -31,7 +31,7 @@ function OrdersTable() {
         <AdminNav active={"Orders"} />
         <div className={styles.tables}>
           {orders && (
-            <table className="table">
+            <table className={`${styles.scrollX} table`}>
               <thead>
                 <tr>
                   <th scope="col">#</th>

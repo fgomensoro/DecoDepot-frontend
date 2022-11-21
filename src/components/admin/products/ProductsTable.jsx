@@ -55,7 +55,7 @@ function ProductsTable() {
           <p className={styles.message}>{message}</p>
         </div>
         {products && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>

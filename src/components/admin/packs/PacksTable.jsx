@@ -29,7 +29,7 @@ function PacksTable() {
       <div className={`${styles.body} container`}>
         <AdminNav active={"Packs"} />
         {packs && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>
