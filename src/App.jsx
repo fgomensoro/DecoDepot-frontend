@@ -41,8 +41,7 @@ function App() {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/checkout" ||
-    location.pathname === "/buy" ||
-    location.pathname === "/swiper"
+    location.pathname === "/buy"
   ) {
     showNav = false;
   }
@@ -51,7 +50,6 @@ function App() {
   if (
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
-    location.pathname === "/swiper" ||
     location.pathname.startsWith("/admin")
   ) {
     showFooter = false;
@@ -81,8 +79,6 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/about-this-proyect" element={<AboutThisProyect />} />
         <Route path="/cart" element={<CartPage />} />
-        <Route path="/swiper" element={<SwiperItems />} />
-
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/myaccount" element={<MyAccount />} />
