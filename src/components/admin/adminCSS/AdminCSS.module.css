@@ -18,8 +18,7 @@
 
 .buttonCreate:hover {
   background-color: transparent;
-  color: aliceblue;
-  background-color: var(--colorBlackDeco);
+  background-color: #e4e4e4;
 }
 
 .linkButtonCreate {
@@ -31,7 +30,7 @@
 }
 
 .linkButtonCreate:hover {
-  color: aliceblue;
+  color: black;
 }
 
 .buttonEdit {
@@ -39,12 +38,27 @@
   border: 2px solid var(--colorBlackDeco);
   border-radius: 30px;
   background-color: transparent;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
 .buttonEdit:hover {
   color: var(--colorBlackDeco);
+  background-color: #e4e4e4;
+}
+
+.buttonOrders {
+  /* width: 4rem; */
+  border: 2px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+
+.buttonOrders:hover {
+  color: var(--colorBlackDeco);
+  background-color: #e4e4e4;
 }
 
 .linkButtonEdit {
@@ -69,7 +83,7 @@
 }
 
 .buttonDelete:hover {
-  color: rgb(252, 23, 23);
+  background-color: rgb(255, 190, 190);
 }
 
 .linkButtonDelete {
@@ -112,7 +126,7 @@
 
 .linkBack {
   color: rgb(46, 46, 46);
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .orderInfo {
@@ -125,4 +139,11 @@
   width: 4rem;
 }
 
-
+.editUserForm {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 2rem;
+  width: 40rem;
+  border: 1px solid #ced4da;
+}

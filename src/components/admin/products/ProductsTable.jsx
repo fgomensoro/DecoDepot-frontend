@@ -116,7 +116,7 @@ function ProductsTable() {
                       </button>
 
                       <button
-                        className={styles.ProductsDeleteButton}
+                        className={styles.buttonDelete}
                         onClick={() => handleDelete(product._id)}
                       >
                         <FontAwesomeIcon icon={iconListSolid.faTrash} />
