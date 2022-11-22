@@ -68,7 +68,12 @@ function UsersTable() {
                       <td>
                         {user.orders.length !== 0 ? (
                           <>
-                            <Button onClick={() => setModalShow(true)}>Orders</Button>
+                            <button
+                              className={styles.buttonOrders}
+                              onClick={() => setModalShow(true)}
+                            >
+                              Orders
+                            </button>
                             <UserOrderModal
                               user={user}
                               show={modalShow}

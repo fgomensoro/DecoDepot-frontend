@@ -88,112 +88,116 @@ function EditProduct() {
   };
   return (
     category && (
-      <div>
-        <div className={styles.body + " container"}>
-          <form className="mt-5" encType="multipart/form-data" action="" onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label className="form-label">Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              {error && !name && <span className={styles.message}>Required field</span>}
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Description</label>
-              <textarea
-                className="form-control"
-                rows="3"
-                name="description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              ></textarea>
-              {error && !description && <span className={styles.message}>Required field</span>}
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Price</label>
-              <input
-                type="number"
-                className="form-control"
-                name="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-              {error && !price && <span className={styles.message}>Required field</span>}
-            </div>
-            <div className="mb-3">
-              <label className="form-label">Stock</label>
-              <input
-                type="number"
-                className="form-control"
-                name="stock"
-                value={stock}
-                onChange={(e) => setStock(e.target.value)}
-              />
-              {error && !stock && <span className={styles.message}>Required field</span>}
-            </div>
-            {/* Definir si se hace automatico en backend o se puede editar manual */}
-            <div className="mb-3">
-              <label className="form-label">Slug</label>
-              <input
-                type="text"
-                className="form-control"
-                name="slug"
-                value={slug}
-                onChange={(e) => setSlug(e.target.value)}
-              />
-              {error && !slug && <span className={styles.message}>Required field</span>}
-            </div>
-            <label className="form-label">Categories</label>
-            <select
-              className="form-select mb-3"
-              name="category"
-              value={category.name}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value={category._id}>{category.name}</option>
-              {categories
-                .filter((cat) => cat.name !== category)
-                .map((category, index) => {
-                  return (
-                    <option key={category._id} value={category._id}>
-                      {category.name}
-                    </option>
-                  );
-                })}
-            </select>
-            <label className="form-label">Do you want to add or replace the images?</label>
-            <select
-              className="form-select mb-3"
-              name="actionImages"
-              value={actionImages}
-              onChange={(e) => setActionImages(e.target.value)}
-            >
-              <option value="add">Add</option>
-              <option value="replace">Replace</option>
-            </select>
+      <div className={`${styles.body} position-relative`}>
+        <form
+          className={styles.editUserForm}
+          encType="multipart/form-data"
+          action=""
+          onSubmit={handleSubmit}
+        >
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            {error && !name && <span className={styles.message}>Required field</span>}
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Description</label>
+            <textarea
+              className="form-control"
+              rows="3"
+              name="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+            {error && !description && <span className={styles.message}>Required field</span>}
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Price</label>
+            <input
+              type="number"
+              className="form-control"
+              name="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            {error && !price && <span className={styles.message}>Required field</span>}
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Stock</label>
+            <input
+              type="number"
+              className="form-control"
+              name="stock"
+              value={stock}
+              onChange={(e) => setStock(e.target.value)}
+            />
+            {error && !stock && <span className={styles.message}>Required field</span>}
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Slug</label>
+            <input
+              type="text"
+              className="form-control"
+              name="slug"
+              value={slug}
+              onChange={(e) => setSlug(e.target.value)}
+            />
+            {error && !slug && <span className={styles.message}>Required field</span>}
+          </div>
+          <label className="form-label">Categories</label>
+          <select
+            className="form-select mb-3"
+            name="category"
+            value={category.name}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value={category._id}>{category.name}</option>
+            {categories
+              .filter((cat) => cat.name !== category)
+              .map((category, index) => {
+                return (
+                  <option key={category._id} value={category._id}>
+                    {category.name}
+                  </option>
+                );
+              })}
+          </select>
+          <label className="form-label">Do you want to add or replace the images?</label>
+          <select
+            className="form-select mb-3"
+            name="actionImages"
+            value={actionImages}
+            onChange={(e) => setActionImages(e.target.value)}
+          >
+            <option value="add">Add</option>
+            <option value="replace">Replace</option>
+          </select>
 
-            <div className="mt-3">
-              <input className="form-control" name="image1" type="file" />
-            </div>
-            <div className="mt-3">
-              <input className="form-control" name="image2" type="file" />
-            </div>
-            <div className="mt-3">
-              <input className="form-control" name="image3" type="file" />
-            </div>
-            <p className={styles.message}>{message}</p>
+          <div className="mt-3">
+            <input className="form-control" name="image1" type="file" />
+          </div>
+          <div className="mt-3">
+            <input className="form-control" name="image2" type="file" />
+          </div>
+          <div className="mt-3">
+            <input className="form-control" name="image3" type="file" />
+          </div>
+          <p className={styles.message}>{message}</p>
+          <div className="d-flex flex-row-reverse">
             <button type="submit" className={styles.buttonEdit}>
               Edit
             </button>
             <Link className={styles.linkBack} to={-1}>
               Back
             </Link>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     )
   );

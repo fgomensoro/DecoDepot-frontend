@@ -11,7 +11,7 @@ import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
 
 function Navbar() {
-  const url = process.env.REACT_APP_IMAGE_PATH + "logo.svg";
+  const url = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
   const [colorChange, setColorchange] = useState(false);
   const [showLeftNavbar, setShowLeftNavbar] = useState(false);
   const [showCart, setShowCart] = useState(false);
