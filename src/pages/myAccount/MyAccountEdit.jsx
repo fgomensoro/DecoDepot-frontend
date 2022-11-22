@@ -13,7 +13,7 @@ function MyAccountEdit() {
           </div>
         </div>
 
-        <div className={`${styles.rightContainer} col-12 col-md-9`}>
+        <div className="col-12 col-lg-9">
           <EditProfile />
         </div>
       </div>

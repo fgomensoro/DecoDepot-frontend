@@ -35,7 +35,7 @@ function UsersTable() {
         </div>
         <div className="col-10">
           {users && (
-            <table className="table">
+            <table className={`${styles.scrollX} table`}>
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -68,7 +68,12 @@ function UsersTable() {
                       <td>
                         {user.orders.length !== 0 ? (
                           <>
-                            <Button onClick={() => setModalShow(true)}>Orders</Button>
+                            <button
+                              className={styles.buttonOrders}
+                              onClick={() => setModalShow(true)}
+                            >
+                              Orders
+                            </button>
                             <UserOrderModal
                               user={user}
                               show={modalShow}

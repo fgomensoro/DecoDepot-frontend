@@ -1,4 +1,5 @@
-import styles from "../../pages/myAccount/MyAccount.module.css";
+import styles from "./Orders.module.css";
+
 import Products from "./Products";
 import { compareAsc, format } from "date-fns";
 

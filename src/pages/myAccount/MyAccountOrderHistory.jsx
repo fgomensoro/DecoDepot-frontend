@@ -33,7 +33,7 @@ function MyAccount() {
           </div>
         </div>
 
-        <div className={`${styles.rightContainer}col-12 col-lg-9`}>
+        <div className="col-12 col-lg-9">
           {orders && (
             <div>
               {orders.length > 0 && <Orders orders={orders} />}

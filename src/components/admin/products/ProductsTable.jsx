@@ -63,7 +63,7 @@ function ProductsTable() {
       </div>
       <div className="col-10">
         {products && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -116,7 +116,7 @@ function ProductsTable() {
                       </button>
 
                       <button
-                        className={styles.ProductsDeleteButton}
+                        className={styles.buttonDelete}
                         onClick={() => handleDelete(product._id)}
                       >
                         <FontAwesomeIcon icon={iconListSolid.faTrash} />

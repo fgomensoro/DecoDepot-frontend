@@ -31,7 +31,7 @@ function ReviewsTable() {
       </div>
       <div className="col-10">
         {reviews && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>
