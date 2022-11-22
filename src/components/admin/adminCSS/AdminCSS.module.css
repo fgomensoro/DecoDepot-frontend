@@ -121,15 +121,23 @@
   border: 2px solid black;
   width: 40%;
 }
-<<<<<<< HEAD
 
-.scrollX {
+/* .scrollX {
   display: block;
 
   max-width: fit-content;
   margin: 0 auto;
   overflow-x: auto;
   white-space: nowrap;
+} */
+
+@media (max-width: 600px) {
+  .scrollX {
+    display: block;
+
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
-=======
->>>>>>> 9adaaa6f087d3ed729ff9a3be2835bf1d6355adc
