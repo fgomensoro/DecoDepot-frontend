@@ -1,13 +1,14 @@
 import React from "react";
-
-import Footer from "../../components/footer/Footer";
+import styles from "../../components/admin/adminCSS/AdminCSS.module.css";
 import AdminNav from "../../components/admin/adminNav/AdminNav";
 
 function Admin() {
   return (
-    <>
-      <AdminNav />
-    </>
+    <div className={styles.body}>
+      <div className="col-2">
+        <AdminNav />
+      </div>
+    </div>
   );
 }
 

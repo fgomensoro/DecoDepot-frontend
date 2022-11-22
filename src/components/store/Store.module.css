@@ -29,6 +29,7 @@
 .buttonSmall:hover {
   background-color: transparent;
   color: var(--colorBlackDeco);
+  border: #131313 solid 2px;
 }
 
 .link {
@@ -50,12 +51,12 @@
 
 .imageContainer:hover {
   position: relative;
-  border: 4px solid black;
+  border: 3px solid #eaeaea;
 }
 
 .imageContainer:focus-visible {
   position: relative;
-  border: 4px solid black;
+  border: 3px solid black;
 }
 
 .image {

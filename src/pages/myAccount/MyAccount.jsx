@@ -3,17 +3,15 @@ import MyAccountNavigation from "./MyAccountNavigation";
 
 function MyAccount() {
   return (
-    <div className="row">
-      <div className="col-4">
-        <div className={`${styles.container} row`}>
-          <div className="col-5"></div>
-          <div className="col-5">
+    <div className="container">
+      <div className={`${styles.mainContainer} row`}>
+        <div className="col-12 col-md-2">
+          <div className={`${styles.leftContainer}`}>
             <MyAccountNavigation />
           </div>
-          <div className="col-2"></div>
         </div>
+        <div className="col-12 col-md-9"></div>
       </div>
-      <div className="col-8"></div>
     </div>
   );
 }

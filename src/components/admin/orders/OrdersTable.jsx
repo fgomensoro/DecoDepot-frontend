@@ -27,42 +27,46 @@ function OrdersTable() {
 
   return (
     <div>
-      <div className={`${styles.body} container`}>
-        <AdminNav active={"Orders"} />
-        <div className={styles.tables}>
-          {orders && (
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {orders &&
-                  orders.map((order, index) => {
-                    return (
-                      <tr key={order._id}>
-                        <th scope="row">{index}</th>
-                        <td>{order.user.email}</td>
-                        <td>{order.user.address}</td>
-                        <td>
-                          <OrderButtons order={order} getOrders={getOrders} />
-                        </td>
-                        <td>
-                          <Link to={`/admin/orders/${order._id}`} className={styles.btnDetail}>
-                            Detail
-                          </Link>
-                        </td>
-                      </tr>
-                    );
-                  })}
-              </tbody>
-            </table>
-          )}
+      <div className={`${styles.body} row`}>
+        <div className="col-2">
+          <AdminNav active={"Orders"} />
+        </div>
+        <div className="col-10">
+          <div className={styles.tables}>
+            {orders && (
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {orders &&
+                    orders.map((order, index) => {
+                      return (
+                        <tr key={order._id}>
+                          <th scope="row">{index}</th>
+                          <td>{order.user.email}</td>
+                          <td>{order.user.address}</td>
+                          <td>
+                            <OrderButtons order={order} getOrders={getOrders} />
+                          </td>
+                          <td>
+                            <Link to={`/admin/orders/${order._id}`} className={styles.btnDetail}>
+                              Detail
+                            </Link>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                </tbody>
+              </table>
+            )}
+          </div>
         </div>
       </div>
     </div>

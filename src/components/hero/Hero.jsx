@@ -7,7 +7,7 @@ function Hero() {
 
   return (
     <div className={styles.background}>
-      <img className={styles.image} src={url} alt="" />
+      <img className={styles.image} src={url} alt="Hero Img" />
 
       <div className={`${styles.textContainer}`}>
         <h1 className={styles.title}>Design you home interior</h1>

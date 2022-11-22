@@ -8,6 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../redux/cartSlice";
 
+// const normalizeCardNumber = (value) => {
+//   value
+//     .replace(/\s/g, "")
+//     .match(/.{1,4}/g)
+//     .join(" ")
+//     .substr(0, 19) || "";
+// };
+
 function CheckoutForm() {
   const state = useSelector((state) => state);
   const [cardNumber, setCardNumber] = useState("");
@@ -87,7 +95,7 @@ function CheckoutForm() {
       </form>
 
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={`${styles.labelInputForm2} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="nameOnCard">
             Name on card
           </label>
@@ -101,7 +109,7 @@ function CheckoutForm() {
         </div>
         {error && !fullName && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} mb-4 position-relative`}>
+        <div className={`d-flex mb-4 position-relative`}>
           <label className={styles.label} htmlFor="cardNumber">
             Card number
           </label>
@@ -109,15 +117,16 @@ function CheckoutForm() {
             type="number"
             className={`${styles.item} form-control`}
             id="cardNumber"
-            placeholder="1234 1234 1234 1234"
+            placeholder="0000 0000 0000 0000"
             value={cardNumber}
+            autoComplete="cc-number"
             onChange={(e) => setCardNumber(e.target.value)}
           />
           <FaLock className={styles.faLock} />
         </div>
         {error && !cardNumber && <span className={styles.message}>Required field</span>}
 
-        <div className={`${styles.labelInputForm} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="expiration">
             Expiration
           </label>
@@ -130,7 +139,7 @@ function CheckoutForm() {
           />
         </div>
         {error && !expirationDate && <span className={styles.message}>Required field</span>}
-        <div className={`${styles.labelInputForm} mb-4`}>
+        <div className={`d-flex mb-4`}>
           <label className={styles.label} htmlFor="cvv">
             CVV
           </label>

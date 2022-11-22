@@ -1,11 +1,10 @@
 .body {
   min-width: 80vh;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .buttonContainer {
-  text-align: center;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 
 .buttonCreate {
@@ -121,3 +120,9 @@
   border: 2px solid black;
   width: 40%;
 }
+
+.tableImage {
+  width: 4rem;
+}
+
+

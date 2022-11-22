@@ -16,7 +16,7 @@ function Item({ product }) {
         <div className={styles.description}>
           <div>
             <h3 className={styles.name}>{product.name}</h3>
-            <p className={styles.price}>{`Actual price $${product.price}`}</p>
+            <p className={styles.price}>{`Price $${product.price}`}</p>
           </div>
           <button className={styles.shopBtn}>Shop now</button>
         </div>

@@ -13,6 +13,8 @@ function ProductsTable() {
   const [products, setProducts] = useState(null);
   const [message, setMessage] = useState("");
 
+  const url = process.env.REACT_APP_IMAGE_PATH;
+
   const navigate = useNavigate();
 
   const handleDelete = async (deletedProductId) => {
@@ -47,8 +49,8 @@ function ProductsTable() {
   }, []); // eslint-disable-line
 
   return (
-    <div>
-      <div className={`${styles.body} container`}>
+    <div className={`${styles.body} row`}>
+      <div className="col-2">
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>
           <button className={styles.buttonCreate}>
@@ -58,16 +60,18 @@ function ProductsTable() {
           </button>
           <p className={styles.message}>{message}</p>
         </div>
+      </div>
+      <div className="col-10">
         {products && (
           <table className="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Image</th>
+                <th scope="col">Images</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Price</th>
-                <th scope="col">Slug</th>
+                {/* <th scope="col">Slug</th> */}
                 <th scope="col">Category</th>
                 <th scope="col">Featured</th>
                 <th scope="col">Actions</th>
@@ -79,10 +83,27 @@ function ProductsTable() {
                   <tr key={product._id}>
                     <th scope="row">{index}</th>
                     <td>{product.name}</td>
-                    <td>{product.images[0]}</td>
+                    <td>
+                      <img
+                        className={`${styles.tableImage} px-1`}
+                        src={url + product.images[0]}
+                        alt=""
+                      />
+                      <img
+                        className={`${styles.tableImage} px-1`}
+                        src={url + product.images[1]}
+                        alt=""
+                      />
+                      <img
+                        className={`${styles.tableImage} px-1`}
+                        src={url + product.images[2]}
+                        alt=""
+                      />
+                    </td>
+                    {/* {product.images[0]} */}
                     <td>{product.stock}</td>
                     <td>{product.price}</td>
-                    <td>{product.slug}</td>
+                    {/* <td>{product.slug}</td> */}
                     <td>{product.category.name}</td>
                     <td>
                       <ProductIsFeatured product={product} user={user} getProducts={getProducts} />
