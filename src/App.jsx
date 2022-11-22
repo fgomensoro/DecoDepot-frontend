@@ -54,11 +54,21 @@ function App() {
   ) {
     showFooter = false;
   }
+  let showCanvas = true;
+  if (
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname.startsWith("/admin") ||
+    location.pathname === "/checkout" ||
+    location.pathname === "/buy"
+  ) {
+    showCanvas = false;
+  }
 
   return (
     <div className={styles.body}>
-      <AboutUsOffcanvas />
       {showNav && <Navbar />}
+      {showCanvas && <AboutUsOffcanvas />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />

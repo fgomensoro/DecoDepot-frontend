@@ -3,14 +3,22 @@ import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-import Button from "react-bootstrap/Button";
+import axios from "axios";
 
 function AboutUsOffcanvas() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleResteDataBase = async () => {
+    const response = await axios({
+      url: `${process.env.REACT_APP_API_URL}/database/reset`,
+      method: "GET",
+    });
+    console.log(response.data.msg);
+    handleClose();
+  };
 
   return (
     <>
@@ -43,9 +51,9 @@ function AboutUsOffcanvas() {
                 As someone might have added or edited content from the page, we recomend clearing
                 and reseting the data base for a better experience.
               </p>
-              <Link to="/about-this-proyect" onClick={handleClose} className={styles.links}>
-                <button className={styles.navigationButtons}>Reset database</button>
-              </Link>
+              <button onClick={() => handleResteDataBase()} className={styles.navigationButtons}>
+                Reset database
+              </button>
             </div>
             <hr></hr>
             <div className={styles.sectionWrapper}>
