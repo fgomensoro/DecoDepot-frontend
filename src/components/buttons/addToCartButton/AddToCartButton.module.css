@@ -48,3 +48,25 @@
   color: white;
   border: black solid 1px;
 }
+
+.buttonBuy {
+  background-color: #131313;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  height: fit-content;
+  padding: 0.5rem 6rem 0.1rem 6rem;
+  font-family: "Calibre", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  transition: all 0.3s;
+  text-decoration: none;
+  margin: 2px;
+  opacity: 95%;
+}
+
+.buttonBuy:hover {
+  background-color: #222222;
+  color: white;
+  opacity: 80%;
+}
