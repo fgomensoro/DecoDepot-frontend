@@ -1,5 +1,4 @@
 import styles from "./Pack.module.css";
-import bigImage from "./img/bigImage.jpg";
 import PackCards from "./PackCards";
 import { useState, useEffect } from "react";
 import axios from "axios";

@@ -1,0 +1,101 @@
+.titleContainer {
+  margin: 4rem 0;
+}
+.leftLine {
+  width: 0;
+  margin: 0;
+  margin-top: 1.25rem;
+}
+.title {
+  font-family: "Calibre", sans-serif;
+  font-size: 2.4rem;
+  width: 30%;
+  margin: 0;
+}
+
+.rightLine {
+  width: 70%;
+  margin: 0;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-family: "Calibre", sans-serif;
+    font-size: 2.4rem;
+    width: 40%;
+    margin: 0;
+  }
+
+  .rightLine {
+    width: 60%;
+    margin: 0;
+    margin-top: 1.25rem;
+  }
+}
+
+@media (max-width: 990px) {
+  .leftLine {
+    width: 25%;
+    margin: 0;
+    margin-top: 1.25rem;
+  }
+  .title {
+    font-family: "Calibre", sans-serif;
+    font-size: 2.4rem;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .rightLine {
+    width: 25%;
+    margin: 0;
+    margin-top: 1.25rem;
+  }
+}
+
+.img {
+  width: 100%;
+}
+
+.card {
+  padding: 0.5rem;
+  /* border: 1px solid black; */
+  margin-bottom: 0.5rem;
+}
+
+.smallTitle {
+  font-family: "Calibre", sans-serif;
+  font-size: 1.43rem;
+  margin: 0px;
+  margin-bottom: 0.5rem;
+  vertical-align: baseline;
+}
+
+.paragraphCard {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.22rem;
+  margin-top: -0.8rem;
+}
+
+.link {
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+  border-radius: 20px;
+  /* height: fit-content; */
+  color: black;
+  padding: 9px 30px 3px 30px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+  border: solid #131313 1px;
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+}
+
+.link:hover {
+  background-color: rgb(15, 15, 15);
+  color: aliceblue;
+  opacity: 90%;
+}

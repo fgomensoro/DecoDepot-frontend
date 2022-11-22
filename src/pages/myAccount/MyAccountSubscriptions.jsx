@@ -11,7 +11,7 @@ function MyAccount() {
             <MyAccountNavigation />
           </div>
         </div>
-        <div className={`${styles.rightContainer} col-12 col-md-9`}>
+        <div className="col-12 col-lg-9">
           <div className={`${styles.subscriptionsWrapper} d-flex justify-content-center`}>
             <div className={styles.containerSubs}>
               <p className={styles.subscriptionContent}>No active subscriptions</p>

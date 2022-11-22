@@ -4,6 +4,7 @@ import Hero from "../../components/hero/Hero";
 import Pack1 from "../../components/pack/Pack1";
 import Pack2 from "../../components/pack/Pack2";
 import Store from "../../components/store/Store";
+import AboutHome from "../../components/aboutHome/AboutHome";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
         <Pack1 />
         <Pack2 />
       </div>
+      <AboutHome />
     </>
   );
 }

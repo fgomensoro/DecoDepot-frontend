@@ -32,7 +32,7 @@ function MyAccount() {
               <MyAccountNavigation />
             </div>
           </div>
-          <div className={`${styles.rightContainer} col-12 col-md-9`}>
+          <div className="col-12 col-md-9">
             <div className={`${styles.detailsWrapper}`}>
               <div className="mb-4">
                 <small className={styles.title}>Name: </small>
