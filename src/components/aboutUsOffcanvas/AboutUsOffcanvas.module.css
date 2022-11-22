@@ -30,14 +30,12 @@
 .sectionWrapper {
   font-family: var(--fontFamilyDeco);
 }
-.navigationButtons {
-  background-color: red;
-}
 
 .navigationButtons {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
   background-color: #131313 !important;
   border-radius: 25px;
@@ -48,6 +46,7 @@
   text-decoration: none;
   background-color: transparent;
   border: none;
+  width: 140px;
 }
 
 .navigationButtons:hover {
