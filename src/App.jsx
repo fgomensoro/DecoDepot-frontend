@@ -30,6 +30,7 @@ import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import OnlyUser from "./components/onlyUser/OnlyUser";
+import AboutUsOffcanvas from "./components/aboutUsOffcanvas/AboutUsOffcanvas";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div className={styles.body}>
+      <AboutUsOffcanvas />
       {showNav && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />

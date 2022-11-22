@@ -1,0 +1,57 @@
+.button {
+  position: fixed;
+  bottom: 40%;
+  left: 0.3%;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  background-color: var(--colorSoftDeco);
+  border-radius: 20px;
+  padding: 5px 1px;
+}
+.buttonContent {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0;
+}
+.btnClose {
+  border: none;
+  background-color: var(--colorSoftDeco);
+}
+
+.aboutusOffcanvasBody {
+  background-color: var(--colorSoftDeco);
+}
+
+.wrapper {
+  margin-top: -30px;
+}
+.sectionWrapper {
+  font-family: var(--fontFamilyDeco);
+}
+.navigationButtons {
+  background-color: red;
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background-color: #131313 !important;
+  border-radius: 25px;
+  height: fit-content;
+  padding: 10px 15px 4px;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+
+.navigationButtons:hover {
+  opacity: 90% !important;
+}
+.links {
+  text-decoration: none;
+}
