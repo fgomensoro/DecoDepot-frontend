@@ -8,8 +8,13 @@
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
   line-height: 2rem;
-  font-weight: 600;
-  margin-right: -8px;
+  font-weight: 500;
+  margin-right: -5px;
+  font-size: 22px;
+}
+
+.customNavLink2 {
+  margin-left: -0.3rem;
 }
 
 .customNavLinkButton {
@@ -17,14 +22,16 @@
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
   line-height: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   background-color: rgba(213, 18, 18, 0);
   transition-duration: 3s;
+  font-size: 22px;
 }
 
 .customNavLinkButton:hover {
   transform: scale(1.05);
+  opacity: 70%;
 }
 
 .backTransparent {
@@ -46,6 +53,21 @@
 
 .cart {
   margin-left: 5px;
+  opacity: 85%;
+  color: #131313;
+  font-size: 22px;
+  margin-right: 0.4rem;
+  margin-left: 0.1rem;
+}
+
+@media (max-width: 450px) {
+  .myAccount {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .logo {
@@ -64,7 +86,7 @@
 }
 
 .listItem {
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   border-bottom: solid 1px rgb(219, 219, 219);
   width: 100%;
 }
@@ -74,8 +96,8 @@
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
   /* line-height: 1rem; */
-  /* font-weight: 600; */
-  font-weight: bold;
+  font-size: 21px;
+  font-weight: 400;
   transition-duration: 0.15s;
 }
 
@@ -94,8 +116,9 @@
   transition-duration: 0.15s;
 }
 .icon {
-  font-size: 20px;
-  margin-left: 5px;
+  font-size: 22px;
+  margin-left: 0.3rem;
+  opacity: 80%;
 }
 .btnClose {
   border: none;

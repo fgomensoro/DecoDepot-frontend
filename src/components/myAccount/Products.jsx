@@ -3,9 +3,7 @@ import Product from "./Product";
 function Products({ order }) {
   const products = order.products;
   const items = products.map((product) => (
-    <div key={product.id}>
-      <Product product={product} order={order} />
-    </div>
+    <Product key={product.id} product={product} order={order} />
   ));
 
   return <div>{items}</div>;

@@ -33,7 +33,12 @@ function Pack() {
         <div className={`${styles.comboContain1} row`}>
           <div className={`${styles.cards} col-12 col-lg-6 text-center`}>
             <img
-              className={styles.bigImage}
+              className={`${styles.bigImage}`}
+              src={`${process.env.REACT_APP_IMAGE_PATH}${packs[0].bigImage}`}
+              alt="comboBigImage"
+            />
+             <img
+              className={`${styles.bigImage} ${styles.bigImageSecondary}`}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[0].bigImage}`}
               alt="comboBigImage"
             />

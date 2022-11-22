@@ -9,6 +9,17 @@
   padding-left: 0.3em;
 }
 
+.link {
+  color: #131313;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #131313;
+  text-decoration: none;
+  opacity: 70%;
+}
+
 .comboContain2 {
   margin-top: 2rem;
   justify-content: center;
@@ -101,4 +112,48 @@
   font-family: "Calibre", sans-serif;
   font-size: 0.88rem;
   margin-top: -0.5rem;
+}
+
+@media (max-width: 991px) {
+  .bigImageResponsive {
+    margin-top: 2.5rem;
+  }
+
+  .bigImageSecondary {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .bigImage {
+    height: 30em !important;
+    margin-top: 1.1rem !important;
+  }
+
+  .bigImageSecondary {
+    height: 30em !important;
+    margin-bottom: -41.5rem !important;
+    border-radius: 25px !important;
+  }
+}
+
+@media (max-width: 1399px) {
+  .bigImage {
+    height: 35em;
+    margin-top: 1.1rem;
+  }
+  .bigImageSecondary {
+    height: 30em !important;
+    margin-top: 3.4rem !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bigImage {
+    height: 35em;
+    margin-top: 1.3rem;
+  }
+  .bigImageSecondary {
+    display: none;
+  }
 }

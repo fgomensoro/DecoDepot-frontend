@@ -5,6 +5,7 @@ import styles from "./Navbar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toggleCart } from "../../redux/offCanvasSlice";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 import LeftNavbar from "./LeftNavbar";
 import RightNavbar from "./RightNavbar";
@@ -68,12 +69,13 @@ function Navbar() {
             onClick={handleShowLeftNavbar}
           >
             Explore
-            <i className={`${styles.icon} bi bi-arrow-down-circle-fill`}></i>
+            <TiArrowSortedDown className={styles.icon} />
+            {/* <i className={`${styles.icon} bi bi-arrow-down-circle-fill`}></i> */}
           </button>
         </div>
 
         <div className={`${styles.logoContainer} nav-item`}>
-          <Link to="/" className={`${styles.customNavLink}   nav-link`}>
+          <Link to="/" className={`${styles.customNavLink} ${styles.customNavLink2} nav-link`}>
             {/* <div className={styles.logo} style={{ backgroundImage: `url(${url})` }}></div> */}
             <img src={url} className={styles.logo} alt="logo" />
           </Link>
@@ -82,12 +84,11 @@ function Navbar() {
         <ul className="navbar-nav mb-0">
           <li className="nav-item">
             <button className={`${styles.customNavLinkButton} nav-link`} onClick={handleToggle}>
-              Cart
               <i className={`${styles.customNavLink} ${styles.cart} bi bi-cart-fill`}></i>
             </button>
           </li>
           {user && (
-            <li className="nav-item">
+            <li className={`${styles.myAccount} nav-item`}>
               <Link to={`/myaccount`} className={`${styles.customNavLink} nav-link`}>
                 My account
               </Link>
