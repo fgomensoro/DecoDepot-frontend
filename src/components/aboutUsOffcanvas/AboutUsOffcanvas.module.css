@@ -13,6 +13,7 @@
   writing-mode: vertical-rl;
   text-orientation: upright;
   margin: 0;
+  font-family: monospace;
 }
 .btnClose {
   border: none;
