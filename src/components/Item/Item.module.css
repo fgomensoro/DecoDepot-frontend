@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.itemImgContainer:hover {
+  opacity: 80%;
+}
+
 .itemImg {
   height: 100%;
   width: 100%;
@@ -21,15 +25,19 @@
   background-color: transparent;
   border-radius: 20px;
   height: fit-content;
-  padding: 6px 30px;
+  padding: 9px 30px 3px 30px;
   font-weight: 500;
   transition: all 0.3s;
   text-decoration: none;
+  border: solid #131313 1px;
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
 }
 
 .shopBtn:hover {
   background-color: rgb(15, 15, 15);
   color: aliceblue;
+  opacity: 90%;
 }
 
 .name {

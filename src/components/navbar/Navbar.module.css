@@ -60,6 +60,16 @@
   margin-left: 0.1rem;
 }
 
+@media (max-width: 450px) {
+  .myAccount {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
 .logo {
   margin-top: 5px;
   width: 57px;
