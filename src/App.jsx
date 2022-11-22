@@ -30,6 +30,7 @@ import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import OnlyUser from "./components/onlyUser/OnlyUser";
+import SwiperItems from "./components/itemDetail/SwiperItems";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -40,7 +41,8 @@ function App() {
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
     location.pathname === "/checkout" ||
-    location.pathname === "/buy"
+    location.pathname === "/buy" ||
+    location.pathname === "/swiper"
   ) {
     showNav = false;
   }
@@ -49,6 +51,7 @@ function App() {
   if (
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
+    location.pathname === "/swiper" ||
     location.pathname.startsWith("/admin")
   ) {
     showFooter = false;
@@ -67,6 +70,8 @@ function App() {
         <Route path="/store" element={<Products />} />
         <Route path="/about-this-proyect" element={<AboutThisProyect />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/swiper" element={<SwiperItems />} />
+
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />
           <Route path="/myaccount" element={<MyAccount />} />
