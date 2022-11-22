@@ -17,11 +17,8 @@ function AddToCartButton({ product, btnClassName, toggle }) {
         slug: product.slug,
       }),
     );
-    if (toggle === false) {
-      return;
-    } else {
-      dispatch(toggleCart());
-    }
+
+    dispatch(toggleCart());
   };
 
   return (

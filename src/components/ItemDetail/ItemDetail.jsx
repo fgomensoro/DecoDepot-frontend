@@ -3,7 +3,7 @@ import styles from "./ItemDetail.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SwiperItems from "./SwiperItems";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/cartSlice";
 import { toggleCart } from "../../redux/offCanvasSlice";
 import AddBtn from "../buttons/addToCartButton/AddToCartButton2";
@@ -12,6 +12,7 @@ function ItemDetail({ product }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
   const dollarUSLocale = Intl.NumberFormat("en-US");
+  const toggle = useSelector((state) => state.offCanvas);
 
   const dispatch = useDispatch();
 
@@ -26,11 +27,8 @@ function ItemDetail({ product }) {
         slug: product.slug,
       }),
     );
-    if (toggle === false) {
-      return;
-    } else {
-      dispatch(toggleCart());
-    }
+
+    dispatch(toggleCart());
   };
 
   const getSimilar = async () => {
@@ -61,7 +59,7 @@ function ItemDetail({ product }) {
       <div className={`${styles.detail} container`}>
         <div className="row ">
           <div className="col d-flex justify-content-center mt-4 mb-5">
-            <AddBtn product={product} toggle={false} />
+            <AddBtn product={product} toggle={toggle} />
           </div>
         </div>
 
