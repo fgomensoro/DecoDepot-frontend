@@ -46,7 +46,11 @@ function App() {
   }
 
   let showFooter = true;
-  if (location.pathname === "/login" || location.pathname === "/signup") {
+  if (
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname.startsWith("/admin")
+  ) {
     showFooter = false;
   }
 

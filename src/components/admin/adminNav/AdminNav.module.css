@@ -1,17 +1,32 @@
 .body {
   min-width: 80vh;
-  margin-top: 12%;
+  margin-top: 5%;
 }
 
 .adminNav {
-  text-align: center;
-  padding: 2rem;
+  padding: 0 2rem;
+}
+
+/* .link {
+  text-decoration: none;
+  color: #5d5e5d;
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-left: 1rem; 
+} */
+
+.line {
+  /* margin: 1rem 0; */
+  /* border-bottom: 1px solid #e1e1e1; */
 }
 
 .navButton {
   border: none;
   background-color: transparent;
-  margin-right: 1rem;
+  color: #5d5e5d;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0.5rem;
 }
 
 .active {
