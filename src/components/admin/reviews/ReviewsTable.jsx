@@ -25,9 +25,11 @@ function ReviewsTable() {
   }, []); // eslint-disable-line
 
   return (
-    <div>
-      <div className={`${styles.body} container`}>
+    <div className={`${styles.body} row`}>
+      <div className="col-2">
         <AdminNav active={"Reviews"} />
+      </div>
+      <div className="col-10">
         {reviews && (
           <table className={`${styles.scrollX} table`}>
             <thead>

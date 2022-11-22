@@ -6,11 +6,11 @@ function AdminNav({ active }) {
 
   const paths = ["Products", "Orders", "Packs", "Users", "Reviews"];
   return (
-    <div className={`${styles.body} container`}>
-      <div className={styles.adminNav}>
-        {paths.map((path, index) => {
-          if (path === active) {
-            return (
+    <div className={styles.adminNav}>
+      {paths.map((path, index) => {
+        if (path === active) {
+          return (
+            <div>
               <button
                 key={path + index}
                 className={`${styles.navButton} ${styles.active}`}
@@ -18,9 +18,12 @@ function AdminNav({ active }) {
               >
                 {path}
               </button>
-            );
-          } else {
-            return (
+              <div className={styles.line}></div>
+            </div>
+          );
+        } else {
+          return (
+            <div>
               <button
                 key={path + index}
                 className={styles.navButton}
@@ -28,10 +31,11 @@ function AdminNav({ active }) {
               >
                 {path}
               </button>
-            );
-          }
-        })}
-      </div>
+              <div className={styles.line}></div>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 }

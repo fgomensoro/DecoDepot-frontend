@@ -1,11 +1,10 @@
 .body {
   min-width: 80vh;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .buttonContainer {
-  text-align: center;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
 
 .buttonCreate {
@@ -122,14 +121,9 @@
   width: 40%;
 }
 
-/* .scrollX {
-  display: block;
-
-  max-width: fit-content;
-  margin: 0 auto;
-  overflow-x: auto;
-  white-space: nowrap;
-} */
+.tableImage {
+  width: 4rem;
+}
 
 @media (max-width: 600px) {
   .scrollX {

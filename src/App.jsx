@@ -49,11 +49,7 @@ function App() {
   if (
     location.pathname === "/login" ||
     location.pathname === "/signup" ||
-    location.pathname === "/admin/products" ||
-    location.pathname === "/admin/orders" ||
-    location.pathname === "/admin/users" ||
-    location.pathname === "/admin/packs" ||
-    location.pathname === "/admin/reviews"
+    location.pathname.startsWith("/admin")
   ) {
     showFooter = false;
   }
