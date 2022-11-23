@@ -4,7 +4,7 @@ import styles from "./AboutThisProyect.module.css";
 
 function AboutThisProyect() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
-  const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus9.jpg";
+
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
