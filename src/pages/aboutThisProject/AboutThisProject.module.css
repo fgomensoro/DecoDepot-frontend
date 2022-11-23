@@ -1,6 +1,9 @@
 .background {
   height: 45rem;
   position: relative;
+  height: 70vh;
+  background: rgb(246,246,246);
+  background: radial-gradient(circle, rgba(246,246,246,0.9556197478991597) 14%, rgba(185,185,185,1) 100%);
 }
 
 .title {
@@ -15,14 +18,189 @@
 
 .image {
   width: 100%;
-  height: 45rem;
+  height: 100%;
   object-fit: cover;
+}
+
+.curveContainer{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.sectionProject {
+  max-width: 50rem;
+  background-color: #ebebeb60;
+  padding: 2rem 4rem;
+}
+.firstText{
+  margin-top: 50px;
+}
+.firstTextContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.subtitle {
+  text-align: start;
+}
+.projectTextContainer{
+  width: 50%;
+}
+.projectText{
+  line-height: 30px;
+  word-spacing: 3px;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+  color: #647788;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.projectLogo{
+width: 45%;
+padding: 12px 6px;
+}
+
+.logo{
+  width: 100%;
+  height: 100%;
+}
+.textSection{
+  width: 45%;
+}
+
+.textSectionContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.cardBottom {
+  position: relative;
+  background-color: #ebebeb60;
+  padding: 32px 16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.089);
+  height: 200px;
+  width: 240px;
+  margin: 30px 0 70px 5px;
+}
+
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border: 4px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: -25%;
+  right: 25%;
+}
+
+.nameContainer{
+margin-top: 48px;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.developer{
+  text-align: center;
+  font-weight: 500;
+}
+
+.teamTitle{
+  text-align: center;
+  margin: 50px 0 20px 0 ;
+}
+
+.linkedContainer{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 28%;
+  bottom: -1rem;
+  background-color: rgb(255, 255, 255);
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.119);
+}
+
+.gitContainer{
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  bottom: -1rem;
+  left: 58%;
+  background-color: rgb(255, 255, 255);
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.119);
+}
+
+.linkedin {
+  font-size: 1.7rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.linkedin:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.github {
+  font-size: 1.7rem;
+  transition: all 0.1s ease-in-out;
+  color: black;
+}
+
+.github:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.tech{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logoContainer{
+  width: 90px;
+  height: 95px;
+  object-fit: contain;
+}
+
+.techLogos{
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+}
+
+.techLogosMongo{
+  width: 50%;
+  height: 100%;
+  margin-left: 25%;
+  filter: grayscale(1);
+}
+
+.sectionMore {
+  background-color: var(--colorSoftDeco);
+}
+
+.imageMern {
+  width: 100%;
+}
+
+.techLogos {
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 @media (min-width: 900px) {
   .titleContainer {
     position: absolute;
-    left: 70%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
@@ -37,83 +215,29 @@
   }
 }
 
-.sectionProject {
-  max-width: 50rem;
-  background-color: var(--colorSoftDeco);
-  padding: 2rem 4rem;
+@media (max-width: 992px){
+  .projectLogo{
+    width: 50%;
+    margin: auto;
+  }
+  .projectTextContainer{
+    width: 80%;
+    margin: auto;
+  }
+  .projectText{
+    line-height: 25px;
+    word-spacing: 2px;
+  }
+  .firstTextContainer{
+    flex-direction: column;
+  }
+  .subtitle {
+    text-align: center;
+  }  
 }
 
-.subtitle {
-  text-align: center;
-  margin: 4rem 0;
-}
-
-.cardTop {
-  height: 6rem;
-}
-
-.cardBottom {
-  position: relative;
-
-  background-color: var(--colorSoftDeco);
-  padding: 2rem;
-}
-
-.avatar {
-  width: 8rem;
-  height: 8rem;
-  border: 4px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: -4rem;
-  left: 1rem;
-}
-
-.ghostBlock {
-  width: 7.3rem;
-}
-
-.name {
-  text-align: center;
-}
-
-
-.linkedin {
-  position: absolute;
-  font-size: 1.7rem;
-  bottom: -1rem;
-  left: 75%;
-  transition: all 0.1s ease-in-out;
-}
-
-.linkedin:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-}
-
-.github {
-  position: absolute;
-  font-size: 1.7rem;
-  bottom: -1rem;
-  left: 85%;
-  transition: all 0.1s ease-in-out;
-  color: black;
-}
-
-.github:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-}
-
-.sectionMore {
-  background-color: var(--colorSoftDeco);
-}
-
-.imageMern {
-  width: 100%;
-}
-
-.techLogos {
-  max-width: 10rem;
-  max-height: 10rem;
+@media (max-width: 514px) {
+  .cardBottom {
+    margin: 50px auto;
+  }
 }

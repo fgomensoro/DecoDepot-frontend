@@ -23,8 +23,6 @@ function Pack() {
     getPacks(); // eslint-disable-next-line
   }, []);
 
-  console.log(packs);
-
   const randomNumber = Math.floor(Math.random() * (1 - 0 + 1) + 0);
 
   return (
