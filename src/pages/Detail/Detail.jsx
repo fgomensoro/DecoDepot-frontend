@@ -23,7 +23,7 @@ function ItemDetailContainer() {
 
   {
     if (!product) {
-      return <div>holax</div>;
+      return <div>hola</div>;
     }
   }
   return <div>{product && <ItemDetail product={product} />}</div>;

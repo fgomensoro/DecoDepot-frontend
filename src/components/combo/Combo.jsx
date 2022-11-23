@@ -1,9 +1,5 @@
 import styles from "./Combo.module.css";
-import bigImage from "./img/bigImage.jpg";
-import image1 from "./img/image1.jpg";
-import image2 from "./img/image2.jpg";
-import image3 from "./img/image3.jpg";
-import image4 from "./img/image4.jpg";
+
 
 function Combo() {
   return (
