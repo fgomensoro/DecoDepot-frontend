@@ -7,7 +7,7 @@ function AboutHome() {
     <section className="container">
       <div className={`${styles.titleContainer} d-flex`}>
         <hr className={styles.leftLine} />
-        <h2 className={styles.title}>About This Proyect</h2>
+        <h2 className={styles.title}>About This Project</h2>
         <hr className={styles.rightLine} />
       </div>
       <div className="row">
@@ -16,7 +16,7 @@ function AboutHome() {
         </div>
         <div className="col-12 col-lg-4 mb-4">
           <div className={styles.card}>
-            <h4 className={styles.smallTitle}>About this proyect </h4>
+            <h4 className={styles.smallTitle}>About this project </h4>
             <p className={styles.paragraphCard}>
               Deco Depot is an e-commerce that consists of a frontend app builded in React JS, Redux
               and CSS5, and an api builded in Node JS and Mongo DB. Read more about this and about
@@ -24,7 +24,7 @@ function AboutHome() {
             </p>
             <div className="d-flex flex-row-reverse">
               {/* <button className={styles.button}> */}
-              <Link className={styles.link} to={"/about-this-proyect"}>
+              <Link className={styles.link} to={"/about_this_project"}>
                 More
               </Link>
               {/* </button> */}

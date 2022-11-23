@@ -25,7 +25,7 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import AboutThisProyect from "./pages/aboutThisProyect/AboutThisProyect";
+import AboutThisProject from "./pages/aboutThisProject/AboutThisProject";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
@@ -77,7 +77,7 @@ function App() {
         <Route path="/store/:category" element={<ProductsCategory />} />
         <Route path="/products/:slug" element={<Detail />} />
         <Route path="/store" element={<Products />} />
-        <Route path="/about-this-proyect" element={<AboutThisProyect />} />
+        <Route path="/about_this_project" element={<AboutThisProject />} />
         <Route path="/cart" element={<CartPage />} />
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />

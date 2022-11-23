@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AboutThisProyect.module.css";
+import styles from "./AboutThisProject.module.css";
 
-function AboutThisProyect() {
+function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
   const urlHero = process.env.REACT_APP_IMAGE_PATH + "aboutus9.jpg";
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
@@ -15,15 +15,15 @@ function AboutThisProyect() {
         <img className={styles.image} src={urlHero} alt="" />
 
         <div className={`${styles.titleContainer}`}>
-          <h1 className={styles.title}>About this proyect</h1>
+          <h1 className={styles.title}>About this project</h1>
         </div>
       </div>
-      <h2 className={styles.subtitle}>Deco Depot Proyect</h2>
-      <div className={`${styles.sectionProyect} container my-5`}>
+      <h2 className={styles.subtitle}>Deco Depot Project</h2>
+      <div className={`${styles.sectionProject} container my-5`}>
         <p>
-          This proyect is the final outcome of a three months, +600 hours Cooding Bootcamp at Hack
-          Academy. This course lasted from september to december at fulltime pace, and for this
-          final proyect we invested the last 3 weeks of the schedule. And is not the result of a
+          This project is the final outcome of a three months, +600 hours Coding Bootcamp at Hack
+          Academy. This course lasted from September to December at fulltime pace, and for this
+          final project we invested the last 3 weeks of the schedule. And is not the result of a
           single person effort, instead of the coordination and time of four different people,
           working remote but in constant communication. Everything was created from scratch,
           including the design, the architecture and the data base.
@@ -36,7 +36,7 @@ function AboutThisProyect() {
           products, have access to all the recorded orders and more.
         </p>
         <p>
-          Feel free to navigate troughout all of this proyect and to try all of it's
+          Feel free to navigate throughout all of this project and to try all of it's
           functionalities!
         </p>
         <p>
@@ -45,7 +45,7 @@ function AboutThisProyect() {
         </p>
       </div>
       <h2 className={styles.subtitle}>The Team</h2>
-      <div className={`${styles.sectionMambers} container my-5`}>
+      <div className={`${styles.sectionMembers} container my-5`}>
         <div className="row">
           <div className="col-12 col-md-6 justify-content-center">
             <div className={styles.memberCard}>
@@ -106,7 +106,7 @@ function AboutThisProyect() {
                 </div>
                 <p className={styles.description}>
                   Fullstack Web Developer Junior, that likes to play guitar on it's free time and
-                  fan of Tolkiens books, Studio Ghibli's movies and rpgs. More than 15 years of
+                  fan of Tolkien's books, Studio Ghibli's movies and rpgs. More than 15 years of
                   experience working in restaurants and as a bookseller, looking for my first
                   experience on the IT world
                 </p>
@@ -205,4 +205,4 @@ function AboutThisProyect() {
   );
 }
 
-export default AboutThisProyect;
+export default AboutThisProject;

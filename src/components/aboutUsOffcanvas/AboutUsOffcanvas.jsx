@@ -23,12 +23,12 @@ function AboutUsOffcanvas() {
   return (
     <>
       <button onClick={handleShow} className={styles.button}>
-        <p className={styles.buttonContent}>ABOUT THIS PROYECT</p>
+        <p className={styles.buttonContent}>ABOUT THIS PROJECT</p>
       </button>
 
       <Offcanvas show={show} onHide={handleClose} className={styles.aboutusOffcanvasBody}>
         <Offcanvas.Header closeButton>
-          <h2 className={styles.title}>About this proyect</h2>
+          <h2 className={styles.title}>About this project</h2>
           <button onClick={handleClose} className={styles.btnClose}></button>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -38,9 +38,9 @@ function AboutUsOffcanvas() {
               <h3>Abstract</h3>
               <p>
                 Deco Depot is an e-commerce developed by 4 students over a period of 3 weeks as a
-                final proyect for de HackAcademy Coding Bootcamp. You can find more about us here:
+                final project for de HackAcademy Coding Bootcamp. You can find more about us here:
               </p>
-              <Link to="/about-this-proyect" onClick={handleClose} className={styles.links}>
+              <Link to="/about_this_project" onClick={handleClose} className={styles.links}>
                 <button className={styles.navigationButtons}>About us</button>
               </Link>
             </div>
@@ -48,8 +48,8 @@ function AboutUsOffcanvas() {
             <div className={styles.sectionWrapper}>
               <h3>Considerations</h3>
               <p>
-                As someone might have added or edited content from the page, we recomend clearing
-                and reseting the data base for a better experience.
+                As someone might have added or edited content from the page, we recommend clearing
+                and resetting the data base for a better experience.
               </p>
               <button onClick={() => handleResteDataBase()} className={styles.navigationButtons}>
                 Reset database
