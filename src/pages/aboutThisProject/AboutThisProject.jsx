@@ -46,7 +46,7 @@ function AboutThisProject() {
         </div>
         <div className={styles.textSectionContainer}>
           <div className={styles.textSection}>
-            <h3 className="mt-4">Design & Development</h3>
+            <h3 className={styles.sectionTitle}>Design & Development</h3>
             <p className={styles.projectText}>
               The initial development was done in Figma, to define aspects such as the MER
               (Entity-Relationship Model) and the basic structure of the project. For the design of
@@ -55,12 +55,11 @@ function AboutThisProject() {
             </p>
           </div>
           <div className={styles.textSection}>
-            <h3 className="mt-4">Team Organization</h3>
+            <h3 className={styles.sectionTitle}>Team Organization and Methodology</h3>
             <p className={styles.projectText}>
-              In order to organize our ideas, we started off by using Figma which allowed us to
-              create the diagrams and visualize the grand scheme of the project. Next, we used
-              Trello to outline, assign and track each other's tasks. Finally, Discord was the
-              platform we used for constant communication and pair programming.
+              To organize the team's tasks we used Trello to outline, assign and keep track of
+              everyone's tasks, following the SCRUM methodology. Finally, Discord was the platform
+              we used for constant communication and pair programming.
             </p>
           </div>
         </div>
@@ -140,6 +139,7 @@ function AboutThisProject() {
           </div>
         </div>
       </div>
+      <h2 className="text-center my-5">MER</h2>
       <h2 className="text-center my-5">TECHNOLOGIES</h2>
       <div className={`${styles.sectionTechs} container`}>
         <div className={styles.tech}>
@@ -175,31 +175,6 @@ function AboutThisProject() {
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "bootstrap.jfif"} alt="" />
             <p className="text-center">Bootstrap</p>
-          </div>
-        </div>
-      </div>
-      <h2 className={styles.subtitle}>MER</h2>
-      <div className={`${styles.sectionMore} container my-5`}>
-        <div className="row">
-          <div className="col-12 col-md-6 p-4">
-            <img className={styles.imageMern} src={urlMern} alt="" />
-          </div>
-          <div className="col-12 col-md-6 p-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur sint non
-              maxime, quisquam iusto esse consequatur minima id, aliquid dolor unde, vero eaque
-              autem! Nostrum unde fugit officia <dolores className="lorem"></dolores>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur sint non
-              maxime, quisquam iusto esse consequatur minima id, aliquid dolor unde, vero eaque
-              autem! Nostrum unde fugit officia <dolores className="lorem"></dolores>
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aspernatur sint non
-              maxime, quisquam iusto esse consequatur minima id, aliquid dolor unde, vero eaque
-              autem! Nostrum unde fugit officia <dolores className="lorem"></dolores>
-            </p>
           </div>
         </div>
       </div>

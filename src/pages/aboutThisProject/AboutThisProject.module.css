@@ -33,19 +33,24 @@
   background-color: #ebebeb60;
   padding: 2rem 4rem;
 }
+
 .firstText{
   margin-top: 50px;
 }
+
 .firstTextContainer{
   display: flex;
   justify-content: space-between;
 }
+
 .subtitle {
   text-align: start;
 }
+
 .projectTextContainer{
   width: 50%;
 }
+
 .projectText{
   line-height: 30px;
   word-spacing: 3px;
@@ -74,6 +79,11 @@ padding: 12px 6px;
   justify-content: space-between;
   margin-top: 40px;
 }
+
+.sectionTitle{
+  margin-top: 20px;
+}
+
 .cardBottom {
   position: relative;
   background-color: #ebebeb60;
@@ -218,7 +228,7 @@ margin-top: 48px;
 @media (max-width: 992px){
   .projectLogo{
     width: 50%;
-    margin: auto;
+    margin: 40px auto 0 auto;
   }
   .projectTextContainer{
     width: 80%;
@@ -234,10 +244,25 @@ margin-top: 48px;
   .subtitle {
     text-align: center;
   }  
+  .textSection{
+    width: 80%;
+    margin: 10px auto;
+  }
+  .sectionTitle{
+    text-align: center;
+  }
+  .textSectionContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
 }
 
 @media (max-width: 514px) {
   .cardBottom {
     margin: 50px auto;
+  }
+  .projectText{
+    word-spacing: 1.5px;
   }
 }
