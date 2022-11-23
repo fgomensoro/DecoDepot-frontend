@@ -17,16 +17,13 @@ function AddToCartButton({ product, btnClassName, toggle }) {
         slug: product.slug,
       }),
     );
-    if (toggle === false) {
-      return;
-    } else {
-      dispatch(toggleCart());
-    }
+
+    dispatch(toggleCart());
   };
 
   return (
-    <button className={styles[btnClassName]} onClick={handleAddToCart}>
-      Add to cart
+    <button className={styles.buttonBuy} onClick={handleAddToCart}>
+      Buy
     </button>
   );
 }

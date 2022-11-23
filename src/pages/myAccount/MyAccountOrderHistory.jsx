@@ -33,12 +33,12 @@ function MyAccount() {
           </div>
         </div>
 
-        <div className={`${styles.rightContainer}col-12 col-lg-9`}>
+        <div className="col-12 col-lg-9">
           {orders && (
-            <div>
+            <div className="d-flex justify-content-center">
               {orders.length > 0 && <Orders orders={orders} />}
               {orders.length === 0 && (
-                <div className={`${styles.subscriptionsWrapper} d-flex justify-content-center`}>
+                <div className={`${styles.subscriptionsWrapper} `}>
                   <div className={styles.containerSubs}>
                     <p className={styles.subscriptionContent}>No orders</p>
                   </div>

@@ -57,10 +57,13 @@
 }
 .detailsBtns:hover .btnSee {
   animation: ease-in-out 0.4s 1 translate;
+  color: black !important;
+  opacity: 95%;
 }
 .detailsBtns:hover .btnAdd {
   animation: ease-in-out 0.2s 1 translate2;
 }
+
 @keyframes translate {
   from {
     transform: translateY(100%);
@@ -87,9 +90,11 @@
   background-color: rgba(238, 243, 247, 0.649);
   color: black;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-family: "Calibre", sans-serif;
+  font-size: 20px;
   border-radius: 50px;
   transform: translateY(-65%);
+  padding-top: 0.6rem;
 }
 
 .img {
@@ -162,17 +167,17 @@
   color: black;
 }
 
-@media (max-width: 1200px){
-  .btnSee{
+@media (max-width: 1200px) {
+  .btnSee {
     width: 40%;
     transform: translateY(0%);
     font-size: 1rem;
   }
-  .btnAdd{
+  .btnAdd {
     width: 40%;
     font-size: 1rem;
   }
-  .detailsBtns{
+  .detailsBtns {
     opacity: 1;
     align-items: flex-end;
     justify-content: space-around;
@@ -185,8 +190,6 @@
     animation: none;
   }
 }
-
-
 
 /* .bigContain {
   margin-top: 2rem;

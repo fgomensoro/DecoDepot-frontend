@@ -27,8 +27,8 @@ function ProductsHero() {
           </div>
         </div>
         <div className={`${styles.leftColumn} col-12 `}>
-          <h3 className={styles.titleLeft}>Categories</h3>
-          <ul className={styles.list}>
+          <h3 className={`${styles.titleLeft} mt-5`}>Categories</h3>
+          <ul className={`${styles.list} mt-4`}>
             <li>
               <Link to="/store" className={`${styles.customNavLink} nav-link`}>
                 All Products

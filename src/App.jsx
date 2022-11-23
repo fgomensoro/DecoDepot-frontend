@@ -25,11 +25,12 @@ import ReviewsTable from "./components/admin/reviews/ReviewsTable";
 import UsersTable from "./components/admin/users/UsersTable";
 import CreateProduct from "./components/admin/products/CreateProduct";
 import EditProduct from "./components/admin/products/EditProduct";
-import AboutThisProyect from "./pages/aboutThisProyect/AboutThisProyect";
+import AboutThisProject from "./pages/aboutThisProject/AboutThisProject";
 import ProductsCategory from "./pages/productsCategory/ProductsCategory";
 import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import OnlyUser from "./components/onlyUser/OnlyUser";
+import AboutUsOffcanvas from "./components/aboutUsOffcanvas/AboutUsOffcanvas";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -53,10 +54,21 @@ function App() {
   ) {
     showFooter = false;
   }
+  let showCanvas = true;
+  if (
+    location.pathname === "/login" ||
+    location.pathname === "/signup" ||
+    location.pathname.startsWith("/admin") ||
+    location.pathname === "/checkout" ||
+    location.pathname === "/buy"
+  ) {
+    showCanvas = false;
+  }
 
   return (
     <div className={styles.body}>
       {showNav && <Navbar />}
+      {showCanvas && <AboutUsOffcanvas />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
@@ -65,7 +77,7 @@ function App() {
         <Route path="/store/:category" element={<ProductsCategory />} />
         <Route path="/products/:slug" element={<Detail />} />
         <Route path="/store" element={<Products />} />
-        <Route path="/about-this-proyect" element={<AboutThisProyect />} />
+        <Route path="/about_this_project" element={<AboutThisProject />} />
         <Route path="/cart" element={<CartPage />} />
         <Route element={<OnlyUser user={user} />}>
           <Route path="/buy" element={<Pay />} />

@@ -31,7 +31,7 @@ function PacksTable() {
       </div>
       <div className="col-10">
         {packs && (
-          <table className="table">
+          <table className={`${styles.scrollX} table`}>
             <thead>
               <tr>
                 <th scope="col">#</th>

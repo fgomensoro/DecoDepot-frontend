@@ -23,29 +23,33 @@ function Pack() {
     getPacks(); // eslint-disable-next-line
   }, []);
 
+  console.log(packs);
+
+  const randomNumber = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+
   return (
     packs && (
       <div className={`${styles.bigContain} container`}>
         <div className="d-flex">
-          <h3 className={styles.title}>{packs[0].name}</h3>
+          <h3 className={styles.title}>{packs[randomNumber].name}</h3>
           <hr className={styles.line} />
         </div>
         <div className={`${styles.comboContain1} row`}>
           <div className={`${styles.cards} col-12 col-lg-6 text-center`}>
             <img
               className={`${styles.bigImage}`}
-              src={`${process.env.REACT_APP_IMAGE_PATH}${packs[0].bigImage}`}
+              src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage}`}
               alt="comboBigImage"
             />
-             <img
+            <img
               className={`${styles.bigImage} ${styles.bigImageSecondary}`}
-              src={`${process.env.REACT_APP_IMAGE_PATH}${packs[0].bigImage}`}
+              src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage2}`}
               alt="comboBigImage"
             />
           </div>
           <div className={`${styles.cards} col-12 col-lg-6`}>
             <div className={`${styles.packCards} d-flex flex-wrap`}>
-              <PackCards packs={packs[0]} />
+              <PackCards packs={packs[randomNumber]} />
             </div>
           </div>
         </div>

@@ -19,7 +19,6 @@ function Product({ product, order }) {
             className="rounded-3"
             src={process.env.REACT_APP_IMAGE_PATH + product.image}
             width="100%"
-            id={styles.image}
           />
         </div>
       </div>

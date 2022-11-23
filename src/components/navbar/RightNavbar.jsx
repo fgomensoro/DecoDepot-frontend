@@ -7,7 +7,6 @@ import Cart from "../cart/Cart";
 function RightNavbar({ cart, toggle, handleToggle }) {
   const dollarUSLocale = Intl.NumberFormat("en-US");
 
-  console.log(cart.items);
   return (
     <Offcanvas show={toggle} onHide={handleToggle} placement={"end"} className={styles.cartSideBar}>
       <Offcanvas.Header className={`${styles.cartHeader} `}>

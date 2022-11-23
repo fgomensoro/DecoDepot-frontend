@@ -8,6 +8,11 @@
   opacity: 80%;
 }
 
+.nameContainer {
+  height: 35px;
+
+}
+
 .itemImg {
   height: 100%;
   width: 100%;
@@ -15,9 +20,13 @@
 }
 
 .description {
+  padding: 1.4rem 0.5rem 2rem 0.5rem;
+}
+
+.priceBtnContainer {
   display: flex;
   justify-content: space-between;
-  padding: 20px 8px 0 8px;
+  align-items: baseline;
 }
 
 .shopBtn {
@@ -25,7 +34,7 @@
   background-color: transparent;
   border-radius: 20px;
   height: fit-content;
-  padding: 9px 30px 3px 30px;
+  padding: 9px 25px 3px 25px;
   font-weight: 500;
   transition: all 0.3s;
   text-decoration: none;
@@ -43,11 +52,19 @@
 .name {
   color: black;
   font-weight: 500;
+  font-size: 28px;
+  font-family: "Calibre", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: auto;
 }
 
 .price {
   font-weight: 500;
   color: #647788;
+  font-size: 23px;
+  font-family: "Calibre", sans-serif;
 }
 
 @media (max-width: 1198px) {

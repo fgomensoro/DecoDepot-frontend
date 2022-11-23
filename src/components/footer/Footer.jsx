@@ -24,7 +24,7 @@ function Footer() {
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
                     <Link
-                      to="/"
+                      to="/store"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
                     >
                       All products
@@ -32,26 +32,34 @@ function Footer() {
                   </li>
                   <li className="nav-item mb-2">
                     <Link
-                      to="/"
+                      to="/store/Beds"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
                     >
-                      Bedroom
+                      Beds
                     </Link>
                   </li>
                   <li className="nav-item mb-2">
                     <Link
-                      to="/"
+                      to="/store/Chairs"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
                     >
-                      Home office
+                      Chairs
                     </Link>
                   </li>
                   <li className="nav-item mb-2">
                     <Link
-                      to="/"
+                      to="/store/Tables"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
                     >
-                      Living
+                      Tables
+                    </Link>
+                  </li>
+                  <li className="nav-item mb-2">
+                    <Link
+                      to="/store/Décor"
+                      className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
+                    >
+                      Décor
                     </Link>
                   </li>
                 </ul>
@@ -62,7 +70,7 @@ function Footer() {
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
                     <Link
-                      to="/"
+                      to="/about_this_project"
                       className={`${styles.customFooterLink} nav-link nav-link p-0 text-muted`}
                     >
                       About us
@@ -122,7 +130,7 @@ function Footer() {
                 </li>
                 <li className="ms-3">
                   <Link to="/" className={`${styles.customFooterLink} link-dark`}>
-                    Accesibility
+                    Accessibility
                   </Link>
                 </li>
               </ul>

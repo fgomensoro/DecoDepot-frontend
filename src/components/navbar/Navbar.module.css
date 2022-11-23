@@ -3,7 +3,22 @@
   font-size: 1.4rem;
 }
 
+.navbarStyle {
+  padding: 0.3rem 0;
+}
+
 .customNavLink {
+  color: #131313;
+  font-family: var(--fontFamilyDeco);
+  text-decoration: none;
+  line-height: 2rem;
+  font-weight: 500;
+  margin-right: -5px;
+  font-size: 22px;
+  margin-top: 0.3rem;
+}
+
+.customNavLink3 {
   color: #131313;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
@@ -14,7 +29,8 @@
 }
 
 .customNavLink2 {
-  margin-left: -0.3rem;
+  margin-left: -1.1rem;
+  margin-top: -0.2rem;
 }
 
 .customNavLinkButton {
@@ -27,6 +43,7 @@
   background-color: rgba(213, 18, 18, 0);
   transition-duration: 3s;
   font-size: 22px;
+  margin-top: 0.3rem;
 }
 
 .customNavLinkButton:hover {
@@ -72,7 +89,7 @@
 
 .logo {
   margin-top: 5px;
-  width: 57px;
+  width: 85px;
 }
 
 .leftNavBody {

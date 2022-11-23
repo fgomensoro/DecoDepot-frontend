@@ -9,16 +9,18 @@ function Item({ product }) {
         <div className={styles.itemImgContainer}>
           <img
             className={styles.itemImg}
-            src={process.env.REACT_APP_IMAGE_PATH + product.images[Math.floor(Math.random() * 3)]}
+            src={process.env.REACT_APP_IMAGE_PATH + product.images[0]}
             alt=""
           />
         </div>
         <div className={styles.description}>
-          <div>
+          <div className={styles.nameContainer}>
             <h3 className={styles.name}>{product.name}</h3>
-            <p className={styles.price}>{`Price $${product.price}`}</p>
           </div>
+          <div className={styles.priceBtnContainer}>
+          <p className={styles.price}>{`Price $${product.price}`}</p>
           <button className={styles.shopBtn}>Shop now</button>
+          </div>
         </div>
       </Link>
     </div>
