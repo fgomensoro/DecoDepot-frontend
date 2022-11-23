@@ -20,12 +20,14 @@ function ProductsHero() {
   return (
     categories && (
       <div>
-        <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
-          <div className={styles.wrapper}>
-            <h1 className={styles.bigLetter}>Our products</h1>
-            <p>Design your home interior with your heart</p>
+        {
+          <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
+            <div className={styles.wrapper}>
+              <h1 className={styles.bigLetter}>Our products</h1>
+              <p>Design your home interior with your heart</p>
+            </div>
           </div>
-        </div>
+        }
         <div className={`${styles.leftColumn} col-12 `}>
           <h3 className={`${styles.titleLeft} mt-5`}>Categories</h3>
           <ul className={`${styles.list} mt-4`}>
@@ -54,3 +56,5 @@ function ProductsHero() {
 }
 
 export default ProductsHero;
+
+/* entre la 31 y la 52 esta el problema. si borro la clase list se arregla*/
