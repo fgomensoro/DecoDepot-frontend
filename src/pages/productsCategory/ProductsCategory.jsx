@@ -15,9 +15,9 @@ function ProductsCategory() {
       url: `${process.env.REACT_APP_API_URL}/products`,
       method: "GET",
     });
-    let filtredProducts = response.data.filter((product) => product.category.name === category);
+    let filteredProducts = response.data.filter((product) => product.category.name === category);
 
-    setProducts(filtredProducts);
+    setProducts(filteredProducts);
   };
 
   useEffect(() => {

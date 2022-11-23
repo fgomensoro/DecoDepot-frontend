@@ -122,7 +122,7 @@ function Footer() {
                 </li>
                 <li className="ms-3">
                   <Link to="/" className={`${styles.customFooterLink} link-dark`}>
-                    Accesibility
+                    Accessibility
                   </Link>
                 </li>
               </ul>

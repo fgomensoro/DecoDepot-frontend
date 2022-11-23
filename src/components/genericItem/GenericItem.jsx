@@ -22,9 +22,6 @@ function GenericItem({ product }) {
               See More
             </Link>
             <AddToCartButton product={product} btnClassName={"genericItem"} />
-            {/* <button className={styles.btnAdd} onClick={handleClickAdd}>
-              Add To Cart
-            </button> */}
           </div>
           <img
             className={styles.img}

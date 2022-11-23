@@ -37,7 +37,7 @@
   }
 }
 
-.sectionProyect {
+.sectionProject {
   max-width: 50rem;
   background-color: var(--colorSoftDeco);
   padding: 2rem 4rem;
@@ -76,8 +76,7 @@
 .name {
   text-align: center;
 }
-.description {
-}
+
 
 .linkedin {
   position: absolute;
