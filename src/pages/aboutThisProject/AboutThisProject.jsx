@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./AboutThisProject.module.css";
 
-function AboutThisProyect() {
+function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
@@ -17,7 +17,7 @@ function AboutThisProyect() {
         {/* <img className={styles.image} src={urlHero} alt="" /> */}
 
         <div className={`${styles.titleContainer}`}>
-          <h1 className={styles.title}>About this proyect</h1>
+          <h1 className={styles.title}>About this project</h1>
         </div>
         <div className={styles.curveContainer}>
           <img className={styles.curveImg} src={urlCurve} alt="" />
@@ -72,13 +72,13 @@ function AboutThisProyect() {
             <p className={styles.projectText}>
               The following step was to define the entity-relationship model, taking into account
               certain factors such as saving the products of each order in JSON format instead of it
-              being connected, separing administrators from the users, amongst others.
+              being connected, separating administrators from the users, amongst others.
             </p>
           </div>
         </div>
       </div>
       <h2 className={styles.teamTitle}>Our Team</h2>
-      <div className={`${styles.sectionMambers} container my-5`}>
+      <div className={`${styles.sectionMembers} container my-5`}>
         <div className=" d-flex flex-wrap justify-content-between">
           <div className={styles.cardBottom}>
             <img className={styles.avatar} src={urlAvatar} alt="" />
@@ -219,4 +219,4 @@ function AboutThisProyect() {
   );
 }
 
-export default AboutThisProyect;
+export default AboutThisProject;
