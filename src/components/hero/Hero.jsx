@@ -10,7 +10,7 @@ function Hero() {
       <img className={styles.image} src={url} alt="Hero Img" />
 
       <div className={`${styles.textContainer}`}>
-        <h1 className={styles.title}>Design you home interior</h1>
+        <h1 className={styles.title}>Design your home interior</h1>
         <button className={styles.button}>
           <Link className={styles.link} to="/store">
             Shop Now
