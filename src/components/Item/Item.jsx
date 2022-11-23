@@ -9,7 +9,7 @@ function Item({ product }) {
         <div className={styles.itemImgContainer}>
           <img
             className={styles.itemImg}
-            src={process.env.REACT_APP_IMAGE_PATH + product.images[Math.floor(Math.random() * 3)]}
+            src={process.env.REACT_APP_IMAGE_PATH + product.images[0]}
             alt=""
           />
         </div>
