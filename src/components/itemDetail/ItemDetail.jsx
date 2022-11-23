@@ -53,8 +53,9 @@ function ItemDetail({ product }) {
     <div className={styles.background}>
       <div className={styles.nameCont}>
         <h2 className={styles.name}>{product.name}</h2>
+        <SwiperItems product={product} />
       </div>
-      <SwiperItems product={product} />
+      
 
       <div className={`${styles.detail} container`}>
         <div className="row ">
