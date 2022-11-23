@@ -53,12 +53,6 @@ function AboutThisProyect() {
               our e-commerce we took ideas from other similar sites, taking the best of each one and
               adjusting them to our site.
             </p>
-
-            <h3 className="mt-4">Technologies and Tools</h3>
-            <p className={styles.projectText}>
-              As a database we chose Mysql, since we understood that it adapted to our application
-              web model and was chosen by 46% of the programmers according to StackOverflow.
-            </p>
           </div>
           <div className={styles.textSection}>
             <h3 className="mt-4">Team Organization</h3>
@@ -67,12 +61,6 @@ function AboutThisProyect() {
               create the diagrams and visualize the grand scheme of the project. Next, we used
               Trello to outline, assign and track each other's tasks. Finally, Discord was the
               platform we used for constant communication and pair programming.
-            </p>
-            <h3 className="mt-4">Entity-Relationship Diagram</h3>
-            <p className={styles.projectText}>
-              The following step was to define the entity-relationship model, taking into account
-              certain factors such as saving the products of each order in JSON format instead of it
-              being connected, separing administrators from the users, amongst others.
             </p>
           </div>
         </div>
