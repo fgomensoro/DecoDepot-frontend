@@ -53,8 +53,9 @@ function ItemDetail({ product }) {
     <div className={styles.background}>
       <div className={styles.nameCont}>
         <h2 className={styles.name}>{product.name}</h2>
+        <SwiperItems product={product} />
       </div>
-      <SwiperItems product={product} />
+      
 
       <div className={`${styles.detail} container`}>
         <div className="row ">
@@ -63,8 +64,8 @@ function ItemDetail({ product }) {
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-6">
+        <div className={styles.containerRow}>
+          <div className={styles.containerCol}>
             <div className={styles.infoContainer}>
               <div className={styles.nameContainer}>
                 <p className={styles.category}>{product.category.name}</p>
@@ -75,7 +76,7 @@ function ItemDetail({ product }) {
               </div>
             </div>
           </div>
-          <div className="col-6">
+          <div className={styles.containerCol}>
             <h3 className={styles.similarTitle}>You might also like:</h3>
             <div className={styles.itemsContainer}>
               <div className="row">
