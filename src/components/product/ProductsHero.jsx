@@ -23,7 +23,7 @@ function ProductsHero() {
         {
           <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
             <div className={styles.wrapper}>
-              <h1 className={styles.bigLetter}>Our products</h1>
+              <h1 className={`${styles.bigLetter}`}>Our Products</h1>
               <p>Design your home interior with your heart</p>
             </div>
           </div>
