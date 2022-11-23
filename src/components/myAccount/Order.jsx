@@ -5,8 +5,8 @@ import { compareAsc, format } from "date-fns";
 
 function order({ order }) {
   return (
-    <div className={styles.orderWrapper}>
-      <div className={`${styles.cardStepper}  card mx-auto`} style={{ borderRadius: 16 }}>
+    <div className={`${styles.orderWrapper} `}>
+      <div className={`${styles.cardStepper} card `} style={{ borderRadius: 16 }}>
         <div className="card-header p-4 ">
           <div className="row">
             <div className="col-12 col-lg-6">
