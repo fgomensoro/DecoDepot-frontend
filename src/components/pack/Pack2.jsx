@@ -25,7 +25,6 @@ function Pack() {
 
   const randomNumber = Math.floor(Math.random() * (3 - 2 + 1) + 2);
 
-
   return (
     packs && (
       <div className={`${styles.bigContain} container`}>
@@ -34,12 +33,12 @@ function Pack() {
           <hr className={styles.line} />
         </div>
         <div className={`${styles.comboContain2} row`}>
-          <div className={`${styles.cards} col-12 col-lg-6`}>
+          <div className={`${styles.cards} col-12 col-lg-4`}>
             <div className={`${styles.packCards} d-flex flex-wrap`}>
               <PackCards packs={packs[randomNumber]} />
             </div>
           </div>
-          <div className={`${styles.cards} col-12 col-lg-6 text-center`}>
+          <div className={`${styles.cards} col-12 col-lg-8 text-center`}>
             <img
               className={`${styles.bigImage}`}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage}`}
@@ -47,7 +46,7 @@ function Pack() {
             />
 
             <img
-              className={`${styles.bigImage} ${styles.bigImageSecondary}`}
+              className={` ${styles.bigImageSecondary}`}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage2}`}
               alt="comboBigImage"
             />
