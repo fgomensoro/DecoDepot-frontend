@@ -35,9 +35,9 @@ function Products() {
     categories && (
       <div>
         <ProductsHero />
-        <div className={`container-fluid px-5 mt-4`}>
-          <div className={`row`}>
-            <div className="col-8 mx-auto">
+        <div className={`${styles.column} container-fluid px-5 mt-4`}>
+          <div className={` row`}>
+            <div className={`col-8 mx-auto`}>
               {categories.map((category) => {
                 return (
                   <ProductsSection

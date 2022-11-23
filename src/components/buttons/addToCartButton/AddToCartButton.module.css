@@ -4,8 +4,15 @@
   background-color: black;
   color: aliceblue;
   font-weight: 600;
-  font-size: 1.2rem;
   border-radius: 50px;
+  font-family: "Calibre", sans-serif;
+  font-size: 20px;
+  padding-top: 0.7rem;
+  border: none;
+}
+
+.genericItem:hover {
+  opacity: 85%;
 }
 
 .itemDetail {

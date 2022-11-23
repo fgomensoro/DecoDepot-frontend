@@ -19,7 +19,7 @@ function GenericItem({ product }) {
               className={`${styles.btnSee} text-decoration-none`}
               to={`/detail/${product.slug}`}
             >
-              See More
+              See more
             </Link>
             <AddToCartButton product={product} btnClassName={"genericItem"} />
           </div>

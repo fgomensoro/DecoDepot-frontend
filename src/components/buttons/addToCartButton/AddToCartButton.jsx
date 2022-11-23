@@ -26,7 +26,7 @@ function AddToCartButton({ product, btnClassName, toggle }) {
 
   return (
     <button className={styles[btnClassName]} onClick={handleAddToCart}>
-      Add To Cart
+      Add to cart
     </button>
   );
 }
