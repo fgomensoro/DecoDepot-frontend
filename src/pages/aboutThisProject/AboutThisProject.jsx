@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AboutThisProyect.module.css";
+import styles from "./AboutThisProject.module.css";
 
 function AboutThisProyect() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
