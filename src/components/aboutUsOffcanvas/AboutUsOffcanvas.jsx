@@ -22,8 +22,8 @@ function AboutUsOffcanvas() {
 
   return (
     <>
-      <button onClick={handleShow} className={styles.button}>
-        <p className={styles.buttonContent}>ABOUT THIS PROJECT</p>
+      <button onClick={handleShow} className={styles.buttonFixed}>
+        <p className="m-0">More Here</p>
       </button>
 
       <Offcanvas show={show} onHide={handleClose} className={styles.aboutusOffcanvasBody}>
@@ -41,7 +41,7 @@ function AboutUsOffcanvas() {
                 final project for de HackAcademy Coding Bootcamp. You can find more about us here:
               </p>
               <Link to="/about_this_project" onClick={handleClose} className={styles.links}>
-                <button className={styles.navigationButtons}>About us</button>
+                <button className={styles.button}>About us</button>
               </Link>
             </div>
             <hr></hr>
@@ -51,7 +51,7 @@ function AboutUsOffcanvas() {
                 As someone might have added or edited content from the page, we recommend clearing
                 and resetting the data base for a better experience.
               </p>
-              <button onClick={() => handleResteDataBase()} className={styles.navigationButtons}>
+              <button onClick={() => handleResteDataBase()} className={styles.button}>
                 Reset database
               </button>
             </div>
@@ -62,9 +62,9 @@ function AboutUsOffcanvas() {
                 We have provided a user with admin credentials. With it, you will be able to test
                 all admin functionalities as well as navigate as a customer.
               </p>
-              <p>Username: admin@admin.com</p> <p>Password: 1</p>
+              <p>Username: admin@admin.com</p> <p>Password: password</p>
               <Link to="/login" onClick={handleClose} className={styles.links}>
-                <button className={styles.navigationButtons}>Login</button>
+                <button className={styles.button}>Login</button>
               </Link>
             </div>
             <hr></hr>

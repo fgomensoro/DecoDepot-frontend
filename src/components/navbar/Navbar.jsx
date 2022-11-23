@@ -44,9 +44,9 @@ function Navbar() {
   window.addEventListener("scroll", changeNavbarColor);
   return (
     <nav
-      className={`${
-        colorChange ? styles.backBlue : styles.backGrey
-      } ${styles.navbarStyle} navbar navbar-expand fixed-top`}
+      className={`${colorChange ? styles.backBlue : styles.backGrey} ${
+        styles.navbarStyle
+      } navbar navbar-expand fixed-top`}
     >
       <LeftNavbar
         showLeftNavbar={showLeftNavbar}
@@ -75,7 +75,7 @@ function Navbar() {
         </div>
 
         <div className={`${styles.logoContainer} nav-item`}>
-          <Link to="/" className={`${styles.customNavLink3} ${styles.customNavLink2} nav-link`}>
+          <Link to="/" className={`${styles.customNavLinkLogo} nav-link`}>
             {/* <div className={styles.logo} style={{ backgroundImage: `url(${url})` }}></div> */}
             <img src={url} className={styles.logo} alt="logo" />
           </Link>

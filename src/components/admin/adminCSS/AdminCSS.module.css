@@ -33,7 +33,16 @@
   color: black;
 }
 
-.buttonEdit {
+.form {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 2rem;
+  width: 40rem;
+  border: 1px solid #ced4da;
+}
+
+.buttonPencil {
   width: 50px;
   border: 2px solid var(--colorBlackDeco);
   border-radius: 30px;
@@ -41,8 +50,21 @@
   color: black;
   font-weight: bold;
 }
+.buttonPencil:hover {
+  color: var(--colorBlackDeco);
+  background-color: #e4e4e4;
+}
 
-.buttonEdit:hover {
+.buttonSubmit {
+  width: 80px;
+  border: 2px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+
+.buttonSubmit:hover {
   color: var(--colorBlackDeco);
   background-color: #e4e4e4;
 }
@@ -148,12 +170,12 @@
     overflow-x: auto;
     white-space: nowrap;
   }
-  .editUserForm {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 2rem;
-    width: 40rem;
-    border: 1px solid #ced4da;
-  }
+}
+
+.modalPosition {
+  margin-top: 15%;
+}
+
+.modal {
+  padding: 4rem;
 }

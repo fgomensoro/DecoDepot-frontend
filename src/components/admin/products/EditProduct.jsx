@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-
 import { Link } from "react-router-dom";
-
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
+import UploadingModal from "./UploadingModal";
 
 function EditProduct() {
   const user = useSelector((state) => state.user);
@@ -20,9 +19,13 @@ function EditProduct() {
   const [actionImages, setActionImages] = useState("add");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [show, setShow] = useState(false);
 
   const params = useParams();
   const navigate = useNavigate();
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -69,7 +72,9 @@ function EditProduct() {
       setError(true);
       return false;
     }
+
     console.log("handleSubmit");
+    handleShow();
     const formData = new FormData(e.target);
     const response = await axios({
       url: `${process.env.REACT_APP_API_URL}/products/${id}`,
@@ -81,16 +86,20 @@ function EditProduct() {
       data: formData,
     });
     if (response.data.msg === "OK") {
+      handleClose();
       navigate("/admin/products");
     } else {
+      handleClose();
       return setMessage(response.data.msg);
     }
   };
+  // <Modal show={show} onHide={handleClose}></Modal>
   return (
     category && (
       <div className={`${styles.body} position-relative`}>
+        <UploadingModal show={show} onHide={handleClose} />
         <form
-          className={styles.editUserForm}
+          className={styles.form}
           encType="multipart/form-data"
           action=""
           onSubmit={handleSubmit}
@@ -190,7 +199,7 @@ function EditProduct() {
           </div>
           <p className={styles.message}>{message}</p>
           <div className="d-flex flex-row-reverse">
-            <button type="submit" className={styles.buttonEdit}>
+            <button type="submit" className={styles.buttonSubmit}>
               Edit
             </button>
             <Link className={styles.linkBack} to={-1}>
