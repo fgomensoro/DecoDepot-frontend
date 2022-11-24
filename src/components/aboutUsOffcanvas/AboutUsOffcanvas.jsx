@@ -38,7 +38,7 @@ function AboutUsOffcanvas() {
               <h3>Abstract</h3>
               <p>
                 Deco Depot is an e-commerce developed by 4 students over a period of 3 weeks as a
-                final project for de HackAcademy Coding Bootcamp. You can find more about us here:
+                final project for HackAcademy Coding Bootcamp. You can find more about us here:
               </p>
               <Link to="/about_this_project" onClick={handleClose} className={styles.links}>
                 <button className={styles.button}>About us</button>
