@@ -10,7 +10,6 @@
 
 .nameContainer {
   height: 35px;
-
 }
 
 .itemImg {
@@ -41,6 +40,7 @@
   border: solid #131313 1px;
   font-family: "Calibre", sans-serif;
   font-size: 19px;
+  color: black;
 }
 
 .shopBtn:hover {
