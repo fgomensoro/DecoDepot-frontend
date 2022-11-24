@@ -6,6 +6,7 @@ function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
+  const urlAvatarTomas = process.env.REACT_APP_IMAGE_PATH + "IMG_CV_TOMAS_1.jpeg";
   const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
   const urlAvatarJoel = process.env.REACT_APP_IMAGE_PATH + "joelCV.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
@@ -94,7 +95,10 @@ function AboutThisProject() {
 
           <div className={styles.cardBottom}>
             <div className={styles.containerAvatar}>
-              <div className={styles.avatar} style={{ backgroundImage: `url(${urlAvatar})` }}></div>
+              <div
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${urlAvatarTomas})` }}
+              ></div>
             </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Tomás Zerbino</h3>
