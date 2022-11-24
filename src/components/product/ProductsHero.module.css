@@ -32,11 +32,21 @@
 
 .customNavLink {
   margin-left: 25px;
+  font-family: var(--fontFamilyDeco);
+  font-size: 25px;
+  font-weight: 300;
+  color: #131313;
+  text-shadow: #131313 1px 0px 2px;
+}
+
+.customNavLink:hover {
+  opacity: 80%;
 }
 
 .titleLeft {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.6rem;
   font-family: var(--fontFamilyDeco);
   margin-top: 2rem;
+  font-weight: 500;
 }
