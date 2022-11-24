@@ -1,8 +1,12 @@
 .background {
   position: relative;
-  height: 65vh;
-  background: rgb(246,246,246);
-  background: radial-gradient(circle, rgba(246,246,246,0.9556197478991597) 14%, rgba(185,185,185,1) 100%);
+  height: 50vh;
+  background: rgb(246, 246, 246);
+  background: radial-gradient(
+    circle,
+    rgba(246, 246, 246, 0.9556197478991597) 14%,
+    rgba(185, 185, 185, 1) 100%
+  );
 }
 
 .title {
@@ -10,7 +14,6 @@
   font-size: 4.5rem;
   margin-top: 4.5rem;
   margin-bottom: 2.5rem;
-
 }
 
 .button:hover {
@@ -24,7 +27,7 @@
   object-fit: cover;
 }
 
-.curveContainer{
+.curveContainer {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -36,11 +39,11 @@
   padding: 2rem 4rem;
 }
 
-.firstText{
+.firstText {
   margin-top: 50px;
 }
 
-.firstTextContainer{
+.firstTextContainer {
   display: flex;
   justify-content: space-between;
 }
@@ -49,40 +52,40 @@
   text-align: start;
 }
 
-.projectTextContainer{
+.projectTextContainer {
   width: 50%;
 }
 
-.projectText{
+.projectText {
   line-height: 30px;
   word-spacing: 3px;
   font-size: 1rem;
   margin: 0;
   font-weight: 500;
   color: #647788;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.projectLogo{
-width: 45%;
-padding: 12px 6px;
+.projectLogo {
+  width: 45%;
+  padding: 12px 6px;
 }
 
-.logo{
+.logo {
   width: 100%;
   height: 100%;
 }
-.textSection{
+.textSection {
   width: 45%;
 }
 
-.textSectionContainer{
+.textSectionContainer {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
 }
 
-.sectionTitle{
+.sectionTitle {
   margin-top: 20px;
 }
 
@@ -97,18 +100,10 @@ padding: 12px 6px;
   margin: 30px 0 70px 5px;
 }
 
-.avatar {
-  width: 8rem;
-  height: 8rem;
-  border: 4px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: -25%;
-  right: 25%;
-}
 
-.nameContainer{
-margin-top: 48px;
+
+.nameContainer {
+  margin-top: 48px;
 }
 
 .name {
@@ -116,17 +111,17 @@ margin-top: 48px;
   font-size: 1.3rem;
 }
 
-.developer{
+.developer {
   text-align: center;
   font-weight: 500;
 }
 
-.teamTitle{
+.teamTitle {
   text-align: center;
-  margin: 50px 0 20px 0 ;
+  margin: 50px 0 20px 0;
 }
 
-.linkedContainer{
+.linkedContainer {
   width: fit-content;
   height: fit-content;
   position: absolute;
@@ -138,7 +133,7 @@ margin-top: 48px;
   box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.119);
 }
 
-.gitContainer{
+.gitContainer {
   width: fit-content;
   height: fit-content;
   position: absolute;
@@ -171,35 +166,33 @@ margin-top: 48px;
   transform: scale(1.03);
 }
 
-.tech{
+.tech {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.logoContainer{
+.logoContainer {
   width: 90px;
   height: 95px;
   object-fit: contain;
-
 }
 
-.techLogos{
+.techLogos {
   width: 100%;
   height: 100%;
   filter: grayscale(1);
-
 }
 
-.techName{
-  margin-top:4px ;
+.techName {
+  margin-top: 4px;
   text-align: center;
   font-weight: 500;
   color: #647788;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.techLogosMongo{
+.techLogosMongo {
   width: 50%;
   height: 100%;
   margin-left: 25%;
@@ -237,36 +230,36 @@ margin-top: 48px;
   }
 }
 
-@media (max-width: 992px){
-  .projectLogo{
+@media (max-width: 992px) {
+  .projectLogo {
     width: 50%;
     margin: 40px auto 0 auto;
   }
-  .logoContainer{
+  .logoContainer {
     margin-top: 40px;
   }
-  .projectTextContainer{
+  .projectTextContainer {
     width: 80%;
     margin: auto;
   }
-  .projectText{
+  .projectText {
     line-height: 25px;
     word-spacing: 2px;
   }
-  .firstTextContainer{
+  .firstTextContainer {
     flex-direction: column;
   }
   .subtitle {
     text-align: center;
-  }  
-  .textSection{
+  }
+  .textSection {
     width: 80%;
     margin: 10px auto;
   }
-  .sectionTitle{
+  .sectionTitle {
     text-align: center;
   }
-  .textSectionContainer{
+  .textSectionContainer {
     display: flex;
     flex-direction: column;
     margin-top: 15px;
@@ -277,10 +270,45 @@ margin-top: 48px;
   .cardBottom {
     margin: 50px auto;
   }
-  .projectText{
+  .projectText {
     word-spacing: 1.5px;
   }
   .background {
     height: 55vh;
   }
 }
+
+.containerAvatar {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  top: -25%;
+  right: 25%;
+}
+
+.avatar {
+  border: 4px solid white;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.avatar:hover {
+  filter: none;
+  -webkit-transition: filter 500ms linear;
+  -ms-transition: filter 500ms linear;
+  transition: filter 500ms linear;
+}
+
+.containerAvatar:hover .avatar,
+.containerAvatar:focus .avatar {
+  transform: scale(1.5);
+  -webkit-transition: transform 500ms linear;
+  -ms-transition: transform 500ms linear;
+  transition: transform 500ms linear;
+
+} 
+

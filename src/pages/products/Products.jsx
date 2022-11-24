@@ -33,7 +33,7 @@ function Products() {
   return (
     products &&
     categories && (
-      <div>
+      <div className={styles.background}>
         <ProductsHero />
         <div className={`${styles.column} container-fluid px-5 mt-4`}>
           <div className={` row`}>
