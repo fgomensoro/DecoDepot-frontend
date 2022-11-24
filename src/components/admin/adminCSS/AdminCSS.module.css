@@ -3,6 +3,13 @@
   margin-top: 5%;
 }
 
+@media (max-width: 500px) {
+  .body {
+    min-width: 80vh;
+    margin-top: 15%;
+  }
+}
+
 .buttonContainer {
   padding: 2rem;
 }
@@ -14,6 +21,7 @@
   background-color: transparent;
   transition: all 0.2s ease-in-out;
   color: var(--colorBlackDeco);
+  text-align: center;
 }
 
 .buttonCreate:hover {

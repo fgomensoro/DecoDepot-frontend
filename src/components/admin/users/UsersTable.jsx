@@ -30,10 +30,10 @@ function UsersTable() {
   return (
     <div>
       <div className={`${styles.body} row`}>
-        <div className="col-2">
+        <div className="col-4 col-md-2">
           <AdminNav active={"Users"} />
         </div>
-        <div className="col-10">
+        <div className="col-8 col-md-10">
           {users && (
             <table className={`${styles.scrollX} table`}>
               <thead>
@@ -52,7 +52,7 @@ function UsersTable() {
                 {users.map((user, index) => {
                   return (
                     <tr key={user._id}>
-                      <th scope="row">{index}</th>
+                      <th scope="row">{index + 1}</th>
                       <td>{user.firstname}</td>
                       <td>{user.lastname}</td>
                       <td>{user.email}</td>

@@ -5,6 +5,7 @@ import axios from "axios";
 
 function ProductsHero() {
   const [categories, setCategories] = useState(null);
+  const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
 
   useEffect(() => {
     const getCategories = async () => {
@@ -22,6 +23,9 @@ function ProductsHero() {
       <div>
         {
           <div className={`${styles.header} d-flex justify-content-center align-items-center`}>
+            <div className={styles.curve}>
+              <img src={urlCurve} alt="" />
+            </div>
             <div className={styles.wrapper}>
               <h1 className={`${styles.bigLetter}`}>Our Products</h1>
               <p>Design your home interior with your heart</p>
