@@ -2,17 +2,27 @@ import styles from "./Pack.module.css";
 import StarRatings from "react-star-ratings";
 
 function PackCard({ product }) {
-  const url = `${process.env.REACT_APP_IMAGE_PATH}${product.images[0]}`;
-
   const priceBefore = Math.round((product.price * 1.15 + Number.EPSILON) * 1) / 1;
   const numberReviews = Math.floor(Math.random() * (6000 - 3 + 1) + 3);
   const rating = Math.random() * (5 - 3.5 + 1) + 2.5;
   let description = product.description;
 
+  const urlImg = process.env.REACT_APP_IMAGE_PATH + product.images[0];
+  const urlImg2 = process.env.REACT_APP_IMAGE_PATH + product.images[1];
+
+  const handleImage = (e) => (e.currentTarget.src = urlImg);
+  const handleImage2 = (e) => (e.currentTarget.src = urlImg2);
+
   return (
     <div className={`${styles.smallCard} mt-3`}>
       <div className={`${styles.cardCombo1}`}>
-        <img className={styles.smallImage} src={url} alt="comboImage" />
+        <img
+          className={styles.smallImage}
+          src={urlImg}
+          alt="Combo Image"
+          onMouseOver={handleImage2}
+          onMouseOut={handleImage}
+        />
         <div className={styles.inline}>
           <h4 className={styles.titleH4}>{product.name}</h4>
           <p className={styles.titleH4}>${product.price}</p>
