@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, FreeMode } from "swiper";
+import { Pagination, Autoplay, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
@@ -13,8 +13,7 @@ function Slider({ products, title }) {
       <h2 className={styles.sliderTitle}>{title}</h2>
       <div className={`${styles.sliderContainer}`}>
         <Swiper
-          modules={[Navigation, Pagination, Autoplay, FreeMode]}
-          navigation
+          modules={[Pagination, Autoplay, FreeMode]}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3700 }}
           breakpoints={{
