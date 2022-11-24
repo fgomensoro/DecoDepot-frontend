@@ -59,7 +59,9 @@ function MyAccount() {
                 <small className={styles.detail}>{userInfo.orders.length}</small>
               </div>
               <div className="d-flex flex-row-reverse">
-                <Link className={`${styles.edit} btn btn-light`}>Edit</Link>
+                <Link to="/myaccount_edit" className={`${styles.edit} btn btn-light`}>
+                  Edit
+                </Link>
               </div>
             </div>
           </div>
