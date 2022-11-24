@@ -6,7 +6,7 @@ function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
-  const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_lejos_1.jpeg";
+  const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
   const urlLogo = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
