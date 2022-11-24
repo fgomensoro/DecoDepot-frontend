@@ -32,10 +32,12 @@ function EditProfile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!email || !address || !phoneNumber || !currentPassword) {
       setError(true);
       return false;
     }
+    handleShow();
     const updateUser = async () => {
       const response = await axios({
         url: `${process.env.REACT_APP_API_URL}/users/${user.slug}`,
@@ -54,8 +56,9 @@ function EditProfile() {
       });
       if (response.data.msg) {
         return setBackendMessage(response.data.msg);
+        handleClose();
       } else {
-        handleShow();
+        handleClose();
         const updatedUser = { ...response.data, token: user.token };
         dispatch(storeUser(updatedUser));
       }
@@ -65,20 +68,12 @@ function EditProfile() {
 
   return (
     <div className={`${styles.formWrapper} mx-auto`}>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header className="d-flex justify-content-center">
+      <Modal className={styles.modalPosition} show={show} onHide={handleClose}>
+        <Modal.Header className={`${styles.modal} d-flex justify-content-center`}>
           <Modal.Title>
             <div className="d-flex flex-column align-items-center justify-content-center">
               {" "}
-              ¡Your changes have been saved!
-              <Button
-                variant="primary"
-                onClick={() => {
-                  navigate(`/myaccount`);
-                }}
-              >
-                Continue to your profile!
-              </Button>
+              Updating...
             </div>
           </Modal.Title>
         </Modal.Header>

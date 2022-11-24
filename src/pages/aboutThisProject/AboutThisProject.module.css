@@ -189,6 +189,14 @@ margin-top: 48px;
 
 }
 
+.techName{
+  margin-top:4px ;
+  text-align: center;
+  font-weight: 500;
+  color: #647788;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .techLogosMongo{
   width: 50%;
   height: 100%;

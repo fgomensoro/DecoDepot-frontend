@@ -28,6 +28,7 @@
   font-size: 22px;
   /* margin-left: -1.1rem; */
   margin-top: 0.3rem;
+  margin-left: 1rem;
 }
 
 .customNavLinkButton {
@@ -240,25 +241,20 @@
     top: 48%;
     transform: translate(-50%, -50%);
     height: 3rem;
-    width: 3rem;
+
     background-size: cover;
   }
 }
 
 @media (max-width: 767px) {
   .logoContainer {
-    position: absolute;
-    left: 10%;
-    top: 48%;
-    transform: translate(-50%, -50%);
+    position: relative;
     height: 3rem;
-    width: 3rem;
+
     background-size: cover;
-    margin-left: 0.1rem;
+    margin-right: 0.8rem;
   }
-  .exploreBtn {
-    padding-left: 8rem;
-  }
+
   .logo {
     width: 70px;
     margin-left: -1.3rem !important;
@@ -276,7 +272,6 @@
     margin-left: -0.7rem !important;
   }
 }
-
 
 .subtotal {
   font-weight: 600;

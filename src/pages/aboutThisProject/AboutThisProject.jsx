@@ -145,36 +145,36 @@ function AboutThisProject() {
         <div className={styles.tech}>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "javascript-icon.png"} alt="" />
-            <p className="text-center">JavaScript</p>
+            <p className={styles.techName}>JavaScript</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "react4.png"} alt="" />
-            <p className="text-center">React.js</p>
+            <p className={styles.techName}>React.js</p>
           </div>
 
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "redux.png"} alt="" />
-            <p className="text-center">Redux</p>
+            <p className={styles.techName}>Redux</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogosMongo} src={baseURL + "mongo2.png"} alt="" />
-            <p className="text-center">MongoDB</p>
+            <p className={styles.techName}>MongoDB</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "github.png"} alt="" />
-            <p className="text-center">GitHub</p>
+            <p className={styles.techName}>GitHub</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "css5.png"} alt="" />
-            <p className="text-center">CSS</p>
+            <p className={styles.techName}>CSS</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "Node.js-Logo.png"} alt="" />
-            <p className="text-center">Node.js</p>
+            <p className={styles.techName}>Node.js</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "bootstrap.jfif"} alt="" />
-            <p className="text-center">Bootstrap</p>
+            <p className={styles.techName}>Bootstrap</p>
           </div>
         </div>
       </div>
