@@ -18,8 +18,13 @@ function SwiperItems({ product }) {
           navigation={true}
           effect={"coverflow"}
           centeredSlides={true}
-          slidesPerView={window.innerWidth < 768 ? 1 : "auto"}
+          slidesPerView={1}
           loop={true}
+          breakpoints={{
+            690: {
+              slidesPerView: 1.3,
+            },
+          }}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,

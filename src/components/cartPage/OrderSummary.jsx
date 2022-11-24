@@ -35,6 +35,13 @@ function OrderSummary() {
           >
             <FaLock className={styles.lock} /> Continue to Checkout
           </Link>
+          <Link
+            to="/checkout"
+            type="button"
+            className={`${styles.continueBtn2} btn btn-dark btn-lg`}
+          >
+            <FaLock className={styles.lock} /> Checkout
+          </Link>
         </div>
       </div>
     );

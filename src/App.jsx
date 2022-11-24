@@ -31,6 +31,7 @@ import AdminOnly from "./components/adminOnly/AdminOnly";
 import OrderDetail from "./components/admin/orders/OrderDetail";
 import OnlyUser from "./components/onlyUser/OnlyUser";
 import AboutUsOffcanvas from "./components/aboutUsOffcanvas/AboutUsOffcanvas";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -69,6 +70,7 @@ function App() {
     <div className={styles.body}>
       {showNav && <Navbar />}
       {showCanvas && <AboutUsOffcanvas />}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />

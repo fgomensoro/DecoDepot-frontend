@@ -21,7 +21,7 @@ function GenericItem({ product }) {
             >
               See more
             </Link>
-            <AddToCartButton product={product} btnClassName={"genericItem"} />
+            <AddToCartButton product={product} btnClassName={"btnAdd"} />
           </div>
           <img
             className={styles.img}

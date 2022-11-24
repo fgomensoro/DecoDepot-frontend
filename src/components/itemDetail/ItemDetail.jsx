@@ -55,20 +55,16 @@ function ItemDetail({ product }) {
         <h2 className={styles.name}>{product.name}</h2>
         <SwiperItems product={product} />
       </div>
-      
 
       <div className={`${styles.detail} container`}>
-        <div className="row ">
-          <div className="col d-flex justify-content-center mt-4 mb-5">
-            <AddBtn product={product} toggle={toggle} />
-          </div>
+        <div className="text-center">
+          <AddBtn product={product} toggle={toggle} />
         </div>
-
         <div className={styles.containerRow}>
           <div className={styles.containerCol}>
             <div className={styles.infoContainer}>
               <div className={styles.nameContainer}>
-                <p className={styles.category}>{product.category.name}</p>
+                <p className={`${styles.category} mt-4 `}>{product.category.name}</p>
               </div>
               <p className={styles.description}>{product.description}</p>
               <div className={styles.nameContainer}>

@@ -25,7 +25,7 @@ function OrderSummary() {
       </div>
       <div className={styles.checkoutContainer}>
         <button type="button" className={`${styles.continueBtn} btn btn-dark btn-lg`}>
-          <FaLock /> Continue to Checkout
+          <FaLock /> Checkout
         </button>
       </div>
     </div>
