@@ -2,6 +2,10 @@
   bottom: 0;
 }
 
+.swiper-pagination{
+  margin-bottom: -1rem !important;
+}
+
 .swiper-pagination-bullet {
   width: 25px;
   height: 5px;
@@ -13,7 +17,7 @@
 .swiper-button-next {
   color: #131313 !important;
   opacity: 70%;
-  margin-top: -6rem !important;
+  margin-top: 0rem !important;
 }
 
 .swiper-button-prev:hover,
