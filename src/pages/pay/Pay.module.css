@@ -3,6 +3,28 @@
   padding-top: 10rem;
 }
 
+@media (max-width: 991px) {
+  .col2 {
+    margin-top: -6rem;
+    margin-bottom: -5rem;
+  }
+  .form {
+    margin-left: 2.8rem !important;
+  }
+  .form2 {
+    margin-left: 2.8rem !important;
+  }
+  .form3 {
+    margin-left: 2.8rem !important;
+  }
+  .customerInfo {
+    margin-left: 2.8rem !important;
+  }
+  .shippingAddress {
+    margin-left: 2.8rem !important;
+  }
+}
+
 .cont {
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -157,6 +179,12 @@
   margin-left: -2rem;
   width: 10em;
   height: auto;
+}
+
+@media (max-width: 590px) {
+  .logo {
+    margin-left: 0.5rem;
+  }
 }
 
 .form {

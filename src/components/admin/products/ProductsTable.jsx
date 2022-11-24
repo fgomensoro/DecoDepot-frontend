@@ -71,7 +71,6 @@ function ProductsTable() {
                 <th scope="col">Images</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Price</th>
-                {/* <th scope="col">Slug</th> */}
                 <th scope="col">Category</th>
                 <th scope="col">Featured</th>
                 <th scope="col">Actions</th>
@@ -100,16 +99,14 @@ function ProductsTable() {
                         alt=""
                       />
                     </td>
-                    {/* {product.images[0]} */}
                     <td>{product.stock}</td>
                     <td>{product.price}</td>
-                    {/* <td>{product.slug}</td> */}
                     <td>{product.category.name}</td>
                     <td>
                       <ProductIsFeatured product={product} user={user} getProducts={getProducts} />
                     </td>
                     <td>
-                      <button className={styles.buttonEdit}>
+                      <button className={styles.buttonPencil}>
                         <Link className={styles.linkButtonEdit} to={`${product.slug}/edit`}>
                           <FontAwesomeIcon icon={iconListSolid.faEdit} />
                         </Link>

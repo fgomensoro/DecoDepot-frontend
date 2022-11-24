@@ -18,19 +18,16 @@
   margin-top: 0.3rem;
 }
 
-.customNavLink3 {
+.customNavLinkLogo {
   color: #131313;
   font-family: var(--fontFamilyDeco);
   text-decoration: none;
   line-height: 2rem;
   font-weight: 500;
-  margin-right: -5px;
+  /* margin-right: -5px; */
   font-size: 22px;
-}
-
-.customNavLink2 {
-  margin-left: -1.1rem;
-  margin-top: -0.2rem;
+  /* margin-left: -1.1rem; */
+  margin-top: 0.3rem;
 }
 
 .customNavLinkButton {
@@ -64,8 +61,6 @@
 
 .arrow {
   -webkit-text-stroke: 1.3px black;
-  /* margin-left: 5px;
-  margin-top: 5px; */
 }
 
 .cart {
@@ -81,15 +76,14 @@
   .myAccount {
     display: none;
   }
-  .nav {
+  /* .nav {
     display: flex;
-    align-items: baseline;
-  }
+  } */
 }
 
 .logo {
-  margin-top: 5px;
   width: 85px;
+  margin-left: -1rem;
 }
 
 .leftNavBody {
@@ -239,7 +233,7 @@
     -webkit-transform: translateX(-100%);
   }
 }
-@media (min-width: 764px) {
+@media (min-width: 767px) {
   .logoContainer {
     position: absolute;
     left: 50%;
@@ -251,7 +245,7 @@
   }
 }
 
-@media (max-width: 763px) {
+@media (max-width: 767px) {
   .logoContainer {
     position: absolute;
     left: 10%;
@@ -260,23 +254,29 @@
     height: 3rem;
     width: 3rem;
     background-size: cover;
+    margin-left: 0.1rem;
   }
   .exploreBtn {
-    padding-left: 4.8rem;
+    padding-left: 8rem;
   }
   .logo {
-    width: 50px;
+    width: 70px;
+    margin-left: -1.3rem !important;
   }
 }
 @media (max-width: 523px) {
   .nav {
     font-size: 1rem;
   }
+  .exploreBtn {
+    padding-left: 6rem;
+  }
+  .logo {
+    width: 70px;
+    margin-left: -0.7rem !important;
+  }
 }
-/* .logo {
-  margin-top: 10px;
-  width: 60px;
-} */
+
 
 .subtotal {
   font-weight: 600;

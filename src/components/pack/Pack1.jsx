@@ -33,19 +33,19 @@ function Pack() {
           <hr className={styles.line} />
         </div>
         <div className={`${styles.comboContain1} row`}>
-          <div className={`${styles.cards} col-12 col-lg-6 text-center`}>
+          <div className={`${styles.cards} col-12 col-lg-8 text-center`}>
             <img
               className={`${styles.bigImage}`}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage}`}
               alt="comboBigImage"
             />
             <img
-              className={`${styles.bigImage} ${styles.bigImageSecondary}`}
+              className={`${styles.bigImageSecondary}`}
               src={`${process.env.REACT_APP_IMAGE_PATH}${packs[randomNumber].bigImage2}`}
               alt="comboBigImage"
             />
           </div>
-          <div className={`${styles.cards} col-12 col-lg-6`}>
+          <div className={`${styles.cards} col-12 col-lg-4`}>
             <div className={`${styles.packCards} d-flex flex-wrap`}>
               <PackCards packs={packs[randomNumber]} />
             </div>

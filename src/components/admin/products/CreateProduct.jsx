@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
+import UploadingModal from "./UploadingModal";
 
 function CreateProduct() {
   const user = useSelector((state) => state.user);
@@ -14,10 +15,13 @@ function CreateProduct() {
   const [categories, setCategories] = useState(null);
   const [featured, setFeatured] = useState(false);
   const [error, setError] = useState(false);
-  // const [slug, setSlug] = useState("");
   const [message, setMessage] = useState("");
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     const getCategories = async () => {
@@ -40,6 +44,7 @@ function CreateProduct() {
       return false;
     }
     console.log("handleSubmit");
+    handleShow();
     const formData = new FormData(e.target);
     const response = await axios({
       url: `${process.env.REACT_APP_API_URL}/products`,
@@ -51,16 +56,24 @@ function CreateProduct() {
       data: formData,
     });
     if (response.data.msg === "OK") {
+      handleClose();
       navigate("/admin/products");
     } else {
+      handleClose();
       return setMessage(response.data.msg);
     }
   };
   return (
     categories && (
       <div>
+        <UploadingModal show={show} onHide={handleClose} />
         <div className={styles.body + " container"}>
-          <form className="mt-5" encType="multipart/form-data" action="" onSubmit={handleSubmit}>
+          <form
+            className={styles.form}
+            encType="multipart/form-data"
+            action=""
+            onSubmit={handleSubmit}
+          >
             <div className="mb-3">
               <label className="form-label">Name</label>
               <input
@@ -122,17 +135,6 @@ function CreateProduct() {
               })}
             </select>
             {error && !category && <span className={styles.message}>Required field</span>}
-
-            {/* <div className="mb-3">
-              <label className="form-label">Slug</label>
-              <input
-                type="text"
-                className="form-control"
-                name="slug"
-                value={slug}
-                onChange={(e) => setSlug(e.target.value)}
-              />
-            </div> */}
             <div className="mt-3">
               <input className="form-control" name="image1" type="file" />
             </div>
@@ -153,12 +155,14 @@ function CreateProduct() {
               <label className="form-check-label">Featured</label>
             </div>
             <p className={styles.message}>{message}</p>
-            <button type="submit" className="btn btn-primary">
-              Create
-            </button>
-            <Link className={styles.linkBack} to={-1}>
-              Back
-            </Link>
+            <div className="d-flex flex-row-reverse">
+              <button type="submit" className={styles.buttonSubmit}>
+                Create
+              </button>
+              <Link className={styles.linkBack} to={-1}>
+                Back
+              </Link>
+            </div>
           </form>
         </div>
       </div>

@@ -1,19 +1,41 @@
-.button {
+.buttonFixed {
   position: fixed;
   bottom: 2%;
-  left: 0.3%;
-  z-index: 2;
-  padding: 0;
-  border: none;
-  background-color: var(--colorSoftDeco);
-  border-radius: 20px;
-  padding: 5px 1px;
+  right: 2%;
+  width: 9.5rem;
+  border: 2px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  background-color: var(--colorBlackDeco);
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+  opacity: 90%;
 }
-.buttonContent {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  margin: 0;
-  font-family: monospace;
+
+.buttonFixed:hover {
+  background-color: aliceblue;
+  color: var(--colorBlackDeco);
+  opacity: 85%;
+}
+
+.button {
+  width: 9.5rem;
+  border: 2px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  padding: 0.5rem 0;
+  background-color: var(--colorBlackDeco);
+  color: white;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  opacity: 90%;
+}
+
+.button:hover {
+  background-color: aliceblue;
+  color: var(--colorBlackDeco);
+  opacity: 85%;
 }
 .btnClose {
   border: none;
@@ -37,7 +59,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  background-color: #131313 !important;
+  background-color: var(--colorBlackDeco) !important;
   border-radius: 25px;
   height: fit-content;
   padding: 10px 15px 4px;
