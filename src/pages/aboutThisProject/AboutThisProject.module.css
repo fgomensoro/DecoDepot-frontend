@@ -100,15 +100,7 @@
   margin: 30px 0 70px 5px;
 }
 
-.avatar {
-  width: 8rem;
-  height: 8rem;
-  border: 4px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: -25%;
-  right: 25%;
-}
+
 
 .nameContainer {
   margin-top: 48px;
@@ -294,7 +286,7 @@
   right: 25%;
 }
 
-.avatarFran {
+.avatar {
   border: 4px solid white;
   width: 100%;
   height: 100%;
@@ -304,16 +296,16 @@
   filter: grayscale(100%);
 }
 
-.avatarFran:hover {
+.avatar:hover {
   filter: none;
   -webkit-transition: filter 500ms linear;
   -ms-transition: filter 500ms linear;
   transition: filter 500ms linear;
 }
 
-.containerAvatar:hover .avatarFran,
-.containerAvatar:focus .avatarFran {
-  transform: scale(2.3);
+.containerAvatar:hover .avatar,
+.containerAvatar:focus .avatar {
+  transform: scale(1.5);
   -webkit-transition: transform 500ms linear;
   -ms-transition: transform 500ms linear;
   transition: transform 500ms linear;

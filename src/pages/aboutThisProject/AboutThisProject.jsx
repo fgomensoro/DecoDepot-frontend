@@ -7,6 +7,7 @@ function AboutThisProject() {
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
   const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
+  const urlAvatarJoel = process.env.REACT_APP_IMAGE_PATH + "joelCV.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
   const urlLogo = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
@@ -71,7 +72,7 @@ function AboutThisProject() {
           <div className={styles.cardBottom}>
             <div className={styles.containerAvatar}>
               <div
-                className={styles.avatarFran}
+                className={styles.avatar}
                 style={{ backgroundImage: `url(${urlAvatarFran})` }}
               ></div>
             </div>
@@ -92,7 +93,9 @@ function AboutThisProject() {
           </div>
 
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div className={styles.avatar} style={{ backgroundImage: `url(${urlAvatar})` }}></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Tomás Zerbino</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -109,7 +112,13 @@ function AboutThisProject() {
             </div>
           </div>
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={baseURL + "joelCV.jpg"} alt="" />
+            <div className={styles.containerAvatar}>
+              <div
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${urlAvatarJoel})` }}
+              ></div>
+            </div>
+
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Joel Dominguez</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -127,7 +136,9 @@ function AboutThisProject() {
           </div>
 
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div className={styles.avatar} style={{ backgroundImage: `url(${urlAvatar})` }}></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Germán Delgado</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
