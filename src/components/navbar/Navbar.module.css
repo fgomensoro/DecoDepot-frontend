@@ -5,6 +5,8 @@
 
 .navbarStyle {
   padding: 0.3rem 0;
+  position: fixed;
+  top: 0%;
 }
 
 .customNavLink {
@@ -247,17 +249,13 @@
 
 @media (max-width: 763px) {
   .logoContainer {
-    position: absolute;
-    left: 10%;
-    top: 48%;
-    transform: translate(-50%, -50%);
+    position: relative;
     height: 3rem;
     width: 3rem;
     background-size: cover;
+    margin-right: 0.8rem;
   }
-  .exploreBtn {
-    padding-left: 4.8rem;
-  }
+
   .logo {
     width: 50px;
   }
