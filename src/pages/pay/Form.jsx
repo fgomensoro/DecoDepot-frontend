@@ -44,7 +44,7 @@ function CheckoutForm() {
         },
         data: {
           products: state.cart.items,
-          status: "Not paid",
+          status: "Paid",
           address: state.shippingAddress,
           total: state.cart.total,
         },
@@ -52,7 +52,8 @@ function CheckoutForm() {
       if (response.data.msg) {
         setBackendMessage(response.data.msg);
       } else {
-        navigate("/");
+        console.log(response.data._id);
+        navigate(`/purchase-completed/${response.data._id}`);
         dispatch(clearCart());
       }
     };

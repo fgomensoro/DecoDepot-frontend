@@ -1,7 +1,7 @@
 import styles from "./Orders.module.css";
 
 import Products from "./Products";
-import { compareAsc, format } from "date-fns";
+import { format } from "date-fns";
 
 function order({ order }) {
   return (
@@ -32,26 +32,17 @@ function order({ order }) {
               <h5 className="fw-normal mb-0">
                 <small>Track</small>
               </h5>
-              {/* <div className="border-start"></div> */}
             </div>
             <div className="col-4 d-flex justify-content-center">
               <h5 className="fw-normal mb-0">
                 <small>Cancel</small>
               </h5>
-              {/* <div className="border-start"></div> */}
             </div>
             <div className="col-4 d-flex justify-content-center">
               <h5 className="fw-normal mb-0">
                 <small>Pre-pay</small>
               </h5>
             </div>
-
-            {/* <div className="border-start"></div>
-            <h5 className="fw-normal mb-0">
-              <a href="#!" className="text-muted">
-                <i className="fas fa-ellipsis-v"></i>
-              </a>
-            </h5> */}
           </div>
         </div>
       </div>

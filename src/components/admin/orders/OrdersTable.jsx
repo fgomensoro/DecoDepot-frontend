@@ -18,6 +18,7 @@ function OrdersTable() {
         Authorization: "Bearer " + user.token,
       },
     });
+    console.log(response.data);
     setOrders(response.data);
   };
 
