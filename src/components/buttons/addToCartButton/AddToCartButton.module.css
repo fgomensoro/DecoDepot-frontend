@@ -77,3 +77,39 @@
   color: white;
   opacity: 80%;
 }
+
+.btnAdd {
+  background-color: #131313;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  height: fit-content;
+  transition: all 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  opacity: 95%;
+  width: 75%;
+  padding: 5px;
+  animation: ease-in-out 0.2s 1 translate2;
+  font-weight: 600;
+  font-family: "Calibre", sans-serif;
+  font-size: 20px;
+  border-radius: 50px;
+  transform: translateY(-65%);
+  padding-top: 0.6rem;
+}
+
+.btnAdd:hover {
+  background-color: #222222;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .btnAdd {
+    width: 40%;
+    font-size: 1rem;
+    margin-bottom: -1.55rem;
+    border: none;
+  }
+}
