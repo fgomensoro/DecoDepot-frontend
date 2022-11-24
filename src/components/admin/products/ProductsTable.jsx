@@ -1,23 +1,31 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 import ProductIsFeatured from "./ProductIsFeatured";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
+import DeleteModal from "./DeleteModal";
 
 function ProductsTable() {
   const user = useSelector((state) => state.user);
   const [products, setProducts] = useState(null);
   const [message, setMessage] = useState("");
+  const [show, setShow] = useState(true);
+  const [deletedProductId, setDeletedProductId] = useState("2");
 
   const url = process.env.REACT_APP_IMAGE_PATH;
 
-  const navigate = useNavigate();
+  const handleClose = () => setShow(false);
+  const handleShow = (productId) => {
+    setDeletedProductId(productId);
+    setShow(true);
+  };
 
   const handleDelete = async (deletedProductId) => {
+    handleClose();
     const response = await axios({
       url: `${process.env.REACT_APP_API_URL}/products/${deletedProductId}`,
       method: "DELETE",
@@ -50,6 +58,14 @@ function ProductsTable() {
 
   return (
     <div className={`${styles.body} row`}>
+      {deletedProductId && (
+        <DeleteModal
+          show={show}
+          handleClose={handleClose}
+          handleDelete={handleDelete}
+          deletedProductId={deletedProductId}
+        />
+      )}
       <div className="col-4 col-md-2">
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>
@@ -114,7 +130,7 @@ function ProductsTable() {
 
                       <button
                         className={styles.buttonDelete}
-                        onClick={() => handleDelete(product._id)}
+                        onClick={() => handleShow(product._id)}
                       >
                         <FontAwesomeIcon icon={iconListSolid.faTrash} />
                       </button>
