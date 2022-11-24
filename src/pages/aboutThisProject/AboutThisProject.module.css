@@ -6,6 +6,7 @@
 }
 
 .title {
+  text-align: center;
   font-size: 4.5rem;
   margin-top: 4.5rem;
   margin-bottom: 2.5rem;
@@ -278,5 +279,8 @@ margin-top: 48px;
   }
   .projectText{
     word-spacing: 1.5px;
+  }
+  .background {
+    height: 55vh;
   }
 }

@@ -46,3 +46,9 @@
   font-family: var(--fontFamilyDeco);
   margin-top: 2rem;
 }
+
+@media (max-width: 514px) {
+  .header {
+    height: 55vh;
+  }
+}
