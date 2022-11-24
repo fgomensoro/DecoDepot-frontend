@@ -26,10 +26,10 @@ function ReviewsTable() {
 
   return (
     <div className={`${styles.body} row`}>
-      <div className="col-2">
+      <div className="col-4 col-md-2">
         <AdminNav active={"Reviews"} />
       </div>
-      <div className="col-10">
+      <div className="col-8 col-md-10">
         {reviews && (
           <table className={`${styles.scrollX} table`}>
             <thead>
@@ -48,7 +48,7 @@ function ReviewsTable() {
               {reviews.map((review, index) => {
                 return (
                   <tr key={review._id}>
-                    <th scope="row">{index}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{review.author}</td>
                     <td>{review.comment}</td>
                     <td></td>

@@ -8,12 +8,12 @@ function ProductsSection({ products, category }) {
         <h4 className={styles.titleRight}>{`${category}`}</h4>
         <hr className={styles.line} />
       </div>
-      <div className="d-flex flex-wrap justify-content-center ">
+      <div className="d-flex flex-wrap justify-content-center">
         {products
           .filter((product) => product.category.name === category)
           .map((product, index) => {
             return (
-              <div key={index} className="mx-4">
+              <div key={index} className="mx-4 mb-5">
                 <GenericItem product={product} />
               </div>
             );

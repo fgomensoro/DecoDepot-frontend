@@ -45,7 +45,7 @@ function ReviewsTable() {
               {reviews.map((review, index) => {
                 return (
                   <tr key={review._id}>
-                    <th scope="row">{index}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{review.author}</td>
                     <td>{review.comment}</td>
                     <td></td>
