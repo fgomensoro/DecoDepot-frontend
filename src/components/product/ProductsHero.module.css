@@ -1,12 +1,18 @@
 .header {
-  height: 300px;
-  background-color: var(--colorSoftDeco);
+  position: relative;
+  height: 65vh;
+  background: rgb(246,246,246);
+  background: radial-gradient(circle, rgba(246,246,246,0.9556197478991597) 14%, rgba(185,185,185,1) 100%);
 }
 
 .wrapper {
   text-align: center;
 }
-
+.curve{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 .bigLetter {
   font-size: 4.5rem;
   margin-top: 4.5rem;

@@ -1,14 +1,15 @@
 .background {
-  height: 45rem;
   position: relative;
-  height: 70vh;
+  height: 65vh;
   background: rgb(246,246,246);
   background: radial-gradient(circle, rgba(246,246,246,0.9556197478991597) 14%, rgba(185,185,185,1) 100%);
 }
 
 .title {
-  margin: 1rem 0;
-  font-weight: bold;
+  font-size: 4.5rem;
+  margin-top: 4.5rem;
+  margin-bottom: 2.5rem;
+
 }
 
 .button:hover {

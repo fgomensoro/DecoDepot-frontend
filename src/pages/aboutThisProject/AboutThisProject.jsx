@@ -17,7 +17,7 @@ function AboutThisProject() {
         {/* <img className={styles.image} src={urlHero} alt="" /> */}
 
         <div className={`${styles.titleContainer}`}>
-          <h1 className={styles.title}>About this project</h1>
+          <h1 className={styles.title}>Our Project</h1>
         </div>
         <div className={styles.curveContainer}>
           <img className={styles.curveImg} src={urlCurve} alt="" />
