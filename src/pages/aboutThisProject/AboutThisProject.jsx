@@ -6,6 +6,7 @@ function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
+  const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_lejos_1.jpeg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
   const urlLogo = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
@@ -68,7 +69,12 @@ function AboutThisProject() {
       <div className={`${styles.sectionMembers} container my-5`}>
         <div className=" d-flex flex-wrap justify-content-between">
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div
+                className={styles.avatarFran}
+                style={{ backgroundImage: `url(${urlAvatarFran})` }}
+              ></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Francisco Gomensoro</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
