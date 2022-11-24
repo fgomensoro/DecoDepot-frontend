@@ -45,7 +45,7 @@ function PacksTable() {
               {packs.map((pack, index) => {
                 return (
                   <tr key={pack._id}>
-                    <th scope="row">{index}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{pack.name}</td>
                     <td>{pack.bigImage}</td>
                     <td>{pack.stock}</td>

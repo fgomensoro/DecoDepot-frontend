@@ -49,7 +49,7 @@ function OrdersTable() {
                     orders.map((order, index) => {
                       return (
                         <tr key={order._id}>
-                          <th scope="row">{index}</th>
+                          <th scope="row">{index + 1}</th>
                           <td>{order.user.email}</td>
                           <td>{order.user.address}</td>
                           <td>

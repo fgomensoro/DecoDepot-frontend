@@ -52,7 +52,7 @@ function UsersTable() {
                 {users.map((user, index) => {
                   return (
                     <tr key={user._id}>
-                      <th scope="row">{index}</th>
+                      <th scope="row">{index + 1}</th>
                       <td>{user.firstname}</td>
                       <td>{user.lastname}</td>
                       <td>{user.email}</td>

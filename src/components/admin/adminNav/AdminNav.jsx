@@ -10,9 +10,8 @@ function AdminNav({ active }) {
       {paths.map((path, index) => {
         if (path === active) {
           return (
-            <div>
+            <div key={path + index}>
               <button
-                key={path + index}
                 className={`${styles.navButton} ${styles.active}`}
                 onClick={() => navigate(`/admin/${path.toLowerCase()}`)}
               >
@@ -23,9 +22,8 @@ function AdminNav({ active }) {
           );
         } else {
           return (
-            <div>
+            <div key={path + index}>
               <button
-                key={path + index}
                 className={styles.navButton}
                 onClick={() => navigate(`/admin/${path.toLowerCase()}`)}
               >

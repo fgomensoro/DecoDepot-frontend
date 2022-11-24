@@ -80,7 +80,7 @@ function ProductsTable() {
               {products.map((product, index) => {
                 return (
                   <tr key={product._id}>
-                    <th scope="row">{index}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{product.name}</td>
                     <td>
                       <img
