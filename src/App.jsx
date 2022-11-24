@@ -68,9 +68,9 @@ function App() {
 
   return (
     <div className={styles.body}>
-      <ScrollToTop />
       {showNav && <Navbar />}
       {showCanvas && <AboutUsOffcanvas />}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />

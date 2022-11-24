@@ -13,9 +13,17 @@
 .swiper-button-next {
   color: #131313 !important;
   opacity: 70%;
+  margin-top: -6rem !important;
 }
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   opacity: 100%;
+}
+
+@media (max-width: 767px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
+  }
 }

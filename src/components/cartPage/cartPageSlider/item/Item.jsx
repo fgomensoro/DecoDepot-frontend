@@ -18,7 +18,7 @@ function Item({ product }) {
         </div>
       </Link>
       <div className={styles.description}>
-        <div>
+        <div className={styles.namePriceContainer}>
           <small className={styles.name}>{product.name}</small>
           <small className={styles.price}> - ${dollarUSLocale.format(product.price)}</small>
         </div>
