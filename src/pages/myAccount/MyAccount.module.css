@@ -97,3 +97,10 @@
 .modal {
   padding: 4rem;
 }
+ @media(max-width: 500px){
+  .leftContainer {
+    margin-bottom: 3rem;
+    padding-top: 0;
+  }
+  
+ }
