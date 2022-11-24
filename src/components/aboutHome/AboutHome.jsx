@@ -19,7 +19,7 @@ function AboutHome() {
             <h4 className={styles.smallTitle}>About this project </h4>
             <p className={styles.paragraphCard}>
               Deco Depot is an e-commerce that consists of a frontend app builded in React JS, Redux
-              and CSS5, and an api builded in Node JS and Mongo DB. Read more about this and about
+              and CSS, and an api builded in Node JS and Mongo DB. Read more about this and about
               their creators clicking the button bellow.
             </p>
             <div className="d-flex flex-row-reverse">
