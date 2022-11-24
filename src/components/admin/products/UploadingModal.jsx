@@ -1,4 +1,3 @@
-import React from "react";
 import Modal from "react-bootstrap/Modal";
 import styles from "../adminCSS/AdminCSS.module.css";
 

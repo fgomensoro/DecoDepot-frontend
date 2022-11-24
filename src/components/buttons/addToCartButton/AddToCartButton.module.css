@@ -109,7 +109,10 @@
   .btnAdd {
     width: 40%;
     font-size: 1rem;
-    margin-bottom: -1.55rem;
+    margin-bottom: -1.61rem;
     border: none;
+    padding-top: 8.8px;
+    padding-bottom: 6px;
+    font-weight: 400;
   }
 }
