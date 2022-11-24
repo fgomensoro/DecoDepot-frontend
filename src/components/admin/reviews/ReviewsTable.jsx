@@ -26,10 +26,10 @@ function ReviewsTable() {
 
   return (
     <div className={`${styles.body} row`}>
-      <div className="col-2">
+      <div className="col-4 col-md-2">
         <AdminNav active={"Reviews"} />
       </div>
-      <div className="col-10">
+      <div className="col-8 col-md-10">
         {reviews && (
           <table className={`${styles.scrollX} table`}>
             <thead>

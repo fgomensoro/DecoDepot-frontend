@@ -50,18 +50,18 @@ function ProductsTable() {
 
   return (
     <div className={`${styles.body} row`}>
-      <div className="col-2">
+      <div className="col-4 col-md-2">
         <AdminNav active={"Products"} />
         <div className={styles.buttonContainer}>
           <button className={styles.buttonCreate}>
             <Link className={styles.linkButtonCreate} to={"/admin/products/create"}>
-              New Product
+              Add
             </Link>
           </button>
           <p className={styles.message}>{message}</p>
         </div>
       </div>
-      <div className="col-10">
+      <div className="col-8 col-md-10">
         {products && (
           <table className={`${styles.scrollX} table`}>
             <thead>
