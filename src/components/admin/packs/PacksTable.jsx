@@ -4,7 +4,8 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 
-import Footer from "../../footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
 function PacksTable() {
   const user = useSelector((state) => state.user);
@@ -56,8 +57,12 @@ function PacksTable() {
                     <td></td>
                     <td></td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
+                      <button className={styles.buttonPencil}>
+                        <FontAwesomeIcon icon={iconListSolid.faEdit} />
+                      </button>
+                      <button className={styles.buttonDelete}>
+                        <FontAwesomeIcon icon={iconListSolid.faTrash} />
+                      </button>
                     </td>
                   </tr>
                 );

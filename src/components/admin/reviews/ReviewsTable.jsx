@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
 import Footer from "../../footer/Footer";
 
@@ -56,8 +58,12 @@ function ReviewsTable() {
                     <td></td>
                     <td></td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
+                      <button className={styles.buttonPencil}>
+                        <FontAwesomeIcon icon={iconListSolid.faEdit} />
+                      </button>
+                      <button className={styles.buttonDelete}>
+                        <FontAwesomeIcon icon={iconListSolid.faTrash} />
+                      </button>
                     </td>
                   </tr>
                 );

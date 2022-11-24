@@ -13,8 +13,8 @@ function ProductsTable() {
   const user = useSelector((state) => state.user);
   const [products, setProducts] = useState(null);
   const [message, setMessage] = useState("");
-  const [show, setShow] = useState(true);
-  const [deletedProductId, setDeletedProductId] = useState("2");
+  const [show, setShow] = useState(false);
+  const [deletedProductId, setDeletedProductId] = useState("");
 
   const url = process.env.REACT_APP_IMAGE_PATH;
 
