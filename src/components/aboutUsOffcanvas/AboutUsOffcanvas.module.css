@@ -11,12 +11,13 @@
   font-weight: bold;
   transition: all 0.2s ease-in-out;
   z-index: 10;
+  opacity: 90%;
 }
 
 .buttonFixed:hover {
-  background-color: transparent;
+  background-color: aliceblue;
   color: var(--colorBlackDeco);
-  opacity: 95%;
+  opacity: 85%;
 }
 
 .button {
@@ -28,12 +29,13 @@
   color: white;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
+  opacity: 90%;
 }
 
 .button:hover {
-  background-color: transparent;
+  background-color: aliceblue;
   color: var(--colorBlackDeco);
-  opacity: 95%;
+  opacity: 85%;
 }
 .btnClose {
   border: none;
