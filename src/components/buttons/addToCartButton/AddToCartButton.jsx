@@ -1,4 +1,5 @@
 import styles from "./AddToCartButton.module.css";
+import addStyle from "../../genericItem/GenericItem.module.css";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../../redux/cartSlice";
 import { toggleCart } from "../../../redux/offCanvasSlice";
@@ -17,16 +18,28 @@ function AddToCartButton({ product, btnClassName, toggle }) {
         slug: product.slug,
       }),
     );
-    if (toggle === false) {
+    if (!toggle) {
+      console.log("not toggle");
       return;
     } else {
+      console.log("toggle");
       dispatch(toggleCart());
     }
   };
 
+  {
+    if (btnClassName === "btnAdd") {
+      return (
+        <button className={addStyle[btnClassName]} onClick={handleAddToCart}>
+          Add To Cart
+        </button>
+      );
+    }
+  }
+
   return (
     <button className={styles[btnClassName]} onClick={handleAddToCart}>
-      Add to cart
+      {btnClassName === "buttonBuy" ? "Buy" : "Add to cart"}
     </button>
   );
 }
