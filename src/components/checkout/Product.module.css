@@ -1,0 +1,41 @@
+.productSummary {
+  border-top: #cbebf7 solid 0.5px;
+  background-color: #f2fafd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 5%;
+}
+
+.productImg {
+  width: 7em;
+  border-radius: 5px;
+}
+
+.productDescription {
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #040646;
+  margin-top: 0.2rem;
+  margin-left: 0.3rem;
+  width: 30%;
+}
+
+.align {
+  margin-top: 0.8rem;
+}
+
+.qty {
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #777777;
+}
+
+.price {
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #555555;
+}

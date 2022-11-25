@@ -20,13 +20,14 @@
 
 @media (max-width: 590px) {
   .logo {
-    margin-left: 0.5rem;
+    margin-left: 0;
   }
 }
 
 .formWrapper {
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .custShippingInfo {
@@ -63,7 +64,7 @@
 }
 
 .OrderSummaryWrapper {
-  max-width: 450px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
