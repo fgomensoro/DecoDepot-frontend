@@ -6,30 +6,12 @@ import SwiperItems from "./SwiperItems";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/cartSlice";
 import { toggleCart } from "../../redux/offCanvasSlice";
-import AddBtn from "../buttons/addToCartButton/AddToCartButton2";
+import AddToCartButton from "../buttons/addToCartButton/AddToCartButton";
 
 function ItemDetail({ product }) {
   const [similar, setSimilar] = useState(null);
   const navigate = useNavigate();
   const dollarUSLocale = Intl.NumberFormat("en-US");
-  const toggle = useSelector((state) => state.offCanvas);
-
-  const dispatch = useDispatch();
-
-  const handleAddToCart = () => {
-    dispatch(
-      addItem({
-        id: product._id,
-        name: product.name,
-        qty: 1,
-        image: product.images[2],
-        price: product.price,
-        slug: product.slug,
-      }),
-    );
-
-    dispatch(toggleCart());
-  };
 
   const getSimilar = async () => {
     const response = await axios(axiosConfig);
@@ -58,7 +40,7 @@ function ItemDetail({ product }) {
 
       <div className={`${styles.detail} container`}>
         <div className="text-center">
-          <AddBtn product={product} toggle={toggle} />
+          <AddToCartButton product={product} btnClassName={"buttonBuy"} toggle={true} />
         </div>
         <div className={styles.containerRow}>
           <div className={styles.containerCol}>

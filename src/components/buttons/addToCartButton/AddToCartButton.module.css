@@ -66,7 +66,7 @@
   font-family: "Calibre", sans-serif;
   font-weight: 500;
   font-size: 30px;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
   margin: 2px;
   opacity: 95%;

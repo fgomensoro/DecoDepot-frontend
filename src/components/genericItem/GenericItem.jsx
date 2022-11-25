@@ -23,7 +23,7 @@ function GenericItem({ product }) {
             >
               See more
             </Link>
-            <AddToCartButton product={product} btnClassName={"btnAdd"} />
+            <AddToCartButton product={product} btnClassName={"btnAdd"} toggle={true} />
           </div>
           <img className={styles.img} src={urlImg} alt="Product Image" />
         </div>
