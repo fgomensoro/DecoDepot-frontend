@@ -26,6 +26,7 @@
   width: 95%;
   height: 100%;
 }
+
 .imgContainer {
   position: relative;
   width: 21.5em;
@@ -33,11 +34,13 @@
   border-radius: 5px;
   overflow: hidden;
 }
+
 .img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .detailsBtns {
   display: flex;
   position: absolute;
@@ -51,17 +54,49 @@
   opacity: 0;
   z-index: 2;
 }
+
 .detailsBtns:hover {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.096);
 }
+
 .detailsBtns:hover .btnSee {
   animation: ease-in-out 0.4s 1 translate;
   color: black !important;
   opacity: 95% !important;
 }
+
 .detailsBtns:hover .btnAdd {
   animation: ease-in-out 0.2s 1 translate2;
+}
+
+.btnAdd {
+  background-color: #131313;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  height: fit-content;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: -20px;
+  opacity: 95%;
+  width: 75%;
+  padding: 5px;
+  font-weight: 600;
+  font-family: "Calibre", sans-serif;
+  font-size: 20px;
+  border-radius: 50px;
+  transform: translateY(-65%);
+  padding-top: 0.6rem;
+}
+
+@keyframes translate2 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-70%);
+  }
 }
 
 @keyframes translate {
@@ -72,14 +107,7 @@
     transform: translateY(-80%);
   }
 }
-@keyframes translate2 {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
+
 
 .btnSee {
   display: flex;
@@ -95,12 +123,8 @@
   border-radius: 50px;
   transform: translateY(-65%);
   padding-top: 0.6rem;
-  animation: ease-in-out 0.4s 1 translate;
 }
 
-.btnSee:hover {
-  opacity: 90% !important;
-}
 
 .img {
   border-radius: 5px;
