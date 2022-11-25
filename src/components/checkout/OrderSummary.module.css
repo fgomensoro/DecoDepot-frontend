@@ -1,0 +1,72 @@
+.orderSummary {
+  border: #cbebf7 solid 2px;
+  box-shadow: 23px 23px 30px -8px #cbebf7;
+  border-radius: 10px;
+  background-color: #f2fafd;
+  margin-top: 0.6rem;
+  opacity: 80%;
+  margin-right: 0.3rem;
+}
+
+@media (max-width: 991px) {
+  .orderSummary {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.titleOrderSummary {
+  margin: 1rem;
+  font-family: "Calibre", sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  padding-top: 0.6rem;
+  text-align: start;
+  margin-left: 1.7rem;
+}
+
+.totalsContainer {
+  border-top: #cbebf7 solid 0.5px;
+  padding-top: 2.2rem;
+  margin-bottom: 1.3rem;
+}
+.totals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0% 5%;
+}
+.pSubtotals {
+  font-family: "Calibre", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #00006b;
+}
+.price {
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #555555;
+}
+
+.hrLine {
+  border-bottom: #cbebf7 solid 0.5px;
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
+  margin-top: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.pTotal {
+  font-family: "Calibre", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #00006b;
+}
+
+.priceTotal {
+  font-family: "Calibre", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: #555555;
+}
