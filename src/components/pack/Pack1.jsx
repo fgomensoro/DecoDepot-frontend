@@ -25,6 +25,8 @@ function Pack() {
 
   const randomNumber = Math.floor(Math.random() * (1 - 0 + 1) + 0);
 
+
+
   return (
     packs && (
       <div className={`${styles.bigContain} container`}>
