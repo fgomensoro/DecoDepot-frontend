@@ -27,13 +27,9 @@ function ProductsHero({ category }) {
               <img src={urlCurve} alt="" />
             </div>
             <div className={styles.wrapper}>
-<<<<<<< HEAD
               <h1 className={styles.bigLetter}>
                 Our {!category ? "products" : category.toLowerCase()}
               </h1>
-=======
-              <h1 className={`${styles.bigLetter}`}>Our Products</h1>
->>>>>>> e7e88dd22c1c199ebd129a6a081b181b77da9857
               <p>Design your home interior with your heart</p>
             </div>
           </div>
