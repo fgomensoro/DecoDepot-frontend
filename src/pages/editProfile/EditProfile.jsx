@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { storeUser } from "../../redux/userSlice";
 
 import React from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 function EditProfile() {
@@ -129,7 +128,7 @@ function EditProfile() {
             </label>
             <input
               type="password"
-              placeholder="Enter your new number"
+              placeholder="Enter your password"
               name="password"
               className={`${styles.input} form-control`}
               value={currentPassword}
@@ -156,7 +155,7 @@ function EditProfile() {
             </label>
             <input
               type="password"
-              placeholder="Enter your new number"
+              placeholder="Confirm password"
               name="confirmNewPassword"
               className={`${styles.input} form-control`}
               value={confirmNewPassword}
@@ -164,7 +163,7 @@ function EditProfile() {
             />
           </div>
           <p className={`${styles.message}`}>{backendMessage}</p>
-          <div className={`${styles.links} d-flex justify-content-center`}>
+          <div className={` d-flex justify-content-center`}>
             <button type="submit" className={`${styles.btnSave} btn btn-block`}>
               Save changes
             </button>
