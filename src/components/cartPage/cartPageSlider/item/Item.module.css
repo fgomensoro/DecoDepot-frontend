@@ -49,3 +49,13 @@
     font-size: 0.9rem;
   }
 }
+
+.namePriceContainer{
+  height: 65px;
+}
+
+@media (max-width: 450px) {
+  .namePriceContainer{
+    height: 100px;
+  }
+}

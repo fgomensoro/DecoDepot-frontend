@@ -58,7 +58,7 @@
 .detailsBtns:hover .btnSee {
   animation: ease-in-out 0.4s 1 translate;
   color: black !important;
-  opacity: 95%;
+  opacity: 95% !important;
 }
 .detailsBtns:hover .btnAdd {
   animation: ease-in-out 0.2s 1 translate2;
@@ -95,6 +95,11 @@
   border-radius: 50px;
   transform: translateY(-65%);
   padding-top: 0.6rem;
+  animation: ease-in-out 0.4s 1 translate;
+}
+
+.btnSee:hover {
+  opacity: 90% !important;
 }
 
 .img {
@@ -138,12 +143,18 @@
   margin-top: 0.5rem;
   vertical-align: baseline;
   color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 3.5rem;
 }
 
 .paragraphCard {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.22rem;
-  margin-top: -0.8rem;
+  margin-top: -1rem;
   color: black;
 }
 
@@ -151,7 +162,7 @@
   font-family: "Calibre", sans-serif;
   font-size: 1.22rem;
   padding-top: 0.3rem;
-  margin-top: -0.8rem;
+  margin-top: -1.8rem;
   font-weight: 200;
   color: black;
 }

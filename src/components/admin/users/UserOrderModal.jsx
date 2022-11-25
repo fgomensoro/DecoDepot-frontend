@@ -19,11 +19,12 @@ function UserOrderModal(props) {
           Authorization: "Bearer " + user.token,
         },
       });
+      console.log(response.data.orders);
       setOrders(response.data.orders);
     };
     getUser();
   }, []);
-  console.log(orders);
+  // console.log(orders);
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>

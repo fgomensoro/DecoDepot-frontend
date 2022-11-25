@@ -4,7 +4,8 @@ import axios from "axios";
 import styles from "../adminCSS/AdminCSS.module.css";
 import AdminNav from "../adminNav/AdminNav";
 
-import Footer from "../../footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as iconListSolid from "@fortawesome/free-solid-svg-icons";
 
 function PacksTable() {
   const user = useSelector((state) => state.user);
@@ -26,10 +27,10 @@ function PacksTable() {
 
   return (
     <div className={`${styles.body} row`}>
-      <div className="col-2">
+      <div className="col-4 col-md-2">
         <AdminNav active={"Packs"} />
       </div>
-      <div className="col-10">
+      <div className="col-8 col-md-10">
         {packs && (
           <table className={`${styles.scrollX} table`}>
             <thead>
@@ -48,7 +49,7 @@ function PacksTable() {
               {packs.map((pack, index) => {
                 return (
                   <tr key={pack._id}>
-                    <th scope="row">{index}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{pack.name}</td>
                     <td>{pack.bigImage}</td>
                     <td>{pack.stock}</td>
@@ -56,8 +57,12 @@ function PacksTable() {
                     <td></td>
                     <td></td>
                     <td>
-                      <button>Edit</button>
-                      <button>Delete</button>
+                      <button className={styles.buttonPencil}>
+                        <FontAwesomeIcon icon={iconListSolid.faEdit} />
+                      </button>
+                      <button className={styles.buttonDelete}>
+                        <FontAwesomeIcon icon={iconListSolid.faTrash} />
+                      </button>
                     </td>
                   </tr>
                 );

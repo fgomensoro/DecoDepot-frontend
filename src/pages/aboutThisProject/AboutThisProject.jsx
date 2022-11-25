@@ -6,6 +6,9 @@ function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
   const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
+  const urlAvatarTomas = process.env.REACT_APP_IMAGE_PATH + "IMG_CV_TOMAS_1.jpeg";
+  const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
+  const urlAvatarJoel = process.env.REACT_APP_IMAGE_PATH + "joelCV.jpg";
   const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
   const urlLogo = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
@@ -17,7 +20,7 @@ function AboutThisProject() {
         {/* <img className={styles.image} src={urlHero} alt="" /> */}
 
         <div className={`${styles.titleContainer}`}>
-          <h1 className={styles.title}>About this project</h1>
+          <h1 className={styles.title}>Our Project</h1>
         </div>
         <div className={styles.curveContainer}>
           <img className={styles.curveImg} src={urlCurve} alt="" />
@@ -68,7 +71,12 @@ function AboutThisProject() {
       <div className={`${styles.sectionMembers} container my-5`}>
         <div className=" d-flex flex-wrap justify-content-between">
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${urlAvatarFran})` }}
+              ></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Francisco Gomensoro</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -86,7 +94,12 @@ function AboutThisProject() {
           </div>
 
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${urlAvatarTomas})` }}
+              ></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Tomás Zerbino</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -103,7 +116,13 @@ function AboutThisProject() {
             </div>
           </div>
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={baseURL + "joelCV.jpg"} alt="" />
+            <div className={styles.containerAvatar}>
+              <div
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${urlAvatarJoel})` }}
+              ></div>
+            </div>
+
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Joel Dominguez</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -121,7 +140,9 @@ function AboutThisProject() {
           </div>
 
           <div className={styles.cardBottom}>
-            <img className={styles.avatar} src={urlAvatar} alt="" />
+            <div className={styles.containerAvatar}>
+              <div className={styles.avatar} style={{ backgroundImage: `url(${urlAvatar})` }}></div>
+            </div>
             <div className={styles.nameContainer}>
               <h3 className={styles.name}>Germán Delgado</h3>
               <p className={styles.developer}>Full Stack Developer Jr</p>
@@ -145,36 +166,36 @@ function AboutThisProject() {
         <div className={styles.tech}>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "javascript-icon.png"} alt="" />
-            <p className="text-center">JavaScript</p>
+            <p className={styles.techName}>JavaScript</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "react4.png"} alt="" />
-            <p className="text-center">React.js</p>
+            <p className={styles.techName}>React.js</p>
           </div>
 
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "redux.png"} alt="" />
-            <p className="text-center">Redux</p>
+            <p className={styles.techName}>Redux</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogosMongo} src={baseURL + "mongo2.png"} alt="" />
-            <p className="text-center">MongoDB</p>
+            <p className={styles.techName}>MongoDB</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "github.png"} alt="" />
-            <p className="text-center">GitHub</p>
+            <p className={styles.techName}>GitHub</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "css5.png"} alt="" />
-            <p className="text-center">CSS</p>
+            <p className={styles.techName}>CSS</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "Node.js-Logo.png"} alt="" />
-            <p className="text-center">Node.js</p>
+            <p className={styles.techName}>Node.js</p>
           </div>
           <div className={styles.logoContainer}>
             <img className={styles.techLogos} src={baseURL + "bootstrap.jfif"} alt="" />
-            <p className="text-center">Bootstrap</p>
+            <p className={styles.techName}>Bootstrap</p>
           </div>
         </div>
       </div>

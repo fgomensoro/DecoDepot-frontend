@@ -18,10 +18,10 @@ import { clearCart } from "../../redux/cartSlice";
 
 function CheckoutForm() {
   const state = useSelector((state) => state);
-  const [cardNumber, setCardNumber] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [expirationDate, setExpirationDate] = useState("");
-  const [securityCode, setSecurityCode] = useState("");
+  const [cardNumber, setCardNumber] = useState("1111 1111 1111 1111");
+  const [fullName, setFullName] = useState(state.user.firstname + " " + state.user.lastname);
+  const [expirationDate, setExpirationDate] = useState("12/28");
+  const [securityCode, setSecurityCode] = useState("123");
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
   const [backendMessage, setBackendMessage] = useState();
@@ -44,7 +44,7 @@ function CheckoutForm() {
         },
         data: {
           products: state.cart.items,
-          status: "Not paid",
+          status: "Paid",
           address: state.shippingAddress,
           total: state.cart.total,
         },
@@ -52,7 +52,8 @@ function CheckoutForm() {
       if (response.data.msg) {
         setBackendMessage(response.data.msg);
       } else {
-        navigate("/");
+        console.log(response.data._id);
+        navigate(`/purchase-completed/${response.data._id}`);
         dispatch(clearCart());
       }
     };
@@ -114,7 +115,7 @@ function CheckoutForm() {
             Card number
           </label>
           <input
-            type="number"
+            type="text"
             className={`${styles.item} form-control`}
             id="cardNumber"
             placeholder="0000 0000 0000 0000"
@@ -131,7 +132,7 @@ function CheckoutForm() {
             Expiration
           </label>
           <input
-            type="number"
+            type="text"
             className={`${styles.item} form-control`}
             placeholder="MM / AA"
             value={expirationDate}

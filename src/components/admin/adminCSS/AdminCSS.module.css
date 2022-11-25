@@ -3,6 +3,13 @@
   margin-top: 5%;
 }
 
+@media (max-width: 500px) {
+  .body {
+    min-width: 80vh;
+    margin-top: 15%;
+  }
+}
+
 .buttonContainer {
   padding: 2rem;
 }
@@ -14,6 +21,7 @@
   background-color: transparent;
   transition: all 0.2s ease-in-out;
   color: var(--colorBlackDeco);
+  text-align: center;
 }
 
 .buttonCreate:hover {
@@ -178,4 +186,37 @@
 
 .modal {
   padding: 4rem;
+}
+
+.modalButtonsContainer {
+  margin-top: 2rem;
+}
+
+.modalBtnClose {
+  width: 100px;
+  border: 2px solid var(--colorBlackDeco);
+  border-radius: 30px;
+  background-color: transparent;
+  color: black;
+  font-size: 1.3rem;
+  /* font-weight: bold; */
+}
+.modalBtnClose:hover {
+  color: var(--colorBlackDeco);
+  background-color: #e4e4e4;
+}
+.modalBtnDelete {
+  text-align: center;
+  width: 100px;
+  border: 2px solid rgb(252, 23, 23);
+  border-radius: 30px;
+  background-color: transparent;
+  color: rgb(252, 23, 23);
+  font-size: 1.3rem;
+  /* font-weight: bold; */
+  margin-left: 4px;
+}
+
+.modalBtnDelete:hover {
+  background-color: rgb(255, 190, 190);
 }

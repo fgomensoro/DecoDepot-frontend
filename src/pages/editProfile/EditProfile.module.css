@@ -63,6 +63,17 @@ input::-webkit-inner-spin-button {
   padding: 10px 20px;
 }
 
+@media (max-width: 550px) {
+  .label {
+    display: none;
+  }
+  .input {
+    border-radius: 20px;
+    margin-top: 25px;
+    padding: 10px 20px;
+  }
+}
+
 .btnSave {
   border-radius: 30px;
   padding: 10px 20px;

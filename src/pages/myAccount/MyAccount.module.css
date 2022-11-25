@@ -78,7 +78,7 @@
 }
 
 .detailsWrapper {
-  max-width: 22rem;
+  max-width: 35rem;
   padding: 4rem;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
@@ -89,3 +89,18 @@
   padding: 4rem;
   margin: 0 auto;
 }
+
+.modalPosition {
+  margin-top: 15%;
+}
+
+.modal {
+  padding: 4rem;
+}
+ @media(max-width: 500px){
+  .leftContainer {
+    margin-bottom: 3rem;
+    padding-top: 0;
+  }
+  
+ }
