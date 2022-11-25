@@ -5,7 +5,7 @@ import styles from "./AboutThisProject.module.css";
 function AboutThisProject() {
   const baseURL = process.env.REACT_APP_IMAGE_PATH;
 
-  const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "psyduckAvatar.jpg";
+  const urlAvatar = process.env.REACT_APP_IMAGE_PATH + "germancv.jpg";
   const urlAvatarTomas = process.env.REACT_APP_IMAGE_PATH + "IMG_CV_TOMAS_1.jpeg";
   const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
   const urlAvatarJoel = process.env.REACT_APP_IMAGE_PATH + "joelCV.jpg";
