@@ -7,7 +7,7 @@ import { storeUser } from "../../redux/userSlice";
 import axios from "axios";
 
 function Login() {
-  const [email, setEmail] = useState("random@user.com");
+  const [email, setEmail] = useState("testing@user.com");
   const [password, setPassword] = useState("password");
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
