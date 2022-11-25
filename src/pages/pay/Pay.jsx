@@ -23,13 +23,13 @@ function pay() {
       <FaLock className={styles.lock} />
 
       <div className={`${styles.cont} container`}>
+        <Link to="/">
+          <img className={styles.logo} src={url} alt="Logo" />
+        </Link>
         <div className="row">
           <div className="col-12 col-lg-6">
-            <Link to="/">
-              <img className={styles.logo} src={url} alt="Logo" />
-            </Link>
-            <div className={styles.customerInfo}>
-              <div className={styles.firstLine}>
+            <div className={styles.formWrapper}>
+              <div className="d-flex justify-content-between">
                 <h2 className={`${styles.custShippingInfo} mb-4`}>
                   Customer & shipping information
                 </h2>
@@ -38,28 +38,29 @@ function pay() {
                 </Link>
               </div>
               <div className="mt-2">
-                <h3 className={styles.productDescription2}>{`${user.email} `}</h3>
+                <h3 className={styles.productDescription}>{`${user.email} `}</h3>
               </div>
               <div className="mt-4">
                 <h3
-                  className={styles.productDescription2}
+                  className={styles.productDescription}
                 >{`${shipAddress.firstName} ${shipAddress.lastName}`}</h3>
                 <h3
-                  className={styles.productDescription2}
+                  className={styles.productDescription}
                 >{`${shipAddress.address},  ${shipAddress.apt}`}</h3>
                 <h3
-                  className={styles.productDescription2}
+                  className={styles.productDescription}
                 >{`${shipAddress.city},  ${shipAddress.state},  ${shipAddress.zipCode}`}</h3>
                 <h3
-                  className={styles.productDescription2}
+                  className={styles.productDescription}
                 >{`${shipAddress.country} ${shipAddress.phone}`}</h3>
               </div>
             </div>
             <Form />
           </div>
-          <div className="col-12 col-lg-1"></div>
-          <div className={`${styles.col2} col-12 col-lg-5`}>
-            <OrderSummary total={total} />
+          <div className={`${styles.col2} col-12 col-lg-6`}>
+            <div className={styles.OrderSummaryWrapper}>
+              <OrderSummary total={total} />
+            </div>
           </div>
         </div>
       </div>

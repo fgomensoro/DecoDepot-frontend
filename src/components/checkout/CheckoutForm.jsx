@@ -24,12 +24,12 @@ function CheckoutForm() {
 
   return (
     <div>
+      <Link to="/">
+        <img className={styles.logo} src={url} alt="Logo" />
+      </Link>
       <div className="row">
         <div className="col-12 col-lg-6">
-          <Link to="/">
-            <img className={styles.logo} src={url} alt="Logo" />
-          </Link>
-          <div className={styles.customerInfo}>
+          <div className={styles.formWrapper}>
             <h2 className={`${styles.custShippingInfo} mb-4`}>Customer & shipping information</h2>
             <div>
               {user.email ? (
@@ -50,9 +50,10 @@ function CheckoutForm() {
           </div>
           <Form />
         </div>
-        <div className="col-12 col-lg-1"></div>
-        <div className={`${styles.col2} col-12 col-lg-5 `}>
-          <OrderSummary total={total} />
+        <div className={`${styles.col2} col-12 col-lg-6 `}>
+          <div className={styles.OrderSummaryWrapper}>
+            <OrderSummary total={total} />
+          </div>
         </div>
       </div>
     </div>
@@ -60,5 +61,3 @@ function CheckoutForm() {
 }
 
 export default CheckoutForm;
-
-

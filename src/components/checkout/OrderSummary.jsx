@@ -1,4 +1,4 @@
-import styles from "./CheckoutForm.module.css";
+import styles from "./OrderSummary.module.css";
 import Products from "./Products";
 import { useSelector } from "react-redux";
 import { useState } from "react";

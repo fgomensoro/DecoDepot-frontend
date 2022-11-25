@@ -1,4 +1,4 @@
-import styles from "./CheckoutForm.module.css";
+import styles from "./Form.module.css";
 import { TiArrowBack } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -59,7 +59,7 @@ function CheckoutForm() {
 
   return (
     firstName && (
-      <div>
+      <div className={styles.formWrapper}>
         <h2 className={`${styles.shippingAddress} mb-4`}>Shipping address</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className="form-group">

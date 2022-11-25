@@ -1,4 +1,4 @@
-import styles from "./CheckoutForm.module.css";
+import styles from "./Product.module.css";
 
 function Product({ item }) {
   const url = `${process.env.REACT_APP_IMAGE_PATH}${item.image}`;

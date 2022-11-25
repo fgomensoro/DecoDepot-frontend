@@ -6,46 +6,6 @@
   border-radius: 10px;
 }
 
-.title {
-  color: #5d5e5d;
-}
-
-/* .label {
-  color: #5d5e5d;
-} */
-
-.input:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: none;
-  background-color: aliceblue;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-.submitBtn {
-  color: #5d5e5d;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  width: 100%;
-  padding: 0.375rem;
-  font-weight: 400;
-  background-color: #f9f9f9;
-  transition: all 0.2s ease-in-out;
-}
-
-.submitBtn:hover {
-  background-color: #f0f0f0;
-}
-
-.message {
-  color: rgb(252, 17, 17);
-  padding-left: 2.1rem;
-}
-
 .label {
   text-align: center;
   margin-top: 0rem;
@@ -63,15 +23,22 @@ input::-webkit-inner-spin-button {
   padding: 10px 20px;
 }
 
-@media (max-width: 550px) {
-  .label {
-    display: none;
-  }
-  .input {
-    border-radius: 20px;
-    margin-top: 25px;
-    padding: 10px 20px;
-  }
+.input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: none;
+  background-color: aliceblue;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.message {
+  color: rgb(252, 17, 17);
+  padding-left: 2.1rem;
 }
 
 .btnSave {
@@ -84,4 +51,15 @@ input::-webkit-inner-spin-button {
   color: white;
   margin-top: 3rem;
   opacity: 88%;
+}
+
+@media (max-width: 550px) {
+  .label {
+    display: none;
+  }
+  .input {
+    border-radius: 20px;
+    margin-top: 25px;
+    padding: 10px 20px;
+  }
 }

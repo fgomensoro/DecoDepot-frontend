@@ -1,11 +1,6 @@
+.background {
+  background-image: linear-gradient(transparent 5%, #999999c1 50%, transparent 100%);
+}
 .column {
   margin-top: -2rem !important;
-}
-
-.background {
-  background-image: linear-gradient(
-    transparent 5%,
-    #999999c1 50%,
-    transparent 100%
-  );
 }
