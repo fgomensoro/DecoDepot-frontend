@@ -321,7 +321,5 @@
 .containerAvatar:hover .avatar,
 .containerAvatar:focus .avatar {
   transform: scale(1.5) translate(0%, -15%);
-  /* -webkit-transition: transform 500ms linear; */
-  /* -ms-transition: transform 500ms linear; */
-  /* transition: transform 500ms linear; */
+  -webkit-transform: scale(1.5) translate(0%, -15%);
 }
