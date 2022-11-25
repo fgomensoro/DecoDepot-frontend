@@ -32,50 +32,47 @@ function Login() {
   };
 
   return (
-    email &&
-    password && (
-      <div className={`${styles.mainContainer}`} style={{ backgroundImage: `url(${url})` }}>
-        <div className={`${styles.formWrapper} `}>
-          <div>
-            <h2 className="text-center mb-4">Login</h2>
-            <form onSubmit={getToken}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                name="email"
-                value={email}
-                className={`${styles.input} form-control mb-3`}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-              <input
-                type="password"
-                placeholder="Enter your password"
-                name="password"
-                value={password}
-                className={`${styles.input} form-control mb-3`}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-              <p className={styles.message}>{message}</p>
-              <button type="submit" className={styles.submitBtn}>
-                Submit
-              </button>
-              <div className="d-flex justify-content-center mt-2">
-                <span>
-                  <Link to={"/"} className={styles.link}>
-                    Home
-                  </Link>
-                </span>
-                <span>
-                  <Link to={"/signup"} className={styles.link}>
-                    Sign Up
-                  </Link>
-                </span>
-              </div>
-            </form>
-          </div>
+    <div className={`${styles.mainContainer}`} style={{ backgroundImage: `url(${url})` }}>
+      <div className={`${styles.formWrapper} `}>
+        <div>
+          <h2 className="text-center mb-4">Login</h2>
+          <form onSubmit={getToken}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              name="email"
+              value={email}
+              className={`${styles.input} form-control mb-3`}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              value={password}
+              className={`${styles.input} form-control mb-3`}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <p className={styles.message}>{message}</p>
+            <button type="submit" className={styles.submitBtn}>
+              Submit
+            </button>
+            <div className="d-flex justify-content-center mt-2">
+              <span>
+                <Link to={"/"} className={styles.link}>
+                  Home
+                </Link>
+              </span>
+              <span>
+                <Link to={"/signup"} className={styles.link}>
+                  Sign Up
+                </Link>
+              </span>
+            </div>
+          </form>
         </div>
       </div>
-    )
+    </div>
   );
 }
 
