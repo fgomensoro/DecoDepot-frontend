@@ -18,10 +18,10 @@ import { clearCart } from "../../redux/cartSlice";
 
 function CheckoutForm() {
   const state = useSelector((state) => state);
-  const [cardNumber, setCardNumber] = useState("");
-  const [fullName, setFullName] = useState("");
-  const [expirationDate, setExpirationDate] = useState("");
-  const [securityCode, setSecurityCode] = useState("");
+  const [cardNumber, setCardNumber] = useState("1111 1111 1111 1111");
+  const [fullName, setFullName] = useState(state.user.firstname + " " + state.user.lastname);
+  const [expirationDate, setExpirationDate] = useState("12/28");
+  const [securityCode, setSecurityCode] = useState("123");
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
   const [backendMessage, setBackendMessage] = useState();
@@ -115,7 +115,7 @@ function CheckoutForm() {
             Card number
           </label>
           <input
-            type="number"
+            type="text"
             className={`${styles.item} form-control`}
             id="cardNumber"
             placeholder="0000 0000 0000 0000"
@@ -132,7 +132,7 @@ function CheckoutForm() {
             Expiration
           </label>
           <input
-            type="number"
+            type="text"
             className={`${styles.item} form-control`}
             placeholder="MM / AA"
             value={expirationDate}
