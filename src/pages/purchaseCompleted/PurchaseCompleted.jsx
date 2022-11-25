@@ -27,7 +27,7 @@ function PurchaseCompleted() {
   return (
     order && (
       <div className={styles.container}>
-        <h1>Thanks For Your Purchase!</h1>
+        <h1 className={styles.title}>Thanks For Your Purchase!</h1>
         <div className="d-flex justify-content-center">
           <Order order={order} />
         </div>
