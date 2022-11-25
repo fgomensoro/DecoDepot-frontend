@@ -25,7 +25,7 @@ function Pack() {
 
   const randomNumber = Math.floor(Math.random() * (1 - 0 + 1) + 0);
 
-  console.log("pack1" + randomNumber)
+
 
   return (
     packs && (
