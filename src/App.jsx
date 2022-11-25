@@ -33,6 +33,7 @@ import OnlyUser from "./components/onlyUser/OnlyUser";
 import AboutUsOffcanvas from "./components/aboutUsOffcanvas/AboutUsOffcanvas";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import PurchaseCompleted from "./pages/purchaseCompleted/PurchaseCompleted";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -69,6 +70,18 @@ function App() {
 
   return (
     <div className={styles.body}>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       {showNav && <Navbar />}
       {showCanvas && <AboutUsOffcanvas />}
       <ScrollToTop />
