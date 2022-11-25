@@ -7,15 +7,18 @@ import axios from "axios";
 
 function AboutUsOffcanvas() {
   const [show, setShow] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleResteDataBase = async () => {
+    setMessage("Reseting database...");
     const response = await axios({
       url: `${process.env.REACT_APP_API_URL}/database/reset`,
       method: "GET",
     });
+    setMessage("");
     console.log(response.data.msg);
     handleClose();
   };
@@ -51,6 +54,7 @@ function AboutUsOffcanvas() {
                 As someone might have added or edited content from the page, we recommend clearing
                 and resetting the data base for a better experience.
               </p>
+              <p className={styles.message}>{message}</p>
               <button onClick={() => handleResteDataBase()} className={styles.button}>
                 Reset database
               </button>

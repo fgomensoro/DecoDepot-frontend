@@ -3,7 +3,7 @@ import styles from "./ProductsHero.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function ProductsHero() {
+function ProductsHero({ category }) {
   const [categories, setCategories] = useState(null);
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
 
@@ -27,7 +27,9 @@ function ProductsHero() {
               <img src={urlCurve} alt="" />
             </div>
             <div className={styles.wrapper}>
-              <h1 className={`${styles.bigLetter}`}>Our Products</h1>
+              <h1 className={styles.bigLetter}>
+                Our {!category ? "products" : category.toLowerCase()}
+              </h1>
               <p>Design your home interior with your heart</p>
             </div>
           </div>

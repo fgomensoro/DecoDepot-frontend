@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+  margin-top: 10%;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    margin-top: 8rem;
+  }
+}

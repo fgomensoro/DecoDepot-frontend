@@ -32,6 +32,7 @@ import OrderDetail from "./components/admin/orders/OrderDetail";
 import OnlyUser from "./components/onlyUser/OnlyUser";
 import AboutUsOffcanvas from "./components/aboutUsOffcanvas/AboutUsOffcanvas";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import PurchaseCompleted from "./pages/purchaseCompleted/PurchaseCompleted";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -89,6 +90,7 @@ function App() {
           <Route path="/myaccount_orderHistory" element={<MyAccountOrderHistory />} />
           <Route path="/myaccount_details" element={<MyAccountDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/purchase-completed/:orderId" element={<PurchaseCompleted />} />
         </Route>
         <Route element={<AdminOnly isAdmin={user && user.isAdmin} />}>
           <Route path="/admin" element={<Admin />} />
