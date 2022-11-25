@@ -9,7 +9,7 @@ function AboutThisProject() {
   const urlAvatarTomas = process.env.REACT_APP_IMAGE_PATH + "IMG_CV_TOMAS_1.jpeg";
   const urlAvatarFran = process.env.REACT_APP_IMAGE_PATH + "cv_fran_pic_cerca_1.jpeg";
   const urlAvatarJoel = process.env.REACT_APP_IMAGE_PATH + "joelCV.jpg";
-  const urlMern = process.env.REACT_APP_IMAGE_PATH + "mern.jpg";
+  const urlMer = process.env.REACT_APP_IMAGE_PATH + "MER.png";
   const urlCurve = process.env.REACT_APP_IMAGE_PATH + "curveWhite.svg";
   const urlLogo = process.env.REACT_APP_IMAGE_PATH + "navLogo.png";
   const navigate = useNavigate();
@@ -161,6 +161,9 @@ function AboutThisProject() {
         </div>
       </div>
       <h2 className="text-center my-5">MER</h2>
+      <div className={styles.merContainer}>
+        <img className={styles.mer} src={urlMer} alt="" />
+      </div>
       <h2 className="text-center my-5">TECHNOLOGIES</h2>
       <div className={`${styles.sectionTechs} container`}>
         <div className={styles.tech}>
