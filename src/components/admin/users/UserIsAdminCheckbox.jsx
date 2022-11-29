@@ -25,32 +25,21 @@ function UserIsAdminCheckbox({ user, loggedUser, getUsers }) {
     updateIsAdmin();
   };
 
-  if (isAdmin) {
-    return (
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          name="featured"
-          value={isAdmin}
-          checked
-          onChange={() => handleIsAdmin(!isAdmin)}
-        />
-      </div>
-    );
-  } else if (!isAdmin) {
-    return (
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          name="featured"
-          value={isAdmin}
-          onChange={() => handleIsAdmin(!isAdmin)}
-        />
-      </div>
-    );
+  if (user.email === "admin@admin.com") {
+    return "";
   }
+
+  return (
+    <div className="mb-3 form-check">
+      <input
+        type="checkbox"
+        className="form-check-input"
+        name="featured"
+        checked={isAdmin}
+        onChange={() => handleIsAdmin(!isAdmin)}
+      />
+    </div>
+  );
 }
 
 export default UserIsAdminCheckbox;

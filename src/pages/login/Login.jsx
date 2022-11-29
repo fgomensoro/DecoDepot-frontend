@@ -27,7 +27,7 @@ function Login() {
       return setMessage(response.data.msg);
     } else {
       dispatch(storeUser(response.data));
-      return navigate("/");
+      return navigate(-1);
     }
   };
 
