@@ -107,15 +107,7 @@ function Navbar() {
           )}
 
           {user ? (
-            <li className="nav-item">
-              <Link
-                to="/login"
-                onClick={() => handleLogout()}
-                className={`${styles.customNavLink} nav-link`}
-              >
-                Logout
-              </Link>
-            </li>
+            <div></div>
           ) : (
             <li className="nav-item">
               <Link to="/login" className={`${styles.customNavLink} nav-link`}>

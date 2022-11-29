@@ -24,7 +24,7 @@
   width: 9.5rem;
   border: 2px solid var(--colorBlackDeco);
   border-radius: 30px;
-  padding: 0.5rem 0;
+  padding: 0.6rem 0 0.3rem 0;
   background-color: var(--colorBlackDeco);
   color: white;
   font-weight: bold;
