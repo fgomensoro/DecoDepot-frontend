@@ -10,10 +10,10 @@ import { clearCart } from "../../redux/cartSlice";
 
 function CheckoutForm() {
   const state = useSelector((state) => state);
-  const [cardNumber, setCardNumber] = useState("1111 1111 1111 1111");
+  const [cardNumber, setCardNumber] = useState("4321 5678 9012 1234");
   const [fullName, setFullName] = useState(state.user.firstname + " " + state.user.lastname);
   const [expirationDate, setExpirationDate] = useState("12/28");
-  const [securityCode, setSecurityCode] = useState("123");
+  const [securityCode, setSecurityCode] = useState("354");
   const [error, setError] = useState(false);
   const [message, setMessage] = useState("");
   const [backendMessage, setBackendMessage] = useState();
@@ -90,7 +90,7 @@ function CheckoutForm() {
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={`d-flex mb-4`}>
             <label className={styles.label} htmlFor="nameOnCard">
-              Name on card
+              Name
             </label>
             <input
               type="text"
@@ -104,7 +104,7 @@ function CheckoutForm() {
 
           <div className={`d-flex mb-4 position-relative`}>
             <label className={styles.label} htmlFor="cardNumber">
-              Card number
+              Card Number
             </label>
             <input
               type="text"

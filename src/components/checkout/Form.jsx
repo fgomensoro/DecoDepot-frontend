@@ -14,13 +14,13 @@ function CheckoutForm() {
 
   const [firstName, setFirstName] = useState(user.firstname);
   const [lastName, setLastName] = useState(user.lastname);
-  const [address, setAddress] = useState(user.address);
-  const [apt, setApt] = useState("3");
+  const [address, setAddress] = useState("16th Street");
+  const [apt, setApt] = useState("203");
   const [city, setCity] = useState("Montevideo");
   const [country, setCountry] = useState("Uruguay");
   const [state, setState] = useState("Montevideo");
-  const [zipCode, setZipCode] = useState("1234");
-  const [phone, setPhone] = useState(user.phoneNumber);
+  const [zipCode, setZipCode] = useState("11300");
+  const [phone, setPhone] = useState("098245673");
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -61,7 +61,10 @@ function CheckoutForm() {
     <div className={styles.formWrapper}>
       <h2 className={`${styles.shippingAddress} mb-4`}>Shipping address</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            First name
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -72,7 +75,10 @@ function CheckoutForm() {
           />
           {error && !firstName && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            Last name
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -83,7 +89,10 @@ function CheckoutForm() {
           />
         </div>
         {error && !lastName && <span className={styles.message}>Required field</span>}
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            Address
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -94,7 +103,10 @@ function CheckoutForm() {
           />
           {error && !address && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            Apt
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -105,7 +117,10 @@ function CheckoutForm() {
           />
           {error && !apt && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            City
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -116,7 +131,10 @@ function CheckoutForm() {
           />
           {error && !city && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            State
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -127,7 +145,10 @@ function CheckoutForm() {
           />
           {error && !state && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            Country
+          </label>
           <input
             type="text"
             className={`${styles.item} form-control`}
@@ -139,7 +160,10 @@ function CheckoutForm() {
           {error && !country && <span className={styles.message}>Required field</span>}
         </div>
 
-        <div className="form-group">
+        <div className={`d-flex position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            ZIP Code
+          </label>
           <input
             type="number"
             className={`${styles.item} form-control`}
@@ -150,7 +174,10 @@ function CheckoutForm() {
           />
           {error && !zipCode && <span className={styles.message}>Required field</span>}
         </div>
-        <div className="form-group">
+        <div className={`d-flex mb-4 position-relative`}>
+          <label className={styles.label} htmlFor="cardNumber">
+            Phone
+          </label>
           <input
             type="number"
             className={`${styles.item} form-control`}

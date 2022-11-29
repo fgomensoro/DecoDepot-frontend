@@ -19,12 +19,24 @@
 }
 
 .item {
-  border-radius: 20px;
-  margin-top: 25px;
+  border-radius: 0px 20px 20px 0px;
   padding: 10px 20px;
+  margin-top: 25px;
 }
 .message {
   color: rgb(252, 25, 25);
+}
+
+.label {
+  text-align: center;
+  margin-top: 1.55rem;
+  width: 10rem;
+  background-color: #f9f9f9;
+  border-radius: 20px 0px 0px 20px;
+  border-top: solid 1px #ced4da;
+  border-bottom: solid 1px #ced4da;
+  border-left: solid 1px #ced4da;
+  padding-top: 0.5879rem;
 }
 
 .links {
